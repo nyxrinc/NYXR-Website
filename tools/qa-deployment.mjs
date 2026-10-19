@@ -162,6 +162,11 @@ try {
   );
   for (const width of [1650, 390]) {
     await page.setViewportSize({ width, height: 900 });
+    await page.evaluate(() => {
+      document.activeElement?.blur();
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    });
+    await page.waitForFunction(() => window.scrollY === 0);
     check(
       `Published fixture no overflow ${width}`,
       await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth),

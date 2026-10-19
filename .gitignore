@@ -4,6 +4,7 @@ dist/
 .capture-frames/
 qa/screenshots/
 qa/diagnostics/
+qa/
 *.log
 .vercel/
 .env*

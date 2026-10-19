@@ -1,5 +1,6 @@
 # Deploy from this website folder, never the parent desktop repository.
 *
+# Directory negations must not end in '/' for Vercel CLI's upload traversal.
 !src
 !src/**
 !public

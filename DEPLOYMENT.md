@@ -5,7 +5,13 @@ Keep installers in release asset storage, outside this repository's tracked sour
 
 ## Current status
 
-The website builds locally. **No live Vercel deployment or public installer upload has been verified.**
+The website passes a clean locked install/build locally and a real Vercel Linux preview build.
+Protected preview: https://nyxr-website-1zd2qyd9o-nyxr.vercel.app
+
+Executed on 19 October 2026: 17 deployment unit tests, 70 isolated browser checks,
+desktop/mobile screenshot review, and authenticated hosted route/header/404 checks.
+The available-download branch was tested using harmless fixture bytes, not a public installer.
+**Production publication and a real public installer download have not been completed.**
 The existing `4.0.0-beta.1` installer is unsigned and was built for private testing.
 Its matching Stockfish source/provenance and dependency notices have not been completed.
 Do not upload that private artifact as a public release. `release/beta.json` deliberately has

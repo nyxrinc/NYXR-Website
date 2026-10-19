@@ -1,4 +1,4 @@
-import { cp, mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
+import { cp, mkdir, readdir, readFile, writeFile, lstat } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -46,6 +46,18 @@ const files = [
     'prepare-deploy',
   ].map((name) => `tools/${name}.mjs`),
 ];
+async function checkSource(path) {
+  const info = await lstat(path);
+  if (info.isSymbolicLink()) throw new Error('Linked files must not enter the deployment checkout');
+  if (info.isDirectory()) {
+    for (const child of await readdir(path)) {
+      if (/^(\.env.*|\.capture-data|\.capture-frames|node_modules)$|\.(exe|zip|db|sqlite\d*|log)$/i.test(child))
+        throw new Error('Unexpected private file inside a deployment source folder');
+      await checkSource(resolve(path, child));
+    }
+  }
+}
+for (const name of files) await checkSource(resolve(site, name));
 for (const name of files) {
   const to = resolve(target, name);
   await mkdir(resolve(to, '..'), { recursive: true });
@@ -57,7 +69,9 @@ delete pkg.scripts['qa:smoke'];
 delete pkg.scripts['qa:ui'];
 pkg.scripts.qa = 'npm run test:deployment && npm run qa:deployment';
 await writeFile(resolve(target, 'package.json'), JSON.stringify(pkg, null, 2) + '\n', 'utf8');
-await cp(resolve(site, '../LICENSE'), resolve(target, 'LICENSE'));
+let license = resolve(site, 'LICENSE');
+try { await lstat(license); } catch { license = resolve(site, '../LICENSE'); }
+await cp(license, resolve(target, 'LICENSE'));
 await writeFile(
   resolve(target, 'README.md'),
   '# NYXR website\n\nThe official NYXR product website. Built with React and Vite; deployed as static pages.\n\nUse Node 24, `npm ci`, `npm run dev`.\n\nRead [DEPLOYMENT.md](DEPLOYMENT.md) before connecting Vercel or publishing beta downloads.\nThe desktop app is not included in this repository. Your own provider keys or a local model power NYXR.\n\nThe public beta link is guarded until reviewed installer and matching source assets are available.\nNo installer or credentials are committed here.\n',

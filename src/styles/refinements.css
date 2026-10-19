@@ -1,0 +1,531 @@
+/* Changes from actual desktop/mobile review: product staging and legibility. */
+.video-frame.has-played::after {
+  display: none;
+}
+@media (min-width: 1101px) {
+  .feature-card:nth-child(1),
+  .feature-card:nth-child(2),
+  .feature-card:nth-child(5),
+  .feature-card:nth-child(12) {
+    grid-column: span 2;
+    padding: 30px 32px;
+    min-height: 204px;
+  }
+  .feature-card:nth-child(1) h3,
+  .feature-card:nth-child(2) h3,
+  .feature-card:nth-child(5) h3,
+  .feature-card:nth-child(12) h3 {
+    font-size: 23px;
+  }
+  .feature-card:nth-child(1) p,
+  .feature-card:nth-child(2) p,
+  .feature-card:nth-child(5) p,
+  .feature-card:nth-child(12) p {
+    max-width: 340px;
+    font-size: 13px;
+  }
+  .feature-card:nth-child(1),
+  .feature-card:nth-child(12) {
+    background: radial-gradient(ellipse at 100% 0, #19394955, transparent 75%), #09151e;
+  }
+}
+@media (max-width: 760px) {
+  .feature-card:nth-child(1),
+  .feature-card:nth-child(2),
+  .feature-card:nth-child(5),
+  .feature-card:nth-child(12) {
+    grid-column: span 2;
+    min-height: 172px;
+    padding: 26px;
+  }
+  .feature-card:nth-child(1) h3,
+  .feature-card:nth-child(2) h3,
+  .feature-card:nth-child(5) h3,
+  .feature-card:nth-child(12) h3 {
+    font-size: 21px;
+  }
+  .feature-card:nth-child(1) p,
+  .feature-card:nth-child(2) p,
+  .feature-card:nth-child(5) p,
+  .feature-card:nth-child(12) p {
+    max-width: 300px;
+    font-size: 13px;
+  }
+}
+main:focus {
+  outline: none;
+}
+html {
+  scrollbar-gutter: stable;
+}
+.button:hover {
+  transform: translate(var(--magnet-x, 0px), calc(var(--magnet-y, 0px) - 3px));
+}
+.feature-icon {
+  transition: transform 0.25s var(--ease);
+}
+.feature-card:hover .feature-icon {
+  transform: translateY(-2px);
+}
+.demo-timeline li.pending {
+  opacity: 1;
+}
+.demo-timeline li.pending strong {
+  color: #94acb9;
+}
+.demo-timeline li.pending p {
+  color: #90a8b5;
+}
+.demo-timeline li.pending .timeline-marker {
+  color: #8aa9bb;
+}
+.desktop-top {
+  color: #8eaab9;
+}
+@media (min-width: 761px) {
+  .hero {
+    padding-top: 96px;
+  }
+  .hero-copy {
+    padding-top: 22px;
+  }
+  .hero-copy h1 {
+    font-size: clamp(130px, 11.8vw, 164px);
+  }
+  .hero-copy h2 {
+    margin-top: 12px;
+    font-size: clamp(30px, 3vw, 42px);
+  }
+  .hero-copy > p {
+    margin-top: 14px;
+    margin-bottom: 22px;
+  }
+  .hero-stage {
+    margin-top: 48px;
+  }
+  .hero-copy .eyebrow {
+    margin-bottom: 9px;
+  }
+  .hero-topline {
+    font-size: 9px;
+  }
+  .hero-bottom {
+    font-size: 8px;
+  }
+}
+@media (min-width: 1600px) {
+  .hero {
+    padding-top: 106px;
+  }
+  .hero-copy {
+    padding-top: 27px;
+  }
+  .hero-copy h1 {
+    font-size: 174px;
+  }
+  .hero-stage {
+    margin-top: 51px;
+  }
+}
+.feature-card p {
+  font-size: 12px;
+}
+.feature-line p {
+  font-size: 12px;
+}
+.coding-principles p {
+  font-size: 12px;
+}
+.demo-timeline p {
+  font-size: 11px;
+}
+.demo-timeline li {
+  min-height: 68px;
+}
+.demo-timeline strong {
+  font-size: 13px;
+}
+.demo-input input {
+  font-size: 12px;
+}
+.demo-result {
+  font-size: 10px;
+}
+.demo-honesty {
+  font-size: 11px;
+}
+.provider-node h3 {
+  font-size: 12px;
+}
+.provider-node div > span {
+  font-size: 9px;
+}
+.provider-disclosure {
+  font-size: 11px;
+}
+.routing-strip > span {
+  font-size: 11px;
+}
+.execution-step p {
+  font-size: 11px;
+}
+.diagram-note {
+  font-size: 11px;
+}
+.control-tags span {
+  font-size: 10px;
+}
+.footnote {
+  font-size: 11px;
+}
+.support-label {
+  font-size: 9px;
+}
+.theme-buttons > button {
+  font-size: 11px;
+}
+.theme-controls p {
+  font-size: 11px;
+}
+.theme-controls .instrument-label {
+  font-size: 8px;
+}
+.theme-capture-note {
+  font-size: 8px;
+}
+.theme-detail-line {
+  font-size: 8px;
+}
+.personalization-items p {
+  font-size: 11px;
+}
+.architecture-callout > span {
+  font-size: 9px;
+}
+.architecture-callout p {
+  font-size: 11px;
+}
+.architecture-flow > span {
+  font-size: 11px;
+}
+.architecture-footnote {
+  font-size: 10px;
+}
+.capture-caption {
+  font-size: 10px;
+}
+.gallery-item-caption > div > span {
+  font-size: 9px;
+}
+.gallery-item-caption h3 {
+  font-size: 14px;
+}
+.gallery-filters > button {
+  font-size: 12px;
+}
+.footer-column > a,
+.footer-column > button {
+  font-size: 12px;
+}
+.footer-column h3 {
+  font-size: 12px;
+}
+.footer-bottom {
+  font-size: 8px;
+}
+.motion-toggle {
+  font-size: 9px;
+}
+.footer-brand > span {
+  font-size: 8px;
+}
+.panel-index {
+  font-size: 9px;
+}
+.visual-caption {
+  font-size: 8px;
+}
+.source-tag {
+  font-size: 8px;
+}
+.code-frame-heading {
+  font-size: 10px;
+}
+.coding-bottom {
+  font-size: 8px;
+}
+.theme-image-wrap .theme-expand {
+  background: #102432;
+}
+.waveform i {
+  will-change: transform;
+}
+.hero-chat-float,
+.hero-voice-float {
+  will-change: transform;
+}
+@media (max-width: 1000px) and (min-width: 761px) {
+  .provider-node h3 {
+    font-size: 10px;
+  }
+  .provider-node div > span {
+    font-size: 8px;
+  }
+  .routing-strip > span {
+    font-size: 9px;
+  }
+  .theme-capture-note {
+    font-size: 7px;
+  }
+  .theme-controls .instrument-label {
+    font-size: 6px;
+  }
+  .theme-controls p {
+    font-size: 10px;
+  }
+  .theme-detail-line {
+    font-size: 6px;
+  }
+  .panel-index {
+    font-size: 7px;
+  }
+}
+@media (max-width: 760px) {
+  .nav-cta {
+    font-size: 10px;
+  }
+  .hero-topline {
+    font-size: 7px;
+  }
+  .hero-copy .eyebrow {
+    font-size: 7px;
+  }
+  .hero-bottom {
+    font-size: 7px;
+  }
+  .hero-bottom a {
+    font-size: 7px;
+  }
+  .stage-coordinate {
+    font-size: 6px;
+  }
+  .hero-main-shot .shot-bar {
+    font-size: 6px;
+  }
+  .float-heading,
+  .float-footer {
+    font-size: 7px;
+  }
+  .hero-voice-float > span {
+    font-size: 8px;
+  }
+  .hero-voice-float kbd {
+    font-size: 8px;
+  }
+  .feature-card p {
+    font-size: 12px;
+  }
+  .feature-card h3 {
+    font-size: 16px;
+  }
+  .feature-card {
+    min-height: 205px;
+  }
+  .feature-line p {
+    font-size: 12px;
+  }
+  .coding-principles p {
+    font-size: 12px;
+  }
+  .source-tag {
+    font-size: 7px;
+  }
+  .code-frame-heading {
+    font-size: 8px;
+  }
+  .coding-bottom {
+    font-size: 6px;
+  }
+  .visual-caption {
+    font-size: 7px;
+  }
+  .demo-timeline p {
+    font-size: 11px;
+  }
+  .demo-timeline strong {
+    font-size: 13px;
+  }
+  .demo-timeline li {
+    min-height: 82px;
+  }
+  .demo-timeline li:last-child {
+    min-height: 65px;
+  }
+  .demo-input input {
+    font-size: 10px;
+  }
+  .demo-result {
+    font-size: 9px;
+  }
+  .console-top {
+    font-size: 8px;
+  }
+  .demo-presets button {
+    font-size: 10px;
+  }
+  .demo-honesty {
+    font-size: 10px;
+  }
+  .control-tags span {
+    font-size: 9px;
+  }
+  .execution-step p {
+    font-size: 10px;
+  }
+  .diagram-note {
+    font-size: 10px;
+  }
+  .diagram-top {
+    font-size: 8px;
+  }
+  .provider-node h3 {
+    font-size: 11px;
+  }
+  .provider-node div > span {
+    font-size: 9px;
+  }
+  .provider-node {
+    padding: 14px 7px;
+  }
+  .provider-disclosure {
+    font-size: 11px;
+  }
+  .routing-strip > span {
+    font-size: 10px;
+  }
+  .support-label {
+    font-size: 8px;
+  }
+  .dock-capture > span {
+    font-size: 8px;
+  }
+  .voice-state-control > span {
+    font-size: 8px;
+  }
+  .voice-state-control small {
+    font-size: 10px;
+  }
+  .voice-state-control button {
+    font-size: 10px;
+  }
+  .shortcut-strip > div {
+    font-size: 10px;
+  }
+  .hud-callout {
+    font-size: 7px;
+  }
+  .skill-cloud > span {
+    font-size: 10px;
+  }
+  .panel-index {
+    font-size: 8px;
+  }
+  .theme-controls .instrument-label {
+    font-size: 8px;
+  }
+  .theme-controls p {
+    font-size: 11px;
+    line-height: 1.8;
+  }
+  .theme-buttons > button {
+    font-size: 10px;
+    padding: 7px 6px;
+    gap: 6px;
+    min-height: 36px;
+  }
+  .theme-buttons {
+    gap: 5px;
+  }
+  .theme-detail-line {
+    font-size: 6px;
+  }
+  .theme-controls > div:first-child {
+    grid-template-columns: 1fr;
+  }
+  .theme-controls h3 {
+    margin-top: 8px;
+  }
+  .theme-controls p {
+    margin-top: 7px;
+    max-width: 320px;
+  }
+  .personalization-items p {
+    font-size: 12px;
+  }
+  .personalization-items h3 {
+    font-size: 13px;
+  }
+  .architecture-callout > span {
+    font-size: 8px;
+  }
+  .architecture-callout p {
+    font-size: 9px;
+    max-width: 125px;
+  }
+  .architecture-flow > span {
+    font-size: 10px;
+  }
+  .architecture-flow {
+    margin-top: 26px;
+  }
+  .architecture-footnote {
+    font-size: 10px;
+  }
+  .gallery-item-caption > div > span {
+    font-size: 8px;
+  }
+  .gallery-item-caption h3 {
+    font-size: 12px;
+  }
+  .gallery-filters > button {
+    font-size: 10px;
+    padding-inline: 8px;
+  }
+  .capture-caption {
+    font-size: 10px;
+  }
+  .video-play small {
+    font-size: 8px;
+  }
+  .footer-column > a,
+  .footer-column > button {
+    font-size: 11px;
+  }
+  .footer-column h3 {
+    font-size: 11px;
+  }
+  .footer-main {
+    gap: 30px 15px;
+  }
+  .footer-brand > span {
+    font-size: 7px;
+  }
+  .footer-bottom {
+    font-size: 7px;
+  }
+  .footer-bottom > a {
+    font-size: 8px;
+  }
+  .motion-toggle {
+    font-size: 8px;
+  }
+  .architecture-callout {
+    top: 263px;
+  }
+  .architecture-visual {
+    height: 365px;
+  }
+  .gallery-image img {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.capture-data/
+.capture-frames/
+qa/screenshots/
+qa/diagnostics/
+*.log
+.vercel/
+.env*
+!.env.example
+public/downloads/
+*.exe
+*.zip
+*.db
+*.sqlite*

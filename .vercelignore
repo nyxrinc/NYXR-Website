@@ -1,0 +1,28 @@
+# Deploy from this website folder, never the parent desktop repository.
+*
+!src/
+!src/**
+!public/
+!public/**
+!release/
+!release/beta.json
+!tools/
+!tools/release-config.mjs
+!tools/build-vercel.mjs
+!tools/verify-build.mjs
+!package.json
+!package-lock.json
+!index.html
+!vite.config.js
+!vercel.json
+# Always exclude accidental state/binaries, including beneath allowlisted folders.
+**/.env*
+**/*.exe
+**/*.zip
+**/*.db
+**/*.sqlite*
+**/*.log
+**/node_modules/**
+**/.capture-data/**
+**/.capture-frames/**
+**/downloads/**

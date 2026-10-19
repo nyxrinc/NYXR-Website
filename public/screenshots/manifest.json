@@ -1,0 +1,121 @@
+[
+  {
+    "file": "chat.webp",
+    "width": 1650,
+    "height": 920,
+    "bytes": 61260,
+    "source": "Actual NYXR Qt UI, isolated showcase session"
+  },
+  {
+    "file": "dashboard.webp",
+    "width": 1650,
+    "height": 920,
+    "bytes": 96996,
+    "source": "Actual NYXR Qt UI, isolated showcase session"
+  },
+  {
+    "file": "fullscreen.webp",
+    "width": 1920,
+    "height": 1080,
+    "bytes": 53936,
+    "source": "Actual NYXR Qt UI, isolated showcase session"
+  },
+  {
+    "file": "hud.webp",
+    "width": 380,
+    "height": 740,
+    "bytes": 15634,
+    "source": "Actual NYXR Qt UI, isolated showcase session"
+  },
+  {
+    "file": "personalization.webp",
+    "width": 1650,
+    "height": 920,
+    "bytes": 38024,
+    "source": "Actual NYXR Qt UI, isolated showcase session"
+  },
+  {
+    "file": "providers.webp",
+    "width": 1650,
+    "height": 920,
+    "bytes": 40388,
+    "source": "Actual NYXR Qt UI, isolated showcase session"
+  },
+  {
+    "file": "skills.webp",
+    "width": 1650,
+    "height": 920,
+    "bytes": 148122,
+    "source": "Actual NYXR Qt UI, isolated showcase session"
+  },
+  {
+    "file": "theme-arctic.webp",
+    "width": 1650,
+    "height": 920,
+    "bytes": 95940,
+    "source": "Actual NYXR Qt UI, isolated showcase session"
+  },
+  {
+    "file": "theme-core.webp",
+    "width": 1650,
+    "height": 920,
+    "bytes": 97154,
+    "source": "Actual NYXR Qt UI, isolated showcase session"
+  },
+  {
+    "file": "theme-ember.webp",
+    "width": 1650,
+    "height": 920,
+    "bytes": 96464,
+    "source": "Actual NYXR Qt UI, isolated showcase session"
+  },
+  {
+    "file": "theme-hacker.webp",
+    "width": 1650,
+    "height": 920,
+    "bytes": 101976,
+    "source": "Actual NYXR Qt UI, isolated showcase session"
+  },
+  {
+    "file": "theme-light.webp",
+    "width": 1650,
+    "height": 920,
+    "bytes": 93664,
+    "source": "Actual NYXR Qt UI, isolated showcase session"
+  },
+  {
+    "file": "theme-violet.webp",
+    "width": 1650,
+    "height": 920,
+    "bytes": 97808,
+    "source": "Actual NYXR Qt UI, isolated showcase session"
+  },
+  {
+    "file": "voice-dock.webp",
+    "width": 440,
+    "height": 141,
+    "bytes": 9238,
+    "source": "Actual NYXR Qt UI, isolated showcase session"
+  },
+  {
+    "file": "voice.webp",
+    "width": 1650,
+    "height": 920,
+    "bytes": 95544,
+    "source": "Actual NYXR Qt UI, isolated showcase session"
+  },
+  {
+    "file": "projects.webp",
+    "width": 1650,
+    "height": 920,
+    "bytes": 87964,
+    "source": "Actual NYXR Qt UI, isolated showcase session"
+  },
+  {
+    "file": "macros.webp",
+    "width": 1650,
+    "height": 900,
+    "bytes": 44404,
+    "source": "Actual NYXR Qt UI, isolated authored Macro example; no live provider call"
+  }
+]

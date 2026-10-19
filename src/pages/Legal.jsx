@@ -45,6 +45,16 @@ const policies = {
             application code. Contact us for information about a particular public deployment;
             hosting retention should not be assumed to be zero.
           </p>
+          <p>
+            The NYXR website is hosted on Vercel. Beta installer and corresponding-source downloads
+            are served through GitHub Releases and its asset infrastructure. These services receive
+            the network information needed to serve your request. See{' '}
+            <a href="https://vercel.com/legal/privacy-policy">Vercel’s Privacy Policy</a> and{' '}
+            <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">
+              GitHub’s Privacy Statement
+            </a>. Downloading does not give this website access to your desktop conversations,
+            provider keys or local files.
+          </p>
         </>,
       ],
       [

@@ -43,6 +43,7 @@ const files = [
     'check-release',
     'deployment.test',
     'qa-deployment',
+    'qa-live-download',
     'prepare-deploy',
   ].map((name) => `tools/${name}.mjs`),
 ];

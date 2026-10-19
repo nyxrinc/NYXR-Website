@@ -1,23 +1,21 @@
 {
   "schemaVersion": 1,
-  "version": "4.0.0-beta.1",
-  "platform": "Windows 10/11 · x64",
-  "publishedAt": null,
+  "version": "4.0.0-beta.2",
+  "platform": "Windows 10/11 \u00b7 x64",
+  "publishedAt": "2026-10-19T16:49:35Z",
   "signed": false,
-  "distributionReady": false,
+  "distributionReady": true,
   "installer": {
-    "filename": "NYXR-Setup-4.0.0-beta.1-x64.exe",
-    "bytes": 538010283,
-    "sha256": "a4affc12d6a0483b966f3a017ad15b3d82c22c22cc8b6783c604a69dbcc3a7f7"
+    "filename": "NYXR-Setup-4.0.0-beta.2-x64.exe",
+    "bytes": 538672261,
+    "sha256": "10671ced7c1ead706bc9b831cc0d2f88cd9b960b405362da178a0139c86beba3",
+    "url": "https://github.com/nyxrinc/NYXR-Website/releases/download/v4.0.0-beta.2/NYXR-Setup-4.0.0-beta.2-x64.exe"
   },
   "source": {
-    "filename": "NYXR-source-4.0.0-beta.1.zip",
-    "bytes": 6660747,
-    "sha256": "1f0ba856cb0dcb89360dffcaa001a33542180197f6ec3c044b656412bbbb5391"
+    "filename": "NYXR-source-4.0.0-beta.2.zip",
+    "bytes": 90133238,
+    "sha256": "0f39a1b14dafe8abfe50de9d1a01e241ec5e8b7a1437496de1547ae2ed6c10df",
+    "url": "https://github.com/nyxrinc/NYXR-Website/releases/download/v4.0.0-beta.2/NYXR-source-4.0.0-beta.2.zip"
   },
-  "blockers": [
-    "The existing installer is a private test build; redistribution review is incomplete.",
-    "Matching Stockfish source and bundled dependency notices need verification.",
-    "Public installer and corresponding-source asset URLs have not been configured."
-  ]
+  "blockers": []
 }

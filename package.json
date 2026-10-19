@@ -14,6 +14,7 @@
     "check:release": "node tools/check-release.mjs",
     "test:deployment": "node --test tools/deployment.test.mjs",
     "qa:deployment": "node tools/qa-deployment.mjs",
+    "qa:download-live": "node tools/qa-live-download.mjs",
     "prepare:deploy": "node tools/prepare-deploy.mjs",
     "preview": "vite preview --host 127.0.0.1",
     "qa": "npm run test:deployment && npm run qa:deployment"

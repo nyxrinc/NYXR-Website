@@ -10,7 +10,13 @@ import {
   verifyAsset,
 } from './release-config.mjs';
 
-const record = await readRelease();
+const actualRelease = await readRelease();
+const record = {
+  ...actualRelease,
+  distributionReady: false,
+  installer: { ...actualRelease.installer, url: undefined },
+  source: { ...actualRelease.source, url: undefined },
+};
 const env = {
   NYXR_BETA_INSTALLER_URL: `https://github.com/nyxrinc/NYXR-Website/releases/download/v${record.version}/${record.installer.filename}`,
   NYXR_BETA_SOURCE_URL: `https://github.com/nyxrinc/NYXR-Website/releases/download/v${record.version}/${record.source.filename}`,
@@ -43,6 +49,15 @@ test('public projection excludes secrets and internal review notes', () => {
   const output = JSON.stringify(createRelease(input, { ...env, API_KEY: 'test-secret' }));
   assert(!/test-secret|blockers|privateKey/.test(output));
 });
+test('verified versioned public URLs can live in the central release record', () => {
+  const embedded = {
+    ...record, distributionReady: true,
+    installer: { ...record.installer, url: env.NYXR_BETA_INSTALLER_URL },
+    source: { ...record.source, url: env.NYXR_BETA_SOURCE_URL },
+  };
+  assert.equal(createRelease(embedded, {}, { required: true }).available, true);
+  assert.throws(() => createRelease(embedded, { NYXR_BETA_INSTALLER_URL: 'http://bad.example/file.exe' }), /HTTPS/);
+});
 for (const [name, url] of Object.entries({
   insecure: `http://cdn.example/${record.installer.filename}`,
   credential: `https://secret@cdn.example/${record.installer.filename}`,
@@ -62,7 +77,8 @@ test('invalid hashes and version mismatches fail', () => {
       ),
     /SHA-256/,
   );
-  assert.throws(() => createRelease({ ...record, version: '4.0.0-beta.2' }, env), /filenames/);
+  const nextVersion = record.version.replace(/beta\.(\d+)$/, (_, value) => `beta.${Number(value) + 1}`);
+  assert.throws(() => createRelease({ ...record, version: nextVersion }, env), /filenames/);
 });
 test('canonical origin must be HTTPS without path/credentials', () => {
   assert.equal(siteOrigin({ NYXR_SITE_URL: 'https://nyxr.example' }), 'https://nyxr.example');

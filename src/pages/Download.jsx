@@ -79,6 +79,13 @@ export default function Download() {
               <a href="/beta-SHA256SUMS.txt" download>
                 Checksums
               </a>
+              <a
+                href={`https://github.com/nyxrinc/NYXR-Website/releases/tag/v${release.version}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Release notes &amp; dependency sources
+              </a>
             </div>
             <details className="release-checksum">
               <summary>Verify your download</summary>
@@ -138,7 +145,7 @@ export default function Download() {
       <div className="release-footnote">
         <span>YOUR WORKSPACE. YOUR CHOICE.</span>
         <p>
-          Windows x64 only. No model weights are included. Upgrade and uninstall preserve your local
+          Windows x64 only. No local LLM weights are included. Upgrade and uninstall preserve your local
           user data by default. Need a hand? <a href="/guide/">Read the guide</a> or{' '}
           <a href="/contact/">contact NYXR</a>.
         </p>

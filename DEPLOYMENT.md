@@ -3,28 +3,31 @@
 This is the website source, not the desktop application. Use Node 24 and `npm ci`.
 Keep installers in release asset storage, outside this repository's tracked source and Vercel deployment.
 
-## Current status
+## Deployment and release model
 
-The website passes a clean locked install/build locally and a real Vercel Linux preview build.
-Protected preview: https://nyxr-website-1zd2qyd9o-nyxr.vercel.app
+Production domain: https://nyxr-website.vercel.app
+Repository: https://github.com/nyxrinc/NYXR-Website
 
-Executed on 19 October 2026: 17 deployment unit tests, 70 isolated browser checks,
-desktop/mobile screenshot review, and authenticated hosted route/header/404 checks.
-The available-download branch was tested using harmless fixture bytes, not a public installer.
-**Production publication and a real public installer download have not been completed.**
-The existing `4.0.0-beta.1` installer is unsigned and was built for private testing.
-Its matching Stockfish source/provenance and dependency notices have not been completed.
-Do not upload that private artifact as a public release. `release/beta.json` deliberately has
-`distributionReady: false`; adding URLs alone cannot make it downloadable.
+`release/beta.json` is the authoritative version, size, SHA-256 and public asset
+record. Downloads require `distributionReady: true` plus installer and matching
+source URLs. The build probes both public assets before publishing Production.
+A previous protected preview is not evidence that Production is publicly reachable.
 
-Website publication and desktop stable release are separate. A publicly downloadable beta
-may describe limited features honestly, but must still include the matching source and
-required redistribution notices. Do not mark the desktop's production release gates passed.
+The current limited Windows beta is **unsigned**. Hosted NYXR accounts/email
+verification, Chrome Web Store distribution, physical voice tests and clean-laptop
+acceptance are separate from the executed local fixture checks. The beta includes
+manual extension files; user provider credentials or an explicitly selected local
+model power the app. NYXR does not include AI credits.
+
+Website publication and desktop stable release are separate. Do not mark the
+desktop's signing, clean-machine or production-service gates passed just because
+a limited beta download is available. Matching source and dependency-source parts,
+notices, release notes and the exact-artifact acceptance record accompany each beta.
 
 ## 1. Publish reviewed beta assets
 
 Use GitHub Releases in `https://github.com/nyxrinc/NYXR-Website` (or a permanent HTTPS object store).
-GitHub release assets accommodate the approximately 538 MB installer; do not commit the EXE
+GitHub release assets accommodate the approximately 539 MB installer; do not commit the EXE
 to Git or copy it into `public/`. Vercel serves the small website and links directly to the asset.
 
 After the redistribution review and corrected build, create an immutable **pre-release** tag,
@@ -58,7 +61,10 @@ If importing a repository that also contains the desktop app, set Root Directory
 `NYXR Website`, **never** to the desktop repository root. Do not enable source files outside
 the root directory. `vercel.json` supplies build, output, headers and URL normalization.
 
-Add these **public configuration** values under the Vercel project's Environment Variables:
+The public installer/source URLs normally live in `release/beta.json`. These
+optional **public configuration** overrides can replace them; never put credentials
+in a release URL. Set `NYXR_SITE_URL` for Production (already configured for this
+project) so canonical/social links and the sitemap use the public domain:
 
 ```text
 NYXR_BETA_INSTALLER_URL=https://github.com/nyxrinc/NYXR-Website/releases/download/vVERSION/NYXR-Setup-VERSION-x64.exe
@@ -87,7 +93,7 @@ npm run build:release
 ```
 
 `check:release -- --full` streams both actual public assets and checks every byte against
-the configured hashes without running them. It can transfer over 538 MB. The normal Vercel
+the configured hashes without running them. It can transfer about 630 MB. The normal Vercel
 build uses a two-byte range probe with total file size and file-signature checks, avoiding
 a full installer download on each build. Requests have bounded timeouts.
 
@@ -121,3 +127,24 @@ release assets that users have already downloaded. Publish a new beta version to
 References: [Vercel limits](https://vercel.com/docs/limits),
 [Vite on Vercel](https://vercel.com/docs/frameworks/frontend/vite),
 [GitHub Releases](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases).
+
+## 5. Verify the real public download
+
+After production deployment, run from the website root:
+
+```powershell
+$env:NYXR_LIVE_URL = 'https://nyxr-website.vercel.app'
+npm run qa:download-live
+```
+
+This downloads the actual installer through the public button without executing
+it, verifies filename, size, executable signature and full SHA-256, verifies the
+complete app-source download, checks all public pages and real 404s, and captures
+desktop/mobile screenshots. Review those images before claiming visual QA passed.
+Results and downloaded artifacts stay under ignored `qa/live-download/` and must
+never enter a deployment. This transfer is about 630 MB. The dependency-source
+bundle is separately available on the same versioned GitHub release.
+
+Keep actual publication receipts and acceptance results with their exact build;
+commands in this document are instructions, not a claim they passed. The GitHub
+release's `BETA_ACCEPTANCE.json` describes the executed desktop fixture scope.

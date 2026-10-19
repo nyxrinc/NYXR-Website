@@ -57,8 +57,11 @@ export function createRelease(record, env = process.env, { required = false } = 
     record.source.filename !== `NYXR-source-${record.version}.zip`
   )
     throw new Error('Release filenames must match the beta version');
-  const installerUrl = publicAssetUrl(env.NYXR_BETA_INSTALLER_URL, record.installer.filename);
-  const sourceUrl = publicAssetUrl(env.NYXR_BETA_SOURCE_URL, record.source.filename);
+  const installerUrl = publicAssetUrl(
+    env.NYXR_BETA_INSTALLER_URL ?? record.installer.url,
+    record.installer.filename,
+  );
+  const sourceUrl = publicAssetUrl(env.NYXR_BETA_SOURCE_URL ?? record.source.url, record.source.filename);
   for (const [name, asset] of Object.entries({
     installer: record.installer,
     source: record.source,
@@ -73,7 +76,7 @@ export function createRelease(record, env = process.env, { required = false } = 
   const available = record.distributionReady === true && Boolean(installerUrl && sourceUrl);
   if (required && !available)
     throw new Error(
-      'Beta publication blocked: complete the redistribution review and configure both NYXR_BETA_INSTALLER_URL and NYXR_BETA_SOURCE_URL. See DEPLOYMENT.md.',
+      'Beta publication blocked: complete the redistribution review and provide both public installer and corresponding-source URLs in release/beta.json or NYXR_BETA_*_URL. See DEPLOYMENT.md.',
     );
   // Explicit projection: never bundle environment variables, local paths or internal review notes.
   const asset = (value, url) => ({

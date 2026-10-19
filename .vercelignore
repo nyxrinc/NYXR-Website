@@ -1,12 +1,12 @@
 # Deploy from this website folder, never the parent desktop repository.
 *
-!src/
+!src
 !src/**
-!public/
+!public
 !public/**
-!release/
+!release
 !release/beta.json
-!tools/
+!tools
 !tools/release-config.mjs
 !tools/build-vercel.mjs
 !tools/verify-build.mjs

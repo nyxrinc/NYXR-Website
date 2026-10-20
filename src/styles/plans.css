@@ -1,0 +1,483 @@
+/* Product pricing only. Every selector is contained by the Pricing page. */
+.nyxr-plans .plans-intro {
+  padding-top: clamp(30px, 5vw, 70px);
+  align-items: start;
+}
+.nyxr-plans .plans-intro h1 {
+  font-size: clamp(44px, 5.4vw, 76px);
+  margin-top: 0;
+  max-width: 760px;
+}
+.nyxr-plans .plans-intro > div > p {
+  max-width: 610px;
+  font-size: 16px;
+}
+.nyxr-plans .pricing-region {
+  margin-top: 4px;
+  background: linear-gradient(145deg, #10232d99, #09131b);
+}
+.nyxr-plans .pricing-region > small {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.nyxr-plans .plans-section {
+  padding-block: 54px 68px;
+  scroll-margin-top: 110px;
+}
+.nyxr-plans .plans-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.nyxr-plans .plans-heading h2 {
+  font-size: clamp(27px, 3vw, 38px);
+}
+.nyxr-plans .plans-heading > p {
+  font: 11px/1.7 var(--mono);
+}
+.nyxr-plans .plans-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+.nyxr-plans .tier-card {
+  position: relative;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 26px 23px 23px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: linear-gradient(155deg, #10212b, #09121b 75%);
+}
+.nyxr-plans .tier-plus {
+  border-color: #76edff7a;
+  background: radial-gradient(ellipse at 70% 0, #1e4a5766, transparent 70%), #0a1821;
+}
+.nyxr-plans .tier-student_plus {
+  background: radial-gradient(ellipse at 70% 0, #3a315b44, transparent 70%), #0c1520;
+}
+.nyxr-plans .tier-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  align-self: flex-start;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  padding: 4px 10px;
+  color: var(--muted);
+  font: 10px/1.6 var(--mono);
+  letter-spacing: 0.03em;
+  margin-bottom: 26px;
+}
+.nyxr-plans .tier-core .tier-status {
+  color: var(--teal);
+  border-color: #4de3bd44;
+  background: #4de3bd08;
+}
+.nyxr-plans .tier-card h3 {
+  font-size: 28px;
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+}
+.nyxr-plans .tier-label {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 10px;
+  min-height: 38px;
+}
+.nyxr-plans .tier-price {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  margin-top: 22px;
+}
+.nyxr-plans .tier-price strong {
+  font: 500 clamp(40px, 3.6vw, 52px)/1.05 var(--display);
+  letter-spacing: -0.055em;
+}
+.nyxr-plans .tier-price span {
+  color: var(--subtle);
+  font: 10px/1.6 var(--mono);
+}
+.nyxr-plans .tier-core .tier-price strong {
+  color: var(--teal);
+}
+.nyxr-plans .tier-period {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 9px;
+}
+.nyxr-plans .tier-description {
+  font-size: 13px;
+  line-height: 1.75;
+  padding-block: 22px;
+  min-height: 116px;
+}
+.nyxr-plans .tier-features {
+  list-style: none;
+  padding: 22px 0 26px;
+  margin: 0;
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 13px;
+}
+.nyxr-plans .tier-features li {
+  display: flex;
+  align-items: start;
+  gap: 9px;
+  font-size: 12px;
+  line-height: 1.7;
+  color: #d1e0e7;
+}
+.nyxr-plans .tier-features svg {
+  color: var(--cyan);
+  flex: 0 0 auto;
+  margin-top: 3px;
+}
+.nyxr-plans .tier-footer {
+  margin-top: auto;
+}
+.nyxr-plans .tier-footer .button {
+  width: 100%;
+  gap: 12px;
+  padding-inline: 12px;
+}
+.nyxr-plans .tier-footer button:disabled {
+  cursor: not-allowed;
+  opacity: 1;
+  background: #14232c;
+  border-color: #30454f;
+  color: #b6c7cf;
+  transform: none;
+  box-shadow: none;
+}
+.nyxr-plans .tier-note {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.7;
+  margin-top: 15px;
+  min-height: 76px;
+}
+.nyxr-plans .tier-preview-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 42px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 8px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+}
+.nyxr-plans .tier-preview-button:hover,
+.nyxr-plans .tier-preview-button[aria-pressed='true'] {
+  color: var(--cyan);
+  background: #76edff08;
+}
+.nyxr-plans .plans-preview {
+  margin-top: 24px;
+  padding: 28px;
+  background: linear-gradient(135deg, #0f2630, #0a1721);
+  border: 1px solid #355560;
+  border-radius: var(--radius);
+  scroll-margin-top: 110px;
+}
+.nyxr-plans .plans-preview-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+.nyxr-plans .plans-preview-heading h3 {
+  font-size: 27px;
+  margin-top: 14px;
+}
+.nyxr-plans .plans-preview-price {
+  font: 500 28px/1.3 var(--display);
+  color: var(--cyan);
+}
+.nyxr-plans .plans-preview-price small {
+  display: block;
+  font: 11px/1.8 var(--sans);
+  color: var(--muted);
+}
+.nyxr-plans .plans-preview-banner {
+  padding-top: 18px;
+  font-size: 13px;
+  color: var(--text);
+}
+.nyxr-plans .plans-preview-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+.nyxr-plans .plans-preview-options button {
+  color: var(--muted);
+  border: 1px solid var(--line);
+  background: #0b1923;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-size: 12px;
+}
+.nyxr-plans .plans-preview-options button[aria-pressed='true'] {
+  color: var(--cyan);
+  border-color: #76edff88;
+  background: #76edff0c;
+}
+.nyxr-plans .plans-preview-limits {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 26px 0 0;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  gap: 22px;
+}
+.nyxr-plans .plans-preview-limits dt {
+  color: var(--muted);
+  font-size: 12px;
+}
+.nyxr-plans .plans-preview-limits dd {
+  margin: 7px 0 0;
+  color: var(--text);
+  font-size: 15px;
+}
+.nyxr-plans .plans-preview-note {
+  font-size: 12px;
+  margin-top: 22px;
+}
+.nyxr-plans .plans-availability {
+  display: flex;
+  align-items: start;
+  gap: 13px;
+  padding: 21px 24px;
+  margin-top: 22px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #0b1720;
+}
+.nyxr-plans .plans-availability > svg {
+  flex: none;
+  color: var(--cyan);
+  margin-top: 2px;
+}
+.nyxr-plans .plans-availability p {
+  font-size: 13px;
+}
+.nyxr-plans .plans-availability strong {
+  color: var(--text);
+  font-weight: 500;
+}
+.nyxr-plans .plans-principles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-block: 1px solid var(--line);
+  margin-bottom: 70px;
+}
+.nyxr-plans .plans-principles > div {
+  padding: 30px 27px;
+}
+.nyxr-plans .plans-principles > div + div {
+  border-left: 1px solid var(--line);
+}
+.nyxr-plans .plans-principles h3 {
+  font-size: 18px;
+  margin-bottom: 13px;
+  letter-spacing: -0.025em;
+}
+.nyxr-plans .plans-principles p {
+  font-size: 13px;
+}
+.nyxr-plans .plans-matrix-section {
+  padding-bottom: 75px;
+}
+.nyxr-plans .plans-matrix-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  scrollbar-color: #39535f #0a1720;
+}
+.nyxr-plans .plans-matrix {
+  width: 100%;
+  min-width: 850px;
+  border-collapse: collapse;
+  font-size: 12px;
+  text-align: left;
+  background: #09141d;
+}
+.nyxr-plans .plans-matrix caption {
+  text-align: left;
+  padding: 18px 22px;
+  color: var(--muted);
+  border-bottom: 1px solid var(--line);
+}
+.nyxr-plans .plans-matrix th,
+.nyxr-plans .plans-matrix td {
+  padding: 17px 20px;
+  border-bottom: 1px solid var(--line-soft);
+  line-height: 1.65;
+}
+.nyxr-plans .plans-matrix thead th {
+  color: var(--text);
+  background: #10202a;
+  font-size: 13px;
+}
+.nyxr-plans .plans-matrix tbody th {
+  color: #c5d7e0;
+  font-weight: 400;
+  width: 32%;
+}
+.nyxr-plans .plans-matrix td {
+  color: var(--muted);
+}
+.nyxr-plans .plans-matrix td.is-included {
+  color: var(--teal);
+}
+.nyxr-plans .plans-matrix tr:last-child > * {
+  border-bottom: 0;
+}
+.nyxr-plans .plans-scroll-hint {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 13px;
+}
+.nyxr-plans .plans-faq {
+  max-width: 850px;
+  padding-bottom: 70px;
+}
+.nyxr-plans .plans-faq h2 {
+  font-size: clamp(28px, 3.6vw, 42px);
+  margin-bottom: 28px;
+}
+.nyxr-plans .plans-faq details {
+  border-top: 1px solid var(--line);
+  padding-block: 20px;
+}
+.nyxr-plans .plans-faq summary {
+  cursor: pointer;
+  color: var(--text);
+  font-size: 15px;
+  padding-right: 12px;
+}
+.nyxr-plans .plans-faq details p {
+  font-size: 14px;
+  line-height: 1.85;
+  margin-top: 16px;
+}
+.nyxr-plans .plans-provider-section {
+  padding-bottom: 70px;
+}
+.nyxr-plans .plans-provider-details > summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 28px;
+  padding-block: 28px;
+  border-top: 1px solid var(--line);
+  cursor: pointer;
+}
+.nyxr-plans .plans-provider-details > summary h2 {
+  font-size: clamp(23px, 3vw, 32px);
+}
+.nyxr-plans .plans-provider-details > summary p {
+  font-size: 13px;
+  margin-top: 12px;
+  max-width: 650px;
+}
+.nyxr-plans .plans-provider-details > summary > svg {
+  flex: none;
+  color: var(--cyan);
+  transition: transform 0.2s ease;
+}
+.nyxr-plans .plans-provider-details[open] > summary > svg {
+  transform: rotate(180deg);
+}
+.nyxr-plans .plans-provider-content .ecosystem-overview,
+.nyxr-plans .plans-provider-content .value-comparison,
+.nyxr-plans .plans-provider-content .allowance-ledger {
+  padding-block: 38px;
+}
+.nyxr-plans .plans-provider-content h2,
+.nyxr-plans .plans-provider-content .value-metrics strong {
+  font-size: clamp(27px, 3.2vw, 40px);
+}
+@media (max-width: 1100px) {
+  .nyxr-plans .plans-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .nyxr-plans .tier-note {
+    min-height: 57px;
+  }
+}
+@media (max-width: 760px) {
+  .nyxr-plans .plans-preview-heading {
+    align-items: start;
+  }
+  .nyxr-plans .plans-preview-limits {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .nyxr-plans .plans-heading {
+    display: block;
+  }
+  .nyxr-plans .plans-heading > p {
+    margin-top: 14px;
+  }
+  .nyxr-plans .plans-principles {
+    grid-template-columns: 1fr;
+  }
+  .nyxr-plans .plans-principles > div {
+    padding: 24px 0;
+  }
+  .nyxr-plans .plans-principles > div + div {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+  .nyxr-plans .plans-principles {
+    margin-bottom: 48px;
+  }
+  .nyxr-plans .plans-section {
+    padding-block: 40px;
+  }
+  .nyxr-plans .plans-matrix-section {
+    padding-bottom: 48px;
+  }
+  .nyxr-plans .plans-provider-details > summary {
+    gap: 14px;
+  }
+}
+@media (max-width: 560px) {
+  .nyxr-plans .plans-preview {
+    padding: 22px;
+  }
+  .nyxr-plans .plans-preview-heading {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .nyxr-plans .plans-grid {
+    grid-template-columns: 1fr;
+  }
+  .nyxr-plans .tier-card {
+    padding: 25px;
+  }
+  .nyxr-plans .tier-label,
+  .nyxr-plans .tier-description,
+  .nyxr-plans .tier-note {
+    min-height: 0;
+  }
+  .nyxr-plans .tier-price strong {
+    font-size: 48px;
+  }
+  .nyxr-plans .plans-availability {
+    padding: 20px;
+  }
+}

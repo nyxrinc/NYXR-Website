@@ -1,5 +1,6 @@
 import { Eyebrow, Button } from '../components/Primitives';
 import Icon from '../components/Icon';
+import { plans, plusBenefits, formatPlanPrice } from '../data/plans';
 
 export const contactEmail = 'nyxrinc@gmail.com';
 export const contactHref = `mailto:${contactEmail}`;
@@ -52,8 +53,9 @@ const policies = {
             <a href="https://vercel.com/legal/privacy-policy">Vercel’s Privacy Policy</a> and{' '}
             <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">
               GitHub’s Privacy Statement
-            </a>. Downloading does not give this website access to your desktop conversations,
-            provider keys or local files.
+            </a>
+            . Downloading does not give this website access to your desktop conversations, provider
+            keys or local files.
           </p>
         </>,
       ],
@@ -155,6 +157,16 @@ const policies = {
             uploaded by default. Legacy Google/Drive options in development builds have their own
             explicit connection and sync choices; they do not demonstrate a working Firebase
             service.
+          </p>
+          <p>
+            Plus and Student Plus are planned to offer {plusBenefits.backupGB} GB of opt-in
+            encrypted cloud backup, sync across {plusBenefits.devices} devices and{' '}
+            {plusBenefits.historyDays}-day version history. Teams is planned to offer shared
+            workspaces and Macro libraries, permissions and activity history. These paid services
+            are not live: production paid accounts, payments and storage are not configured. Before
+            enabling backups, you will choose the data to include and receive the service’s
+            encryption, retention and deletion details. Provider keys remain local and are excluded
+            from planned NYXR cloud backups.
           </p>
         </>,
       ],
@@ -302,10 +314,10 @@ const policies = {
         'Pricing, free tiers and future billing',
         <>
           <p>
-            The displayed zero price describes NYXR’s software fee today. It is not a promise of
-            permanently free future subscriptions or unlimited third-party inference. Provider
-            charges, quotas, trials, hardware, electricity and model-license conditions may apply
-            separately.
+            Core stays free, including BYOK or local chat, coding, voice, Chrome tools, Macros, and
+            local PDF tutoring and slides. NYXR imposes no local token quota. Optional future
+            subscriptions add cloud services or team collaboration. Provider charges, quotas,
+            trials, hardware, electricity and model-license conditions apply separately.
           </p>
           <p>
             FreeLLMAPI figures are attributed publisher estimates of catalog-wide potential. Counts
@@ -315,10 +327,27 @@ const policies = {
             scope.
           </p>
           <p>
-            Competitor comparisons use stated plans and published currencies; they do not promise
-            identical entitlements or outcomes. Country/currency preferences are for display. Any
-            future purchase will show its actual price, currency, taxes, renewal conditions and
-            cancellation terms before you agree; this site has no checkout today.
+            Planned monthly prices are{' '}
+            {formatPlanPrice(plans.find((plan) => plan.id === 'plus').price)} for Plus,{' '}
+            {formatPlanPrice(plans.find((plan) => plan.id === 'student_plus').price)} for Student
+            Plus, and {formatPlanPrice(plans.find((plan) => plan.id === 'teams').price)} per seat
+            for Teams, all in INR. Student Plus has the same personal cloud benefits as Plus and
+            requires verified student eligibility; self-declaration does not unlock it. Paid
+            services are coming soon. This site has no checkout or live billing and takes no
+            payments.
+          </p>
+          <p>
+            The plan comparison is a test preview. Previewing a tier changes temporary page UI only
+            and resets on reload. It creates no account, subscription, charge or paid entitlement
+            and does not verify student eligibility or activate a cloud service.
+          </p>
+          <p>
+            Country and currency selections are display preferences, not verified billing residence
+            or currency conversions. Future billing is INR-only. A future checkout must verify
+            billing country and show the authoritative server price in INR, taxes, final total,
+            renewal conditions and cancellation terms before you agree. Competitor comparisons use
+            their stated plans and published currencies, without promising identical entitlements or
+            outcomes.
           </p>
         </>,
       ],

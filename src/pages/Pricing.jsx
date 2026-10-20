@@ -14,6 +14,15 @@ import {
 import { Button, Eyebrow } from '../components/Primitives';
 import Icon from '../components/Icon';
 import { RegionSelector, useRegion } from '../localization/RegionalPreferences';
+import {
+  plans,
+  featureMatrix,
+  planFAQs,
+  formatPlanPrice,
+  planCurrency,
+  previewLimits,
+} from '../data/plans';
+import '../styles/plans.css';
 
 const compactNumber = (value) =>
   new Intl.NumberFormat('en', { notation: 'compact', maximumFractionDigits: 1 }).format(value);
@@ -185,7 +194,7 @@ function PricingComparison() {
         </h2>
         <p>
           Paid coding plans can add up. NYXR brings your providers into one desktop workspace, with
-          no NYXR subscription required today.
+          no NYXR subscription required for Core.
         </p>
       </div>
       <div className="comparison-grid">
@@ -403,43 +412,285 @@ export function ProviderLedger() {
   );
 }
 
-export default function Pricing() {
-  const { formatMoney } = useRegion();
+function ProductPlans() {
+  const [previewId, setPreviewId] = useState('core');
+  const preview = plans.find((plan) => plan.id === previewId);
+  const selectPreview = (id, scroll = false) => {
+    setPreviewId(id);
+    if (scroll)
+      requestAnimationFrame(() =>
+        document
+          .getElementById('plan-preview')
+          ?.scrollIntoView({ block: 'nearest', behavior: 'instant' }),
+      );
+  };
   return (
-    <>
-      <section className="pricing-intro container">
+    <section id="plans" className="plans-section container" aria-labelledby="plans-title">
+      <header className="plans-heading">
+        <h2 id="plans-title">Start with Core. Grow on your terms.</h2>
+        <p>Paid plan preview · Planned monthly prices in INR</p>
+      </header>
+      <div className="plans-grid">
+        {plans.map((plan) => (
+          <article
+            key={plan.id}
+            className={`tier-card tier-${plan.id}`}
+            aria-labelledby={`tier-${plan.id}`}
+            data-plan={plan.id}
+          >
+            <span className="tier-status">
+              {plan.available && <span className="status-dot" />}
+              {plan.available ? 'FREE CORE' : 'PLANNED / PREVIEW'}
+            </span>
+            <h3 id={`tier-${plan.id}`}>{plan.name}</h3>
+            <span className="tier-label">{plan.label}</span>
+            <div className="tier-price" data-price-currency={planCurrency}>
+              <strong>{formatPlanPrice(plan.price)}</strong>
+              <span>{planCurrency}</span>
+            </div>
+            <span className="tier-period">{plan.period}</span>
+            <p className="tier-description">{plan.description}</p>
+            <ul className="tier-features">
+              {plan.features.map((feature) => (
+                <li key={feature}>
+                  <Icon name="check" size={14} />
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="tier-footer">
+              {plan.available ? (
+                <Button href={plan.href} icon="download">
+                  {plan.cta}
+                </Button>
+              ) : (
+                <Button
+                  disabled
+                  secondary
+                  icon="timeline"
+                  aria-label={`${plan.name}: coming soon`}
+                  aria-describedby={`note-${plan.id}`}
+                >
+                  {plan.cta}
+                </Button>
+              )}
+              <button
+                type="button"
+                className="tier-preview-button"
+                aria-label={`Preview ${plan.name}`}
+                aria-pressed={previewId === plan.id}
+                aria-controls="plan-preview"
+                onClick={() => selectPreview(plan.id, true)}
+              >
+                Preview plan <Icon name="arrow" size={14} />
+              </button>
+              <p className="tier-note" id={`note-${plan.id}`}>
+                {plan.note}
+              </p>
+            </div>
+          </article>
+        ))}
+      </div>
+      <div className="plans-availability">
+        <Icon name="shield" size={20} />
+        <p>
+          <strong>Core stays free. Paid services are coming soon.</strong> Production paid accounts,
+          payments and cloud storage are not configured. No checkout is live and no charges are
+          being taken. Future billing is INR-only; checkout must verify billing country and confirm
+          the server price, taxes and final total before any purchase.
+        </p>
+      </div>
+      <section
+        id="plan-preview"
+        className="plans-preview"
+        aria-labelledby="plan-preview-title"
+        data-preview-plan={previewId}
+      >
+        <div className="plans-preview-heading">
+          <div>
+            <span className="plan-kicker">TRY THE COMPARISON</span>
+            <h3 id="plan-preview-title">{preview.name} preview</h3>
+          </div>
+          <span className="plans-preview-price">
+            {formatPlanPrice(preview.price)} <small>INR · {preview.period}</small>
+          </span>
+        </div>
+        <p className="plans-preview-banner" role="status">
+          Preview only — no subscription or charge. Viewing {preview.name}.
+        </p>
+        <div className="plans-preview-options" role="group" aria-label="Choose a plan to preview">
+          {plans.map((plan) => (
+            <button
+              type="button"
+              key={plan.id}
+              aria-pressed={previewId === plan.id}
+              onClick={() => selectPreview(plan.id)}
+            >
+              {plan.name}
+            </button>
+          ))}
+        </div>
+        <dl className="plans-preview-limits">
+          {previewLimits(preview).map((item) => (
+            <div key={item.label}>
+              <dt>{item.label}</dt>
+              <dd>{item.value}</dd>
+            </div>
+          ))}
+        </dl>
+        <p className="plans-preview-note">
+          {preview.note} This comparison is temporary page UI; it resets on reload and creates no
+          account or entitlement. Local storage uses your own disk, not the cloud allowance shown
+          here.
+        </p>
+      </section>
+    </section>
+  );
+}
+
+function PlanComparison() {
+  return (
+    <section className="plans-matrix-section container" aria-labelledby="plans-matrix-title">
+      <header className="plans-heading">
+        <h2 id="plans-matrix-title">The workspace is yours. The extras are optional.</h2>
+      </header>
+      <div
+        className="plans-matrix-scroll"
+        role="region"
+        aria-label="Compare NYXR plan features"
+        tabIndex={0}
+      >
+        <table className="plans-matrix">
+          <caption>
+            Core features stay free in every plan. Cloud and team features below are planned.
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">What you get</th>
+              {plans.map((plan) => (
+                <th scope="col" key={plan.id}>
+                  {plan.name}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {featureMatrix.map((feature) => (
+              <tr key={feature.label}>
+                <th scope="row">{feature.label}</th>
+                {feature.values.map((value, index) => (
+                  <td
+                    key={plans[index].id}
+                    className={value === 'Included' || value === 'None' ? 'is-included' : undefined}
+                  >
+                    {value}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p className="plans-scroll-hint">
+        On smaller screens, scroll the comparison sideways. Provider charges and quotas are separate
+        from every NYXR plan.
+      </p>
+    </section>
+  );
+}
+
+export default function Pricing() {
+  return (
+    <div className="nyxr-plans">
+      <section className="pricing-intro plans-intro container">
         <div>
-          <Eyebrow>POWER WITHOUT THE EXTRA SUBSCRIPTION</Eyebrow>
+          <Eyebrow>YOUR WORKSPACE. YOUR CHOICE.</Eyebrow>
           <h1>
-            Big ideas.
+            The core stays free.
             <br />
-            <span>A {formatMoney(0)} starting point.</span>
+            <span>Go further, together.</span>
           </h1>
           <p>
-            Your desktop AI workspace, with {providers.length} provider integrations and no NYXR fee
-            today. Use eligible free tiers, bring your own accounts, and keep control of what you
-            spend.
+            Chat, code, automate and learn in one local workspace. Start with free Core; optional
+            cloud backup, device sync and team collaboration are coming next.
           </p>
           <div className="button-row">
-            <Button href="/download/">Get release information</Button>
-            <Button href="#token-calculation" secondary>
-              Explore the free tiers
+            <Button href="/download/" icon="download">
+              Download Core
+            </Button>
+            <Button href="#plans" secondary>
+              Compare plans
             </Button>
           </div>
         </div>
         <aside className="pricing-region">
-          <span className="plan-kicker">A LITTLE MORE LOCAL</span>
+          <span className="plan-kicker">YOUR REGION, CLEAR PRICING</span>
           <RegionSelector />
           <small>
-            NYXR’s zero fee is shown in your chosen currency. Paid provider prices remain in their
-            published currency. Future checkout will confirm country, currency and tax separately.
+            Plan prices are shown in INR. Your display preference does not convert these prices or
+            verify your billing country. Future billing is INR-only. Checkout must verify billing
+            country and confirm the authoritative server price, taxes and final total.
           </small>
         </aside>
       </section>
-      <EcosystemOverview />
-      <TokenCalculation />
-      <PricingComparison />
-      <ProviderLedger />
-    </>
+      <ProductPlans />
+      <div className="plans-principles container">
+        <div>
+          <h3>Your local tools stay free</h3>
+          <p>
+            No NYXR-imposed local token quota. Your hardware and model license determine local
+            capacity.
+          </p>
+        </div>
+        <div>
+          <h3>Your provider, your account</h3>
+          <p>
+            BYOK provider charges and allowances remain separate. No NYXR plan includes an AI credit
+            balance.
+          </p>
+        </div>
+        <div>
+          <h3>Your backup, your decision</h3>
+          <p>
+            Future encrypted backups are opt-in. Provider keys stay local and are excluded from
+            planned cloud backups.
+          </p>
+        </div>
+      </div>
+      <PlanComparison />
+      <section className="plans-faq container" aria-labelledby="plans-faq-title">
+        <Eyebrow>A FEW THINGS, MADE CLEAR</Eyebrow>
+        <h2 id="plans-faq-title">Before you choose.</h2>
+        {planFAQs.map((item) => (
+          <details key={item.question}>
+            <summary>{item.question}</summary>
+            <p>{item.answer}</p>
+          </details>
+        ))}
+      </section>
+      <section
+        className="plans-provider-section"
+        aria-label="Separate provider pricing disclosures"
+      >
+        <details className="plans-provider-details">
+          <summary className="container">
+            <div>
+              <h2>Provider allowances &amp; sources</h2>
+              <p>
+                A separate look at provider accounts, free tiers and published limits. These are not
+                NYXR plan entitlements or guaranteed credits.
+              </p>
+            </div>
+            <Icon name="chevron" size={22} />
+          </summary>
+          <div className="plans-provider-content">
+            <EcosystemOverview />
+            <TokenCalculation />
+            <PricingComparison />
+            <ProviderLedger />
+          </div>
+        </details>
+      </section>
+    </div>
   );
 }

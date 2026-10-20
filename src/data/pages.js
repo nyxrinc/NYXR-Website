@@ -126,10 +126,10 @@ export const pages = [
   {
     id: 'pricing',
     path: '/pricing/',
-    label: 'Pricing & free tiers',
+    label: 'Pricing & plans',
     group: 'Discover',
     description:
-      '13 NYXR integrations including Ollama, FreeLLMAPI’s reported 7.4B monthly ecosystem potential, a $0 NYXR fee and sourced pricing comparisons.',
+      'Free NYXR Core with your own AI providers or local models. Preview planned Plus, Student Plus and Teams services, with no subscriptions or charges today.',
   },
   {
     id: 'download',

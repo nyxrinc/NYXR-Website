@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "currency": "INR",
+  "interval": "month",
+  "plans": [
+    {
+      "id": "core",
+      "name": "Core",
+      "amount_minor": 0,
+      "limits": {
+        "storage_bytes": 0,
+        "device_limit": 1,
+        "history_days": 0
+      }
+    },
+    {
+      "id": "plus",
+      "name": "Plus",
+      "amount_minor": 29900,
+      "limits": {
+        "storage_bytes": 5000000000,
+        "device_limit": 3,
+        "history_days": 30
+      }
+    },
+    {
+      "id": "student_plus",
+      "name": "Student Plus",
+      "amount_minor": 14900,
+      "limits": {
+        "storage_bytes": 5000000000,
+        "device_limit": 3,
+        "history_days": 30
+      }
+    },
+    {
+      "id": "teams",
+      "name": "Teams",
+      "amount_minor": 79900,
+      "limits": {
+        "storage_bytes": 5000000000,
+        "device_limit": 3,
+        "history_days": 30
+      }
+    }
+  ]
+}

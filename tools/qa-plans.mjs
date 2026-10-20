@@ -16,7 +16,14 @@ import {
 } from '../src/data/plans.js';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
-const output = resolve(root, 'qa/plans');
+const live = process.env.NYXR_PLANS_LIVE_URL || '';
+if (live) {
+  const url = new URL(live);
+  assert.equal(url.protocol, 'https:');
+  assert.equal(url.origin, live);
+  assert.equal(url.username + url.password + url.search + url.hash, '');
+}
+const output = resolve(root, live ? 'qa/plans-live' : 'qa/plans');
 await mkdir(output, { recursive: true });
 const report = { checks: [], viewports: [], errors: [], blockedExternalRequests: [] };
 const check = (name, result = true) => {
@@ -61,9 +68,11 @@ check('Free Core, verified student eligibility, planned paid CTAs and no local t
 let server;
 let browser;
 try {
-  server = await createServer({ root, server: { host: '127.0.0.1', port: 0, strictPort: true } });
-  await server.listen();
-  const base = `http://127.0.0.1:${server.httpServer.address().port}`;
+  if (!live) {
+    server = await createServer({ root, server: { host: '127.0.0.1', port: 0, strictPort: true } });
+    await server.listen();
+  }
+  const base = live || `http://127.0.0.1:${server.httpServer.address().port}`;
   browser = await chromium.launch({
     headless: true,
     ...(process.env.NYXR_BROWSER_PATH ? { executablePath: process.env.NYXR_BROWSER_PATH } : {}),

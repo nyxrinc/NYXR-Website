@@ -298,6 +298,49 @@
 .nyxr-plans .plans-principles p {
   font-size: 13px;
 }
+.nyxr-plans .teams-foundations {
+  padding-bottom: 70px;
+  scroll-margin-top: 110px;
+}
+.nyxr-plans .teams-foundations > h2 {
+  font-size: clamp(28px, 3.6vw, 42px);
+  line-height: 1.25;
+  margin-top: 20px;
+}
+.nyxr-plans .teams-foundations-intro {
+  max-width: 790px;
+  margin-top: 20px;
+  font-size: 15px;
+  line-height: 1.85;
+}
+.nyxr-plans .teams-foundations-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 30px;
+}
+.nyxr-plans .teams-foundations-grid article {
+  min-width: 0;
+  padding: 26px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: linear-gradient(145deg, #10232d, #09131b);
+}
+.nyxr-plans .teams-foundations-grid svg {
+  color: var(--cyan);
+}
+.nyxr-plans .teams-foundations-grid h3 {
+  margin-block: 18px 12px;
+  font-size: 20px;
+  line-height: 1.35;
+}
+.nyxr-plans .teams-foundations-grid p {
+  font-size: 13px;
+  line-height: 1.85;
+}
+.nyxr-plans .teams-foundations > .text-link {
+  margin-top: 24px;
+}
 .nyxr-plans .plans-matrix-section {
   padding-bottom: 75px;
 }
@@ -420,6 +463,9 @@
   }
 }
 @media (max-width: 760px) {
+  .nyxr-plans .teams-foundations-grid {
+    grid-template-columns: 1fr;
+  }
   .nyxr-plans .plans-preview-heading {
     align-items: start;
   }

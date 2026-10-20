@@ -440,7 +440,7 @@ function ProductPlans() {
           >
             <span className="tier-status">
               {plan.available && <span className="status-dot" />}
-              {plan.available ? 'FREE CORE' : 'PLANNED / PREVIEW'}
+              {plan.available ? 'FREE CORE' : plan.status || 'PLANNED / PREVIEW'}
             </span>
             <h3 id={`tier-${plan.id}`}>{plan.name}</h3>
             <span className="tier-label">{plan.label}</span>
@@ -468,7 +468,7 @@ function ProductPlans() {
                   disabled
                   secondary
                   icon="timeline"
-                  aria-label={`${plan.name}: coming soon`}
+                  aria-label={`${plan.name}: ${plan.cta}`}
                   aria-describedby={`note-${plan.id}`}
                 >
                   {plan.cta}
@@ -495,7 +495,8 @@ function ProductPlans() {
         <Icon name="shield" size={20} />
         <p>
           <strong>Core stays free. Paid services are coming soon.</strong> Production paid accounts,
-          payments and cloud storage are not configured. No checkout is live and no charges are
+          payments and cloud storage are not configured. Teams has implemented beta foundations;
+          hosted access awaits account service configuration. No checkout is live and no charges are
           being taken. Future billing is INR-only; checkout must verify billing country and confirm
           the server price, taxes and final total before any purchase.
         </p>
@@ -548,6 +549,67 @@ function ProductPlans() {
   );
 }
 
+function TeamsFoundations() {
+  return (
+    <section
+      className="teams-foundations container"
+      id="teams-beta"
+      aria-labelledby="teams-foundations-title"
+    >
+      <Eyebrow>TEAMS / BETA FOUNDATIONS</Eyebrow>
+      <h2 id="teams-foundations-title">A shared place to move work forward.</h2>
+      <p className="teams-foundations-intro">
+        Collaboration for explicitly selected text files, shared Macro libraries through JSON
+        export/import, permissions and activity / audit history have implemented beta foundations in
+        the current source. Hosted availability is pending production account service configuration.
+        Automatic whole-folder sync and binary-file sharing are not supported.
+      </p>
+      <div className="teams-foundations-grid">
+        {[
+          [
+            'folder',
+            'Choose the text files to share',
+            'Workspace and membership foundations support explicitly chosen text files. You decide which files enter the shared workspace.',
+          ],
+          [
+            'route',
+            'Shared Macro libraries',
+            'Share reusable Macros through JSON export/import, governed by workspace permissions and audit records.',
+          ],
+          [
+            'shield',
+            'Workspace permissions',
+            'Permissions define who can access and manage shared workspace content.',
+          ],
+          [
+            'timeline',
+            'Activity & audit history',
+            'Activity and audit records provide a history of shared-file and Macro changes in the workspace.',
+          ],
+        ].map(([icon, title, description]) => (
+          <article key={title}>
+            <Icon name={icon} size={23} />
+            <h3>{title}</h3>
+            <p>{description}</p>
+          </article>
+        ))}
+      </div>
+      <div className="plans-availability">
+        <Icon name="timeline" size={20} />
+        <p>
+          <strong>Hosted access pending.</strong> Public Teams workspaces and hosted NYXR sign-in
+          have not launched. Account services must be configured before hosted collaboration can
+          become available. Payments remain inactive; Teams is a planned INR price per seat per
+          month.
+        </p>
+      </div>
+      <a className="text-link" href="#plans">
+        View planned Teams pricing <Icon size={16} />
+      </a>
+    </section>
+  );
+}
+
 function PlanComparison() {
   return (
     <section className="plans-matrix-section container" aria-labelledby="plans-matrix-title">
@@ -562,7 +624,9 @@ function PlanComparison() {
       >
         <table className="plans-matrix">
           <caption>
-            Core features stay free in every plan. Cloud and team features below are planned.
+            Core features stay free in every plan. Write for me is a next-beta source preview,
+            outside the beta2 download. Cloud services are planned; Teams beta foundations await
+            hosted account service configuration.
           </caption>
           <thead>
             <tr>
@@ -612,7 +676,8 @@ export default function Pricing() {
           </h1>
           <p>
             Chat, code, automate and learn in one local workspace. Start with free Core; optional
-            cloud backup, device sync and team collaboration are coming next.
+            cloud backup and device sync are planned. Teams collaboration has implemented beta
+            foundations, with hosted access pending account service configuration.
           </p>
           <div className="button-row">
             <Button href="/download/" icon="download">
@@ -657,6 +722,7 @@ export default function Pricing() {
           </p>
         </div>
       </div>
+      <TeamsFoundations />
       <PlanComparison />
       <section className="plans-faq container" aria-labelledby="plans-faq-title">
         <Eyebrow>A FEW THINGS, MADE CLEAR</Eyebrow>

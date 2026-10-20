@@ -49,6 +49,15 @@ const resourceCopy = {
           <li>Ctrl+Shift+P opens the command palette.</li>
           <li>F6 starts macro recording; F5 stops it.</li>
         </ul>
+        <h3>Write for me / next beta</h3>
+        <p>
+          Next beta / source preview: the F11 dropdown adds Assistant, Write for me and Macro voice.
+          In Write for me, choose Select textbox, click a field, then hold F8 to dictate. With
+          grammar correction on, scores below 9/10 are rewritten; 9/10 or higher stays verbatim.
+          Text is inserted and verified without submitting it. The speech service transcribes your
+          audio; the selected AI checks only dictation, not the textbox’s existing contents. Write
+          for me is not included in the downloadable beta2 installer.
+        </p>
         <h3>Connect deliberately</h3>
         <p>
           Use guided setup to open the existing AI Providers settings, or choose local Ollama. Bring

@@ -28,7 +28,8 @@ export const pages = [
     path: '/features/',
     label: 'Features',
     group: 'Discover',
-    description: 'Explore the conversations, projects, tools and workflows inside NYXR.',
+    description:
+      'Explore NYXR conversations, projects and tools, plus the next-beta Write for me preview and Teams beta foundations with hosted access pending.',
   },
   {
     id: 'chat',
@@ -57,7 +58,8 @@ export const pages = [
     path: '/voice/',
     label: 'Voice & hands-free',
     group: 'Workspace',
-    description: 'Meet the compact F11 voice dock and hold F8 to speak to NYXR.',
+    description:
+      'Meet the F11 voice dock and preview next-beta Write for me: select a textbox, dictate with F8 and insert text without sending. Not in the beta2 download.',
   },
   {
     id: 'hud',
@@ -100,7 +102,8 @@ export const pages = [
     path: '/core/',
     label: 'N Intelligence Core',
     group: 'Intelligence',
-    description: 'The context, models, tools and verification behind the NYXR intelligence core.',
+    description:
+      'The context, models, tools and verification behind NYXR, including the next-beta Write for me source preview.',
   },
   {
     id: 'demo',

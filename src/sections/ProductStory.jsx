@@ -12,6 +12,7 @@ const featurePaths = {
   Projects: '/coding/',
   'Computer Use': '/computer-use/',
   Voice: '/voice/',
+  'Write for me': '/voice/#write-for-me',
   'HUD & Full Screen': '/modes/',
   Skills: '/skills/',
   Macros: '/macros/',
@@ -19,6 +20,7 @@ const featurePaths = {
   Providers: '/providers/',
   Personalization: '/personalization/',
   'Visible progress': '/demo/',
+  Teams: '/pricing/#teams-beta',
 };
 
 function Counter({ value, label }) {
@@ -338,7 +340,7 @@ export function VoiceSection({ openShot }) {
           >
             <img
               src="/screenshots/voice-dock.webp"
-              alt="The updated NYXR F11 dock with centered voice dots, quick-text input, Send and collapse controls"
+              alt="NYXR F11 dock with centered voice dots, quick-text input, Send and collapse controls"
               width="440"
               height="141"
               loading="lazy"
@@ -375,6 +377,57 @@ export function VoiceSection({ openShot }) {
             </div>
           ))}
         </div>
+        <article
+          className="dictation-preview"
+          id="write-for-me"
+          aria-labelledby="dictation-preview-title"
+        >
+          <Eyebrow>NEXT BETA / SOURCE PREVIEW</Eyebrow>
+          <h3 id="dictation-preview-title">Write for me. Your words, in the right textbox.</h3>
+          <p className="preview-availability">
+            Implemented in the current source for the next beta. Write for me is not included in the
+            downloadable beta2 installer. The capture above shows the earlier dock; the source
+            preview adds the mode dropdown and writing controls.
+          </p>
+          <ol className="dictation-steps">
+            <li>
+              <span>01 / CHOOSE YOUR MODE</span>
+              <h4>Open the F11 dropdown.</h4>
+              <p>
+                Press <Key>F11</Key>, then choose Write for me from the Assistant / Write for me /
+                Macro voice mode dropdown.
+              </p>
+            </li>
+            <li>
+              <span>02 / SELECT AND SPEAK</span>
+              <h4>Pick the textbox.</h4>
+              <p>
+                Choose Select textbox and click an editable field. Hold <Key>F8</Key> to dictate;
+                release when you finish speaking.
+              </p>
+            </li>
+            <li>
+              <span>03 / OPTIONAL CORRECTION</span>
+              <h4>Keep your meaning.</h4>
+              <p>
+                With Correct grammar on, your selected AI rewrites scores below 9/10. A score of
+                9/10 or higher stays verbatim. Turn correction off to keep the transcription
+                unchanged.
+              </p>
+            </li>
+          </ol>
+          <div className="dictation-details">
+            <FeatureLine title="Checked insertion, without sending">
+              NYXR checks the selected textbox before insertion and verifies the result. It does not
+              press Send or submit the form. Cancel stops further writing; Copy last text copies the
+              latest dictation.
+            </FeatureLine>
+            <FeatureLine title="Only your dictation goes to the grammar check">
+              The speech service transcribes your audio. Your selected AI checks the dictated words;
+              the textbox’s existing contents stay out of that grammar request.
+            </FeatureLine>
+          </div>
+        </article>
       </div>
     </section>
   );
@@ -701,6 +754,24 @@ export function CoreSection() {
           Operational architecture, not private model reasoning. Execution and verification depend
           on the task and available integrations.
         </p>
+        <article className="architecture-example" aria-labelledby="dictation-core-title">
+          <Eyebrow>NEXT BETA / SOURCE PREVIEW</Eyebrow>
+          <h3 id="dictation-core-title">Write for me, with a clear role for each tool.</h3>
+          <p>
+            The F11 dropdown separates Assistant, Write for me and Macro voice. Select a textbox and
+            hold F8 to dictate. The speech service transcribes audio; with correction on, your
+            selected AI checks only the dictation. Scores below 9/10 are rewritten; 9/10 or higher
+            stays verbatim. Local tools check the target and verify insertion without submitting the
+            text.
+          </p>
+          <p className="preview-availability">
+            Implemented in the current source for the next beta; not included in the downloadable
+            beta2 installer.
+          </p>
+          <a className="text-link" href="/voice/#write-for-me">
+            Explore Write for me <Icon size={16} />
+          </a>
+        </article>
       </div>
     </section>
   );
@@ -728,7 +799,7 @@ export function FeatureGrid() {
         </span>
       </div>
       <div className="feature-grid" data-reveal>
-        {features.map(([icon, t, d], i) => (
+        {features.map(([icon, t, d, availability], i) => (
           <a
             key={t}
             href={featurePaths[t] || '/features/'}
@@ -739,6 +810,7 @@ export function FeatureGrid() {
               <span>{String(i + 1).padStart(2, '0')}</span>
             </div>
             <h3>{t}</h3>
+            {availability && <span className="feature-availability">{availability}</span>}
             <p>{d}</p>
           </a>
         ))}

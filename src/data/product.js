@@ -130,13 +130,27 @@ export const gallery = [
 ];
 
 export const features = [
-  ['memory', 'Student tutor', 'Learn from local PDFs with explanations, quizzes and source-page references.'],
-  ['panel', 'Slideshows', 'Review an outline and export editable PowerPoint slides with speaker notes.'],
+  [
+    'memory',
+    'Student tutor',
+    'Learn from local PDFs with explanations, quizzes and source-page references.',
+  ],
+  [
+    'panel',
+    'Slideshows',
+    'Review an outline and export editable PowerPoint slides with speaker notes.',
+  ],
   ['chat', 'Conversation', 'Pick up the thread across persistent, independent chats.'],
   ['code', 'Coding', 'Inspect files, propose changes, validate and recover.'],
   ['folder', 'Projects', 'Keep files, conversations and task context together.'],
   ['cursor', 'Computer Use', 'Plan actions, execute through tools, inspect the result.'],
   ['voice', 'Voice', 'Hold F8 to speak while hands-free mode is enabled.'],
+  [
+    'voice',
+    'Write for me',
+    'F11 mode dropdown, textbox selection and F8 dictation. Grammar below 9/10 is rewritten; text is inserted without sending. Not in the beta2 download.',
+    'NEXT BETA / SOURCE PREVIEW',
+  ],
   ['panel', 'HUD & Full Screen', 'A side companion or the whole desktop canvas.'],
   ['spark', 'Skills', 'Choose the approach that fits the current task.'],
   [
@@ -148,6 +162,12 @@ export const features = [
   ['nodes', 'Providers', 'Choose cloud routes or explicitly select local mode.'],
   ['sliders', 'Personalization', 'Your name, conversation style, appearance and behavior.'],
   ['timeline', 'Visible progress', 'Follow execution and recovery in the Agent Timeline.'],
+  [
+    'nodes',
+    'Teams',
+    'Beta foundations for explicitly selected text files, Macro JSON export/import, workspace permissions and audit history. Hosted access awaits account service configuration.',
+    'BETA FOUNDATIONS / HOSTED PENDING',
+  ],
 ];
 
 export const walkthroughs = {

@@ -1,10 +1,10 @@
 import { Eyebrow, Button } from '../components/Primitives';
 import Icon from '../components/Icon';
-import { plans, plusBenefits, formatPlanPrice } from '../data/plans';
+import { plusBenefits } from '../data/plans';
 
 export const contactEmail = 'nyxrinc@gmail.com';
 export const contactHref = `mailto:${contactEmail}`;
-const updated = '19 October 2026';
+const updated = '20 October 2026';
 const Email = () => <a href={contactHref}>{contactEmail}</a>;
 
 const policies = {
@@ -161,12 +161,24 @@ const policies = {
           <p>
             Plus and Student Plus are planned to offer {plusBenefits.backupGB} GB of opt-in
             encrypted cloud backup, sync across {plusBenefits.devices} devices and{' '}
-            {plusBenefits.historyDays}-day version history. Teams is planned to offer shared
-            workspaces and Macro libraries, permissions and activity history. These paid services
-            are not live: production paid accounts, payments and storage are not configured. Before
-            enabling backups, you will choose the data to include and receive the service’s
-            encryption, retention and deletion details. Provider keys remain local and are excluded
-            from planned NYXR cloud backups.
+            {plusBenefits.historyDays}-day version history. Teams has implemented beta foundations
+            in the current source for explicitly selected text-file collaboration, shared Macro
+            libraries through JSON export/import, permissions and activity / audit history.
+            Collaboration does not automatically sync whole folders or share binary files. Hosted
+            availability is pending account service configuration. These paid services are not live:
+            production paid accounts, payments and storage are not configured. Before enabling
+            backups, you will choose the data to include and receive the service’s encryption,
+            retention and deletion details. Provider keys remain local and are excluded from planned
+            NYXR cloud backups.
+          </p>
+          <p>
+            In a configured Teams service, explicitly published workspace notes, text files and
+            Macro JSON are readable by permitted team members and the service operator. They are
+            not protected by the separate backup passphrase. Review shared content first; never
+            publish passwords or provider keys. Macro sharing does not run a Macro automatically.
+            Deleting a hosted account removes its owned teams and their shared content; activity
+            records in other teams may remain for those teams’ audit history. Local originals stay
+            on the device.
           </p>
         </>,
       ],
@@ -327,13 +339,10 @@ const policies = {
             scope.
           </p>
           <p>
-            Planned monthly prices are{' '}
-            {formatPlanPrice(plans.find((plan) => plan.id === 'plus').price)} for Plus,{' '}
-            {formatPlanPrice(plans.find((plan) => plan.id === 'student_plus').price)} for Student
-            Plus, and {formatPlanPrice(plans.find((plan) => plan.id === 'teams').price)} per seat
-            for Teams, all in INR. Student Plus has the same personal cloud benefits as Plus and
-            requires verified student eligibility; self-declaration does not unlock it. Paid
-            services are coming soon. This site has no checkout or live billing and takes no
+            Planned monthly prices in INR are listed on the <a href="/pricing/">Pricing page</a>.
+            Teams is priced per seat. Student Plus has the same planned personal cloud benefits as
+            Plus and requires verified student eligibility; self-declaration does not unlock it.
+            Paid services are coming soon. This site has no checkout or live billing and takes no
             payments.
           </p>
           <p>

@@ -16,6 +16,7 @@ export const coreFeatures = [
   'BYOK & local model chat',
   'Coding workspace',
   'Voice & Chrome tools',
+  'Write for me · next beta / source preview',
   'Macros & local workflows',
   'Local PDF tutoring & slides',
 ];
@@ -68,17 +69,20 @@ const planPresentation = [
     id: 'teams',
     label: 'A shared place to make progress',
     period: 'per seat / month',
-    description: 'Bring people and repeatable work together, with a workspace your team can share.',
+    description:
+      'Shared workspaces and reusable workflows, with beta foundations implemented in source.',
     features: [
       'Everything in free Core',
       'Shared workspaces',
-      'Shared Macro libraries',
+      'Explicit text-file sharing',
+      'Macro libraries · JSON export/import',
       'Workspace permissions',
-      'Activity history',
+      'Activity & audit history',
     ],
     available: false,
-    cta: 'Coming soon',
-    note: 'Planned service. Cloud and collaboration features are not live yet.',
+    status: 'PLANNED / BETA FOUNDATIONS',
+    cta: 'Hosted access pending',
+    note: 'Beta foundations implemented. Hosted availability awaits account service configuration. Payments are inactive.',
   },
 ];
 
@@ -120,6 +124,10 @@ export const featureMatrix = [
     label: 'Local PDF tutoring & slides',
     values: ['Included', 'Included', 'Included', 'Included'],
   },
+  {
+    label: 'Write for me · free Core feature',
+    values: Array(4).fill('Next beta / source preview'),
+  },
   { label: 'NYXR-imposed local token quota', values: ['None', 'None', 'None', 'None'] },
   {
     label: 'Opt-in encrypted cloud backup',
@@ -134,12 +142,16 @@ export const featureMatrix = [
     values: cloudValues('history_days', (value) => `${value} days planned`),
   },
   {
-    label: 'Shared workspaces & Macro libraries',
-    values: ['Not included', 'Not included', 'Not included', 'Planned'],
+    label: 'Explicitly selected text-file collaboration',
+    values: ['Not included', 'Not included', 'Not included', 'Beta foundations · hosted pending'],
   },
   {
-    label: 'Team permissions & activity history',
-    values: ['Not included', 'Not included', 'Not included', 'Planned'],
+    label: 'Shared workspaces & Macro libraries',
+    values: ['Not included', 'Not included', 'Not included', 'Beta foundations · hosted pending'],
+  },
+  {
+    label: 'Team permissions & activity / audit history',
+    values: ['Not included', 'Not included', 'Not included', 'Beta foundations · hosted pending'],
   },
   {
     label: 'Student eligibility verification',
@@ -167,6 +179,16 @@ export const planFAQs = [
     question: 'Can I subscribe or activate a student discount now?',
     answer:
       'Not yet. Paid accounts, payments and cloud storage are not configured for production. There is no checkout, waitlist form or charge today. Student Plus will require verified eligibility; a self-declared student status will not unlock paid benefits.',
+  },
+  {
+    question: 'Can my team use the collaboration features today?',
+    answer:
+      'Workspace collaboration has implemented beta foundations for explicitly selected text files, shared Macro libraries through JSON export/import, permissions and activity / audit history. It does not automatically sync whole folders or share binary files. Hosted availability is pending production account service configuration. Public Teams workspaces have not launched, and payments are inactive. The Teams price is planned per seat per month in INR.',
+  },
+  {
+    question: 'Is Write for me included in the current download?',
+    answer:
+      'Write for me is a free Core feature implemented in the current source preview for the next beta. It is not included in the downloadable beta2 installer. The source preview adds the F11 mode dropdown, textbox selection, F8 dictation, optional grammar correction and verified insertion without submitting the text.',
   },
   {
     question: 'Will my work or provider keys be uploaded?',

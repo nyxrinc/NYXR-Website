@@ -115,6 +115,22 @@ export default function Download() {
           Use on a test computer first and keep backups of important work.
         </p>
       </article>
+      <aside className="release-preview-notice" aria-labelledby="source-preview-title">
+        <Eyebrow>AFTER BETA2 / SOURCE PREVIEW</Eyebrow>
+        <h2 id="source-preview-title">A look at what comes next.</h2>
+        <p>
+          <a href="/voice/#write-for-me">Write for me</a> is implemented in the current source for
+          the next beta, including the F11 mode dropdown and F8 textbox dictation. It is not
+          included in this beta2 installer. The corresponding-source download above matches beta2.
+        </p>
+        <p>
+          <a href="/pricing/#teams-beta">Teams collaboration</a> has implemented beta foundations
+          for explicitly selected text files and Macro JSON export/import, with workspace
+          permissions and activity / audit history. Automatic whole-folder sync and binary-file
+          sharing are not supported. Hosted access awaits production account service configuration;
+          public cloud services have not launched.
+        </p>
+      </aside>
       <div className="beta-setup" data-reveal>
         <article>
           <span>01 / YOUR AI</span>
@@ -145,8 +161,8 @@ export default function Download() {
       <div className="release-footnote">
         <span>YOUR WORKSPACE. YOUR CHOICE.</span>
         <p>
-          Windows x64 only. No local LLM weights are included. Upgrade and uninstall preserve your local
-          user data by default. Need a hand? <a href="/guide/">Read the guide</a> or{' '}
+          Windows x64 only. No local LLM weights are included. Upgrade and uninstall preserve your
+          local user data by default. Need a hand? <a href="/guide/">Read the guide</a> or{' '}
           <a href="/contact/">contact NYXR</a>.
         </p>
       </div>

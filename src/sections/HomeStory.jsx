@@ -316,20 +316,22 @@ export function HomeSignature() {
         <Core small />
       </div>
       <div className="home-signature-copy" data-reveal>
-        <Eyebrow number="03">THE NYXR WAY</Eyebrow>
+        <Eyebrow number="03">NEXUS / INTELLIGENCE IN ORBIT</Eyebrow>
         <h2 id="home-signature-title">
-          One core.
+          The soul of NYXR.
           <br />
           <span>Room for your world.</span>
         </h2>
         <p>
-          A conversation when you need to think. A workspace when you’re ready to build. A quiet
-          companion beside the things you’re already doing.
+          The central core responds to what NYXR is doing: listening, speaking, coding,
+          researching or waiting. NEXUS brings onyx glass, neon cyan-blue type and cursor-responsive orbital depth.
+          Every theme keeps that same living heart, with readable work panels around it.
         </p>
         <div className="home-signature-details">
-          <span>Context that follows the task.</span>
-          <span>Themes and modes that feel like you.</span>
-          <span>Your choice of AI provider or local model.</span>
+          <span>Real task state. No invented activity.</span>
+          <span>Electrolize headings. Chakra Petch interface. JetBrains Mono for code.</span>
+          <span>Reduced motion when you want a calmer workspace.</span>
+          <span>A skippable tutorial, with separate listening and speaking checks.</span>
         </div>
         <a className="home-signature-link" href="/personalization/">
           Make NYXR your own

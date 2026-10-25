@@ -624,8 +624,8 @@ function PlanComparison() {
       >
         <table className="plans-matrix">
           <caption>
-            Core features stay free in every plan. Write for me is a next-beta source preview,
-            outside the beta2 download. Cloud services are planned; Teams beta foundations await
+            Core features stay free in every plan. Write for me is included in beta 3.
+            Cloud services are planned; Teams beta foundations await
             hosted account service configuration.
           </caption>
           <thead>

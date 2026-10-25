@@ -133,7 +133,7 @@ export function InteractiveDemo() {
 }
 
 export function ThemeSection({ openShot }) {
-  const [selected, setSelected] = useState('core');
+  const [selected, setSelected] = useState('nexus');
   const theme = themes.find((t) => t.id === selected);
   return (
     <section className="theme-section section container" id="personalization">
@@ -266,7 +266,7 @@ export function MotionSection() {
         />
         <p className="title-aside">
           A short look around the real Windows interface. Command Center, Chat, the coding
-          workspace, and Skills.
+          workspace, Student, and the live core editor.
         </p>
       </div>
       <div
@@ -281,7 +281,7 @@ export function MotionSection() {
           poster="/screenshots/dashboard.webp"
           width="1320"
           height="736"
-          aria-label="Twenty-second recording of the actual NYXR interface in a clean showcase session"
+          aria-label="Twenty-second tour of current NYXR interface captures from a clean showcase session"
           onPlay={() => {
             setHasPlayed(true);
             setPlaying(true);
@@ -306,14 +306,14 @@ export function MotionSection() {
             </span>
             <span>
               {error ? 'Try playback again' : 'Take a look inside'}
-              <small>00:20 / ACTUAL APP RECORDING</small>
+              <small>00:20 / CURRENT APP CAPTURES</small>
             </span>
           </button>
         )}
         <div className="video-corners" aria-hidden="true" />
       </div>
       <p className="capture-caption">
-        Real NYXR UI, recorded in an isolated showcase session. Authored project and conversation
+        Real NYXR UI captures from an isolated showcase session. Authored project and conversation
         data. External services, microphone, and inference were disabled.
       </p>
     </section>

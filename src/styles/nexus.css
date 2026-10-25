@@ -1,0 +1,28 @@
+/* Shared identity, using the same original geometric glyph as the desktop. */
+@font-face { font-family: 'JetBrains Mono'; src: url('/fonts/JetBrainsMono-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: 'JetBrains Mono'; src: url('/fonts/JetBrainsMono-Bold.ttf') format('truetype'); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: Electrolize; src: url('/fonts/Electrolize-Regular.ttf') format('truetype'); font-weight: 400; font-style: normal; font-display: swap; }
+:root { --mono: 'JetBrains Mono', ui-monospace, Consolas, monospace; }
+pre, code, kbd, samp { font-family: var(--mono); }
+.home-signature .eyebrow { font-family: Electrolize, sans-serif; font-size: 10px; }
+.core-glyph {
+  width: 70%;
+  height: 70%;
+  fill: #e5f8ff;
+  filter: drop-shadow(0 0 9px #56f0e875);
+}
+.core-center::before, .core-center::after { pointer-events: none; }
+.home-signature-core .core-center { background: radial-gradient(circle, #163d4b, #07121e 78%); }
+.home-signature-core .n-core { filter: drop-shadow(0 0 24px #56f0e818); }
+.hero-copy .eyebrow { color: #91d9d8; }
+.hero-copy h2 { font-weight: 600; }
+.hero-main-shot .product-shot { border-color: #56f0e842; box-shadow: 0 28px 90px #000b, 0 0 90px #56f0e80e; }
+.hero-main-shot { max-width: 1080px; }
+.core-ring.ring-three { border-style: dashed; border-color: #56f0e84a; }
+.core-orbit { border-color: #56f0e832; }
+[data-theme='nexus'] { --preview-accent: #32dfff; }
+.beta-setup { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 700px) { .beta-setup { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) {
+  .core-glyph { filter: none; }
+}

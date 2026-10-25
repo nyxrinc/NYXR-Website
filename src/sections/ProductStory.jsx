@@ -94,7 +94,7 @@ export function Introduction() {
           ))}
         </div>
         <div className="intro-stats">
-          <Counter value={6} label="signature themes" />
+          <Counter value={7} label="featured themes" />
           <Counter value={3} label="desktop modes" />
           <div className="stat stat-n">
             <strong>N</strong>
@@ -382,12 +382,11 @@ export function VoiceSection({ openShot }) {
           id="write-for-me"
           aria-labelledby="dictation-preview-title"
         >
-          <Eyebrow>NEXT BETA / SOURCE PREVIEW</Eyebrow>
+          <Eyebrow>BETA 3 / WRITE FOR ME</Eyebrow>
           <h3 id="dictation-preview-title">Write for me. Your words, in the right textbox.</h3>
           <p className="preview-availability">
-            Implemented in the current source for the next beta. Write for me is not included in the
-            downloadable beta2 installer. The capture above shows the earlier dock; the source
-            preview adds the mode dropdown and writing controls.
+            Included in the beta 3 installer. The capture above shows the earlier dock; the app
+            adds the mode dropdown and writing controls for selecting a textbox and dictating.
           </p>
           <ol className="dictation-steps">
             <li>
@@ -755,7 +754,7 @@ export function CoreSection() {
           on the task and available integrations.
         </p>
         <article className="architecture-example" aria-labelledby="dictation-core-title">
-          <Eyebrow>NEXT BETA / SOURCE PREVIEW</Eyebrow>
+          <Eyebrow>BETA 3 / WRITE FOR ME</Eyebrow>
           <h3 id="dictation-core-title">Write for me, with a clear role for each tool.</h3>
           <p>
             The F11 dropdown separates Assistant, Write for me and Macro voice. Select a textbox and
@@ -765,8 +764,7 @@ export function CoreSection() {
             text.
           </p>
           <p className="preview-availability">
-            Implemented in the current source for the next beta; not included in the downloadable
-            beta2 installer.
+            Included in the beta 3 installer and its matching source download.
           </p>
           <a className="text-link" href="/voice/#write-for-me">
             Explore Write for me <Icon size={16} />

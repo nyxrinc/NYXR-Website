@@ -17,7 +17,7 @@
     "qa:download-live": "node tools/qa-live-download.mjs",
     "prepare:deploy": "node tools/prepare-deploy.mjs",
     "preview": "vite preview --host 127.0.0.1",
-    "qa": "npm run test:deployment && npm run qa:deployment"
+    "qa": "npm run test:deployment && node tools/qa-all.mjs"
   },
   "dependencies": {
     "react": "^19.3.1",

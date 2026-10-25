@@ -8,6 +8,7 @@ import './styles/refinements.css';
 import './styles/pages.css';
 import './styles/pricing.css';
 import './styles/home.css';
+import './styles/nexus.css';
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RegionalPreferences>

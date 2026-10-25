@@ -1,21 +1,21 @@
 {
   "schemaVersion": 1,
-  "version": "4.0.0-beta.2",
+  "version": "4.0.0-beta.3",
   "platform": "Windows 10/11 \u00b7 x64",
-  "publishedAt": "2026-10-19T16:49:35Z",
+  "publishedAt": "2026-10-25T08:12:21Z",
   "signed": false,
   "distributionReady": true,
   "installer": {
-    "filename": "NYXR-Setup-4.0.0-beta.2-x64.exe",
-    "bytes": 538672261,
-    "sha256": "10671ced7c1ead706bc9b831cc0d2f88cd9b960b405362da178a0139c86beba3",
-    "url": "https://github.com/nyxrinc/NYXR-Website/releases/download/v4.0.0-beta.2/NYXR-Setup-4.0.0-beta.2-x64.exe"
+    "filename": "NYXR-Setup-4.0.0-beta.3-x64.exe",
+    "bytes": 555244827,
+    "sha256": "3c84fc6dda90cda507471bf1184093e1d24398807c793dbe1fd979bb2904d310",
+    "url": "https://github.com/nyxrinc/NYXR-Website/releases/download/v4.0.0-beta.3/NYXR-Setup-4.0.0-beta.3-x64.exe"
   },
   "source": {
-    "filename": "NYXR-source-4.0.0-beta.2.zip",
-    "bytes": 90133238,
-    "sha256": "0f39a1b14dafe8abfe50de9d1a01e241ec5e8b7a1437496de1547ae2ed6c10df",
-    "url": "https://github.com/nyxrinc/NYXR-Website/releases/download/v4.0.0-beta.2/NYXR-source-4.0.0-beta.2.zip"
+    "filename": "NYXR-source-4.0.0-beta.3.zip",
+    "bytes": 94969447,
+    "sha256": "90881fffe2cc99096b526b121297f21b1cfa1f890c58351b987035994e994b91",
+    "url": "https://github.com/nyxrinc/NYXR-Website/releases/download/v4.0.0-beta.3/NYXR-source-4.0.0-beta.3.zip"
   },
   "blockers": []
 }

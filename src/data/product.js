@@ -1,5 +1,11 @@
 export const themes = [
   {
+    id: 'nexus',
+    name: 'NEXUS',
+    color: '#32dfff',
+    description: 'NYXR’s living heart. Cursor-responsive orbital depth, neon cyan-blue text and onyx glass.',
+  },
+  {
     id: 'core',
     name: 'NYXR Core',
     color: '#76edff',
@@ -55,6 +61,10 @@ export const providers = [
 
 export const gallery = [
   {
+    id: 'theme-nexus', title: 'The NEXUS core', category: 'Personalization',
+    description: 'Actual NEXUS Command Center. The shared core remains central in every theme.',
+  },
+  {
     id: 'dashboard',
     title: 'Command Center',
     category: 'Workspace',
@@ -89,7 +99,7 @@ export const gallery = [
     id: 'personalization',
     title: 'Make it feel like you',
     category: 'Personalization',
-    description: 'Conversation style controls in the real Theme Studio.',
+    description: 'The theme library in the real NEXUS Theme Studio.',
   },
   {
     id: 'skills',
@@ -107,19 +117,27 @@ export const gallery = [
     id: 'macros',
     title: 'Record. Understand. Run.',
     category: 'Workspace',
-    description: 'The actual Macros workspace with an authored example and its grounded plan.',
+    description: 'The actual Macros workspace, ready to record or open a saved routine.',
   },
   {
     id: 'fullscreen',
     title: 'Take the whole canvas',
     category: 'Modes',
-    description: 'The real full-screen Chat interface, distinct from HUD and Focus.',
+    description: 'The real Chat interface at 1920×1080, distinct from the compact HUD.',
   },
   {
     id: 'providers',
     title: 'Connections, clearly',
     category: 'Workspace',
     description: 'Actual connection status. External services were disabled for these captures.',
+  },
+  {
+    id: 'student', title: 'A place to learn', category: 'Workspace',
+    description: 'The actual Student workspace, ready for local PDF study material.',
+  },
+  {
+    id: 'core-editor', title: 'Tune your AI heart', category: 'Personalization',
+    description: 'The live core editor: orbital depth, size, glow, rings and cursor response.',
   },
   {
     id: 'theme-light',
@@ -148,8 +166,8 @@ export const features = [
   [
     'voice',
     'Write for me',
-    'F11 mode dropdown, textbox selection and F8 dictation. Grammar below 9/10 is rewritten; text is inserted without sending. Not in the beta2 download.',
-    'NEXT BETA / SOURCE PREVIEW',
+    'F11 mode dropdown, textbox selection and F8 dictation. Grammar below 9/10 is rewritten; text is inserted without sending. Included in beta 3.',
+    'BETA 3 / WRITE FOR ME',
   ],
   ['panel', 'HUD & Full Screen', 'A side companion or the whole desktop canvas.'],
   ['spark', 'Skills', 'Choose the approach that fits the current task.'],

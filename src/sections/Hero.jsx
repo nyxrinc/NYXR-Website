@@ -7,13 +7,13 @@ export default function Hero({ openShot }) {
       <div className="hero-grid" />
       <div className="hero-atmosphere" />
       <div className="hero-topline container">
-        <span>INTELLIGENCE, WITH A PLACE TO WORK.</span>
+        <span>THE HEART OF YOUR WINDOWS WORKSPACE.</span>
         <span>
           <i className="status-dot" /> NYXR / VERSION 4.0
         </span>
       </div>
       <div className="hero-copy">
-        <Eyebrow>A NEW PERSPECTIVE ON YOUR DESKTOP</Eyebrow>
+        <Eyebrow>NEXUS / THE NYXR COMMAND CENTER</Eyebrow>
         <h1 id="hero-title">
           NYXR
           <span className="title-star" aria-hidden="true">
@@ -21,11 +21,11 @@ export default function Hero({ openShot }) {
           </span>
         </h1>
         <h2>
-          Think clearly. <span>Make things happen.</span>
+          A living core. <span>A world of possibilities.</span>
         </h2>
         <p>
-          Meet your personal AI assistant for Windows. Talk through an idea, build a project,
-          automate a routine or learn something new. NYXR brings it all into your workspace.
+          Your own AI command center for Windows. Speak an idea, build a project, automate a
+          routine or learn something new. One glowing core, with your work in orbit.
         </p>
         <div className="button-row">
           <Button href="/download/">
@@ -58,7 +58,7 @@ export default function Hero({ openShot }) {
         <div className="hero-main-shot">
           <Shot
             name="dashboard"
-            alt="Actual NYXR Command Center, with the N Intelligence Core and project overview"
+            alt="Actual NYXR NEXUS Command Center, with its large central reactor core and surrounding work panels"
             caption="COMMAND CENTER"
             priority
             onClick={() => openShot('dashboard')}
@@ -97,7 +97,7 @@ export default function Hero({ openShot }) {
             src="/screenshots/voice-dock.webp"
             alt="Actual NYXR F11 quick-text dock"
             width="440"
-            height="132"
+            height="191"
           />
           <span>
             <kbd>F11</kbd> A smaller way to ask.

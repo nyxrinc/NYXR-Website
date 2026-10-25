@@ -21,8 +21,8 @@ export default function Download() {
           <i /> {release.available ? 'BETA AVAILABLE' : 'PREPARING THE BETA'}
         </span>
         <h1>
-          Your desktop.
-          <br />A little more <span className="text-cyan">capable.</span>
+          Your core.
+          <br />Ready for <span className="text-cyan">Windows.</span>
         </h1>
         <p>
           Bring NYXR to Windows. Talk through an idea, build a project, learn from your PDFs or
@@ -116,12 +116,16 @@ export default function Download() {
         </p>
       </article>
       <aside className="release-preview-notice" aria-labelledby="source-preview-title">
-        <Eyebrow>AFTER BETA2 / SOURCE PREVIEW</Eyebrow>
-        <h2 id="source-preview-title">A look at what comes next.</h2>
+        <Eyebrow>NEXUS / BETA 3</Eyebrow>
+        <h2 id="source-preview-title">The heart of NYXR, back at the center.</h2>
         <p>
-          <a href="/voice/#write-for-me">Write for me</a> is implemented in the current source for
-          the next beta, including the F11 mode dropdown and F8 textbox dictation. It is not
-          included in this beta2 installer. The corresponding-source download above matches beta2.
+          A large animated core in every theme. A new NEXUS atmosphere. Your work arranged around
+          it on readable surfaces. Fresh installations start in NEXUS; updates retain your saved
+          theme, local conversations, projects and profile.
+        </p>
+        <p>
+          <a href="/voice/#write-for-me">Write for me</a> is included in beta 3, with the F11 mode
+          dropdown and F8 textbox dictation. The matching application source accompanies the installer.
         </p>
         <p>
           <a href="/pricing/#teams-beta">Teams collaboration</a> has implemented beta foundations
@@ -150,7 +154,16 @@ export default function Download() {
           </p>
         </article>
         <article>
-          <span>03 / EARLY ACCESS</span>
+          <span>03 / LISTENING &amp; SPEAKING</span>
+          <h3>Find your voice.</h3>
+          <p>
+            The skippable tutorial helps you choose a microphone, run a local signal check and
+            test the current speaking voice. Set up input and output separately, or skip both.
+            Your checklist is available from Home whenever you want to return.
+          </p>
+        </article>
+        <article>
+          <span>04 / EARLY ACCESS</span>
           <h3>Help shape what comes next.</h3>
           <p>
             Hosted NYXR sign-in is not available in this beta. Clean-machine, voice and browser

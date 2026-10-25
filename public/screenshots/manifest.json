@@ -1,103 +1,5 @@
 [
   {
-    "file": "chat.webp",
-    "width": 1650,
-    "height": 920,
-    "bytes": 61260,
-    "source": "Actual NYXR Qt UI, isolated showcase session"
-  },
-  {
-    "file": "dashboard.webp",
-    "width": 1650,
-    "height": 920,
-    "bytes": 96996,
-    "source": "Actual NYXR Qt UI, isolated showcase session"
-  },
-  {
-    "file": "fullscreen.webp",
-    "width": 1920,
-    "height": 1080,
-    "bytes": 53936,
-    "source": "Actual NYXR Qt UI, isolated showcase session"
-  },
-  {
-    "file": "hud.webp",
-    "width": 380,
-    "height": 740,
-    "bytes": 15634,
-    "source": "Actual NYXR Qt UI, isolated showcase session"
-  },
-  {
-    "file": "personalization.webp",
-    "width": 1650,
-    "height": 920,
-    "bytes": 38024,
-    "source": "Actual NYXR Qt UI, isolated showcase session"
-  },
-  {
-    "file": "providers.webp",
-    "width": 1650,
-    "height": 920,
-    "bytes": 40388,
-    "source": "Actual NYXR Qt UI, isolated showcase session"
-  },
-  {
-    "file": "skills.webp",
-    "width": 1650,
-    "height": 920,
-    "bytes": 148122,
-    "source": "Actual NYXR Qt UI, isolated showcase session"
-  },
-  {
-    "file": "theme-arctic.webp",
-    "width": 1650,
-    "height": 920,
-    "bytes": 95940,
-    "source": "Actual NYXR Qt UI, isolated showcase session"
-  },
-  {
-    "file": "theme-core.webp",
-    "width": 1650,
-    "height": 920,
-    "bytes": 97154,
-    "source": "Actual NYXR Qt UI, isolated showcase session"
-  },
-  {
-    "file": "theme-ember.webp",
-    "width": 1650,
-    "height": 920,
-    "bytes": 96464,
-    "source": "Actual NYXR Qt UI, isolated showcase session"
-  },
-  {
-    "file": "theme-hacker.webp",
-    "width": 1650,
-    "height": 920,
-    "bytes": 101976,
-    "source": "Actual NYXR Qt UI, isolated showcase session"
-  },
-  {
-    "file": "theme-light.webp",
-    "width": 1650,
-    "height": 920,
-    "bytes": 93664,
-    "source": "Actual NYXR Qt UI, isolated showcase session"
-  },
-  {
-    "file": "theme-violet.webp",
-    "width": 1650,
-    "height": 920,
-    "bytes": 97808,
-    "source": "Actual NYXR Qt UI, isolated showcase session"
-  },
-  {
-    "file": "voice-dock.webp",
-    "width": 440,
-    "height": 141,
-    "bytes": 9238,
-    "source": "Actual NYXR Qt UI, isolated showcase session"
-  },
-  {
     "file": "voice.webp",
     "width": 1650,
     "height": 920,
@@ -105,17 +7,157 @@
     "source": "Actual NYXR Qt UI, isolated showcase session"
   },
   {
+    "file": "dashboard.webp",
+    "width": 1650,
+    "height": 920,
+    "bytes": 96284,
+    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
+  },
+  {
+    "file": "theme-nexus.webp",
+    "width": 1650,
+    "height": 920,
+    "bytes": 96284,
+    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
+  },
+  {
+    "file": "theme-core.webp",
+    "width": 1650,
+    "height": 920,
+    "bytes": 78692,
+    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
+  },
+  {
+    "file": "theme-hacker.webp",
+    "width": 1650,
+    "height": 920,
+    "bytes": 93544,
+    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
+  },
+  {
+    "file": "theme-violet.webp",
+    "width": 1650,
+    "height": 920,
+    "bytes": 79452,
+    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
+  },
+  {
+    "file": "theme-arctic.webp",
+    "width": 1650,
+    "height": 920,
+    "bytes": 78130,
+    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
+  },
+  {
+    "file": "theme-ember.webp",
+    "width": 1650,
+    "height": 920,
+    "bytes": 83392,
+    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
+  },
+  {
+    "file": "theme-light.webp",
+    "width": 1650,
+    "height": 920,
+    "bytes": 72958,
+    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
+  },
+  {
+    "file": "setup-tour.webp",
+    "width": 1650,
+    "height": 900,
+    "bytes": 43496,
+    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
+  },
+  {
+    "file": "setup-listening.webp",
+    "width": 1650,
+    "height": 900,
+    "bytes": 49718,
+    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
+  },
+  {
+    "file": "setup-speaking.webp",
+    "width": 1650,
+    "height": 900,
+    "bytes": 50920,
+    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
+  },
+  {
+    "file": "chat.webp",
+    "width": 1650,
+    "height": 920,
+    "bytes": 43084,
+    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
+  },
+  {
+    "file": "fullscreen.webp",
+    "width": 1920,
+    "height": 1080,
+    "bytes": 47210,
+    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
+  },
+  {
     "file": "projects.webp",
     "width": 1650,
     "height": 920,
-    "bytes": 87964,
-    "source": "Actual NYXR Qt UI, isolated showcase session"
+    "bytes": 89352,
+    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
+  },
+  {
+    "file": "skills.webp",
+    "width": 1650,
+    "height": 920,
+    "bytes": 163818,
+    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
+  },
+  {
+    "file": "student.webp",
+    "width": 1650,
+    "height": 920,
+    "bytes": 64422,
+    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
   },
   {
     "file": "macros.webp",
     "width": 1650,
-    "height": 900,
-    "bytes": 44404,
-    "source": "Actual NYXR Qt UI, isolated authored Macro example; no live provider call"
+    "height": 920,
+    "bytes": 55410,
+    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
+  },
+  {
+    "file": "personalization.webp",
+    "width": 1650,
+    "height": 920,
+    "bytes": 44090,
+    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
+  },
+  {
+    "file": "core-editor.webp",
+    "width": 1650,
+    "height": 920,
+    "bytes": 47786,
+    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
+  },
+  {
+    "file": "providers.webp",
+    "width": 1650,
+    "height": 920,
+    "bytes": 39660,
+    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
+  },
+  {
+    "file": "hud.webp",
+    "width": 460,
+    "height": 740,
+    "bytes": 19824,
+    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
+  },
+  {
+    "file": "voice-dock.webp",
+    "width": 440,
+    "height": 192,
+    "bytes": 6180,
+    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
   }
 ]

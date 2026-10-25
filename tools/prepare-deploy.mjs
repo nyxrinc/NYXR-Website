@@ -43,6 +43,8 @@ const files = [
     'check-release',
     'deployment.test',
     'qa-deployment',
+    'qa-nexus',
+    'qa-all',
     'qa-live-download',
     'prepare-deploy',
   ].map((name) => `tools/${name}.mjs`),
@@ -68,7 +70,7 @@ for (const name of files) {
 const pkg = JSON.parse(await readFile(resolve(target, 'package.json'), 'utf8'));
 delete pkg.scripts['qa:smoke'];
 delete pkg.scripts['qa:ui'];
-pkg.scripts.qa = 'npm run test:deployment && npm run qa:deployment';
+pkg.scripts.qa = 'npm run test:deployment && node tools/qa-all.mjs';
 await writeFile(resolve(target, 'package.json'), JSON.stringify(pkg, null, 2) + '\n', 'utf8');
 let license = resolve(site, 'LICENSE');
 try { await lstat(license); } catch { license = resolve(site, '../LICENSE'); }

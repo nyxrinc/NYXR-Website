@@ -59,7 +59,7 @@ export const pages = [
     label: 'Voice & hands-free',
     group: 'Workspace',
     description:
-      'Meet the F11 voice dock and preview next-beta Write for me: select a textbox, dictate with F8 and insert text without sending. Not in the beta2 download.',
+      'Meet the F11 voice dock and Write for me in beta 3: select a textbox, dictate with F8 and insert text without sending.',
   },
   {
     id: 'hud',
@@ -103,7 +103,7 @@ export const pages = [
     label: 'N Intelligence Core',
     group: 'Intelligence',
     description:
-      'The context, models, tools and verification behind NYXR, including the next-beta Write for me source preview.',
+      'The context, models, tools and verification behind NYXR, with the central core and Write for me in beta 3.',
   },
   {
     id: 'demo',

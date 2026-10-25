@@ -16,7 +16,7 @@ export const coreFeatures = [
   'BYOK & local model chat',
   'Coding workspace',
   'Voice & Chrome tools',
-  'Write for me · next beta / source preview',
+  'Write for me · included in beta 3',
   'Macros & local workflows',
   'Local PDF tutoring & slides',
 ];
@@ -126,7 +126,7 @@ export const featureMatrix = [
   },
   {
     label: 'Write for me · free Core feature',
-    values: Array(4).fill('Next beta / source preview'),
+    values: Array(4).fill('Included · beta 3'),
   },
   { label: 'NYXR-imposed local token quota', values: ['None', 'None', 'None', 'None'] },
   {
@@ -188,7 +188,7 @@ export const planFAQs = [
   {
     question: 'Is Write for me included in the current download?',
     answer:
-      'Write for me is a free Core feature implemented in the current source preview for the next beta. It is not included in the downloadable beta2 installer. The source preview adds the F11 mode dropdown, textbox selection, F8 dictation, optional grammar correction and verified insertion without submitting the text.',
+      'Write for me is a free Core feature included in beta 3. It adds the F11 mode dropdown, textbox selection, F8 dictation, optional grammar correction and verified insertion without submitting the text. Speech and AI services use your own configured providers.',
   },
   {
     question: 'Will my work or provider keys be uploaded?',

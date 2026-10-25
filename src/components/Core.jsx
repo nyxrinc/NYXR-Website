@@ -9,7 +9,9 @@ export default function Core({ className = '', small = false }) {
       <div className="core-ring ring-two" />
       <div className="core-ring ring-three" />
       <div className="core-center">
-        <span>N</span>
+        <svg className="core-glyph" viewBox="0 0 100 100" focusable="false" aria-hidden="true">
+          <path d="M18 15H35L65 57V15H82V85H65L35 43V85H18Z" />
+        </svg>
         <i />
       </div>
       <b className="core-satellite satellite-one" />

@@ -27,11 +27,11 @@ notices, release notes and the exact-artifact acceptance record accompany each b
 ## 1. Publish reviewed beta assets
 
 Use GitHub Releases in `https://github.com/nyxrinc/NYXR-Website` (or a permanent HTTPS object store).
-GitHub release assets accommodate the approximately 539 MB installer; do not commit the EXE
+GitHub release assets host the large Windows installer; do not commit the EXE
 to Git or copy it into `public/`. Vercel serves the small website and links directly to the asset.
 
 After the redistribution review and corrected build, create an immutable **pre-release** tag,
-such as `v4.0.0-beta.2` if the current binary changes. Upload:
+such as `v4.0.0-beta.3` for the NEXUS update. Upload:
 
 - The reviewed Windows x64 installer.
 - A matching `NYXR-source-VERSION.zip`, including corresponding third-party source/notices

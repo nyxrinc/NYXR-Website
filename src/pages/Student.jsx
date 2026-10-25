@@ -1,10 +1,11 @@
-import { SectionHeading, Button } from '../components/Primitives';
+import { SectionHeading, Button, Shot } from '../components/Primitives';
 
 export default function Student({ slidesOnly = false }) {
   return <section className="section container">
     <SectionHeading number="STUDY" label={slidesOnly ? 'SLIDESHOW STUDIO' : 'NYXR FOR STUDENTS'} title={slidesOnly ? <>From a topic.<br /><span className="text-cyan">To your next presentation.</span></> : <>Your material.<br /><span className="text-cyan">A tutor at your pace.</span></>}>
       {slidesOnly ? 'Create a slide outline, review the content, then export an editable PowerPoint with speaker notes.' : 'Add PDF study material. Ask questions, practise recall and work through ideas with NYXR.'}
     </SectionHeading>
+    <Shot name="student" alt="The actual NEXUS Student workspace with PDF library, Tutor, Slides, Revision and Exams tabs" caption="THE STUDENT WORKSPACE / ACTUAL APP" />
     <div className="study-feature-grid">
       {(slidesOnly ? [
         ['Start with a topic', 'Describe the audience and what you want to explain. Or use selected excerpts from your study material.'],

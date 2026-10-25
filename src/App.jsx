@@ -39,7 +39,9 @@ const resourceCopy = {
         <h3>Find your place</h3>
         <p>
           Use Chat for conversations and Projects for the file explorer, editor and coding
-          assistant. The Command Center brings your system and work overview together.
+          assistant. The Command Center puts the animated NYXR core at the center, surrounded by
+          your work and system panels. NEXUS is the new default for fresh installations; existing
+          users keep their chosen theme.
         </p>
         <h3>Keep the flow</h3>
         <ul>
@@ -49,14 +51,14 @@ const resourceCopy = {
           <li>Ctrl+Shift+P opens the command palette.</li>
           <li>F6 starts macro recording; F5 stops it.</li>
         </ul>
-        <h3>Write for me / next beta</h3>
+        <h3>Write for me / beta 3</h3>
         <p>
-          Next beta / source preview: the F11 dropdown adds Assistant, Write for me and Macro voice.
+          In beta 3, the F11 dropdown adds Assistant, Write for me and Macro voice.
           In Write for me, choose Select textbox, click a field, then hold F8 to dictate. With
           grammar correction on, scores below 9/10 are rewritten; 9/10 or higher stays verbatim.
           Text is inserted and verified without submitting it. The speech service transcribes your
-          audio; the selected AI checks only dictation, not the textbox’s existing contents. Write
-          for me is not included in the downloadable beta2 installer.
+          audio; dictation cleanup uses your selected AI. Review Voice context and privacy settings. Write
+          for me is included in the beta 3 installer.
         </p>
         <h3>Connect deliberately</h3>
         <p>
@@ -71,6 +73,15 @@ const resourceCopy = {
           or the command palette. Optional NYXR accounts are being developed with Firebase;
           availability depends on the configured release and verified account service. A provider
           account is separate from an NYXR account.
+        </p>
+        <h3>Listening and speaking, separately</h3>
+        <p>
+          Guided setup includes a short app tour and a saved checklist. For listening, find your
+          microphone, run the two-second local signal check, then select your speech-to-text
+          engine in Voice settings. For speaking, choose a voice and use Test current voice.
+          Check Windows output and volume if you cannot hear it. Nothing records or plays just
+          because you open the tutorial. Skip a step or skip everything, and return from Home’s
+          Tutorial &amp; setup checklist button whenever you want.
         </p>
         <h3>Connect Chrome for browser tasks</h3>
         <p>

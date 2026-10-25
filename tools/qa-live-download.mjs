@@ -58,6 +58,9 @@ try {
   for (const width of [1650, 390]) {
     await page.setViewportSize({ width, height: 900 });
     await page.evaluate(() => { document.activeElement?.blur(); window.scrollTo({ top: 0, behavior: 'instant' }); });
+    // Responsive React/ResizeObserver work commits on the next frame. Measure
+    // the settled layout, as in the deployment suite, rather than the old size.
+    await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
     check(`No horizontal overflow ${width}`, await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
     await page.screenshot({ path: resolve(output, `download-${width}.png`), fullPage: true, animations: 'disabled' });
   }

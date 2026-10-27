@@ -151,6 +151,58 @@ release's `BETA_ACCEPTANCE.json` describes the executed desktop fixture scope.
 
 ## Android companion release contract
 
+### Separate Exhibition Test channel — beta 5
+
+`src/data/exhibition-release.json` controls only `/download/#exhibition-test`.
+It is committed as unavailable, with `apk: null`, `source: null` and no invented
+hashes or hosted URLs. The setup instructions live at `/guide/#exhibition-test`;
+Phone and Updates link to this separate channel. Public beta 3 and the public
+companion/candidate gates remain independent and unchanged.
+
+The integration owner publishes the real assets before filling this descriptor.
+For version `4.0.0-beta.5`, use immutable tag `exhibition-4.0.0-beta.5` and:
+
+- `apk.filename`: `NYXR-Exhibition-4.0.0-beta.5.apk`.
+- `source.filename`: `NYXR-Exhibition-source-4.0.0-beta.5.zip`, containing matching
+  source, notices and build instructions. The PC must run the updated repository;
+  this source link does not make the public beta 3 installer compatible.
+- Both assets require their actual positive integer `bytes`, lowercase 64-digit
+  `sha256` and permanent public HTTPS `url` ending in `/TAG/FILENAME`.
+- `apk.signingCertificateSha256` is the actual signing certificate fingerprint.
+  Set `apk.signatureVerified: true` and top-level `signed: true` only after the
+  Android owner verifies the exact APK signature with Android build tools.
+- Keep `schemaVersion: 1`, `channel: "exhibition-test"`, `minAndroid: 10` and
+  `applicationId: "com.nyxr.companion.exhibition"`. Set `available: true` only
+  after the exact signed APK and matching source are actually hosted.
+
+The normalizer rejects malformed identities, mismatched tags/filenames, missing
+signing evidence, invalid sizes/hashes and unsafe URLs (including local/private
+IP addresses, credentials, query strings, fragments, escapes and mutable links).
+Unavailable records expose no APK/source metadata. Only projected public fields
+enter the bundle and separate `dist/exhibition-release.json`; it never enters
+`beta-release.json` or the public beta checksum list. Build verification checks
+this independent manifest. Production/release builds and `check:release` fully
+verify both exhibition assets against their hashes when this channel is enabled.
+The website does not perform Android signature verification itself.
+
+Exhibition availability is testing readiness, not physical-device acceptance.
+Both desktop and phone must opt in. The current PC must close NYXR and restart
+the updated repository's `run_nyxr.bat`, then enable **Local exhibition testing**
+in Phone settings. No account is required for the local 30 test actions per UTC
+day; this grants no premium entitlement. Communication simulation stays ON by
+default; permissions and exact confirmations remain required. Start with battery,
+listing apps and media volume. Never claim a real call/message or physical test
+passed from a simulated receipt or website fixture.
+
+Run `npm run test:release-gating`, `npm run build` and `npm run qa:exhibition`.
+The unit/browser fixture uses complete synthetic hosted metadata and intercepted
+harmless bytes, without altering the descriptor or fetching an actual APK. It
+checks unavailable/available UI states, checksums, links, download filenames,
+accessibility, mobile/desktop overflow and preservation of production gates.
+Screenshots and the scope-labeled report stay in ignored `qa/exhibition-test/`.
+To use a specific installed headless Chromium, set `NYXR_BROWSER_PATH`.
+These local checks do not authorize deployment or supply physical acceptance.
+
 ### Website refresh — 27 October 2026
 
 The website now includes `/phone/` and `/updates/`, a Home phone-workflow

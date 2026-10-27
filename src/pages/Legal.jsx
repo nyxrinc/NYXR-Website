@@ -222,11 +222,17 @@ const policies = {
             optional cloud backup and does not itself enable a NYXR cloud upload.
           </p>
           <p>
-            Phone execution requires a verified NYXR account. The account service stores device
-            registration and quota records; it does not receive message bodies or contacts for
-            allowance accounting. Signed, device-bound allowances may support limited offline use
-            until expiry. Pairing credentials and journals are stored on the paired devices.
+            Public companion execution requires a verified NYXR account. The account service stores
+            device registration and quota records; it does not receive message bodies or contacts
+            for allowance accounting. Signed, device-bound allowances may support limited offline
+            use until expiry. Pairing credentials and journals are stored on the paired devices.
             Production account/key configuration and physical-device acceptance are still pending.
+          </p>
+          <p>
+            The separate <a href="/guide/#exhibition-test">Exhibition Test channel</a> allows local
+            testing without an account after explicit opt-in on both devices. Its 30 test actions
+            per UTC day are counted locally and grant no premium entitlement. Communication
+            simulation is ON by default. Permissions and confirmations still apply.
           </p>
           <p>
             Notification access can expose message previews, sender names and reply actions. Grant

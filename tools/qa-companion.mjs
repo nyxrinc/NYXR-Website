@@ -64,7 +64,7 @@ try {
     check(
       `${width}: Android disabled without a fabricated APK link`,
       (await page.getByRole('button', { name: 'Android beta coming soon' }).isDisabled()) &&
-        (await page.locator('a[href$=".apk"]').count()) === 0,
+        (await page.getByTestId('companion-card').locator('a[href$=".apk"]').count()) === 0,
     );
     check(
       `${width}: real Windows link preserved`,
@@ -209,7 +209,7 @@ try {
   check(
     'Real-looking APK metadata cannot bypass hardware gate in rendered UI',
     (await page.getByRole('button', { name: 'Android beta coming soon' }).isDisabled()) &&
-      (await page.locator('a[href$=".apk"]').count()) === 0,
+      (await page.getByTestId('companion-card').locator('a[href$=".apk"]').count()) === 0,
   );
   await page.goto((await fixture(ready)) + '/download/', { waitUntil: 'networkidle' });
   check(

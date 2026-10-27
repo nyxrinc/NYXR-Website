@@ -3,6 +3,7 @@ import Core from '../components/Core';
 import Icon from '../components/Icon';
 import { Button, Eyebrow } from '../components/Primitives';
 import { candidate } from '../components/CandidateRelease';
+import { exhibitionRelease } from '../components/ExhibitionRelease';
 
 const examples = [
   {
@@ -58,6 +59,15 @@ export function PhoneShowcase({ full = false }) {
         <p className="phone-availability">
           Built, signed and being tested. Phone control is not active in the current public release.
         </p>
+        {full && (
+          <p className="phone-availability">
+            Testing your own phone?{' '}
+            <a href="/download/#exhibition-test">Exhibition Test {exhibitionRelease.version}</a> is
+            a separate local testing channel with explicit opt-in on both devices. Use the{' '}
+            <a href="/guide/#exhibition-test">Exhibition Test guide</a> with the updated repository
+            on your PC; the public beta 3 installer is not compatible.
+          </p>
+        )}
         <div className="button-row">
           <Button href={full ? '/download/#android-companion' : '/phone/'}>
             {full ? 'See downloads & status' : 'Meet the phone companion'}
@@ -193,9 +203,14 @@ export default function Phone() {
           conversations open for review on the phone; notification replies depend on the app.
         </p>
         <p>
-          A verified NYXR account is required for execution. Public account setup and real-device
-          acceptance are still pending. Carrier call/SMS/data charges and your chosen AI provider’s
-          terms still apply.
+          Public companion execution requires a verified NYXR account. Public account setup and
+          real-device acceptance are still pending. Carrier call/SMS/data charges and your chosen AI
+          provider’s terms still apply.
+        </p>
+        <p>
+          Exhibition Test requires no account after opting in on both devices: 30 local test actions
+          per UTC day, no premium entitlement, communication simulation ON by default. Permissions
+          and confirmations still apply; physical-device acceptance is pending.
         </p>
         <div className="release-resource-links">
           <a href="/pricing/#phone-limits">Phone allowance</a>

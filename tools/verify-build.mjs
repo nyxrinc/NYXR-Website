@@ -2,6 +2,7 @@ import { readdir, readFile, stat } from 'node:fs/promises';
 import { resolve, relative } from 'node:path';
 import assert from 'node:assert/strict';
 import { pages } from '../src/data/pages.js';
+import { normalizeExhibitionRelease } from '../src/data/exhibition-release.mjs';
 
 const root = resolve('dist');
 let bytes = 0,
@@ -42,6 +43,19 @@ for (const page of pages) {
 }
 assert((await readFile(resolve(root, '404.html'), 'utf8')).includes('noindex'));
 const release = JSON.parse(await readFile(resolve(root, 'beta-release.json'), 'utf8'));
+const exhibition = JSON.parse(await readFile(resolve(root, 'exhibition-release.json'), 'utf8'));
+assert.deepEqual(
+  exhibition,
+  normalizeExhibitionRelease(
+    JSON.parse(await readFile('src/data/exhibition-release.json', 'utf8')),
+  ),
+  'Exhibition manifest must be the validated independent projection',
+);
+assert.equal(exhibition.hardwareAccepted, false, 'Exhibition testing is not hardware acceptance');
+assert(
+  exhibition.available || (exhibition.apk === null && exhibition.source === null),
+  'Unavailable exhibition channel exposes assets',
+);
 assert(!JSON.stringify(release).includes('blockers'), 'Internal review notes must not be public');
 assert(
   release.available || (!release.installer.url && !release.source.url),

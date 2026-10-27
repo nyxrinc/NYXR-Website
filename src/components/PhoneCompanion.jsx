@@ -153,6 +153,11 @@ export function CompanionGuide() {
     <section id="phone-companion" className="companion-guide" aria-labelledby="phone-guide-title">
       <h2 id="phone-guide-title">Android phone companion / private beta</h2>
       <p>
+        These are the public companion requirements. For the separate local tester build, follow
+        the <a href="/guide/#exhibition-test">Exhibition Test guide</a>. Its local opt-in allowance
+        does not activate the public companion release.
+      </p>
+      <p>
         {available
           ? 'The companion is available as a private beta. '
           : 'The signed beta 4 APK and matching desktop candidate are built and in testing. '}
@@ -160,7 +165,7 @@ export function CompanionGuide() {
         before installing.{' '}
         {available
           ? 'Use only the matching desktop and signed APK linked there.'
-          : 'The current Windows beta is not phone enabled. There is no public APK yet; do not use an unofficial download or reuse the current installer as a phone-enabled release.'}
+          : 'The current Windows beta is not phone enabled. This public companion channel has no APK download yet; do not reuse the current installer as a phone-enabled release.'}
       </p>
       <ol>
         <li>

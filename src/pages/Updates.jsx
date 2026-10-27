@@ -1,6 +1,7 @@
 import { Button, Eyebrow } from '../components/Primitives';
 import { CandidateDetails, candidate } from '../components/CandidateRelease';
 import { betaRelease } from '../data/release';
+import { exhibitionRelease } from '../components/ExhibitionRelease';
 
 export default function Updates() {
   return (
@@ -11,6 +12,42 @@ export default function Updates() {
         What is available, what has been built, and what still needs to pass before it reaches your
         devices.
       </p>
+      <article className="update-entry" aria-labelledby="exhibition-update-title">
+        <header>
+          <span className="release-channel">EXHIBITION TEST / SEPARATE LOCAL CHANNEL</span>
+          <span>27 OCTOBER 2026</span>
+        </header>
+        <h2 id="exhibition-update-title">{exhibitionRelease.version} · Test on your own phone.</h2>
+        <p>
+          Exhibition Test uses a separate Android app identity and requires explicit opt-in on both
+          the desktop and phone. Android 10+ and the same Wi-Fi are required. Update the repository
+          on your current PC, close NYXR and restart with <code>run_nyxr.bat</code>; the public beta
+          3 installer is not compatible. Enable Local exhibition testing in desktop Phone settings.
+        </p>
+        <p>
+          No account required. The local allowance is 30 test actions per UTC day and grants no
+          premium entitlement. Communication simulation is ON by default; permissions and exact
+          confirmations remain required. Start with battery, listing apps and media volume.
+        </p>
+        <div className="update-open">
+          <strong>Testing, not hardware acceptance</strong>
+          <p>
+            Physical-device acceptance remains pending. Public companion release gates are
+            unchanged.{' '}
+            {exhibitionRelease.available
+              ? 'The signed tester APK and corresponding source are linked in the separate download card.'
+              : 'The tester download is unavailable until the signed APK and corresponding source are hosted and their exact metadata is recorded.'}
+          </p>
+        </div>
+        <div className="button-row">
+          <Button href="/download/#exhibition-test" secondary>
+            Exhibition Test download &amp; status
+          </Button>
+          <a className="text-link" href="/guide/#exhibition-test">
+            Exhibition Test setup guide
+          </a>
+        </div>
+      </article>
       <article className="update-entry">
         <header>
           <span className="release-channel">IN TESTING / WINDOWS + ANDROID</span>

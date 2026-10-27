@@ -24,6 +24,7 @@ import { pages, pageByPath } from './data/pages';
 import usePage from './navigation/usePage';
 import Download from './pages/Download';
 import { CompanionFeatures, CompanionGuide } from './components/PhoneCompanion';
+import { ExhibitionGuide } from './components/ExhibitionRelease';
 import Student from './pages/Student';
 import Phone, { PhoneShowcase } from './pages/Phone';
 import Updates from './pages/Updates';
@@ -93,6 +94,7 @@ const resourceCopy = {
           content; content needed for your request may be sent to your selected AI provider. See the{' '}
           <a href="/privacy/">Privacy Policy</a> before connecting.
         </p>
+        <ExhibitionGuide />
         <CompanionGuide />
         <h3>Connect Ashna AI</h3>
         <p>

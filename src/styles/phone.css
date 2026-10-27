@@ -310,6 +310,17 @@
   overflow-wrap: anywhere;
   word-break: break-word;
 }
+.exhibition-release {
+  border-color: #76edff80;
+  background: radial-gradient(ellipse at top left, #29d6e81a, transparent 70%), #0a1720;
+}
+.exhibition-release > div { min-width: 0; }
+.exhibition-release h2 { color: var(--cyan); }
+.exhibition-release strong { color: var(--text); font-weight: 500; }
+.exhibition-release code,
+.exhibition-release a,
+#exhibition-test code { overflow-wrap: anywhere; }
+.exhibition-release .next-release-actions > p { overflow-wrap: anywhere; }
 .updates-page {
   max-width: 1100px;
   padding-block: 40px 80px;

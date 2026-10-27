@@ -3,8 +3,9 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { pages } from './src/data/pages.js';
 import { createRelease, readRelease, releaseAssets, siteOrigin } from './tools/release-config.mjs';
+import { normalizeExhibitionRelease } from './src/data/exhibition-release.mjs';
 
-function staticPageEntries(release, origin) {
+function staticPageEntries(release, exhibition, origin) {
   let output;
   const escape = (value) =>
     value
@@ -67,6 +68,11 @@ function staticPageEntries(release, origin) {
         JSON.stringify(release, null, 2) + '\n',
         'utf-8',
       );
+      await writeFile(
+        resolve(output, 'exhibition-release.json'),
+        JSON.stringify(exhibition, null, 2) + '\n',
+        'utf-8',
+      );
       if (release.available)
         await writeFile(
           resolve(output, 'beta-SHA256SUMS.txt'),
@@ -93,10 +99,18 @@ function staticPageEntries(release, origin) {
 export default defineConfig(async ({ mode }) => {
   const env = { ...loadEnv(mode, process.cwd(), 'NYXR_'), ...process.env };
   const release = createRelease(await readRelease(), env);
+  const exhibition = normalizeExhibitionRelease(
+    JSON.parse(
+      await readFile(new URL('./src/data/exhibition-release.json', import.meta.url), 'utf8'),
+    ),
+  );
   const origin = siteOrigin(env);
   return {
-    define: { __NYXR_BETA_RELEASE__: JSON.stringify(release) },
-    plugins: [staticPageEntries(release, origin)],
+    define: {
+      __NYXR_BETA_RELEASE__: JSON.stringify(release),
+      __NYXR_EXHIBITION_RELEASE__: JSON.stringify(exhibition),
+    },
+    plugins: [staticPageEntries(release, exhibition, origin)],
     server: {
       host: '127.0.0.1',
       watch: {

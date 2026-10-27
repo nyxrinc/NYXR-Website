@@ -51,7 +51,10 @@ try {
             (await button.getAttribute('aria-pressed')) === 'true',
           );
         }
-        await page.evaluate(() => { document.activeElement?.blur(); window.scrollTo(0, 0); });
+        await page.evaluate(() => {
+          document.activeElement?.blur();
+          window.scrollTo(0, 0);
+        });
         await page.screenshot({ path: `${output}/phone-${width}.png`, fullPage: true });
         await page.screenshot({ path: `${output}/phone-viewport-${width}.png` });
       }
@@ -65,8 +68,8 @@ try {
           await page.getByRole('button', { name: 'Android beta coming soon' }).isDisabled(),
         );
         check(
-          `${width}: no unhosted APK links`,
-          (await page.locator('a[href$=".apk"]').count()) === 0,
+          `${width}: public companion exposes no APK link`,
+          (await page.getByTestId('companion-card').locator('a[href$=".apk"]').count()) === 0,
         );
         for (const details of await page.locator('.candidate-checksum').all())
           await details.locator('summary').click();
@@ -78,7 +81,10 @@ try {
             })
             .isVisible(),
         );
-        await page.evaluate(() => { document.activeElement?.blur(); window.scrollTo(0, 0); });
+        await page.evaluate(() => {
+          document.activeElement?.blur();
+          window.scrollTo(0, 0);
+        });
         await page.screenshot({ path: `${output}/download-${width}.png`, fullPage: true });
         await page.screenshot({ path: `${output}/download-viewport-${width}.png` });
       }

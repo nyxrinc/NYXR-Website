@@ -4,6 +4,7 @@ import { Button, Eyebrow } from '../components/Primitives';
 import { betaRelease as release, betaSize } from '../data/release';
 import { CompanionDownload } from '../components/PhoneCompanion';
 import { NextDesktopRelease } from '../components/CandidateRelease';
+import { ExhibitionDownload } from '../components/ExhibitionRelease';
 
 export default function Download() {
   const [copyStatus, setCopyStatus] = useState('');
@@ -32,6 +33,7 @@ export default function Download() {
           automate a workflow — with your own AI provider or an explicitly selected local model.
         </p>
         <nav className="download-jump-links" aria-label="Download platforms">
+          <a href="#exhibition-test">Exhibition Test</a>
           <a href="#release-title">Windows beta</a>
           <a href="#android-companion">Android companion</a>
           <a href="#next-desktop">Next Windows build</a>
@@ -40,6 +42,7 @@ export default function Download() {
           Explore NYXR <Icon size={16} />
         </a>
       </div>
+      <ExhibitionDownload />
       <div className="download-assets">
         <article className="release-card" data-reveal aria-labelledby="release-title">
           <div className="release-card-top">

@@ -1,0 +1,85 @@
+import { Button, Eyebrow } from '../components/Primitives';
+import { CandidateDetails, candidate } from '../components/CandidateRelease';
+import { betaRelease } from '../data/release';
+
+export default function Updates() {
+  return (
+    <section className="updates-page container">
+      <Eyebrow>NYXR / RELEASE NOTES</Eyebrow>
+      <h1>The core keeps evolving.</h1>
+      <p className="updates-intro">
+        What is available, what has been built, and what still needs to pass before it reaches your
+        devices.
+      </p>
+      <article className="update-entry">
+        <header>
+          <span className="release-channel">IN TESTING / WINDOWS + ANDROID</span>
+          <span>27 OCTOBER 2026</span>
+        </header>
+        <h2>{candidate.version} · Your phone joins the orbit.</h2>
+        <p>
+          A signed Android 10+ companion and matching Windows candidate have been built locally.
+          Same-Wi-Fi pairing uses pinned TLS, short-lived setup links and approval on both devices.
+        </p>
+        <ul>
+          <li>Phone commands join normal chat, F8 and F11 instead of a separate chatbot.</li>
+          <li>Contact/SIM clarification and exact confirmations for outgoing actions.</li>
+          <li>
+            Supported notifications, media, apps, controls, productivity handoffs and selected
+            files.
+          </li>
+          <li>Durable command receipts and protection against repeating uncertain sends.</li>
+          <li>
+            Core’s 30-action daily policy and verified premium entitlements; payments remain
+            inactive.
+          </li>
+        </ul>
+        <div className="update-evidence">
+          <strong>Checked locally</strong>
+          <p>
+            535 Python tests, 36 Android JVM tests, 72 account-service tests and packaged desktop
+            checks passed. These are automated and controlled checks, not real Motorola acceptance.
+          </p>
+        </div>
+        <div className="update-open">
+          <strong>Still required</strong>
+          <p>
+            Production account setup and trusted allowance keys, physical Motorola/instrumentation
+            testing, clean Windows acceptance, final redistribution review, Windows signing and
+            public artifact hosting. Phone execution is disabled without the account/key
+            configuration.
+          </p>
+        </div>
+        <CandidateDetails platform="windows" />
+        <CandidateDetails platform="android" />
+        <div className="button-row">
+          <Button href="/download/#next-desktop" secondary>
+            Build & download status
+          </Button>
+          <a className="text-link" href="/phone/">
+            Explore phone capabilities
+          </a>
+        </div>
+      </article>
+      <article className="update-entry">
+        <header>
+          <span className="release-channel">CURRENT PUBLIC WINDOWS BETA</span>
+          <span>25 OCTOBER 2026</span>
+        </header>
+        <h2>{betaRelease.version} · The heart of NYXR.</h2>
+        <p>
+          NEXUS brings the animated core back to the command center. Write for me, the F11 dock,
+          skippable first-launch setup and upgrade backups accompany the existing coding, voice,
+          Student and Macro workflows.
+        </p>
+        <p>
+          This unsigned early-access Windows build does not include the phone companion. Bring your
+          own AI connection or deliberately choose an installed local Ollama model.
+        </p>
+        <Button href="/download/" secondary>
+          Current Windows download
+        </Button>
+      </article>
+    </section>
+  );
+}

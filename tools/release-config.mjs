@@ -1,4 +1,5 @@
 import { readFile } from 'node:fs/promises';
+import { createCompanion } from './companion-release.mjs';
 
 export const releaseFile = new URL('../release/beta.json', import.meta.url);
 
@@ -49,7 +50,11 @@ export function siteOrigin(env = process.env) {
   return url.origin;
 }
 
-export function createRelease(record, env = process.env, { required = false } = {}) {
+export function createRelease(
+  record,
+  env = process.env,
+  { required = false, requireCompanion = false } = {},
+) {
   if (record.schemaVersion !== 1 || !/^\d+\.\d+\.\d+-beta\.\d+$/.test(record.version))
     throw new Error('Unsupported beta release metadata');
   if (
@@ -61,7 +66,10 @@ export function createRelease(record, env = process.env, { required = false } = 
     env.NYXR_BETA_INSTALLER_URL ?? record.installer.url,
     record.installer.filename,
   );
-  const sourceUrl = publicAssetUrl(env.NYXR_BETA_SOURCE_URL ?? record.source.url, record.source.filename);
+  const sourceUrl = publicAssetUrl(
+    env.NYXR_BETA_SOURCE_URL ?? record.source.url,
+    record.source.filename,
+  );
   for (const [name, asset] of Object.entries({
     installer: record.installer,
     source: record.source,
@@ -85,7 +93,7 @@ export function createRelease(record, env = process.env, { required = false } = 
     sha256: value.sha256,
     url: available ? url : null,
   });
-  return {
+  const release = {
     schemaVersion: 1,
     version: record.version,
     platform: record.platform,
@@ -95,7 +103,18 @@ export function createRelease(record, env = process.env, { required = false } = 
     installer: asset(record.installer, installerUrl),
     source: asset(record.source, sourceUrl),
   };
+  release.companion = createCompanion(record, release, env);
+  if (requireCompanion && !release.companion.available)
+    throw new Error(
+      'Android companion publication blocked: signed APK, compatible desktop and exact-artifact Motorola hardware acceptance are required. See DEPLOYMENT.md.',
+    );
+  return release;
 }
+
+export const releaseAssets = (release) => [
+  ...(release.available ? [release.installer, release.source] : []),
+  ...(release.companion?.available ? [release.companion.apk] : []),
+];
 
 export async function verifyAsset(asset, { full = false, fetcher = fetch } = {}) {
   const deadline = AbortSignal.timeout(full ? 600_000 : 30_000);
@@ -140,19 +159,25 @@ export async function verifyAsset(asset, { full = false, fetcher = fetch } = {})
     const { createHash } = await import('node:crypto');
     const hash = createHash('sha256');
     let bytes = 0;
+    const prefix = [];
     while (true) {
       const { value, done } = await reader.read();
       if (done) break;
       bytes += value.length;
+      if (prefix.length < 2) prefix.push(...value.subarray(0, 2 - prefix.length));
       if (bytes > asset.bytes) {
         await reader.cancel();
         throw new Error(`${asset.filename}: oversized download`);
       }
       hash.update(value);
     }
+    if (prefix[0] !== signature[0] || prefix[1] !== signature[1])
+      throw new Error(
+        `${asset.filename}: binary file signature does not match; verification failed`,
+      );
     if (bytes !== asset.bytes || hash.digest('hex') !== asset.sha256)
       throw new Error(`${asset.filename}: full download SHA-256/size verification failed`);
-    return { filename: asset.filename, bytes, sha256Verified: true };
+    return { filename: asset.filename, bytes, sha256Verified: true, signatureVerified: true };
   } finally {
     await response.body?.cancel().catch(() => {});
   }

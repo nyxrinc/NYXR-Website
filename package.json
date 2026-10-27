@@ -13,11 +13,15 @@
     "build:release": "node tools/build-vercel.mjs --release",
     "check:release": "node tools/check-release.mjs",
     "test:deployment": "node --test tools/deployment.test.mjs",
+    "test:release-gating": "node --test tools/companion-release.test.mjs tools/candidate-release.test.mjs",
+    "qa:refresh": "node tools/qa-refresh.mjs",
+    "qa:companion": "node tools/qa-companion.mjs",
+    "qa:plans": "node tools/qa-plans.mjs",
     "qa:deployment": "node tools/qa-deployment.mjs",
     "qa:download-live": "node tools/qa-live-download.mjs",
     "prepare:deploy": "node tools/prepare-deploy.mjs",
     "preview": "vite preview --host 127.0.0.1",
-    "qa": "npm run test:deployment && node tools/qa-all.mjs"
+    "qa": "npm run test:deployment && npm run test:release-gating && node tools/qa-all.mjs"
   },
   "dependencies": {
     "react": "^19.3.1",

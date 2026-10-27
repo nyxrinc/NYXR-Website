@@ -1,4 +1,25 @@
 /* Product pricing only. Every selector is contained by the Pricing page. */
+.nyxr-plans .phone-plans {
+  padding-block: 40px 64px;
+  scroll-margin-top: 110px;
+}
+.nyxr-plans .phone-plans h2 {
+  font-size: clamp(27px, 3vw, 38px);
+  margin-block: 16px 24px;
+}
+.nyxr-plans .phone-plans p {
+  max-width: 880px;
+  margin-top: 18px;
+}
+.nyxr-plans .phone-plans a {
+  color: var(--cyan);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.nyxr-plans .phone-policy-pending {
+  border-left: 2px solid var(--amber);
+  padding-left: 18px;
+}
 .nyxr-plans .plans-intro {
   padding-top: clamp(30px, 5vw, 70px);
   align-items: start;

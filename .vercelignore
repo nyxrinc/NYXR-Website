@@ -9,6 +9,7 @@
 !release/beta.json
 !tools
 !tools/release-config.mjs
+!tools/companion-release.mjs
 !tools/build-vercel.mjs
 !tools/verify-build.mjs
 !package.json
@@ -19,6 +20,10 @@
 # Always exclude accidental state/binaries, including beneath allowlisted folders.
 **/.env*
 **/*.exe
+**/*.apk
+**/*.aab
+**/*.jks
+**/*.keystore
 **/*.zip
 **/*.db
 **/*.sqlite*

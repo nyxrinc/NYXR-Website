@@ -1,10 +1,11 @@
 import { Eyebrow, Button } from '../components/Primitives';
 import Icon from '../components/Icon';
 import { plusBenefits } from '../data/plans';
+import { betaRelease } from '../data/release';
 
 export const contactEmail = 'nyxrinc@gmail.com';
 export const contactHref = `mailto:${contactEmail}`;
-const updated = '20 October 2026';
+const updated = '27 October 2026';
 const Email = () => <a href={contactHref}>{contactEmail}</a>;
 
 const policies = {
@@ -173,12 +174,12 @@ const policies = {
           </p>
           <p>
             In a configured Teams service, explicitly published workspace notes, text files and
-            Macro JSON are readable by permitted team members and the service operator. They are
-            not protected by the separate backup passphrase. Review shared content first; never
-            publish passwords or provider keys. Macro sharing does not run a Macro automatically.
-            Deleting a hosted account removes its owned teams and their shared content; activity
-            records in other teams may remain for those teams’ audit history. Local originals stay
-            on the device.
+            Macro JSON are readable by permitted team members and the service operator. They are not
+            protected by the separate backup passphrase. Review shared content first; never publish
+            passwords or provider keys. Macro sharing does not run a Macro automatically. Deleting a
+            hosted account removes its owned teams and their shared content; activity records in
+            other teams may remain for those teams’ audit history. Local originals stay on the
+            device.
           </p>
         </>,
       ],
@@ -205,6 +206,42 @@ const policies = {
             You can skip browser setup, disconnect it in the desktop setup controls where supported,
             or disable/remove the extension in Chrome. Skipping account, Chrome or voice setup does
             not prevent use with your own provider keys or a configured local model.
+          </p>
+        </>,
+      ],
+      [
+        'phone-companion',
+        'Android phone companion / beta in testing',
+        <>
+          <p>
+            {betaRelease.companion.available
+              ? 'The Android companion is available as a private beta with the matching desktop release. '
+              : 'The Android companion is not available in the current Windows beta. '}
+            The private beta pairs an Android 10+ phone with a compatible Windows release on the
+            same Wi-Fi. Motorola is the initial hardware test target. Pairing is separate from
+            optional cloud backup and does not itself enable a NYXR cloud upload.
+          </p>
+          <p>
+            Phone execution requires a verified NYXR account. The account service stores device
+            registration and quota records; it does not receive message bodies or contacts for
+            allowance accounting. Signed, device-bound allowances may support limited offline use
+            until expiry. Pairing credentials and journals are stored on the paired devices.
+            Production account/key configuration and physical-device acceptance are still pending.
+          </p>
+          <p>
+            Notification access can expose message previews, sender names and reply actions. Grant
+            it only if you want notification reading or supported replies. Native calling, SMS and
+            contact lookup require their own permissions. New WhatsApp messages are handed off to
+            the phone for review and sending. Call audio on the PC is not supported. You can revoke
+            notification access in Android settings and unpair your devices.
+          </p>
+          <p>
+            Phone user content stays local to your paired devices except content you explicitly
+            select for a request to your chosen AI provider. That provider may receive the selected
+            message or notification context under its own policy. Your phone’s messaging services
+            continue to process messages under their own terms. Do not send private message
+            contents, pairing codes or provider keys in diagnostics. See the{' '}
+            <a href="/guide/#phone-companion">setup and permissions guide</a> before pairing.
           </p>
         </>,
       ],

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { pages } from '../data/pages';
 import Icon from './Icon';
 
-const primary = ['overview', 'features', 'coding', 'voice', 'providers', 'pricing'];
+const primary = ['overview', 'features', 'coding', 'voice', 'phone', 'providers', 'pricing'];
 export default function Navigation({ page }) {
   const [open, setOpen] = useState(false),
     [browse, setBrowse] = useState(false),
@@ -93,9 +93,11 @@ export default function Navigation({ page }) {
                   ? 'Coding'
                   : id === 'providers'
                     ? 'Providers'
-                    : id === 'pricing'
-                      ? 'Pricing'
-                      : item.label}
+                    : id === 'phone'
+                      ? 'Phone'
+                      : id === 'pricing'
+                        ? 'Pricing'
+                        : item.label}
                 <span />
               </a>
             );

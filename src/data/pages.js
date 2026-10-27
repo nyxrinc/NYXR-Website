@@ -1,6 +1,22 @@
 // One route per product area; also used to emit static hosting entry points.
 export const pages = [
   {
+    id: 'phone',
+    path: '/phone/',
+    label: 'Phone companion',
+    group: 'Workspace',
+    description:
+      'Meet NYXR’s Android companion: same-Wi-Fi pairing, supported phone tasks, exact confirmations and clear beta availability.',
+  },
+  {
+    id: 'updates',
+    path: '/updates/',
+    label: 'Release notes',
+    group: 'Release',
+    description:
+      'Track current NYXR downloads and the Windows/Android beta 4 candidates, with tested scope, checksums and remaining release requirements.',
+  },
+  {
     id: 'students',
     path: '/students/',
     label: 'For students',
@@ -29,7 +45,7 @@ export const pages = [
     label: 'Features',
     group: 'Discover',
     description:
-      'Explore NYXR conversations, projects and tools, plus the next-beta Write for me preview and Teams beta foundations with hosted access pending.',
+      'Explore NYXR conversations, projects and tools, plus Android phone companion private beta plans and Teams beta foundations with hosted access pending.',
   },
   {
     id: 'chat',
@@ -140,14 +156,15 @@ export const pages = [
     label: 'Download',
     group: 'Release',
     description:
-      'Get the NYXR Windows beta, check release details and set up your own AI provider or local model.',
+      'Download the current NYXR Windows beta. Inspect Windows and signed Android beta 4 build details, checksums, compatibility and setup status.',
   },
   {
     id: 'documentation',
     path: '/guide/',
     label: 'Quick guide',
     group: 'Information',
-    description: 'A short guide to NYXR workspaces, voice shortcuts, Macros and providers.',
+    description:
+      'A short guide to NYXR workspaces, voice shortcuts, Macros, providers and the planned Android phone companion private beta.',
   },
   {
     id: 'privacy',

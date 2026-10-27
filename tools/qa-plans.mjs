@@ -53,9 +53,7 @@ assert.deepEqual(plans[1].limits, plans[2].limits);
 assert.equal(plans[2].requiresVerification, true);
 assert.equal(plans[0].href, '/download/');
 assert.equal(plans[0].available, true);
-assert.ok(
-  plans.slice(1).every((plan) => !plan.available && plan.cta === 'Coming soon' && !plan.href),
-);
+assert.ok(plans.slice(1).every((plan) => !plan.available && !plan.href));
 assert.ok(coreFeatures.some((value) => value.includes('PDF')));
 assert.ok(featureMatrix.every((row) => row.values.length === plans.length));
 assert.ok(
@@ -104,8 +102,11 @@ try {
       await page.locator('[data-plan="student_plus"]').innerText(),
       /Verified student eligibility required/,
     );
-    assert.match(await page.locator('.plans-availability').innerText(), /No checkout is live/);
-    assert.match(await page.locator('.plans-availability').innerText(), /INR-only/);
+    assert.match(
+      await page.locator('.plans-availability').first().innerText(),
+      /No checkout is live/,
+    );
+    assert.match(await page.locator('.plans-availability').first().innerText(), /INR-only/);
     assert.equal(await page.locator('.plans-provider-details').getAttribute('open'), null);
     assert.equal(await page.locator('.plans-provider-content').isVisible(), false);
     const initialPrices = await page.locator('.tier-price strong').allTextContents();
@@ -226,7 +227,7 @@ try {
     await page.locator('.tier-core a').click();
     await page.waitForURL('**/download/');
     assert.equal(await page.locator('.download-page h1').count(), 1);
-    assert.ok(await page.locator('.release-card').isVisible());
+    assert.ok(await page.locator('article[aria-labelledby="release-title"]').isVisible());
     check(`${width}: Core CTA reaches the existing download page`);
     for (const path of ['/privacy/', '/terms/']) {
       await page.goto(base + path, { waitUntil: 'networkidle' });

@@ -1,0 +1,19 @@
+{
+  "version": "4.0.0-beta.4",
+  "protocol": 1,
+  "status": "testing",
+  "windows": {
+    "filename": "NYXR-Setup-4.0.0-beta.4-x64.exe",
+    "bytes": 557971917,
+    "sha256": "ee39b1c63b0365152677426eac95485a837ab391398f8916c5ab6b29769f743a",
+    "signed": false
+  },
+  "android": {
+    "filename": "NYXR-Companion-4.0.0-beta.4.apk",
+    "bytes": 2810840,
+    "sha256": "d0150921f024f012a2f17f9aed7ef3c4f980c7806e59abed7d561ceed246238e",
+    "signingCertificateSha256": "ff52c12273610e901fc8fae0c27c377e8e388484a81d7daf430108a1f6650b7d",
+    "signatureVerified": true,
+    "minAndroid": 10
+  }
+}

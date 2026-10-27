@@ -38,11 +38,17 @@ const files = [
   'DEPLOYMENT.md',
   ...[
     'release-config',
+    'companion-release',
+    'companion-release.test',
+    'candidate-release.test',
     'build-vercel',
     'verify-build',
     'check-release',
     'deployment.test',
     'qa-deployment',
+    'qa-companion',
+    'qa-refresh',
+    'qa-plans',
     'qa-nexus',
     'qa-all',
     'qa-live-download',
@@ -54,7 +60,11 @@ async function checkSource(path) {
   if (info.isSymbolicLink()) throw new Error('Linked files must not enter the deployment checkout');
   if (info.isDirectory()) {
     for (const child of await readdir(path)) {
-      if (/^(\.env.*|\.capture-data|\.capture-frames|node_modules)$|\.(exe|zip|db|sqlite\d*|log)$/i.test(child))
+      if (
+        /^(\.env.*|\.capture-data|\.capture-frames|node_modules)$|\.(exe|apk|aab|jks|keystore|zip|db|sqlite\d*|log)$/i.test(
+          child,
+        )
+      )
         throw new Error('Unexpected private file inside a deployment source folder');
       await checkSource(resolve(path, child));
     }
@@ -70,10 +80,14 @@ for (const name of files) {
 const pkg = JSON.parse(await readFile(resolve(target, 'package.json'), 'utf8'));
 delete pkg.scripts['qa:smoke'];
 delete pkg.scripts['qa:ui'];
-pkg.scripts.qa = 'npm run test:deployment && node tools/qa-all.mjs';
+pkg.scripts.qa = 'npm run test:deployment && npm run test:release-gating && node tools/qa-all.mjs';
 await writeFile(resolve(target, 'package.json'), JSON.stringify(pkg, null, 2) + '\n', 'utf8');
 let license = resolve(site, 'LICENSE');
-try { await lstat(license); } catch { license = resolve(site, '../LICENSE'); }
+try {
+  await lstat(license);
+} catch {
+  license = resolve(site, '../LICENSE');
+}
 await cp(license, resolve(target, 'LICENSE'));
 await writeFile(
   resolve(target, 'README.md'),

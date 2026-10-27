@@ -85,7 +85,9 @@ try {
     await page.setViewportSize({ width, height });
     // Chromium acknowledges the viewport before responsive layout/ResizeObserver
     // callbacks paint. Inspect the rendered breakpoint after two frames.
-    await page.evaluate(() => new Promise(done => requestAnimationFrame(() => requestAnimationFrame(done))));
+    await page.evaluate(
+      () => new Promise((done) => requestAnimationFrame(() => requestAnimationFrame(done))),
+    );
     check(
       `Download no horizontal overflow ${width}`,
       await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth),
@@ -102,7 +104,10 @@ try {
   await page.locator('.site-header a[href="/download/"]').click();
   check('Header Download opens the correct page', new URL(page.url()).pathname === '/download/');
   await page.reload({ waitUntil: 'networkidle' });
-  check('Download survives refresh', await page.locator('.release-card').isVisible());
+  check(
+    'Download survives refresh',
+    await page.locator('article[aria-labelledby="release-title"]').isVisible(),
+  );
   for (const missing of ['/not-a-real-page/', '/missing-installer.exe', '/assets/missing.js'])
     check(`True 404 for ${missing}`, (await fetch(base + missing)).status === 404);
 
@@ -155,7 +160,9 @@ try {
   await page.getByText('Verify your download', { exact: true }).click();
   check(
     'Checksum is complete',
-    (await page.locator('.release-checksum code').textContent()) === record.installer.sha256,
+    (await page
+      .locator('article[aria-labelledby="release-title"] .release-checksum code')
+      .textContent()) === record.installer.sha256,
   );
   await context.grantPermissions(['clipboard-read', 'clipboard-write']);
   await page.getByRole('button', { name: 'Copy SHA-256' }).click();
@@ -165,7 +172,9 @@ try {
   );
   for (const width of [1650, 390]) {
     await page.setViewportSize({ width, height: 900 });
-    await page.evaluate(() => new Promise(done => requestAnimationFrame(() => requestAnimationFrame(done))));
+    await page.evaluate(
+      () => new Promise((done) => requestAnimationFrame(() => requestAnimationFrame(done))),
+    );
     await page.evaluate(() => {
       document.activeElement?.blur();
       window.scrollTo({ top: 0, behavior: 'instant' });

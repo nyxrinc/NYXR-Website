@@ -148,3 +148,121 @@ bundle is separately available on the same versioned GitHub release.
 Keep actual publication receipts and acceptance results with their exact build;
 commands in this document are instructions, not a claim they passed. The GitHub
 release's `BETA_ACCEPTANCE.json` describes the executed desktop fixture scope.
+
+## Android companion release contract
+
+### Website refresh — 27 October 2026
+
+The website now includes `/phone/` and `/updates/`, a Home phone-workflow
+illustration, and a download hub with platform jump links. All illustrations are
+labeled as examples rather than live device activity. The published Windows
+beta remains separate from beta 4 candidates.
+
+`src/data/candidate-release.json` records the exact locally built Windows and
+signed Android beta 4 identities, sizes and checksums. It deliberately contains
+no download URLs or entitlement switches. Candidate details do not activate the
+companion release gate. Do not turn local build evidence into physical-device
+acceptance. Use the existing `release/beta.json` companion contract below to
+publish a verified pair after production configuration and release acceptance.
+
+Run `npm run qa:refresh` for the new pages, interactive phone examples, checksum
+disclosure, disabled candidate buttons, accessibility and desktop/mobile layout.
+The release-gating test command also compares candidate metadata with the local
+artifact receipt when available. That local receipt is not included in the
+standalone website repository.
+
+The current Windows release record is unchanged and does **not** declare phone
+support. The Android card stays disabled. No APK version, URL, size, hash or signing
+certificate has been invented. Do not add these fields until the Android and
+desktop release owners supply verified artifacts and the parent integration owner
+has checked the matching metadata. Local website fixture results are not hardware
+acceptance, an APK signing check or approval to publish.
+
+The optional `companion` object lives in the existing `release/beta.json`; absence
+or `null` keeps Windows working. Its v1 fields are:
+
+| Field | Required value / evidence |
+|---|---|
+| `schemaVersion` | `1` |
+| `channel` | `private-beta` |
+| `minAndroid` | `10` (API 29) |
+| `version` | Actual APK semver, optionally suffixed `-beta.N` |
+| `signed`, `distributionReady` | Literal `true` only after signing and distribution review |
+| `apk.filename` | `NYXR-Companion-VERSION.apk`, matching the actual APK version |
+| `apk.bytes`, `apk.sha256` | Positive integer byte count and lowercase 64-digit SHA-256 of the exact signed APK |
+| `apk.url` | Permanent public HTTPS asset URL ending in its filename; no credentials, query, fragment or mutable `releases/latest` link |
+| `apk.signingCertificateSha256` | Lowercase 64-digit SHA-256 fingerprint of the actual release signing certificate |
+| `apk.signatureVerified` | Literal `true` after the Android owner runs Android build-tools `apksigner verify --verbose --print-certs` against these exact bytes; a ZIP prefix is not signing evidence |
+| `desktop.version`, `desktop.installerSha256` | Exact version and installer hash of the updated desktop release in this same manifest |
+| `desktop.protocolVersion` | Positive integer matching the desktop's `phoneCompanion.protocolVersion` |
+| `hardwareAcceptance.passed` | Literal `true` after physical-device acceptance of this exact pair |
+| `hardwareAcceptance.device` | Actual Motorola manufacturer/model description |
+| `hardwareAcceptance.androidApiLevel` | Actual integer API level, at least 29 |
+| `hardwareAcceptance.testedAt` | Actual ISO timestamp of hardware acceptance |
+| `hardwareAcceptance.apkSha256` | Exact signed APK SHA-256 |
+| `hardwareAcceptance.desktopInstallerSha256` | Exact updated Windows installer SHA-256 |
+| `hardwareAcceptance.checks` | All checks below must be literal `true` |
+
+The updated desktop's top-level `phoneCompanion` must contain `ready: true` and a
+positive integer `protocolVersion`. Never attach that declaration to the existing
+beta 3 installer merely to unlock the website. Release the actual rebuilt desktop
+and matching source under a new version with their own sizes and hashes.
+
+Physical-device acceptance checks are `same_wifi_pairing`,
+`sms_notification_reply`, `whatsapp_notification_reply`,
+`whatsapp_new_message_handoff`, `permission_revocation` and `quota_enforcement`.
+Record real observations of the Motorola model, Android version, notification
+reply availability, restricted/denied permissions and 30/day Core quota versus
+verified entitlements. Test that a new WhatsApp message is handed off for phone
+review/sending. PC call audio is outside the beta and must not be advertised.
+Keep sanitized acceptance evidence with the exact release, outside the public
+projection. Never include pairing tokens, private message content or signing keys.
+
+Windows release readiness is independent of Android readiness. Missing readiness
+flags or failed compatibility/acceptance keep Android disabled and suppress all
+APK metadata/URLs in `dist/beta-release.json`. Malformed supplied asset metadata
+fails validation. Only explicitly projected public fields enter the bundle.
+An optional `NYXR_COMPANION_APK_URL` override changes the permanent public URL;
+it cannot create an artifact or bypass any readiness check.
+
+`npm run check:release -- --companion --full` and
+`npm run build:release -- --companion` additionally require Android readiness.
+Normal production Windows builds remain permitted while Android is pending.
+When ready, release checks and the Vercel build stream and hash the whole APK;
+Windows retains its existing lightweight probe unless `--full` is requested.
+The generated checksum list includes the APK only when its gate passes. Signature
+verification is an Android release-owner prerequisite; website tools verify the
+declared size/hash and do not substitute for Android signing-tool verification.
+
+APK/AAB files and signing stores are excluded from website deployment checks,
+the Vercel upload allowlist and prepared source copies. Host APKs as immutable
+release assets alongside the existing distribution model, not in `public/`.
+
+### Shared pricing coordination
+
+The server owner updates `../commerce/plans.json`. The website consumes
+`src/data/plan-catalog.json`, generated by the existing
+`../tools/sync_plan_catalog.py`. Confirm the source fields before syncing:
+`phone_actions_per_day` and `phone_limit`; Core values are `30` and `1`, and
+verified Plus, Student Plus and Teams use `null` for unlimited. Verified owners
+have unlimited entitlements through the account service; owner status is not a
+public purchasable tier or a browser preference. Selecting a Pricing preview
+never grants an entitlement and does not enable payments.
+
+To regenerate only the website copy without writing sibling-owned files, load
+the existing generator with `sys.dont_write_bytecode = True`, restrict its
+`COPIES` tuple to `('NYXR Website/src/data/plan-catalog.json',)`, and call
+`sync()` followed by `sync(check=True)`. Do not edit the generated file by hand.
+The complete generator remains the parent's responsibility when syncing all
+desktop, server and website copies together.
+
+### Local validation (no publishing)
+
+Run `npm run test:deployment`, `npm run test:release-gating`, `npm run build`
+and `npm run qa`. The existing deployment and NEXUS browser suites, the pricing
+suite and the companion suite run isolated Chromium with local fixtures. The
+companion suite captures desktop/mobile renders and accessibility checks, tests
+the current blocked state, a staged-but-unaccepted APK, and a fully gated synthetic
+APK download. All synthetic metadata and harmless bytes stay in test/QA files.
+Review `qa/phone-companion/` screenshots before claiming visual QA. No command
+here authorizes public deployment or modifies a remote service.

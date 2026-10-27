@@ -11,6 +11,10 @@ qa/
 !.env.example
 public/downloads/
 *.exe
+*.apk
+*.aab
+*.jks
+*.keystore
 *.zip
 *.db
 *.sqlite*

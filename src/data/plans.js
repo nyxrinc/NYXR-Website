@@ -1,4 +1,5 @@
 import catalog from './plan-catalog.json' with { type: 'json' };
+import { phoneLimits } from './phone-plans.js';
 
 // NYXR product plans. Provider allowances remain a separate sourced snapshot.
 // Planned prices are INR offers, never conversions of a display preference.
@@ -19,12 +20,14 @@ export const coreFeatures = [
   'Write for me · included in beta 3',
   'Macros & local workflows',
   'Local PDF tutoring & slides',
+  `Phone companion · ${phoneLimits('core').actions}, when released`,
 ];
 
 const personalCloudFeatures = (id) => {
   const limits = catalogById[id].limits;
   return [
     'Everything in free Core',
+    'Phone companion · unlimited with verified entitlement, when released',
     `${limits.storage_bytes / 1_000_000_000} GB opt-in encrypted cloud backup`,
     `Sync across ${limits.device_limit} devices`,
     `${limits.history_days}-day version history`,
@@ -73,6 +76,7 @@ const planPresentation = [
       'Shared workspaces and reusable workflows, with beta foundations implemented in source.',
     features: [
       'Everything in free Core',
+      'Phone companion · unlimited with verified entitlement, when released',
       'Shared workspaces',
       'Explicit text-file sharing',
       'Macro libraries · JSON export/import',
@@ -95,6 +99,8 @@ export const plans = planPresentation.map((presentation) => ({
 }));
 
 export const previewLimits = (plan) => [
+  { label: 'Phone actions / private beta', value: phoneLimits(plan.id).actions },
+  { label: 'Paired phones / private beta', value: phoneLimits(plan.id).phones },
   {
     label: 'Cloud backup',
     value: plan.available
@@ -116,6 +122,14 @@ const cloudValues = (key, format) =>
   plans.map((plan) => (plan.id === 'core' ? 'Not included' : format(plan.limits[key])));
 
 export const featureMatrix = [
+  {
+    label: 'Phone actions / private beta',
+    values: plans.map((plan) => phoneLimits(plan.id).actions),
+  },
+  {
+    label: 'Paired phones / private beta',
+    values: plans.map((plan) => phoneLimits(plan.id).phones),
+  },
   {
     label: 'Chat, coding, voice, Chrome & Macros',
     values: ['Included', 'Included', 'Included', 'Included'],
@@ -160,6 +174,10 @@ export const featureMatrix = [
 ];
 
 export const planFAQs = [
+  {
+    question: 'What are the phone companion limits?',
+    answer: `For the planned Android private beta, free Core includes ${phoneLimits('core').actions.replace(' planned', '')} phone actions and ${phoneLimits('core').phones.replace(' planned', '')}. Verified Plus, Student Plus and Teams entitlements, and verified owners, have unlimited phone actions and paired phones. Phone actions are separate from AI tokens and cloud sync devices. Your mobile carrier’s call/SMS and data charges still apply. The free Core allowance covers NYXR actions only. For native SMS, a verified SENT status confirms sending; it does not confirm recipient delivery. Selecting a paid plan or declaring student or owner status does not grant access. Payments are inactive; companion availability requires a verified signed APK, matching updated desktop and hardware acceptance.`,
+  },
   {
     question: 'What does Preview plan do?',
     answer:

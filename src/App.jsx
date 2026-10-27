@@ -23,7 +23,10 @@ import { trapDialogFocus } from './components/modalFocus';
 import { pages, pageByPath } from './data/pages';
 import usePage from './navigation/usePage';
 import Download from './pages/Download';
+import { CompanionFeatures, CompanionGuide } from './components/PhoneCompanion';
 import Student from './pages/Student';
+import Phone, { PhoneShowcase } from './pages/Phone';
+import Updates from './pages/Updates';
 import Pricing from './pages/Pricing';
 import LegalPage, { contactEmail, contactHref } from './pages/Legal';
 
@@ -33,8 +36,8 @@ const resourceCopy = {
     content: (
       <>
         <p>
-          NYXR is a Windows desktop application. This showcase is a local website, not a connected
-          version of the assistant.
+          NYXR is a Windows desktop application. This website showcases the product; it does not
+          control your computer or run a connected version of the assistant.
         </p>
         <h3>Find your place</h3>
         <p>
@@ -53,12 +56,12 @@ const resourceCopy = {
         </ul>
         <h3>Write for me / beta 3</h3>
         <p>
-          In beta 3, the F11 dropdown adds Assistant, Write for me and Macro voice.
-          In Write for me, choose Select textbox, click a field, then hold F8 to dictate. With
-          grammar correction on, scores below 9/10 are rewritten; 9/10 or higher stays verbatim.
-          Text is inserted and verified without submitting it. The speech service transcribes your
-          audio; dictation cleanup uses your selected AI. Review Voice context and privacy settings. Write
-          for me is included in the beta 3 installer.
+          In beta 3, the F11 dropdown adds Assistant, Write for me and Macro voice. In Write for me,
+          choose Select textbox, click a field, then hold F8 to dictate. With grammar correction on,
+          scores below 9/10 are rewritten; 9/10 or higher stays verbatim. Text is inserted and
+          verified without submitting it. The speech service transcribes your audio; dictation
+          cleanup uses your selected AI. Review Voice context and privacy settings. Write for me is
+          included in the beta 3 installer.
         </p>
         <h3>Connect deliberately</h3>
         <p>
@@ -77,11 +80,11 @@ const resourceCopy = {
         <h3>Listening and speaking, separately</h3>
         <p>
           Guided setup includes a short app tour and a saved checklist. For listening, find your
-          microphone, run the two-second local signal check, then select your speech-to-text
-          engine in Voice settings. For speaking, choose a voice and use Test current voice.
-          Check Windows output and volume if you cannot hear it. Nothing records or plays just
-          because you open the tutorial. Skip a step or skip everything, and return from Home’s
-          Tutorial &amp; setup checklist button whenever you want.
+          microphone, run the two-second local signal check, then select your speech-to-text engine
+          in Voice settings. For speaking, choose a voice and use Test current voice. Check Windows
+          output and volume if you cannot hear it. Nothing records or plays just because you open
+          the tutorial. Skip a step or skip everything, and return from Home’s Tutorial &amp; setup
+          checklist button whenever you want.
         </p>
         <h3>Connect Chrome for browser tasks</h3>
         <p>
@@ -90,6 +93,7 @@ const resourceCopy = {
           content; content needed for your request may be sent to your selected AI provider. See the{' '}
           <a href="/privacy/">Privacy Policy</a> before connecting.
         </p>
+        <CompanionGuide />
         <h3>Connect Ashna AI</h3>
         <p>
           Open Settings → AI Providers → Ashna AI in the desktop app. Enter your API key, save it
@@ -279,6 +283,8 @@ export default function App() {
           {![
             'overview',
             'download',
+            'phone',
+            'updates',
             'pricing',
             'not-found',
             'documentation',
@@ -328,7 +334,7 @@ export default function App() {
               .filter(
                 (p) =>
                   p.group === 'Intelligence' ||
-                  ['demo', 'in-motion', 'gallery', 'download', 'pricing'].includes(p.id),
+                  ['demo', 'in-motion', 'gallery', 'download', 'updates', 'pricing'].includes(p.id),
               )
               .map((p) => (
                 <a key={p.id} href={p.path}>
@@ -380,6 +386,7 @@ function PageContent({ page, openShot }) {
           <Hero openShot={openShot} />
           <HomeCapabilities />
           <LearningShowcase />
+          <PhoneShowcase />
           <HomeSignature />
         </>
       );
@@ -390,6 +397,7 @@ function PageContent({ page, openShot }) {
         <>
           <Introduction />
           <FeatureGrid />
+          <CompanionFeatures />
         </>
       );
     case 'chat':
@@ -420,6 +428,10 @@ function PageContent({ page, openShot }) {
       return <Gallery openShot={openShot} />;
     case 'download':
       return <Download />;
+    case 'phone':
+      return <Phone />;
+    case 'updates':
+      return <Updates />;
     case 'privacy':
     case 'terms':
     case 'contact':
@@ -451,7 +463,7 @@ function PageContent({ page, openShot }) {
 function PageDirectory({ current }) {
   const choices =
     current === 'overview'
-      ? ['coding', 'voice', 'providers', 'macros', 'personalization', 'gallery']
+      ? ['coding', 'voice', 'phone', 'macros', 'personalization', 'gallery']
       : ['features', 'demo', 'download'].filter((id) => id !== current);
   return (
     <section className="page-directory container" aria-labelledby="page-directory-title">

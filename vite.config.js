@@ -2,7 +2,7 @@ import { defineConfig, loadEnv } from 'vite';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { pages } from './src/data/pages.js';
-import { createRelease, readRelease, siteOrigin } from './tools/release-config.mjs';
+import { createRelease, readRelease, releaseAssets, siteOrigin } from './tools/release-config.mjs';
 
 function staticPageEntries(release, origin) {
   let output;
@@ -70,7 +70,7 @@ function staticPageEntries(release, origin) {
       if (release.available)
         await writeFile(
           resolve(output, 'beta-SHA256SUMS.txt'),
-          [release.installer, release.source]
+          releaseAssets(release)
             .map((asset) => `${asset.sha256}  ${asset.filename}`)
             .join('\n') + '\n',
           'utf-8',

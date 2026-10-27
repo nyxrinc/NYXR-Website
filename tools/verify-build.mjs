@@ -12,7 +12,7 @@ async function visit(folder) {
       name = relative(root, path).replaceAll('\\', '/');
     assert(!entry.isSymbolicLink(), `Symlink must not be deployed: ${name}`);
     assert(
-      !/(^|\/)(node_modules|\.capture-data|\.capture-frames|\.venv|\.env[^/]*|credentials?|runtime|build)(\/|$)|\.(exe|zip|db|sqlite\d*|log|py|pyc|map)$/i.test(
+      !/(^|\/)(node_modules|\.capture-data|\.capture-frames|\.venv|\.env[^/]*|credentials?|runtime|build)(\/|$)|\.(exe|apk|aab|jks|keystore|zip|db|sqlite\d*|log|py|pyc|map)$/i.test(
         name,
       ),
       `Private/unexpected deploy file: ${name}`,
@@ -47,6 +47,18 @@ assert(
   release.available || (!release.installer.url && !release.source.url),
   'Unavailable release exposes download URLs',
 );
+assert(
+  release.companion && (release.companion.available || release.companion.apk === null),
+  'Unavailable companion exposes an APK',
+);
+if (release.companion.available) {
+  assert(
+    release.available && release.companion.desktopCompatible && release.companion.hardwareAccepted,
+    'Companion requires compatible desktop and hardware acceptance',
+  );
+  const checksums = await readFile(resolve(root, 'beta-SHA256SUMS.txt'), 'utf8');
+  assert(checksums.includes(`${release.companion.apk.sha256}  ${release.companion.apk.filename}`));
+}
 const vercel = JSON.parse(await readFile('vercel.json', 'utf8'));
 assert.equal(vercel.outputDirectory, 'dist');
 assert(

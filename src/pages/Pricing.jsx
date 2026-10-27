@@ -23,6 +23,7 @@ import {
   previewLimits,
 } from '../data/plans';
 import '../styles/plans.css';
+import { phoneCatalogReady, phoneLimits } from '../data/phone-plans';
 
 const compactNumber = (value) =>
   new Intl.NumberFormat('en', { notation: 'compact', maximumFractionDigits: 1 }).format(value);
@@ -624,9 +625,8 @@ function PlanComparison() {
       >
         <table className="plans-matrix">
           <caption>
-            Core features stay free in every plan. Write for me is included in beta 3.
-            Cloud services are planned; Teams beta foundations await
-            hosted account service configuration.
+            Core features stay free in every plan. Write for me is included in beta 3. Cloud
+            services are planned; Teams beta foundations await hosted account service configuration.
           </caption>
           <thead>
             <tr>
@@ -658,6 +658,45 @@ function PlanComparison() {
       <p className="plans-scroll-hint">
         On smaller screens, scroll the comparison sideways. Provider charges and quotas are separate
         from every NYXR plan.
+      </p>
+    </section>
+  );
+}
+
+function PhonePlans() {
+  return (
+    <section
+      id="phone-limits"
+      className="phone-plans container"
+      aria-labelledby="phone-plans-title"
+    >
+      <Eyebrow>PHONE COMPANION / PLANNED PRIVATE BETA</Eyebrow>
+      <h2 id="phone-plans-title">A little more reach, with clear limits.</h2>
+      <p>
+        Free Core includes {phoneLimits('core').actions.replace(' planned', '')} phone actions and{' '}
+        {phoneLimits('core').phones.replace(' planned', '')} when the companion is released.
+        Verified Plus, Student Plus and Teams entitlements, plus verified owners, have unlimited
+        phone actions and paired phones. This allowance is separate from AI tokens and cloud device
+        sync.
+      </p>
+      <p>
+        A reply or a phone handoff uses the phone-action allowance. Eligibility must be verified by
+        NYXR; a plan preview, self-declared student status or owner label does not unlock unlimited
+        use. Payments remain inactive and there is no checkout. Provider charges still apply
+        separately.
+      </p>
+      {!phoneCatalogReady && (
+        <p className="phone-policy-pending">
+          Planned phone policy: the shared entitlement catalog update is pending. These limits are
+          not an active paid service or a claim of phone support in the current Windows beta.
+        </p>
+      )}
+      <p>
+        Android 10+ on the same Wi-Fi; Motorola is the initial test target. SMS and WhatsApp
+        notification replies require a supported notification reply action. New WhatsApp messages
+        are handed off to the phone for review and sending. PC call audio is not supported. Check{' '}
+        <a href="/download/#android-companion">companion availability</a> and the{' '}
+        <a href="/guide/#phone-companion">setup guide</a> before pairing.
       </p>
     </section>
   );
@@ -723,6 +762,7 @@ export default function Pricing() {
         </div>
       </div>
       <TeamsFoundations />
+      <PhonePlans />
       <PlanComparison />
       <section className="plans-faq container" aria-labelledby="plans-faq-title">
         <Eyebrow>A FEW THINGS, MADE CLEAR</Eyebrow>

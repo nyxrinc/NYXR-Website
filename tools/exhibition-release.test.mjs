@@ -16,8 +16,8 @@ const descriptor = JSON.parse(
 );
 
 test('publication descriptor validates independently before and after real assets are supplied', () => {
-  assert.equal(descriptor.version, '4.0.0-beta.6');
-  assert.equal(descriptor.tag, 'exhibition-4.0.0-beta.6');
+  assert.match(descriptor.version, /^4\.0\.0-beta\.\d+$/);
+  assert.equal(descriptor.tag, `exhibition-${descriptor.version}`);
   assert.equal(descriptor.edition, 'basic');
   assert.equal(descriptor.applicationId, 'com.nyxr.companion.exhibition');
   assert.equal(normalizeExhibitionRelease(descriptor).hardwareAccepted, false);

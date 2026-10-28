@@ -59,12 +59,18 @@ export function ExhibitionDownload() {
         <p>
           <strong>Desktop required:</strong> update the repository, close the running NYXR app and
           restart with <code>run_nyxr.bat</code>. The public beta 3 installer is not compatible.
-          Enable <strong>Local exhibition testing</strong> in the desktop Phone settings and opt in
+          Enable <strong>Use the Exhibition tester</strong> (Local exhibition testing) in the desktop Phone settings and opt in
           on the phone too.
         </p>
         <p>
           30 test actions per UTC day, counted locally. No account required; this grants no premium
           entitlement. Permissions and exact action confirmations still apply.
+        </p>
+        <p>
+          <strong>Guided connection:</strong> on PC, choose the Exhibition tester and show its QR.
+          On Android, tap <strong>Scan PC QR</strong>, approve the PC, then approve your phone on
+          Windows. Use <strong>Test battery connection</strong> to check the complete connection.
+          Once ready, ask “What’s my battery?” in NYXR voice or chat.
         </p>
         <ExhibitionScope />
         <PlayProtectHelp />
@@ -151,14 +157,15 @@ export function ExhibitionGuide() {
         </li>
         <li>
           <strong>Enable local testing on the desktop.</strong> Open Settings → Connected devices →
-          Phone and enable <strong>Local exhibition testing</strong>. This is an explicit local
+          Phone and tick <strong>Use the Exhibition tester</strong> (Local exhibition testing).
+          Click <strong>Show QR to connect</strong>. This is an explicit local
           allowance: no NYXR account is required, and it does not grant a premium plan.
         </li>
         <li>
           <strong>Install the signed tester APK and opt in.</strong> When its download is available,
           compare the APK SHA-256 and signing certificate with the Exhibition Test card. Install{' '}
-          {basic ? 'NYXR Exhibition Basic' : 'the Exhibition APK'}, open it and opt in to exhibition
-          testing on the phone. Both devices must opt in. Allow installation from your chosen source
+          {basic ? 'NYXR Exhibition Basic' : 'the Exhibition APK'}, open it and enable <strong>Local testing</strong>,
+          then tap <strong>Scan PC QR</strong>. Both devices must opt in. Allow installation from your chosen source
           only as needed; keep Android security checks enabled.
         </li>
         <li>
@@ -176,6 +183,9 @@ export function ExhibitionGuide() {
           “List apps on my phone,” then request a small media-volume change. Inspect the result on
           the phone and desktop. A submitted or simulated receipt is not proof the physical action
           happened.
+          {' '}The updated desktop also includes <strong>Test battery connection</strong> and
+          understands “What’s my battery?” when one phone is connected. If it is offline, locked or
+          awaiting approval, follow the next-step message rather than pairing again unnecessarily.
         </li>
         {!basic && (
           <li>

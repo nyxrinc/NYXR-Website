@@ -1,7 +1,11 @@
 import { Button, Eyebrow } from '../components/Primitives';
 import { CandidateDetails, candidate } from '../components/CandidateRelease';
 import { betaRelease } from '../data/release';
-import { exhibitionRelease } from '../components/ExhibitionRelease';
+import {
+  exhibitionRelease,
+  ExhibitionScope,
+  PlayProtectHelp,
+} from '../components/ExhibitionRelease';
 
 export default function Updates() {
   return (
@@ -17,7 +21,10 @@ export default function Updates() {
           <span className="release-channel">EXHIBITION TEST / SEPARATE LOCAL CHANNEL</span>
           <span>27 OCTOBER 2026</span>
         </header>
-        <h2 id="exhibition-update-title">{exhibitionRelease.version} · Test on your own phone.</h2>
+        <h2 id="exhibition-update-title">
+          {exhibitionRelease.version} · Exhibition{' '}
+          {exhibitionRelease.edition === 'basic' ? 'Basic' : 'Test'}
+        </h2>
         <p>
           Exhibition Test uses a separate Android app identity and requires explicit opt-in on both
           the desktop and phone. Android 10+ and the same Wi-Fi are required. Update the repository
@@ -26,9 +33,11 @@ export default function Updates() {
         </p>
         <p>
           No account required. The local allowance is 30 test actions per UTC day and grants no
-          premium entitlement. Communication simulation is ON by default; permissions and exact
-          confirmations remain required. Start with battery, listing apps and media volume.
+          premium entitlement. Permissions and exact confirmations remain required. Start with
+          battery, listing apps and media volume.
         </p>
+        <ExhibitionScope />
+        <PlayProtectHelp />
         <div className="update-open">
           <strong>Testing, not hardware acceptance</strong>
           <p>

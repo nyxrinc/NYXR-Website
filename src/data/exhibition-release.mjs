@@ -43,6 +43,7 @@ export function normalizeExhibitionRelease(record) {
     record.tag !== `exhibition-${record.version}` ||
     record.applicationId !== 'com.nyxr.companion.exhibition' ||
     record.minAndroid !== 10 ||
+    (record.edition !== undefined && !['full', 'basic'].includes(record.edition)) ||
     typeof record.available !== 'boolean' ||
     typeof record.signed !== 'boolean'
   )
@@ -81,6 +82,7 @@ export function normalizeExhibitionRelease(record) {
   return {
     schemaVersion: 1,
     channel: 'exhibition-test',
+    edition: record.edition ?? 'full',
     version: record.version,
     tag: record.tag,
     applicationId: record.applicationId,

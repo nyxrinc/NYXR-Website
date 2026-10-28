@@ -1,24 +1,25 @@
 {
   "schemaVersion": 1,
   "channel": "exhibition-test",
-  "version": "4.0.0-beta.5",
-  "tag": "exhibition-4.0.0-beta.5",
+  "version": "4.0.0-beta.6",
+  "tag": "exhibition-4.0.0-beta.6",
+  "edition": "basic",
   "applicationId": "com.nyxr.companion.exhibition",
   "minAndroid": 10,
   "available": true,
   "signed": true,
   "apk": {
-    "filename": "NYXR-Exhibition-4.0.0-beta.5.apk",
-    "bytes": 2810848,
-    "sha256": "25d4609157387d926eb46a1c4a8251178be54ce3850240385f1cf25240d5acf0",
-    "url": "https://github.com/nyxrinc/NYXR-Website/releases/download/exhibition-4.0.0-beta.5/NYXR-Exhibition-4.0.0-beta.5.apk",
+    "filename": "NYXR-Exhibition-4.0.0-beta.6.apk",
+    "bytes": 2777704,
+    "sha256": "9d38de4bbfa72cc6d2e2c7107da92e4bf4bfa18224b421c211a37629b4a41327",
+    "url": "https://github.com/nyxrinc/NYXR-Website/releases/download/exhibition-4.0.0-beta.6/NYXR-Exhibition-4.0.0-beta.6.apk",
     "signingCertificateSha256": "ff52c12273610e901fc8fae0c27c377e8e388484a81d7daf430108a1f6650b7d",
     "signatureVerified": true
   },
   "source": {
-    "filename": "NYXR-Exhibition-source-4.0.0-beta.5.zip",
-    "bytes": 145319,
-    "sha256": "a4ac7dcbccaaba6fc6c3c2d2c4f556b54a3c959c52821c6b8343ea634f65aee2",
-    "url": "https://github.com/nyxrinc/NYXR-Website/releases/download/exhibition-4.0.0-beta.5/NYXR-Exhibition-source-4.0.0-beta.5.zip"
+    "filename": "NYXR-Exhibition-source-4.0.0-beta.6.zip",
+    "bytes": 161309,
+    "sha256": "d1ec3c2015c9503e8137bb1bfc37ef38084f2cbbae83716733adb7bbdf124427",
+    "url": "https://github.com/nyxrinc/NYXR-Website/releases/download/exhibition-4.0.0-beta.6/NYXR-Exhibition-source-4.0.0-beta.6.zip"
   }
 }

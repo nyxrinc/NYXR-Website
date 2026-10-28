@@ -5,6 +5,7 @@ import { normalizeExhibitionRelease, exhibitionAssetUrl } from '../src/data/exhi
 import { createRelease, readRelease, releaseAssets, verifyAsset } from './release-config.mjs';
 import {
   exhibitionFixture,
+  basicExhibitionFixture,
   unavailableExhibitionFixture,
   exhibitionApkBytes,
   exhibitionSourceBytes,
@@ -15,10 +16,32 @@ const descriptor = JSON.parse(
 );
 
 test('publication descriptor validates independently before and after real assets are supplied', () => {
-  assert.equal(descriptor.version, '4.0.0-beta.5');
-  assert.equal(descriptor.tag, 'exhibition-4.0.0-beta.5');
+  assert.equal(descriptor.version, '4.0.0-beta.6');
+  assert.equal(descriptor.tag, 'exhibition-4.0.0-beta.6');
+  assert.equal(descriptor.edition, 'basic');
   assert.equal(descriptor.applicationId, 'com.nyxr.companion.exhibition');
   assert.equal(normalizeExhibitionRelease(descriptor).hardwareAccepted, false);
+});
+
+test('Basic beta 6 publication requires the matching signed APK and source', () => {
+  const record = basicExhibitionFixture();
+  const result = normalizeExhibitionRelease(record);
+  assert.equal(result.edition, 'basic');
+  assert.equal(result.apk.filename, 'NYXR-Exhibition-4.0.0-beta.6.apk');
+  assert.equal(result.source.filename, 'NYXR-Exhibition-source-4.0.0-beta.6.zip');
+  record.source = null;
+  assert.throws(() => normalizeExhibitionRelease(record), /matching hosted source/);
+});
+
+test('legacy beta 5 defaults to full and explicit editions survive public projection', () => {
+  assert.equal(normalizeExhibitionRelease(exhibitionFixture()).edition, 'full');
+  for (const edition of ['full', 'basic']) {
+    const record = { ...exhibitionFixture(), edition };
+    assert.equal(normalizeExhibitionRelease(record).edition, edition);
+  }
+  for (const edition of [null, '', 'BASIC', 'unknown', true, 1, {}, ['basic']]) {
+    assert.throws(() => normalizeExhibitionRelease({ ...exhibitionFixture(), edition }));
+  }
 });
 
 test('unavailable fixture has no fabricated artifact metadata', () => {

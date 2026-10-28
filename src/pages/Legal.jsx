@@ -2,6 +2,7 @@ import { Eyebrow, Button } from '../components/Primitives';
 import Icon from '../components/Icon';
 import { plusBenefits } from '../data/plans';
 import { betaRelease } from '../data/release';
+import { ExhibitionScope, PlayProtectHelp } from '../components/ExhibitionRelease';
 
 export const contactEmail = 'nyxrinc@gmail.com';
 export const contactHref = `mailto:${contactEmail}`;
@@ -231,15 +232,18 @@ const policies = {
           <p>
             The separate <a href="/guide/#exhibition-test">Exhibition Test channel</a> allows local
             testing without an account after explicit opt-in on both devices. Its 30 test actions
-            per UTC day are counted locally and grant no premium entitlement. Communication
-            simulation is ON by default. Permissions and confirmations still apply.
+            per UTC day are counted locally and grant no premium entitlement. Permissions and
+            confirmations still apply.
           </p>
+          <ExhibitionScope />
+          <PlayProtectHelp />
           <p>
-            Notification access can expose message previews, sender names and reply actions. Grant
-            it only if you want notification reading or supported replies. Native calling, SMS and
-            contact lookup require their own permissions. New WhatsApp messages are handed off to
-            the phone for review and sending. Call audio on the PC is not supported. You can revoke
-            notification access in Android settings and unpair your devices.
+            In the separate full companion, notification access can expose message previews, sender
+            names and reply actions. Grant it only if you want notification reading or supported
+            replies. Native calling, SMS and contact lookup require their own permissions. New
+            WhatsApp messages are handed off to the phone for review and sending. Call audio on the
+            PC is not supported. You can revoke notification access in Android settings and unpair
+            your devices.
           </p>
           <p>
             Phone user content stays local to your paired devices except content you explicitly

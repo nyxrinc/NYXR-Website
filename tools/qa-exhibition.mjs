@@ -9,6 +9,7 @@ import { normalizeExhibitionRelease } from '../src/data/exhibition-release.mjs';
 import { readRelease } from './release-config.mjs';
 import {
   exhibitionFixture,
+  basicExhibitionFixture,
   unavailableExhibitionFixture,
   exhibitionApkBytes,
   exhibitionSourceBytes,
@@ -32,6 +33,7 @@ const current = await readRelease();
 // These UI cases remain deterministic after the owner fills the real descriptor.
 const unavailable = unavailableExhibitionFixture();
 const hosted = exhibitionFixture();
+const basicHosted = basicExhibitionFixture();
 let server;
 const browser = await chromium.launch({
   headless: true,
@@ -41,16 +43,18 @@ const context = await browser.newContext({ reducedMotion: 'reduce', acceptDownlo
 await context.route('**/*', async (route) => {
   const url = route.request().url();
   if (new URL(url).hostname === '127.0.0.1') return route.continue();
-  const asset =
-    url === hosted.apk.url ? hosted.apk : url === hosted.source.url ? hosted.source : null;
+  const asset = [hosted.apk, hosted.source, basicHosted.apk, basicHosted.source].find(
+    (candidate) => candidate.url === url,
+  );
   if (asset)
     return route.fulfill({
       headers: {
-        'Content-Type':
-          asset === hosted.apk ? 'application/vnd.android.package-archive' : 'application/zip',
+        'Content-Type': asset.filename.endsWith('.apk')
+          ? 'application/vnd.android.package-archive'
+          : 'application/zip',
         'Content-Disposition': `attachment; filename="${asset.filename}"`,
       },
-      body: asset === hosted.apk ? exhibitionApkBytes : exhibitionSourceBytes,
+      body: asset.filename.endsWith('.apk') ? exhibitionApkBytes : exhibitionSourceBytes,
     });
   report.externalRequests.push(new URL(url).origin);
   return route.abort();
@@ -96,8 +100,10 @@ async function captureElement(locator, path) {
 try {
   for (const [name, record] of [
     ['unavailable', unavailable],
+    ['basic-hosted-fixture', basicHosted],
     ['hosted-fixture', hosted],
   ]) {
+    const basic = record.edition === 'basic';
     const base = await fixture(record);
     for (const width of [390, 1366, 1650]) {
       await page.setViewportSize({ width, height: width === 390 ? 844 : 1000 });
@@ -105,7 +111,7 @@ try {
       const card = page.getByTestId('exhibition-card');
       const text = await card.innerText();
       for (const pattern of [
-        /Exhibition Test/,
+        /Exhibition (?:Basic|Test)/,
         /Android 10\+/,
         /same Wi-Fi/,
         /run_nyxr\.bat/,
@@ -115,16 +121,47 @@ try {
         /30 test actions per UTC day/,
         /No account required/,
         /no premium/,
-        /simulation is ON by default/,
         /physical-device\s+acceptance is still pending/,
       ])
         assert.match(text, pattern);
       check(`${name}/${width}: testing scope and desktop prerequisites disclosed`);
+      async function checkBasicScope(container) {
+        const scope = await container.getByTestId('exhibition-basic-scope').innerText();
+        assert.match(scope, /battery status, listing and opening apps, media volume/);
+        assert.match(scope, /torch, selected files, links and productivity handoffs/);
+        assert.match(
+          scope,
+          /Not included in Basic: calls, SMS, contacts, notification reading or replies,\s*WhatsApp actions and media playback control/,
+        );
+        assert.match(
+          scope,
+          /removes call, SMS and contacts permissions and the notification listener/,
+        );
+        assert.match(scope, /POST_NOTIFICATIONS/);
+        assert.match(scope, /does not allow reading or replying to other apps’ notifications/);
+        assert.doesNotMatch(await container.innerText(), /simulation|real communication test/i);
+      }
+      async function checkProtect(container) {
+        const help = container.getByTestId('play-protect-help');
+        assert.match(await help.innerText(), /Keep Play Protect enabled/);
+        assert.match(await help.innerText(), /installation cannot be guaranteed/);
+        assert.equal(
+          await help.getByRole('link').getAttribute('href'),
+          'https://developers.google.com/android/play-protect/warning-dev-guidance',
+        );
+        assert.doesNotMatch(
+          await container.innerText(),
+          /(?:disable|turn off|bypass)\s+(?:Google\s+)?Play Protect|install anyway/i,
+        );
+      }
+      if (basic) await checkBasicScope(card);
+      await checkProtect(card);
+      check(`${name}/${width}: edition boundaries and Play Protect guidance`);
       if (name === 'unavailable') {
         check(
           `${width}: unavailable button has no fabricated APK link`,
           (await card
-            .getByRole('button', { name: 'Exhibition APK awaiting publication' })
+            .getByRole('button', { name: 'Exhibition Basic APK awaiting publication' })
             .isDisabled()) &&
             (await card.locator('a[href$=".apk"]').count()) === 0 &&
             (await card
@@ -136,14 +173,14 @@ try {
       } else {
         check(
           `${width}: only the separate Exhibition APK is linked`,
-          (await page.getByTestId('exhibition-download').getAttribute('href')) === hosted.apk.url &&
+          (await page.getByTestId('exhibition-download').getAttribute('href')) === record.apk.url &&
             (await page.locator('a[href$=".apk"]').count()) === 1,
         );
         await card.locator('summary').click();
         assert.deepEqual(await card.locator('.release-checksum code').allTextContents(), [
-          hosted.apk.sha256,
-          hosted.apk.signingCertificateSha256,
-          hosted.source.sha256,
+          record.apk.sha256,
+          record.apk.signingCertificateSha256,
+          record.source.sha256,
         ]);
         check(`${width}: exact fixture hashes and signing certificate shown`);
       }
@@ -185,14 +222,15 @@ try {
         /permissions or action confirmations/,
         /30 test actions\s+per UTC day/,
         /no NYXR account is required/,
-        /simulation ON/,
-        /ON by default/,
         /Show my phone battery/,
         /List apps on my phone/,
         /media-volume/,
         /not passed physical-device acceptance/,
       ])
         assert.match(guideText, pattern);
+      if (basic) await checkBasicScope(guide);
+      else assert.match(guideText, /simulation ON/);
+      await checkProtect(guide);
       check(`${name}/${width}: setup anchor reaches complete testing instructions`);
       await audit('#exhibition-test');
       check(
@@ -203,8 +241,16 @@ try {
       await guide.getByRole('link', { name: 'Exhibition Test download channel' }).click();
       await page.waitForURL('**/download/#exhibition-test');
     }
-    for (const path of ['/phone/', '/updates/']) {
+    for (const path of ['/phone/', '/updates/', '/privacy/']) {
       await navigate(base + path);
+      if (basic) {
+        assert.equal(await page.getByTestId('exhibition-basic-scope').count(), 1);
+        assert.match(
+          await page.getByTestId('play-protect-help').innerText(),
+          /Keep Play Protect enabled/,
+        );
+      }
+      if (path === '/privacy/') continue;
       const link = page.locator('main a[href="/download/#exhibition-test"]').first();
       await link.click();
       await page.waitForURL('**/download/#exhibition-test');
@@ -213,20 +259,20 @@ try {
         await page.getByTestId('exhibition-card').isVisible(),
       );
     }
-    if (name === 'hosted-fixture') {
+    if (record.available) {
       for (const [selector, asset, bytes] of [
-        ['[data-testid="exhibition-download"]', hosted.apk, exhibitionApkBytes],
-        ['#exhibition-test .release-checksum a', hosted.source, exhibitionSourceBytes],
+        ['[data-testid="exhibition-download"]', record.apk, exhibitionApkBytes],
+        ['#exhibition-test .release-checksum a', record.source, exhibitionSourceBytes],
       ]) {
         await navigate(base + '/download/#exhibition-test');
-        if (asset === hosted.source) await page.locator('#exhibition-test summary').click();
+        if (asset === record.source) await page.locator('#exhibition-test summary').click();
         const event = page.waitForEvent('download');
         await page.locator(selector).click();
         const download = await event;
         assert.equal(download.suggestedFilename(), asset.filename);
         const file = resolve(
           output,
-          asset === hosted.apk ? 'harmless-apk-fixture.bin' : 'harmless-source-fixture.bin',
+          `${name}-${asset === record.apk ? 'harmless-apk-fixture.bin' : 'harmless-source-fixture.bin'}`,
         );
         await download.saveAs(file);
         assert.deepEqual(await readFile(file), bytes);

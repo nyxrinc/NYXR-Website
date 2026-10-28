@@ -3,7 +3,11 @@ import Core from '../components/Core';
 import Icon from '../components/Icon';
 import { Button, Eyebrow } from '../components/Primitives';
 import { candidate } from '../components/CandidateRelease';
-import { exhibitionRelease } from '../components/ExhibitionRelease';
+import {
+  exhibitionRelease,
+  ExhibitionScope,
+  PlayProtectHelp,
+} from '../components/ExhibitionRelease';
 
 const examples = [
   {
@@ -62,8 +66,11 @@ export function PhoneShowcase({ full = false }) {
         {full && (
           <p className="phone-availability">
             Testing your own phone?{' '}
-            <a href="/download/#exhibition-test">Exhibition Test {exhibitionRelease.version}</a> is
-            a separate local testing channel with explicit opt-in on both devices. Use the{' '}
+            <a href="/download/#exhibition-test">
+              Exhibition {exhibitionRelease.edition === 'basic' ? 'Basic' : 'Test'}{' '}
+              {exhibitionRelease.version}
+            </a>{' '}
+            is a separate local testing channel with explicit opt-in on both devices. Use the{' '}
             <a href="/guide/#exhibition-test">Exhibition Test guide</a> with the updated repository
             on your PC; the public beta 3 installer is not compatible.
           </p>
@@ -160,7 +167,11 @@ export default function Phone() {
       <PhoneShowcase full />
       <section className="phone-principles container" aria-labelledby="phone-principles-title">
         <Eyebrow>PAIRED DELIBERATELY</Eyebrow>
-        <h2 id="phone-principles-title">More reach. Clear boundaries.</h2>
+        <h2 id="phone-principles-title">Full companion capabilities / in testing</h2>
+        <p>
+          These full companion features are separate from Exhibition Basic. Check Basic’s limits
+          below.
+        </p>
         <div className="phone-capability-grid">
           {capabilities.map(([icon, title, text]) => (
             <article key={title}>
@@ -209,9 +220,11 @@ export default function Phone() {
         </p>
         <p>
           Exhibition Test requires no account after opting in on both devices: 30 local test actions
-          per UTC day, no premium entitlement, communication simulation ON by default. Permissions
-          and confirmations still apply; physical-device acceptance is pending.
+          per UTC day, no premium entitlement. Permissions and confirmations still apply;
+          physical-device acceptance is pending.
         </p>
+        <ExhibitionScope />
+        <PlayProtectHelp />
         <div className="release-resource-links">
           <a href="/pricing/#phone-limits">Phone allowance</a>
           <a href="/privacy/#privacy-phone-companion">Phone privacy</a>

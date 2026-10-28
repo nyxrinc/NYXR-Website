@@ -2,8 +2,45 @@ import { Button, Eyebrow } from './Primitives';
 
 export const exhibitionRelease = __NYXR_EXHIBITION_RELEASE__;
 
+export function ExhibitionScope() {
+  if (exhibitionRelease.edition !== 'basic') return null;
+  return (
+    <div data-testid="exhibition-basic-scope">
+      <p>
+        <strong>Basic capabilities:</strong> battery status, listing and opening apps, media volume,
+        torch, selected files, links and productivity handoffs (such as alarms, timers and
+        calendar). Handoffs may need a tap on the phone.
+      </p>
+      <p>
+        <strong>Not included in Basic:</strong> calls, SMS, contacts, notification reading or
+        replies, WhatsApp actions and media playback control. Media volume adjusts loudness only.
+        Basic removes call, SMS and contacts permissions and the notification listener.
+      </p>
+      <p>
+        Android may request <code>POST_NOTIFICATIONS</code> for NYXR’s own session notification.
+        This does not allow reading or replying to other apps’ notifications.
+      </p>
+    </div>
+  );
+}
+
+export function PlayProtectHelp() {
+  return (
+    <p data-testid="play-protect-help">
+      <strong>Play Protect blocked an install?</strong> Keep Play Protect enabled. The older full
+      beta 5 has been blocked on a tester’s device; it is not the default download. Basic uses fewer
+      permissions, but installation cannot be guaranteed. If Android blocks it, stop and consult{' '}
+      <a href="https://developers.google.com/android/play-protect/warning-dev-guidance">
+        Google’s official Play Protect guidance
+      </a>
+      .
+    </p>
+  );
+}
+
 export function ExhibitionDownload() {
   const release = exhibitionRelease;
+  const basic = release.edition === 'basic';
   return (
     <article
       id="exhibition-test"
@@ -13,7 +50,7 @@ export function ExhibitionDownload() {
     >
       <div>
         <Eyebrow>SEPARATE ANDROID CHANNEL / LOCAL TESTING</Eyebrow>
-        <h2 id="exhibition-title">Exhibition Test</h2>
+        <h2 id="exhibition-title">{basic ? 'NYXR Exhibition Basic' : 'Exhibition Test'}</h2>
         <p>
           {release.version} · Android 10+ · same Wi-Fi. Test your own phone with the updated
           repository on your current PC. This is an experimental tester build; physical-device
@@ -27,9 +64,10 @@ export function ExhibitionDownload() {
         </p>
         <p>
           30 test actions per UTC day, counted locally. No account required; this grants no premium
-          entitlement. Communication simulation is ON by default. Permissions and exact action
-          confirmations still apply.
+          entitlement. Permissions and exact action confirmations still apply.
         </p>
+        <ExhibitionScope />
+        <PlayProtectHelp />
       </div>
       <div className="next-release-actions">
         <span className="release-channel">EXHIBITION TEST / NOT HARDWARE ACCEPTED</span>
@@ -41,7 +79,7 @@ export function ExhibitionDownload() {
               icon="download"
               data-testid="exhibition-download"
             >
-              Download signed Exhibition APK
+              {basic ? 'Download signed Exhibition Basic APK' : 'Download signed Exhibition APK'}
             </Button>
             <p>
               {release.apk.filename} · {(release.apk.bytes / 1_000_000).toFixed(1)} MB
@@ -62,7 +100,9 @@ export function ExhibitionDownload() {
         ) : (
           <>
             <Button disabled icon="download" aria-describedby="exhibition-unavailable">
-              Exhibition APK awaiting publication
+              {basic
+                ? 'Exhibition Basic APK awaiting publication'
+                : 'Exhibition APK awaiting publication'}
             </Button>
             <p id="exhibition-unavailable">
               The tester download opens here after the signed APK and matching source are hosted and
@@ -79,19 +119,24 @@ export function ExhibitionDownload() {
 }
 
 export function ExhibitionGuide() {
+  const basic = exhibitionRelease.edition === 'basic';
   return (
     <section
       id="exhibition-test"
       className="companion-guide"
       aria-labelledby="exhibition-guide-title"
     >
-      <h2 id="exhibition-guide-title">Exhibition Test / local phone testing</h2>
+      <h2 id="exhibition-guide-title">
+        {basic ? 'NYXR Exhibition Basic' : 'Exhibition Test'} / local phone testing
+      </h2>
       <p>
         Use the separate <a href="/download/#exhibition-test">Exhibition Test download channel</a>.
         This tester app uses <code>com.nyxr.companion.exhibition</code>. It is experimental and has
         not passed physical-device acceptance. The public companion retains its production account,
         compatible-desktop and hardware acceptance requirements.
       </p>
+      <ExhibitionScope />
+      <PlayProtectHelp />
       <ol>
         <li>
           <strong>Prepare both devices.</strong> Use Android 10 or later and connect your phone and
@@ -111,10 +156,10 @@ export function ExhibitionGuide() {
         </li>
         <li>
           <strong>Install the signed tester APK and opt in.</strong> When its download is available,
-          compare the APK SHA-256 and signing certificate with the Exhibition Test card. Install the
-          Exhibition APK, open it and opt in to exhibition testing on the phone. Both devices must
-          opt in. Allow installation from your chosen source only as needed; keep Android security
-          checks enabled.
+          compare the APK SHA-256 and signing certificate with the Exhibition Test card. Install{' '}
+          {basic ? 'NYXR Exhibition Basic' : 'the Exhibition APK'}, open it and opt in to exhibition
+          testing on the phone. Both devices must opt in. Allow installation from your chosen source
+          only as needed; keep Android security checks enabled.
         </li>
         <li>
           <strong>Pair and approve both screens.</strong> Show the desktop’s short-lived pairing QR
@@ -123,9 +168,8 @@ export function ExhibitionGuide() {
         </li>
         <li>
           <strong>Choose permissions and keep confirmations.</strong> Grant only the permissions
-          needed for each test. Contacts, phone, SMS and notification access are separate choices.
-          Review the exact device, recipient and action before confirming. Local testing does not
-          bypass permissions or action confirmations.
+          needed for each test. Review the exact device and action before confirming. Local testing
+          does not bypass permissions or action confirmations.
         </li>
         <li>
           <strong>Start with battery, apps and volume.</strong> Ask “Show my phone battery,” then
@@ -133,13 +177,15 @@ export function ExhibitionGuide() {
           the phone and desktop. A submitted or simulated receipt is not proof the physical action
           happened.
         </li>
-        <li>
-          <strong>Keep communication simulation ON for initial tests.</strong> It is ON by default.
-          Simulated calls and messages do not establish real calling or message delivery. Any
-          deliberate real communication test still needs permissions and exact confirmations;
-          carrier charges may apply. A new WhatsApp message requires review and sending on the
-          phone. PC call audio is unsupported.
-        </li>
+        {!basic && (
+          <li>
+            <strong>Keep communication simulation ON for initial tests.</strong> It is ON by
+            default. Simulated calls and messages do not establish real calling or message delivery.
+            Any deliberate real communication test still needs permissions and exact confirmations;
+            carrier charges may apply. A new WhatsApp message requires review and sending on the
+            phone. PC call audio is unsupported.
+          </li>
+        )}
         <li>
           <strong>Respect the local allowance and finish cleanly.</strong> You get 30 test actions
           per UTC day, tracked locally rather than as a premium entitlement. When finished, turn off

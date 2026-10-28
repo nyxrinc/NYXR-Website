@@ -8,8 +8,9 @@ export function unavailableExhibitionFixture() {
   return {
     schemaVersion: 1,
     channel: 'exhibition-test',
-    version: '4.0.0-beta.5',
-    tag: 'exhibition-4.0.0-beta.5',
+    version: '4.0.0-beta.6',
+    tag: 'exhibition-4.0.0-beta.6',
+    edition: 'basic',
     applicationId: 'com.nyxr.companion.exhibition',
     minAndroid: 10,
     available: false,
@@ -43,4 +44,16 @@ export function exhibitionFixture() {
     },
     source: file(`NYXR-Exhibition-source-${version}.zip`, exhibitionSourceBytes),
   };
+}
+
+export function basicExhibitionFixture() {
+  const record = exhibitionFixture();
+  record.version = '4.0.0-beta.6';
+  record.tag = `exhibition-${record.version}`;
+  record.edition = 'basic';
+  for (const kind of ['apk', 'source']) {
+    record[kind].filename = record[kind].filename.replace('beta.5', 'beta.6');
+    record[kind].url = `https://downloads.nyxr.test/${record.tag}/${record[kind].filename}`;
+  }
+  return record;
 }

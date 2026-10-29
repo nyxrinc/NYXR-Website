@@ -219,6 +219,8 @@ try {
         /Local exhibition testing/,
         /Both devices\s+must opt in/,
         /approve the connection on both devices/,
+        /five-digit/,
+        /expire after two minutes/,
         /permissions or action confirmations/,
         /30 test actions\s+per UTC day/,
         /no NYXR account is required/,

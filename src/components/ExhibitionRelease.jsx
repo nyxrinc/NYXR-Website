@@ -67,9 +67,10 @@ export function ExhibitionDownload() {
           entitlement. Permissions and exact action confirmations still apply.
         </p>
         <p>
-          <strong>Guided connection:</strong> on PC, choose the Exhibition tester and show its QR.
-          On Android, tap <strong>Scan PC QR</strong>, approve the PC, then approve your phone on
-          Windows. Use <strong>Test battery connection</strong> to check the complete connection.
+          <strong>Connect with five digits:</strong> on PC, choose the Exhibition tester and click
+          <strong> Show connection code</strong>. Enter those five digits in the Android app on the
+          same Wi-Fi, then approve both screens. The code expires after two minutes. QR and manual
+          setup remain available as alternatives. Use <strong>Test battery connection</strong> to check the complete connection.
           Once ready, ask “What’s my battery?” in NYXR voice or chat.
         </p>
         <ExhibitionScope />
@@ -158,20 +159,23 @@ export function ExhibitionGuide() {
         <li>
           <strong>Enable local testing on the desktop.</strong> Open Settings → Connected devices →
           Phone and tick <strong>Use the Exhibition tester</strong> (Local exhibition testing).
-          Click <strong>Show QR to connect</strong>. This is an explicit local
+          Click <strong>Show connection code</strong>. This is an explicit local
           allowance: no NYXR account is required, and it does not grant a premium plan.
         </li>
         <li>
           <strong>Install the signed tester APK and opt in.</strong> When its download is available,
           compare the APK SHA-256 and signing certificate with the Exhibition Test card. Install{' '}
           {basic ? 'NYXR Exhibition Basic' : 'the Exhibition APK'}, open it and enable <strong>Local testing</strong>,
-          then tap <strong>Scan PC QR</strong>. Both devices must opt in. Allow installation from your chosen source
+          then choose your PC and enter its five-digit code. Both devices must opt in. Allow installation from your chosen source
           only as needed; keep Android security checks enabled.
         </li>
         <li>
-          <strong>Pair and approve both screens.</strong> Show the desktop’s short-lived pairing QR
-          code or use its private setup link, then approve the connection on both devices. Keep
-          pairing codes and links private.
+          <strong>Pair and approve both screens.</strong> Enter the PC’s five-digit connection code
+          on your phone, then approve the connection on both devices: approve the PC on Android
+          and click <strong>Approve my phone</strong> on Windows.
+          Use the short-lived pairing QR code or private setup link in Advanced if needed.
+          Codes are one-use and expire after two minutes; repeated incorrect attempts are limited.
+          Keep pairing codes and links private.
         </li>
         <li>
           <strong>Choose permissions and keep confirmations.</strong> Grant only the permissions

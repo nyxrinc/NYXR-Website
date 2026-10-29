@@ -19,7 +19,7 @@ export default function Updates() {
       <article className="update-entry" aria-labelledby="exhibition-update-title">
         <header>
           <span className="release-channel">EXHIBITION TEST / SEPARATE LOCAL CHANNEL</span>
-          <span>27 OCTOBER 2026</span>
+          <span>29 OCTOBER 2026</span>
         </header>
         <h2 id="exhibition-update-title">
           {exhibitionRelease.version} · Exhibition{' '}
@@ -35,6 +35,17 @@ export default function Updates() {
           No account required. The local allowance is 30 test actions per UTC day and grants no
           premium entitlement. Permissions and exact confirmations remain required. Start with
           battery, listing apps and media volume.
+        </p>
+        <p>
+          The updated desktop and tester support five-digit, same-Wi-Fi pairing. Show a connection
+          code on PC, enter it on Android and approve both screens. QR remains an alternative.
+          Already paired? Reconnect instead of starting setup again.
+        </p>
+        <p>
+          The current Windows repository also adds image, local text-file and readable PDF pasting
+          into main and project chats, plus a FreeLLMAPI saved-key refresh fix across account sessions.
+          PDF attachments provide extracted text with page references; scanned PDFs need searchable text.
+          These changes require the updated repository, rather than the older public beta 3 installer.
         </p>
         <ExhibitionScope />
         <PlayProtectHelp />

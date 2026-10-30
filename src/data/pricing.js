@@ -24,6 +24,16 @@ export const exampleTokens = dailyCapSum * exampleDays;
 // Match the existing integrations in product.js. No gateway is counted as extra upstream quota.
 export const providerAllowances = [
   {
+    name: 'OpenJarvis',
+    type: 'Manual bridge',
+    category: 'account',
+    allowance: 'Your local model or cloud account',
+    detail:
+      'An optional text-inference bridge with explicit local Ollama or selected cloud providers. It adds no separate token grant. Cloud requests use the connected provider’s credits and limits; local inference uses your hardware.',
+    source: 'https://github.com/open-jarvis/OpenJarvis',
+    contribution: 'Bridge only; do not double-count provider quota',
+  },
+  {
     name: 'OpenRouter',
     type: 'Free models',
     category: 'free',

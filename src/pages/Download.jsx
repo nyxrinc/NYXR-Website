@@ -5,6 +5,7 @@ import { betaRelease as release, betaSize } from '../data/release';
 import { CompanionDownload } from '../components/PhoneCompanion';
 import { NextDesktopRelease } from '../components/CandidateRelease';
 import { ExhibitionDownload } from '../components/ExhibitionRelease';
+import { DownloadSourceNote } from '../components/SourceUpdates';
 
 export default function Download() {
   const [copyStatus, setCopyStatus] = useState('');
@@ -132,6 +133,7 @@ export default function Download() {
         </div>
       </div>
       <NextDesktopRelease />
+      <DownloadSourceNote />
       <aside className="release-preview-notice" aria-labelledby="source-preview-title">
         <Eyebrow>NEXUS / BETA 3</Eyebrow>
         <h2 id="source-preview-title">The heart of NYXR, back at the center.</h2>

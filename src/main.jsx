@@ -10,6 +10,7 @@ import './styles/pricing.css';
 import './styles/home.css';
 import './styles/nexus.css';
 import './styles/phone.css';
+import './styles/evolution.css';
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RegionalPreferences>

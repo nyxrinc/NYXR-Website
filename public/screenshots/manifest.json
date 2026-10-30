@@ -159,5 +159,12 @@
     "height": 192,
     "bytes": 6180,
     "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
+  },
+  {
+    "file": "openjarvis-settings.webp",
+    "width": 900,
+    "height": 850,
+    "bytes": 62674,
+    "source": "Actual NYXR Qt settings, isolated offscreen showcase with an illustrative model; empty credential fields"
   }
 ]

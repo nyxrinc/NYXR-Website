@@ -385,8 +385,8 @@ export function VoiceSection({ openShot }) {
           <Eyebrow>BETA 3 / WRITE FOR ME</Eyebrow>
           <h3 id="dictation-preview-title">Write for me. Your words, in the right textbox.</h3>
           <p className="preview-availability">
-            Included in the beta 3 installer. The capture above shows the earlier dock; the app
-            adds the mode dropdown and writing controls for selecting a textbox and dictating.
+            Included in the beta 3 installer. The capture above shows the earlier dock; the app adds
+            the mode dropdown and writing controls for selecting a textbox and dictating.
           </p>
           <ol className="dictation-steps">
             <li>
@@ -483,6 +483,7 @@ export function ProviderSection() {
       <div className="routing-strip" data-reveal>
         {[
           'Task compatibility',
+          'Input/output modality',
           'Provider health',
           'Cost policy',
           'Quality & reliability',
@@ -491,7 +492,7 @@ export function ProviderSection() {
           <span key={s}>
             <small>0{i + 1}</small>
             {s}
-            {i < 4 && <Icon size={12} />}
+            {i < 5 && <Icon size={12} />}
           </span>
         ))}
       </div>
@@ -500,7 +501,9 @@ export function ProviderSection() {
         selected service. Ashna AI is available in Settings → AI Providers, with secure key storage
         and account-quota access you explicitly enable. Ollama is manual-only unless local fallback
         is explicitly enabled. Bring your own keys or use an installed local model: there are no
-        NYXR inference credits, and an NYXR account is optional.
+        NYXR inference credits, and an NYXR account is optional. OpenJarvis is a separate manual
+        text bridge, with explicit local or cloud inference; it adds no provider quota and never
+        joins AUTO fallback. OpenWhispr is a speech integration, not an LLM chat provider.
       </p>
       <div className="provider-pricing-link">
         <p>

@@ -3,7 +3,8 @@ export const themes = [
     id: 'nexus',
     name: 'NEXUS',
     color: '#32dfff',
-    description: 'NYXR’s living heart. Cursor-responsive orbital depth, neon cyan-blue text and onyx glass.',
+    description:
+      'NYXR’s living heart. Cursor-responsive orbital depth, neon cyan-blue text and onyx glass.',
   },
   {
     id: 'core',
@@ -56,12 +57,22 @@ export const providers = [
   ['Cerebras', 'C', 'Hosted inference'],
   ['Mistral', '/', 'Mistral models'],
   ['OpenAI', '◎', 'Configured API'],
+  ['OpenJarvis', 'OJ', 'Manual text bridge · local or cloud'],
   ['Ollama', 'O', 'Installed models · LOCAL mode'],
 ];
 
 export const gallery = [
   {
-    id: 'theme-nexus', title: 'The NEXUS core', category: 'Personalization',
+    id: 'openjarvis-settings',
+    title: 'Choose where NYXR thinks',
+    category: 'Workspace',
+    description:
+      'Actual OpenJarvis local/cloud settings in an isolated showcase. Example model, empty credential fields; available in the updated source.',
+  },
+  {
+    id: 'theme-nexus',
+    title: 'The NEXUS core',
+    category: 'Personalization',
     description: 'Actual NEXUS Command Center. The shared core remains central in every theme.',
   },
   {
@@ -132,11 +143,15 @@ export const gallery = [
     description: 'Actual connection status. External services were disabled for these captures.',
   },
   {
-    id: 'student', title: 'A place to learn', category: 'Workspace',
+    id: 'student',
+    title: 'A place to learn',
+    category: 'Workspace',
     description: 'The actual Student workspace, ready for local PDF study material.',
   },
   {
-    id: 'core-editor', title: 'Tune your AI heart', category: 'Personalization',
+    id: 'core-editor',
+    title: 'Tune your AI heart',
+    category: 'Personalization',
     description: 'The live core editor: orbital depth, size, glow, rings and cursor response.',
   },
   {
@@ -148,6 +163,30 @@ export const gallery = [
 ];
 
 export const features = [
+  [
+    'nodes',
+    'OpenJarvis',
+    'Explicit local or cloud text inference, with cloud keys in Windows Credential Manager. NYXR keeps execution and verification.',
+    'LATEST SOURCE / MANUAL CONNECTION',
+  ],
+  [
+    'chat',
+    'Background Replies',
+    'Draft or explicitly enable bounded auto replies for one approved WhatsApp Web conversation.',
+    'LATEST SOURCE / SCOPED BETA',
+  ],
+  [
+    'voice',
+    'British assistant voice',
+    'An optional ElevenLabs Jarvis-inspired preset alongside Fish Audio and existing speech output. Provider access and credits apply.',
+    'LATEST SOURCE / OPTIONAL VOICE',
+  ],
+  [
+    'sliders',
+    'JARVIS Interface sounds',
+    'Bundled control-panel effects with volume, per-event options and voice ducking.',
+    'LATEST SOURCE / SFX',
+  ],
   [
     'memory',
     'Student tutor',

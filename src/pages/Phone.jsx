@@ -59,11 +59,16 @@ export function PhoneShowcase({ full = false }) {
           The Android companion brings supported phone tasks into your Windows conversation. Check a
           device, prepare a message or manage media without breaking your train of thought.
         </p>
-        <span className="release-channel">ANDROID BETA {candidate.version} / IN TESTING</span>
+        <span className="release-channel">
+          {exhibitionRelease.available
+            ? `EXHIBITION BASIC ${exhibitionRelease.version} / TEST DOWNLOAD`
+            : `ANDROID BETA ${candidate.version} / IN TESTING`}
+        </span>
         <p className="phone-availability">
-          Built, signed and being tested. Phone control is not active in the current public release.
+          The signed Basic tester is available separately. The full companion remains in testing;
+          the public Windows beta 3 installer does not include phone control.
         </p>
-        {full && (
+        {exhibitionRelease.available && (
           <p className="phone-availability">
             Testing your own phone?{' '}
             <a href="/download/#exhibition-test">
@@ -197,8 +202,8 @@ export default function Phone() {
             matching phone-enabled build.
           </li>
           <li>
-            <strong>Pair both screens.</strong> Scan the short-lived QR code or paste its private
-            setup link. Approve the connection on both devices.
+            <strong>Enter five digits.</strong> Show a short-lived connection code on your PC, enter
+            it on the phone, and approve both screens. A QR code is also available.
           </li>
           <li>
             <strong>Choose permissions.</strong> Enable only the capabilities you need. Pause,

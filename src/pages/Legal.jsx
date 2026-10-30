@@ -6,7 +6,7 @@ import { ExhibitionScope, PlayProtectHelp } from '../components/ExhibitionReleas
 
 export const contactEmail = 'nyxrinc@gmail.com';
 export const contactHref = `mailto:${contactEmail}`;
-const updated = '27 October 2026';
+const updated = '30 October 2026';
 const Email = () => <a href={contactHref}>{contactEmail}</a>;
 
 const policies = {
@@ -27,6 +27,11 @@ const policies = {
             The website is a product showcase. It is not a hosted copy of the desktop assistant. The
             desktop overview below explains important differences; any additional service-specific
             privacy information will be provided when that service is introduced.
+          </p>
+          <p>
+            The OpenJarvis, Jarvis-inspired voice preset, bundled JARVIS sound effects and
+            Background Replies additions described below were added to source after the public
+            Windows beta3 release of 25 October 2026. They are not included in that installer.
           </p>
         </>,
       ],
@@ -130,6 +135,50 @@ const policies = {
         </>,
       ],
       [
+        'openjarvis',
+        'Optional OpenJarvis text inference',
+        <>
+          <p>
+            OpenJarvis is an optional, manually selected text inference route. You can choose local
+            Ollama or explicitly select cloud inference through OpenRouter, OpenAI, Anthropic,
+            Gemini, DeepSeek or MiniMax. OpenJarvis is excluded from automatic provider selection;
+            neither OpenJarvis nor Ollama is enabled by default.
+          </p>
+          <p>
+            Keys for this route are saved separately for each provider and its official endpoint in
+            Windows Credential Manager. Only the chosen provider’s key is passed to the isolated
+            helper’s memory. These keys are never sent to this website or stored in configuration
+            files.
+          </p>
+          <p>
+            The managed bridge uses a loopback connection on your computer. This does not establish
+            that inference is local: a cloud selection sends the relevant text and context to the
+            chosen provider under its own policies.
+          </p>
+        </>,
+      ],
+      [
+        'voice',
+        'Optional voice services and sound effects',
+        <>
+          <p>
+            Optional speech engines include ElevenLabs, Fish and the other engines offered in the
+            app. The ElevenLabs Jarvis-inspired British assistant preset uses Eldrin. It is not a
+            licensed character voice or an imitation of a particular actor.
+          </p>
+          <p>
+            Checking voice metadata is separate from generating an audio Preview. The ElevenLabs
+            audio Preview generates speech and uses provider credits. Provider speech services
+            process the text or audio needed for your request under their own terms and privacy
+            policies.
+          </p>
+          <p>
+            JARVIS sound effects use bundled Kenney assets released under CC0. Playing these effects
+            does not retrieve audio over the network.
+          </p>
+        </>,
+      ],
+      [
         'accounts',
         'Optional NYXR accounts and planned Firebase services',
         <>
@@ -207,6 +256,32 @@ const policies = {
             You can skip browser setup, disconnect it in the desktop setup controls where supported,
             or disable/remove the extension in Chrome. Skipping account, Chrome or voice setup does
             not prevent use with your own provider keys or a configured local model.
+          </p>
+        </>,
+      ],
+      [
+        'background-replies',
+        'Background Replies / source beta',
+        <>
+          <p>
+            Background Replies supports only one approved WhatsApp Web conversation in the selected
+            browser profile, tab and document. It does not monitor other chats or arbitrary apps.
+            Draft mode is the default; automatic sending requires an explicit choice for that
+            session. Each session has a duration and reply limit, capped at 120 minutes and 30
+            replies, and does not restart automatically.
+          </p>
+          <p>
+            Selected message content and conversation context are used in memory and passed to your
+            chosen AI to draft a reply. A cloud provider processes that content under its own
+            policies. The local journal stores hashed conversation and message identifiers, status
+            and timestamps, not message text.
+          </p>
+          <p>
+            Replies pause while you type or have a draft. Changes to the approved conversation,
+            profile, tab or document, or loss of connection or permissions, stop the session and
+            require you to enable it again. Uncertain sends are not replayed. A submitted status
+            means WhatsApp displayed the outgoing message; it does not confirm delivery to the
+            recipient.
           </p>
         </>,
       ],
@@ -362,6 +437,12 @@ const policies = {
             checks or clean-machine acceptance have passed.
           </p>
           <p>
+            OpenJarvis, the Jarvis-inspired voice preset, bundled JARVIS sound effects and
+            Background Replies are source additions made after public Windows beta3, released on 25
+            October 2026. Their description here does not add them to that installer. Check the
+            release notes for the version you download.
+          </p>
+          <p>
             Product captures show the interface; scripted walkthroughs are demonstrations, not live
             AI execution or proof that a task will succeed on every computer. We aim to keep
             descriptions accurate and will correct errors brought to our attention.
@@ -437,6 +518,38 @@ const policies = {
             Provider or model availability does not guarantee task compatibility, successful
             execution, uninterrupted service or a particular level of quality.
           </p>
+          <p>
+            OpenJarvis text inference requires manual selection of local Ollama or a supported cloud
+            provider. OpenJarvis is excluded from automatic provider selection, and neither it nor
+            Ollama is enabled by default. A managed loopback bridge does not establish local
+            inference. Cloud use remains subject to the chosen provider’s terms and charges.
+          </p>
+          <p>
+            Optional speech services, including ElevenLabs and Fish, apply their own terms and usage
+            charges. Checking voice metadata is separate from the audio Preview; generating an
+            ElevenLabs Preview uses provider credits.
+          </p>
+        </>,
+      ],
+      [
+        'background-replies',
+        'Background Replies and sending limits',
+        <>
+          <p>
+            This source beta supports only the WhatsApp Web conversation, browser profile, tab and
+            document you approve. Draft mode keeps replies in NYXR for review. Automatic sending
+            requires explicit approval for a session with a duration and reply limit, capped at 120
+            minutes and 30 replies. Sessions do not restart automatically or authorize general app
+            monitoring. Use it only with accounts and conversations you are authorized to access.
+          </p>
+          <p>
+            Replies pause during active typing or an existing draft. If a send outcome is uncertain,
+            NYXR does not replay it; inspect the conversation before taking further action. A
+            submitted status is not confirmation of recipient delivery. You remain responsible for
+            the replies you approve or authorize. See the{' '}
+            <a href="/privacy/#privacy-background-replies">Privacy Policy</a> for message processing
+            and journal storage.
+          </p>
         </>,
       ],
       [
@@ -453,6 +566,11 @@ const policies = {
             to imply endorsement or affiliation. Open-source components and models retain their
             applicable licenses. You retain the rights you already have in material you provide; you
             must have permission to use it.
+          </p>
+          <p>
+            The optional Jarvis-inspired British assistant preset uses ElevenLabs’ Eldrin voice; it
+            is not a licensed character voice or an imitation of a particular actor. Bundled JARVIS
+            sound effects are Kenney assets released under CC0 and require no network retrieval.
           </p>
         </>,
       ],

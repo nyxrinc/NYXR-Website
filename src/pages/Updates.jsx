@@ -12,6 +12,71 @@ export default function Updates() {
     <section className="updates-page container">
       <Eyebrow>NYXR / RELEASE NOTES</Eyebrow>
       <h1>The core keeps evolving.</h1>
+      <article className="update-entry latest-source-entry" id="october-reliability">
+        <header>
+          <span className="release-channel">LATEST DESKTOP SOURCE / NOT A NEW INSTALLER</span>
+          <time dateTime="2026-10-30">30 OCTOBER 2026</time>
+        </header>
+        <h2>More ways to think. Better ways to act.</h2>
+        <p>
+          OpenJarvis can now use explicitly selected cloud models as well as local Ollama. NYXR
+          keeps its own action tools, verification and approvals.
+        </p>
+        <ul>
+          <li>
+            OpenJarvis supports OpenRouter, OpenAI, Anthropic, Google Gemini, DeepSeek and MiniMax,
+            with separate cloud keys in Windows Credential Manager.
+          </li>
+          <li>
+            Cloud and local inference are labeled separately. Saving a key or checking
+            managed-service metadata does not generate a completion.
+          </li>
+          <li>
+            Malformed browser verification plans get one bounded repair from a fresh observation
+            before input starts. Profile, tab and document targeting remain explicit.
+          </li>
+          <li>
+            Vision requests retain compatible image routes and purpose-specific deadlines across
+            fallback.
+          </li>
+          <li>
+            Background Replies adds a WhatsApp Web source beta: drafts first, explicitly scoped
+            automatic sessions, typing/draft pauses, and no replay of uncertain sends.
+          </li>
+          <li>
+            An optional ElevenLabs British assistant preset and bundled JARVIS Interface SFX add
+            voice and sound choices without silently switching providers.
+          </li>
+        </ul>
+        <div className="update-evidence">
+          <strong>Checked in the source checkout</strong>
+          <p>
+            493 targeted checks passed across the selected integration suites. Cloud SDK requests
+            used controlled responses. No real email, WhatsApp message or billable cloud inference
+            was sent during those checks. This is not packaged-release or physical-device
+            acceptance.
+          </p>
+        </div>
+        <div className="update-open">
+          <strong>Download versions are unchanged</strong>
+          <p>
+            The public Windows installer remains {betaRelease.version}. The signed Android
+            Exhibition Basic tester has its own version and limited scope. The source additions
+            above do not change either artifact or its checksum.
+          </p>
+        </div>
+        <div className="button-row">
+          <Button href="/openjarvis/" secondary>
+            Set up OpenJarvis
+          </Button>
+          <a className="text-link" href="/download/#latest-source">
+            Compare download versions
+          </a>
+          <a className="text-link" href="/guide/#background-replies">
+            Background Replies setup
+          </a>
+        </div>
+      </article>
       <p className="updates-intro">
         What is available, what has been built, and what still needs to pass before it reaches your
         devices.
@@ -43,9 +108,10 @@ export default function Updates() {
         </p>
         <p>
           The current Windows repository also adds image, local text-file and readable PDF pasting
-          into main and project chats, plus a FreeLLMAPI saved-key refresh fix across account sessions.
-          PDF attachments provide extracted text with page references; scanned PDFs need searchable text.
-          These changes require the updated repository, rather than the older public beta 3 installer.
+          into main and project chats, plus a FreeLLMAPI saved-key refresh fix across account
+          sessions. PDF attachments provide extracted text with page references; scanned PDFs need
+          searchable text. These changes require the updated repository, rather than the older
+          public beta 3 installer.
         </p>
         <ExhibitionScope />
         <PlayProtectHelp />

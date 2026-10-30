@@ -1,6 +1,14 @@
 // One route per product area; also used to emit static hosting entry points.
 export const pages = [
   {
+    id: 'openjarvis',
+    path: '/openjarvis/',
+    label: 'OpenJarvis',
+    group: 'Intelligence',
+    description:
+      'Use local Ollama or explicit cloud models through NYXR’s manual OpenJarvis bridge, with Windows Credential Manager key storage and NYXR’s own action tools.',
+  },
+  {
     id: 'phone',
     path: '/phone/',
     label: 'Phone companion',
@@ -14,7 +22,7 @@ export const pages = [
     label: 'Release notes',
     group: 'Release',
     description:
-      'Track current NYXR downloads and the Windows/Android beta 4 candidates, with tested scope, checksums and remaining release requirements.',
+      'See the latest OpenJarvis, voice, Background Replies and browser-recovery source changes, alongside exact Windows and Android download versions.',
   },
   {
     id: 'students',
@@ -45,7 +53,7 @@ export const pages = [
     label: 'Features',
     group: 'Discover',
     description:
-      'Explore NYXR conversations, projects and tools, plus Android phone companion private beta plans and Teams beta foundations with hosted access pending.',
+      'Explore NYXR coding, voice, Windows tools, Student workflows, OpenJarvis and scoped Background Replies, with source and release availability explained.',
   },
   {
     id: 'chat',
@@ -75,7 +83,7 @@ export const pages = [
     label: 'Voice & hands-free',
     group: 'Workspace',
     description:
-      'Meet the F11 voice dock and Write for me in beta 3: select a textbox, dictate with F8 and insert text without sending.',
+      'Explore F11 hands-free, Write for me, Fish Audio, ElevenLabs voice presets and JARVIS interface sounds, with clear setup and provider-cost boundaries.',
   },
   {
     id: 'hud',
@@ -104,7 +112,8 @@ export const pages = [
     path: '/providers/',
     label: 'AI providers',
     group: 'Intelligence',
-    description: 'Explore NYXR provider integrations and compatible, policy-aware model routing.',
+    description:
+      'Connect your own AI providers, explicit local Ollama or the OpenJarvis text bridge. Explore task-compatible routing and secure API key storage.',
   },
   {
     id: 'personalization',
@@ -156,7 +165,7 @@ export const pages = [
     label: 'Download',
     group: 'Release',
     description:
-      'Download the current NYXR Windows beta. Inspect Windows and signed Android beta 4 build details, checksums, compatibility and setup status.',
+      'Download NYXR Windows beta 3 or the signed Android Exhibition Basic tester. Compare versions, checksums, setup requirements and recent source-only updates.',
   },
   {
     id: 'documentation',
@@ -164,7 +173,7 @@ export const pages = [
     label: 'Quick guide',
     group: 'Information',
     description:
-      'A short guide to NYXR workspaces, voice shortcuts, Macros, providers and the planned Android phone companion private beta.',
+      'Set up NYXR providers, OpenJarvis cloud keys, Chrome, voice, Background Replies and the same-Wi-Fi Android tester.',
   },
   {
     id: 'privacy',

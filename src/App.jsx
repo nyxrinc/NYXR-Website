@@ -30,6 +30,9 @@ import Phone, { PhoneShowcase } from './pages/Phone';
 import Updates from './pages/Updates';
 import Pricing from './pages/Pricing';
 import LegalPage, { contactEmail, contactHref } from './pages/Legal';
+import OpenJarvis from './pages/OpenJarvis';
+import SourceUpdates, { HomeEvolution } from './components/SourceUpdates';
+import LatestSetupGuide from './components/LatestSetupGuide';
 
 const resourceCopy = {
   documentation: {
@@ -94,6 +97,7 @@ const resourceCopy = {
           content; content needed for your request may be sent to your selected AI provider. See the{' '}
           <a href="/privacy/">Privacy Policy</a> before connecting.
         </p>
+        <LatestSetupGuide />
         <ExhibitionGuide />
         <CompanionGuide />
         <h3>Connect Ashna AI</h3>
@@ -130,8 +134,13 @@ const resourceCopy = {
           separate from app captures.
         </p>
         <p>
-          Theme previews use six actual NYXR themes. The Matrix rain over the Hacker preview is a
-          website animation.
+          Theme previews use actual NYXR theme captures. The Matrix rain over the Hacker preview is
+          a website animation.
+        </p>
+        <p>
+          The OpenJarvis settings capture shows the updated source in an isolated offscreen session,
+          with an illustrative model ID and empty credential fields. It is separate from the earlier
+          beta 3 screenshots and product film.
         </p>
       </>
     ),
@@ -287,6 +296,7 @@ export default function App() {
             'download',
             'phone',
             'updates',
+            'openjarvis',
             'pricing',
             'not-found',
             'documentation',
@@ -297,6 +307,16 @@ export default function App() {
             'about',
           ].includes(page.id) && <h1 className="sr-only">{page.label}</h1>}
           <PageContent page={page} openShot={setShot} />
+          {[
+            'chat',
+            'coding',
+            'computer',
+            'voice',
+            'providers',
+            'personalization',
+            'macros',
+            'intelligence',
+          ].includes(page.id) && <SourceUpdates page={page.id} />}
           {!['download', 'not-found', 'privacy', 'terms', 'contact'].includes(page.id) && (
             <PageDirectory current={page.id} />
           )}
@@ -387,6 +407,7 @@ function PageContent({ page, openShot }) {
         <>
           <Hero openShot={openShot} />
           <HomeCapabilities />
+          <HomeEvolution />
           <LearningShowcase />
           <PhoneShowcase />
           <HomeSignature />
@@ -399,6 +420,7 @@ function PageContent({ page, openShot }) {
         <>
           <Introduction />
           <FeatureGrid />
+          <SourceUpdates all />
           <CompanionFeatures />
         </>
       );
@@ -414,6 +436,8 @@ function PageContent({ page, openShot }) {
       return <VoiceSection openShot={openShot} />;
     case 'providers':
       return <ProviderSection />;
+    case 'openjarvis':
+      return <OpenJarvis />;
     case 'hud':
       return <HudSection openShot={openShot} />;
     case 'skills':

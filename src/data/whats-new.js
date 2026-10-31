@@ -1,8 +1,8 @@
 // Product facts from the current desktop source. Not a release-manifest override.
 export const sourceUpdate = {
-  date: '30 October 2026',
+  date: '31 October 2026',
   label: 'LATEST SOURCE UPDATE',
-  href: '/updates/#october-reliability',
+  href: '/updates/#nexus-games',
 };
 export const openJarvisCloudProviders = [
   'OpenRouter',
@@ -14,6 +14,10 @@ export const openJarvisCloudProviders = [
 ];
 
 export const recentCapabilities = [
+  {id:'nexus-games',icon:'code',title:'Your idea. A world to play.',
+   text:'Describe a small 3D game. NYXR creates a Nexus project and opens a full-screen play test, with a clear exit back to your work.',
+   detail:'Play-only inside NYXR. Editing opens separately in Chrome. Uses your selected AI provider; source beta, newer than Windows beta 3.',
+   href:'/games/',link:'Explore Game Studio',pages:['coding','chat','intelligence']},
   {
     id: 'openjarvis',
     icon: 'nodes',

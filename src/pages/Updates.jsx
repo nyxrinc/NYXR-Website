@@ -12,7 +12,26 @@ export default function Updates() {
     <section className="updates-page container">
       <Eyebrow>NYXR / RELEASE NOTES</Eyebrow>
       <h1>The core keeps evolving.</h1>
-      <article className="update-entry latest-source-entry" id="october-reliability">
+      <article className="update-entry latest-source-entry" id="nexus-games">
+        <header><span className="release-channel">DESKTOP SOURCE BETA / NOT A NEW INSTALLER</span><time dateTime="2026-10-31">31 OCTOBER 2026</time></header>
+        <h2>Nexus worlds. Inside NYXR.</h2>
+        <p>Game Studio turns a prompt into an editable Nexus project using your configured AI provider.
+          NYXR contains the player; Edit in Chrome opens the separate scene and script editor.</p>
+        <ul><li>Play test fills the screen. Exit play test or Esc restores NYXR.</li>
+          <li>Compact AI scene authoring and tested gameplay components cover coins, keys, checkpoints,
+          hazards, moving platforms, doors and goals. Custom Nyx scripts remain supported.</li>
+          <li>Raw output is saved before validation. Bounded repairs and hash-bound promotion protect
+          the last working game. Import/export uses standard .nexus files.</li>
+          <li>Bundled Three.js allows local playback. Generation uses your provider and its quota.</li></ul>
+        <div className="update-evidence"><strong>Executed acceptance checks</strong><p>Three increasingly
+          difficult cloud-generated games passed real-engine compilation and automated gameplay checks.
+          The native Windows Qt test covered generation, play-only rendering, full-screen play, exit and
+          the separate editor handoff. Nexus’s 19 existing browser regression groups also passed.</p>
+          <p>Automated interaction checks are not a guarantee for every generated game or a substitute
+          for reviewing a complete level. The public Windows beta 3 binary has not been rebuilt for this update.</p></div>
+        <Button href="/games/" secondary>Explore Game Studio</Button>
+      </article>
+      <article className="update-entry" id="october-reliability">
         <header>
           <span className="release-channel">LATEST DESKTOP SOURCE / NOT A NEW INSTALLER</span>
           <time dateTime="2026-10-30">30 OCTOBER 2026</time>

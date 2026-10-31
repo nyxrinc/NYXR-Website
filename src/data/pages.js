@@ -1,5 +1,7 @@
 // One route per product area; also used to emit static hosting entry points.
 export const pages = [
+  {id:'games',path:'/games/',label:'Game Studio',group:'Workspace',
+   description:'Create a Nexus game from a prompt, play test inside NYXR, and edit separately in Chrome. Current desktop source beta; bring your own AI provider.'},
   {
     id: 'openjarvis',
     path: '/openjarvis/',

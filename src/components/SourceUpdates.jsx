@@ -137,8 +137,9 @@ export function DownloadSourceNote() {
         <Eyebrow>LATEST DEVELOPMENT / {sourceUpdate.date.toUpperCase()}</Eyebrow>
         <h2 id="download-source-title">Know what you’re installing.</h2>
         <p>
-          The current source adds OpenJarvis cloud setup, British voice presets, JARVIS sounds and
-          scoped Background Replies. These are newer than the Windows beta 3 download above.
+          The current source adds Nexus Game Studio: generate with your AI provider, play test
+          full-screen in NYXR, and edit separately in Chrome. OpenJarvis cloud setup, British voice
+          presets, JARVIS sounds and scoped Background Replies are also newer than Windows beta 3.
         </p>
         <p>
           Existing downloads keep their original versions, checksums and limitations. A new

@@ -12,7 +12,28 @@ export default function Updates() {
     <section className="updates-page container">
       <Eyebrow>NYXR / RELEASE NOTES</Eyebrow>
       <h1>The core keeps evolving.</h1>
-      <article className="update-entry latest-source-entry" id="nexus-games">
+      <article className="update-entry latest-source-entry" id="one-prompt-games">
+        <header><span className="release-channel">DESKTOP SOURCE BETA / NOT A NEW INSTALLER</span><time dateTime="2026-11-10">10 NOVEMBER 2026</time></header>
+        <h2>One sentence. An original game.</h2>
+        <p>Game Studio now writes original browser games from a single prompt, then checks them by
+          playing them. Claude Code and Codex can write games through your own signed-in accounts.</p>
+        <ul><li>Real keys and clicks test starting, moving, restarting and a short play session before a game is saved.</li>
+          <li>A source check looks for limits that cannot be met, content that never appears, offers nobody
+          can afford and games that end too soon.</li>
+          <li>For 2D games, an AI-written player tries to win on a throwaway copy. If two separately written
+          players fail, NYXR attempts a repair. Games won by out-playing a computer opponent keep their difficulty.</li>
+          <li>Fix game applies a plain-language change, such as “Add sound effects and animations,” and
+          keeps your last working version until the change passes its checks.</li></ul>
+        <div className="update-evidence"><strong>Executed checks</strong><p>Thirteen one-prompt builds ran on
+          Claude Haiku on 10 November 2026. Twelve saved, and one paused for repair; its cause was then fixed.
+          Two saved games, both early card builds, had real design flaws that led to stricter checks. A person
+          played Lighthouse Keeper, Garden Keeper, Lantern Rooftops and Chess vs Bot, and each worked well.</p>
+          <p>These results are not a guarantee for every prompt. Successful builds took between 7 and 26 minutes,
+          and 3D games do not get the automated win check yet. This update is not in a public download, and the
+          public Windows beta 3 binary has not been rebuilt for it.</p></div>
+        <Button href="/games/" secondary>Explore Game Studio</Button>
+      </article>
+      <article className="update-entry" id="nexus-games">
         <header><span className="release-channel">DESKTOP SOURCE BETA / NOT A NEW INSTALLER</span><time dateTime="2026-10-31">31 OCTOBER 2026</time></header>
         <h2>Nexus worlds. Inside NYXR.</h2>
         <p>Game Studio turns a prompt into an editable Nexus project using your configured AI provider.

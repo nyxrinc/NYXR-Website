@@ -167,7 +167,7 @@ export const pages = [
     label: 'Download',
     group: 'Release',
     description:
-      'Download NYXR Windows beta 3 or the signed Android Exhibition Basic tester. Compare versions, checksums, setup requirements and recent source-only updates.',
+      'Download NYXR Windows beta 5 or the signed Android Exhibition Basic tester. Compare versions, checksums, setup requirements and what each release includes.',
   },
   {
     id: 'documentation',

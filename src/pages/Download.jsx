@@ -3,7 +3,6 @@ import Icon from '../components/Icon';
 import { Button, Eyebrow } from '../components/Primitives';
 import { betaRelease as release, betaSize } from '../data/release';
 import { CompanionDownload } from '../components/PhoneCompanion';
-import { NextDesktopRelease } from '../components/CandidateRelease';
 import { ExhibitionDownload } from '../components/ExhibitionRelease';
 import { DownloadSourceNote } from '../components/SourceUpdates';
 
@@ -37,7 +36,7 @@ export default function Download() {
           <a href="#exhibition-test">Exhibition Test</a>
           <a href="#release-title">Windows beta</a>
           <a href="#android-companion">Android companion</a>
-          <a href="#next-desktop">Next Windows build</a>
+          <a href="#latest-source">What’s in beta 5</a>
         </nav>
         <a className="text-link" href="/features/">
           Explore NYXR <Icon size={16} />
@@ -132,20 +131,19 @@ export default function Download() {
           <CompanionDownload />
         </div>
       </div>
-      <NextDesktopRelease />
       <DownloadSourceNote />
       <aside className="release-preview-notice" aria-labelledby="source-preview-title">
-        <Eyebrow>NEXUS / BETA 3</Eyebrow>
-        <h2 id="source-preview-title">The heart of NYXR, back at the center.</h2>
+        <Eyebrow>WINDOWS BETA 5</Eyebrow>
+        <h2 id="source-preview-title">Describe a game. Play it in minutes.</h2>
         <p>
-          A large animated core in every theme. A new NEXUS atmosphere. Your work arranged around it
-          on readable surfaces. Fresh installations start in NEXUS; updates retain your saved theme,
-          local conversations, projects and profile.
+          <a href="/games/">Game Studio</a> writes an original game from one prompt with your AI
+          provider, checks it by playing it, keeps repairing by itself and opens it full screen. Claude
+          Code, Codex and Antigravity (Gemini) can write through the plans already signed in on your PC.
         </p>
         <p>
-          <a href="/voice/#write-for-me">Write for me</a> is included in beta 3, with the F11 mode
-          dropdown and F8 textbox dictation. The matching application source accompanies the
-          installer.
+          The NEXUS core, every theme and <a href="/voice/#write-for-me">Write for me</a> carry over
+          from beta 3. Updates keep your saved theme, local conversations, projects and profile. The
+          matching application source accompanies the installer.
         </p>
         <p>
           <a href="/pricing/#teams-beta">Teams collaboration</a> has implemented beta foundations

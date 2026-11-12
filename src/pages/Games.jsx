@@ -9,7 +9,7 @@ export default function Games() {
         <h1 id="games-title">An idea.<br /><span className="text-cyan">A world to play.</span></h1>
         <p>Describe an original game in a sentence. NYXR writes it with your chosen AI provider, tests it with real keys and clicks, and brings it into your game library.</p>
         <div className="button-row"><Button href="#game-workflow">See the workflow</Button><Button href="/download/" secondary>Release availability</Button></div>
-        <span className="games-source-label">DESKTOP SOURCE BETA · NOT IN WINDOWS BETA 3</span>
+        <span className="games-source-label">INCLUDED IN WINDOWS BETA 5</span>
       </div>
       <figure className="games-capture">
         <img src="/screenshots/nexus-game-chess.png" alt="Chess vs Bot, a game NYXR built from one sentence, with Easy, Medium and Hard bot levels" width="960" height="540" fetchPriority="high" />
@@ -22,7 +22,7 @@ export default function Games() {
       <div className="games-steps">
         <article><span>01 / DESCRIBE</span><h3>Start with the rules.</h3><p>Open Games, use the Game Studio command, or describe your idea in one sentence. Your configured model designs the rules and writes the game.</p></article>
         <article><span>02 / BUILD</span><h3>Checked by playing it.</h3><p>Every version is saved before it is checked. NYXR reads the rules for faults and tests the controls with real input. For 2D games, an AI-written player tries to win. A failed check gets a bounded repair, and your last working game stays safe.</p></article>
-        <article><span>03 / PLAY</span><h3>The game takes the screen.</h3><p>Play test opens a full-screen player over NYXR, with the controls each game shows you. Use Exit game or Esc to return.</p></article>
+        <article><span>03 / PLAY</span><h3>The game takes the screen.</h3><p>Play opens the game full screen in front of NYXR, scaled and centred to fit your display, with the controls each game shows you. Use Exit game or Esc to return.</p></article>
       </div>
     </section>
     <section className="games-editing" aria-labelledby="games-editing-title">

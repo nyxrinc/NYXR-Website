@@ -12,8 +12,32 @@ export default function Updates() {
     <section className="updates-page container">
       <Eyebrow>NYXR / RELEASE NOTES</Eyebrow>
       <h1>The core keeps evolving.</h1>
-      <article className="update-entry latest-source-entry" id="one-prompt-games">
-        <header><span className="release-channel">DESKTOP SOURCE BETA / NOT A NEW INSTALLER</span><time dateTime="2026-11-10">10 NOVEMBER 2026</time></header>
+      <article className="update-entry latest-source-entry" id="beta-5">
+        <header><span className="release-channel">WINDOWS BETA 5 / UNSIGNED EARLY ACCESS</span><time dateTime="2026-11-11">11 NOVEMBER 2026</time></header>
+        <h2>Build it, play it, share the screen with it.</h2>
+        <p>NYXR {betaRelease.version} brings everything since beta 3 into one installer: Game Studio,
+          signed-in AI plans, background research and a lighter interface on modest PCs.</p>
+        <ul><li>Game Studio keeps a build going by itself. A game that still runs after every automatic
+          repair is saved with a note, so you can play it and use Fix game. Play opens the game full
+          screen, scaled and centred, in front of NYXR. Add images, files or web research as inspiration.</li>
+          <li>Claude Code, Codex and Antigravity (Gemini) work through the command-line tools already
+          signed in on your PC. NYXR never reads their logins. Antigravity prefers Gemini 3.5 Flash and
+          otherwise uses the newest Gemini Flash your account offers.</li>
+          <li>Questions that need current sources are researched in the background, with live steps and
+          the pages NYXR read.</li>
+          <li>The chat + button attaches files or picks a tool for the next message: Web research,
+          Create a game, Write code, Use the computer, Make slides or Think longer.</li>
+          <li>AUTO chooses FULL, BALANCED or PERFORMANCE from your processor, memory and graphics.
+          On the build PC, idle chat CPU fell from about 45% to 2–5%.</li></ul>
+        <div className="update-evidence"><strong>Executed checks</strong><p>The frozen app, its helpers and
+          an isolated install, upgrade and uninstall were checked against this exact installer before
+          publication. Results are in BETA_ACCEPTANCE.json with the release.</p>
+          <p>This build is unsigned, so Windows may warn about the publisher. Clean-machine laptop,
+          microphone and different-CPU testing remain open. Game results vary by prompt and provider.</p></div>
+        <Button href="/download/" secondary>Download beta 5</Button>
+      </article>
+      <article className="update-entry" id="one-prompt-games">
+        <header><span className="release-channel">DESKTOP SOURCE BETA / NOW IN BETA 5</span><time dateTime="2026-11-10">10 NOVEMBER 2026</time></header>
         <h2>One sentence. An original game.</h2>
         <p>Game Studio now writes original browser games from a single prompt, then checks them by
           playing them. Claude Code and Codex can write games through your own signed-in accounts.</p>
@@ -29,8 +53,8 @@ export default function Updates() {
           Two saved games, both early card builds, had real design flaws that led to stricter checks. A person
           played Lighthouse Keeper, Garden Keeper, Lantern Rooftops and Chess vs Bot, and each worked well.</p>
           <p>These results are not a guarantee for every prompt. Successful builds took between 7 and 26 minutes,
-          and 3D games do not get the automated win check yet. This update is not in a public download, and the
-          public Windows beta 3 binary has not been rebuilt for it.</p></div>
+          and 3D games do not get the automated win check yet. This update was source-only when written; it is
+          included in the Windows beta 5 installer.</p></div>
         <Button href="/games/" secondary>Explore Game Studio</Button>
       </article>
       <article className="update-entry" id="nexus-games">

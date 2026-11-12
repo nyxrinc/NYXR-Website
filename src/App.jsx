@@ -51,11 +51,11 @@ const resourceCopy = {
           your work and system panels. NEXUS is the new default for fresh installations; existing
           users keep their chosen theme.
         </p>
-        <h3>Build a game in the source beta</h3>
-        <p>Open Games or ask “Build a coin collection game.” Generate with your selected provider,
-          then choose Play test for a full-screen player. Esc or Exit play test returns to NYXR.
+        <h3>Build a game</h3>
+        <p>Open Games, choose Create a game from the chat + menu, or ask “Build a coin collection game.”
+          Press Build game, then Play for a full-screen player. Esc or Exit game returns to NYXR.
           Editing opens separately with Edit in Chrome; export and re-import a .nexus file to keep
-          changes. This feature is newer than the public beta 3 installer. <a href="/games/">Game Studio guide</a>.</p>
+          changes. Included in Windows beta 5. <a href="/games/">Game Studio guide</a>.</p>
         <h3>Keep the flow</h3>
         <ul>
           <li>F11 toggles hands-free. While enabled, hold F8 to speak.</li>

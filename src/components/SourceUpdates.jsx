@@ -7,10 +7,10 @@ export function SourceAvailability({ compact = false }) {
     <aside className={`source-availability ${compact ? 'is-compact' : ''}`}>
       <Icon name="timeline" size={19} />
       <div>
-        <strong>New in the desktop source</strong>
+        <strong>New in Windows beta 5</strong>
         <p>
-          These additions follow the public Windows beta 3 installer. Check the release notes for
-          what each download includes.
+          These additions are in the Windows beta 5 installer and its matching source. Check the
+          release notes for what each download includes.
         </p>
       </div>
       <a href={sourceUpdate.href}>
@@ -137,13 +137,14 @@ export function DownloadSourceNote() {
         <Eyebrow>LATEST DEVELOPMENT / {sourceUpdate.date.toUpperCase()}</Eyebrow>
         <h2 id="download-source-title">Know what you’re installing.</h2>
         <p>
-          The current source adds Nexus Game Studio: generate with your AI provider, play test
-          full-screen in NYXR, and edit separately in Chrome. OpenJarvis cloud setup, British voice
-          presets, JARVIS sounds and scoped Background Replies are also newer than Windows beta 3.
+          Windows beta 5 adds Game Studio, Claude Code, Codex and Antigravity (Gemini) as signed-in
+          providers, background web research, the chat + menu and automatic performance levels.
+          OpenJarvis cloud setup, British voice presets, JARVIS sounds and scoped Background Replies
+          are included too.
         </p>
         <p>
-          Existing downloads keep their original versions, checksums and limitations. A new
-          installer will be listed after its own build and release checks.
+          Earlier downloads keep their original versions, checksums and limitations. Beta 5 passed
+          its own build, runtime and isolated installer checks before it was listed here.
         </p>
       </div>
       <Button href={sourceUpdate.href} secondary>

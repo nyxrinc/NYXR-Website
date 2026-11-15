@@ -318,3 +318,18 @@ the current blocked state, a staged-but-unaccepted APK, and a fully gated synthe
 APK download. All synthetic metadata and harmless bytes stay in test/QA files.
 Review `qa/phone-companion/` screenshots before claiming visual QA. No command
 here authorizes public deployment or modifies a remote service.
+
+## Readable pages for AI readers (pre-render)
+
+Every page ships as finished HTML, so readers that do not run JavaScript
+(Gemini, ChatGPT browsing, link previews) see the real content, and
+`/llms.txt` gives AI tools a plain-text map of the site.
+
+- `npm run build` on a PC with Chrome, Edge or a Playwright Chromium renders
+  each page and saves `prerender/snapshots.json.gz` with a fingerprint of the
+  source. **Commit that file** with your change.
+- Vercel's build machine has no browser. It reuses the snapshots only when the
+  fingerprint matches the uploaded source exactly; otherwise it prints
+  "Pre-render skipped" and the site still works, but AI readers see an empty
+  page again. So: edit → `npm run build` → commit (including the snapshot) →
+  `git pull` before pushing → `npx vercel --prod --yes`.

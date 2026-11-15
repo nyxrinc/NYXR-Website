@@ -39,7 +39,9 @@ for (const [name, viewport] of [['desktop', { width: 1440, height: 900 }], ['pho
     ['words', '.word-reveal', 120],
     ['stats', '.stat-counters', -200],
     ['marquee', '.say-marquee', -60],
+    ['status', '.feature-status', -60],
     ['how', '.how-it-works', -60],
+    ['first', '.first-steps', -60],
     ['footer', '.site-footer', 0],
   ]) {
     await page.evaluate(([sel, off]) => {

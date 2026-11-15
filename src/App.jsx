@@ -44,6 +44,7 @@ import {
   HowItWorks,
   FullForm,
 } from './sections/Motion';
+import { FeatureStatus, FirstSteps } from './sections/Status';
 
 const resourceCopy = {
   documentation: {
@@ -434,7 +435,9 @@ function PageContent({ page, openShot }) {
           <HomeEvolution />
           <LearningShowcase />
           <PhoneShowcase />
+          <FeatureStatus />
           <HowItWorks />
+          <FirstSteps />
           <HomeSignature />
         </>
       );
@@ -444,6 +447,7 @@ function PageContent({ page, openShot }) {
       return (
         <>
           <Introduction />
+          <FeatureStatus />
           <FeatureGrid />
           <SourceUpdates all />
           <CompanionFeatures />

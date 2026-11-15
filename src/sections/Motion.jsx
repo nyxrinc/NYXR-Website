@@ -320,8 +320,8 @@ export function SayMarquee() {
       <Row items={SAYINGS} />
       <Row items={ROUTES} reverse />
       <p className="container say-marquee-note">
-        Hinglish commands, Show me how, Focus sessions and Brief me are in the latest NYXR source
-        and arrive with the next Windows beta.
+        Some phrases here arrive with the next Windows beta; see “What works today” below for exact
+        availability.
       </p>
     </section>
   );

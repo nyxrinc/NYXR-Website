@@ -320,7 +320,7 @@ export function SayMarquee() {
       <Row items={SAYINGS} />
       <Row items={ROUTES} reverse />
       <p className="container say-marquee-note">
-        Some phrases here arrive with the next Windows beta; see “What works today” below for exact
+        Every phrase here works in Windows beta 6; see “What works today” below for exact
         availability.
       </p>
     </section>

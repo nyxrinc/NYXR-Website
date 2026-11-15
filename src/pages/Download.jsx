@@ -36,7 +36,7 @@ export default function Download() {
           <a href="#exhibition-test">Exhibition Test</a>
           <a href="#release-title">Windows beta</a>
           <a href="#android-companion">Android companion</a>
-          <a href="#latest-source">What’s in beta 5</a>
+          <a href="#latest-source">What’s in beta 6</a>
         </nav>
         <a className="text-link" href="/features/">
           Explore NYXR <Icon size={16} />
@@ -133,12 +133,13 @@ export default function Download() {
       </div>
       <DownloadSourceNote />
       <aside className="release-preview-notice" aria-labelledby="source-preview-title">
-        <Eyebrow>WINDOWS BETA 5</Eyebrow>
-        <h2 id="source-preview-title">Describe a game. Play it in minutes.</h2>
+        <Eyebrow>WINDOWS BETA 6</Eyebrow>
+        <h2 id="source-preview-title">One assistant. Games, music, pictures and more.</h2>
         <p>
-          <a href="/games/">Game Studio</a> writes an original game from one prompt with your AI
-          provider, checks it by playing it, keeps repairing by itself and opens it full screen. Claude
-          Code, Codex and Antigravity (Gemini) can write through the plans already signed in on your PC.
+          Describe a song and hear it, ask for a drawing or a realistic picture, turn a topic into a
+          mind map, or build an original game in <a href="/games/">Game Studio</a>. Common commands act
+          the moment you say them. Claude Code, Codex and Antigravity (Gemini) work through the plans
+          already signed in on your PC.
         </p>
         <p>
           The NEXUS core, every theme and <a href="/voice/#write-for-me">Write for me</a> carry over

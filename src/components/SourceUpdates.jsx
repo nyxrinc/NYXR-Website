@@ -7,9 +7,9 @@ export function SourceAvailability({ compact = false }) {
     <aside className={`source-availability ${compact ? 'is-compact' : ''}`}>
       <Icon name="timeline" size={19} />
       <div>
-        <strong>New in Windows beta 5</strong>
+        <strong>New in Windows beta 6</strong>
         <p>
-          These additions are in the Windows beta 5 installer and its matching source. Check the
+          These additions are in the Windows beta 6 installer and its matching source. Check the
           release notes for what each download includes.
         </p>
       </div>
@@ -137,13 +137,15 @@ export function DownloadSourceNote() {
         <Eyebrow>LATEST DEVELOPMENT / {sourceUpdate.date.toUpperCase()}</Eyebrow>
         <h2 id="download-source-title">Know what you’re installing.</h2>
         <p>
-          Windows beta 5 adds Game Studio, Claude Code, Codex and Antigravity (Gemini) as signed-in
-          providers, background web research, the chat + menu and automatic performance levels.
-          OpenJarvis cloud setup, British voice presets, JARVIS sounds and scoped Background Replies
-          are included too.
+          Windows beta 6 adds the Music page, make-anything results with drawings and realistic
+          images, Student visuals and Antigravity slides, instant voice commands with Exhibition
+          mode, verified email sending, an on-screen Companion, Hinglish commands, a Stop everything
+          switch with per-action permissions, and a calmer interface. Everything from beta 5 is included:
+          Game Studio, signed-in Claude Code, Codex and Antigravity, background research and
+          automatic performance levels.
         </p>
         <p>
-          Earlier downloads keep their original versions, checksums and limitations. Beta 5 passed
+          Earlier downloads keep their original versions, checksums and limitations. Beta 6 passed
           its own build, runtime and isolated installer checks before it was listed here.
         </p>
       </div>

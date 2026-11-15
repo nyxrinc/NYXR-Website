@@ -12,7 +12,41 @@ export default function Updates() {
     <section className="updates-page container">
       <Eyebrow>NYXR / RELEASE NOTES</Eyebrow>
       <h1>The core keeps evolving.</h1>
-      <article className="update-entry latest-source-entry" id="beta-5">
+      <article className="update-entry latest-source-entry" id="beta-6">
+        <header><span className="release-channel">WINDOWS BETA 6 / UNSIGNED EARLY ACCESS</span><time dateTime="2026-11-15">15 NOVEMBER 2026</time></header>
+        <h2>Games, music, pictures. One assistant.</h2>
+        <p>NYXR {betaRelease.version} turns NYXR into a creative hub, alongside everything from beta 5.</p>
+        <figure className="games-capture">
+          <img src="/screenshots/nyxr-music.png" alt="NYXR's Music page playing Window Rain Study, a chill 85 BPM song in A minor with intro, verse, chorus and outro" width="1440" height="900" loading="lazy" />
+          <figcaption>The Music page playing a song NYXR composed from one sentence.</figcaption>
+        </figure>
+        <ul><li><strong>Music.</strong> Describe a song and hear it at once. Change the tempo, key, mood and
+          instruments, regenerate a part, edit notes, turn lyrics into a melody, and export WAV, MIDI or a project file.</li>
+          <li><strong>Make anything.</strong> Drawings, posters, quizzes, tunes and small apps are made and checked even
+          without a special tool. Draw and Generate image are in the + menu. Realistic pictures and photo edits use
+          Antigravity’s free image tool when it is signed in.</li>
+          <li><strong>Student visuals.</strong> Mind maps, concept maps, flowcharts, timelines, comparisons, Venn
+          diagrams and labelled diagrams. Slides can be written through Antigravity, with pictures.</li>
+          <li><strong>Instant commands.</strong> About twenty common phrases act the moment they are transcribed.
+          Exhibition mode preloads everything for a live demo.</li>
+          <li><strong>Email and a calmer interface.</strong> “Send it” sends the drafted email through Gmail and
+          confirms only when Gmail does. The header, menus, Home and Settings are quieter, with every action still reachable.</li>
+          <li><strong>Companion.</strong> “Show me how…” highlights the real buttons step by step and waits for your
+          click. Press Ctrl+Alt+A and drag a box to ask about part of the screen. Focus sessions, a “Brief me” daily
+          briefing and spoken reminders with snooze.</li>
+          <li><strong>You stay in control.</strong> “Stop everything” or Ctrl+Alt+Backspace halts every action, and
+          Settings → Permissions switches off whole kinds of action. Notes, a memory manager, custom instructions,
+          schedules and a second opinion from another AI.</li>
+          <li><strong>Your words, your provider.</strong> Hinglish commands such as “Chrome kholo” work, with replies
+          in the language you wrote in. A provider you pick stays picked, falling back Claude Code → Codex → Antigravity.</li></ul>
+        <div className="update-evidence"><strong>Executed checks</strong><p>The frozen app, its helpers, the packaged
+          game player and an isolated install, upgrade and uninstall were checked against this exact installer before
+          publication. Results are in BETA_ACCEPTANCE.json with the release.</p>
+          <p>This build is unsigned, so Windows may warn about the publisher. Reload the Browser Companion after
+          upgrading. Clean-machine laptop, microphone and different-CPU testing remain open.</p></div>
+        <Button href="/download/" secondary>Download beta 6</Button>
+      </article>
+      <article className="update-entry" id="beta-5">
         <header><span className="release-channel">WINDOWS BETA 5 / UNSIGNED EARLY ACCESS</span><time dateTime="2026-11-11">11 NOVEMBER 2026</time></header>
         <h2>Build it, play it, share the screen with it.</h2>
         <p>NYXR {betaRelease.version} brings everything since beta 3 into one installer: Game Studio,

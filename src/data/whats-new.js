@@ -1,8 +1,8 @@
 // Product facts from the current desktop source. Not a release-manifest override.
 export const sourceUpdate = {
-  date: '11 November 2026',
-  label: 'WINDOWS BETA 5',
-  href: '/updates/#beta-5',
+  date: '15 November 2026',
+  label: 'WINDOWS BETA 6',
+  href: '/updates/#beta-6',
 };
 export const openJarvisCloudProviders = [
   'OpenRouter',
@@ -14,6 +14,26 @@ export const openJarvisCloudProviders = [
 ];
 
 export const recentCapabilities = [
+  {id:'music',icon:'voice',title:'Describe a song. Hear it now.',
+   text:'The Music page writes a song from a sentence and plays it at once. Change the tempo, key, mood or instruments, regenerate a part and edit the notes.',
+   detail:'Turn lyrics into a melody and export WAV, MIDI or a project file. Composition uses your AI provider; playback is built in. Included in Windows beta 6.',
+   href:'/updates/#beta-6',link:'See what changed',pages:['chat','intelligence','personalization']},
+  {id:'make-anything',icon:'spark',title:'Ask for anything. Get something real.',
+   text:'Drawings, posters, quizzes, tunes and small apps are made and checked even when NYXR has no special tool for them. Draw and Generate image are in the + menu.',
+   detail:'Realistic pictures and photo edits use Antigravity’s free image tool when it is signed in, with a drawing as the fallback. Requests NYXR cannot do get a plain reason.',
+   href:'/updates/#beta-6',link:'See what changed',pages:['chat','intelligence','coding']},
+  {id:'student-visuals',icon:'nodes',title:'Study it as a picture.',
+   text:'Student’s Visuals tab makes mind maps, concept maps, flowcharts, timelines, comparisons, Venn diagrams and labelled diagrams from a topic or your notes.',
+   detail:'Slides can be written through Antigravity, with pictures, and still export to PowerPoint.',
+   href:'/updates/#beta-6',link:'See what changed',pages:['intelligence','chat']},
+  {id:'instant-commands',icon:'cursor',title:'Say it. It’s done.',
+   text:'About twenty common commands act the moment your words are transcribed, with no AI round trip. Exhibition mode preloads everything for a live demo.',
+   detail:'Everything else still goes through NYXR’s normal planning and checks.',
+   href:'/updates/#beta-6',link:'See what changed',pages:['computer','voice','macros']},
+  {id:'companion',icon:'cursor',title:'Show me how. Right here.',
+   text:'Ask “Show me how…” and NYXR highlights the real buttons step by step, waiting for your click. Press Ctrl+Alt+A and drag a box to ask about any part of the screen.',
+   detail:'Focus sessions with spoken nudges, a “Brief me” daily briefing and spoken reminders with snooze. Stop everything with Ctrl+Alt+Backspace. Included in Windows beta 6.',
+   href:'/updates/#beta-6',link:'See what changed',pages:['computer','voice','personalization']},
   {id:'nexus-games',icon:'code',title:'Your idea. A world to play.',
    text:'Describe an original game in a sentence. NYXR writes it, tests it by playing it, keeps repairing by itself and opens it full screen, centred, in front of your work.',
    detail:'Add images, files or web research as inspiration. Editing opens separately in Chrome. Uses your selected AI provider; results vary by prompt. Included in Windows beta 5.',

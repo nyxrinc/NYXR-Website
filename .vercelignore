@@ -12,6 +12,9 @@
 !tools/companion-release.mjs
 !tools/build-vercel.mjs
 !tools/verify-build.mjs
+!tools/prerender.mjs
+!prerender
+!prerender/**
 !package.json
 !package-lock.json
 !index.html

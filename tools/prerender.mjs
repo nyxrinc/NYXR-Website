@@ -5,20 +5,78 @@
 // JavaScript (Gemini, ChatGPT browsing, Slack, WhatsApp...) saw nothing.
 //
 // 1. Always: write dist/llms.txt, a plain-text guide to the site for AI tools.
-// 2. When a local Playwright Chromium exists: open each built page with
-//    reduced motion, copy the rendered page into its index.html. The browser
-//    app still starts as usual and simply replaces that copy.
+// 2. When a local browser exists (Playwright's Chromium, Chrome or Edge): open
+//    each built page with reduced motion and copy the rendered page into its
+//    index.html. The browser app still starts as usual and replaces that copy.
 //
-// Without a browser (for example a remote build machine) step 2 is skipped
-// with a note; the site still works, just without the pre-filled HTML.
+// Each local render is also saved to prerender/snapshots.json.gz with a
+// fingerprint of the source. A build machine without a browser (Vercel's)
+// reuses those snapshots only when the fingerprint matches exactly, so the
+// pre-filled HTML can never show out-of-date text; otherwise it skips with a
+// note and the site still works, just without the pre-filled HTML.
 import { createServer } from 'node:http';
-import { readFile, writeFile, stat } from 'node:fs/promises';
-import { extname, resolve, normalize, sep } from 'node:path';
+import { createHash } from 'node:crypto';
+import { gzipSync, gunzipSync } from 'node:zlib';
+import { mkdir, readdir, readFile, writeFile, stat } from 'node:fs/promises';
+import { extname, resolve, normalize, relative, sep } from 'node:path';
 import { pages } from '../src/data/pages.js';
 
 const root = resolve('dist');
 const origin = (process.env.NYXR_SITE_ORIGIN || 'https://nyxr-website.vercel.app').replace(/\/$/, '');
 const FULL_FORM = 'Natural-language eXecution & Reasoning';
+const SNAPSHOTS = resolve('prerender', 'snapshots.json.gz');
+const TEXT_FILE = /\.(jsx?|mjs|css|html|json|txt|svg|md)$/i;
+
+// Same answer on Windows (CRLF checkout) and Linux (LF): text line endings are normalised.
+export async function sourceFingerprint() {
+  const files = [];
+  async function walk(folder) {
+    for (const entry of await readdir(folder, { withFileTypes: true }).catch(() => [])) {
+      const path = resolve(folder, entry.name);
+      if (entry.isDirectory()) await walk(path);
+      else files.push(path);
+    }
+  }
+  for (const folder of ['src', 'public']) await walk(resolve(folder));
+  files.push(resolve('index.html'), resolve('vite.config.js'), resolve('package-lock.json'), resolve('release', 'beta.json'));
+  const hash = createHash('sha256');
+  for (const file of files.sort()) {
+    const name = relative(resolve('.'), file).split(sep).join('/');
+    let data = await readFile(file).catch(() => null);
+    if (data === null) continue;
+    if (TEXT_FILE.test(name)) data = Buffer.from(data.toString('utf8').split('\r\n').join('\n'));
+    hash.update(name).update('|').update(data).update('|');
+  }
+  return hash.digest('hex');
+}
+
+async function fill(file, html) {
+  const shell = await readFile(file, 'utf8');
+  if (!shell.includes('<div id="root"></div>')) return false;
+  await writeFile(file, shell.replace('<div id="root"></div>', `<div id="root">${html}</div>`), 'utf8');
+  return true;
+}
+
+async function fromSnapshots(reason) {
+  try {
+    const saved = JSON.parse(gunzipSync(await readFile(SNAPSHOTS)).toString('utf8'));
+    if (saved.fingerprint !== (await sourceFingerprint())) {
+      console.log(
+        `Pre-render skipped (${reason}); saved snapshots are for different source. ` +
+          'Run npm run build on a PC with Chrome to refresh them.',
+      );
+      return;
+    }
+    let done = 0;
+    for (const page of pages) {
+      const html = saved.pages[page.path];
+      if (html && (await fill(resolve(root, '.' + page.path, 'index.html'), html))) done++;
+    }
+    console.log(`Pre-rendered ${done} pages from saved snapshots (source fingerprint matches).`);
+  } catch (error) {
+    console.log(`Pre-render skipped (${reason}); no usable snapshots: ${String(error.message).split('\n')[0]}`);
+  }
+}
 
 async function writeLlms() {
   const groups = {};
@@ -36,8 +94,7 @@ async function writeLlms() {
   ];
   for (const [group, items] of Object.entries(groups)) {
     lines.push(`## ${group}`, '');
-    for (const page of items)
-      lines.push(`- [${page.label}](${origin}${page.path}): ${page.description || ''}`.trim());
+    for (const page of items) lines.push(`- [${page.label}](${origin}${page.path}): ${page.description || ''}`.trim());
     lines.push('');
   }
   await writeFile(resolve(root, 'llms.txt'), lines.join('\n'), 'utf8');
@@ -81,12 +138,14 @@ function serve() {
 
 // Playwright's own browser first; otherwise any Chromium already downloaded
 // by another Playwright version, then installed Chrome/Edge (a fresh,
-// temporary headless profile — never the user's own).
+// temporary headless profile, never the user's own).
 async function launch(chromium) {
+  if (process.env.NYXR_PRERENDER_BROWSER === 'off') return null;
   const tries = [{}];
-  const store = process.env.PLAYWRIGHT_BROWSERS_PATH || (process.env.LOCALAPPDATA && resolve(process.env.LOCALAPPDATA, 'ms-playwright'));
+  const store =
+    process.env.PLAYWRIGHT_BROWSERS_PATH ||
+    (process.env.LOCALAPPDATA && resolve(process.env.LOCALAPPDATA, 'ms-playwright'));
   if (store) {
-    const { readdir } = await import('node:fs/promises');
     const folders = (await readdir(store).catch(() => [])).sort().reverse();
     for (const folder of folders) {
       for (const exe of [
@@ -110,7 +169,7 @@ async function launch(chromium) {
       last = String(error.message).split('\n')[0];
     }
   }
-  console.log('Pre-render skipped: no local Chromium (' + last + ').');
+  console.log('No local Chromium (' + last + ').');
   return null;
 }
 
@@ -119,21 +178,19 @@ async function prerender() {
   try {
     ({ chromium } = await import('playwright'));
   } catch {
-    console.log('Pre-render skipped: Playwright is not installed.');
-    return;
+    return fromSnapshots('Playwright is not installed');
   }
   const browser = await launch(chromium);
-  if (!browser) return;
+  if (!browser) return fromSnapshots('no local browser');
   const server = await serve();
   const base = `http://127.0.0.1:${server.address().port}`;
+  const snapshots = {};
   let done = 0;
   try {
     const context = await browser.newContext({ reducedMotion: 'reduce', viewport: { width: 1440, height: 900 } });
     const tab = await context.newPage();
     for (const page of pages) {
       const file = resolve(root, '.' + page.path, 'index.html');
-      const shell = await readFile(file, 'utf8');
-      if (!shell.includes('<div id="root"></div>')) continue;
       await tab.goto(base + page.path, { waitUntil: 'networkidle' });
       await tab.waitForSelector('#root main', { timeout: 15000 });
       const html = await tab.evaluate(() => {
@@ -145,14 +202,19 @@ async function prerender() {
         return copy.innerHTML;
       });
       if (!html.includes('<main')) throw new Error('No page content rendered for ' + page.path);
-      await writeFile(file, shell.replace('<div id="root"></div>', `<div id="root">${html}</div>`), 'utf8');
-      done++;
+      if (await fill(file, html)) {
+        snapshots[page.path] = html;
+        done++;
+      }
     }
   } finally {
     await browser.close();
     server.close();
   }
-  console.log(`Pre-rendered ${done} pages as readable HTML.`);
+  await mkdir(resolve('prerender'), { recursive: true });
+  const fingerprint = await sourceFingerprint();
+  await writeFile(SNAPSHOTS, gzipSync(JSON.stringify({ fingerprint, pages: snapshots }), { level: 9 }));
+  console.log(`Pre-rendered ${done} pages as readable HTML; snapshots saved for remote builds.`);
 }
 
 await writeLlms();

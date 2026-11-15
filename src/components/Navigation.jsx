@@ -65,7 +65,12 @@ export default function Navigation({ page }) {
         Skip to content
       </a>
       <div className="nav-inner">
-        <a href="/" className="brand-home" aria-label="NYXR home">
+        <a
+          href="/"
+          className="brand-home"
+          aria-label="NYXR home"
+          title="NYXR · Natural-language eXecution & Reasoning"
+        >
           <img
             src="/logos/nyxr-brand-core.png"
             alt="NYXR orbital core logo"

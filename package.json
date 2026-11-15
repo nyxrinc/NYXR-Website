@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "vite --host 127.0.0.1",
-    "build": "vite build && node tools/verify-build.mjs",
+    "build": "vite build && node tools/prerender.mjs && node tools/verify-build.mjs",
     "build:vercel": "node tools/build-vercel.mjs",
     "build:release": "node tools/build-vercel.mjs --release",
     "check:release": "node tools/check-release.mjs",

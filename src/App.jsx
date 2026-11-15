@@ -34,6 +34,16 @@ import OpenJarvis from './pages/OpenJarvis';
 import Games from './pages/Games';
 import SourceUpdates, { HomeEvolution } from './components/SourceUpdates';
 import LatestSetupGuide from './components/LatestSetupGuide';
+import {
+  ScrollProgress,
+  SpeakStrip,
+  StatementReveal,
+  WordReveal,
+  StatCounters,
+  SayMarquee,
+  HowItWorks,
+  FullForm,
+} from './sections/Motion';
 
 const resourceCopy = {
   documentation: {
@@ -287,6 +297,7 @@ export default function App() {
         </div>
       )}
       <div id="top" />
+      <ScrollProgress />
       <Navigation page={page} />
       <main id="main" tabIndex={-1} className={page.id === 'overview' ? 'home-main' : 'route-main'}>
         <div key={path} className="page-content">
@@ -343,6 +354,7 @@ export default function App() {
             </a>
             <p>Your AI operating environment.</p>
             <span>DESIGNED FOR THE WAY YOU WORK.</span>
+            <FullForm />
             <a className="footer-contact" href={contactHref}>
               {contactEmail}
             </a>
@@ -413,10 +425,16 @@ function PageContent({ page, openShot }) {
       return (
         <>
           <Hero openShot={openShot} />
+          <SpeakStrip />
+          <StatementReveal />
+          <WordReveal />
+          <StatCounters />
           <HomeCapabilities />
+          <SayMarquee />
           <HomeEvolution />
           <LearningShowcase />
           <PhoneShowcase />
+          <HowItWorks />
           <HomeSignature />
         </>
       );

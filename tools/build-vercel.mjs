@@ -37,4 +37,5 @@ if (release.available) {
     'Preview only: beta download is unavailable until release assets and redistribution review are ready.',
   );
 await build();
+await import('./prerender.mjs');
 await import('./verify-build.mjs');

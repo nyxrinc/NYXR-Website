@@ -1,164 +1,94 @@
 [
   {
-    "file": "voice.webp",
-    "width": 1650,
-    "height": 920,
-    "bytes": 95544,
-    "source": "Actual NYXR Qt UI, isolated showcase session"
-  },
-  {
     "file": "dashboard.webp",
     "width": 1650,
     "height": 920,
-    "bytes": 96284,
-    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
-  },
-  {
-    "file": "theme-nexus.webp",
-    "width": 1650,
-    "height": 920,
-    "bytes": 96284,
-    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
-  },
-  {
-    "file": "theme-core.webp",
-    "width": 1650,
-    "height": 920,
-    "bytes": 78692,
-    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
+    "bytes": 32688,
+    "source": "Actual NYXR 5 app (5.0.0-preview.1 source), fresh data folder, placeholder name; chat replies and the game are real Antigravity (Gemini Flash) outputs"
   },
   {
     "file": "theme-hacker.webp",
     "width": 1650,
     "height": 920,
-    "bytes": 93544,
-    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
-  },
-  {
-    "file": "theme-violet.webp",
-    "width": 1650,
-    "height": 920,
-    "bytes": 79452,
-    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
-  },
-  {
-    "file": "theme-arctic.webp",
-    "width": 1650,
-    "height": 920,
-    "bytes": 78130,
-    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
-  },
-  {
-    "file": "theme-ember.webp",
-    "width": 1650,
-    "height": 920,
-    "bytes": 83392,
-    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
-  },
-  {
-    "file": "theme-light.webp",
-    "width": 1650,
-    "height": 920,
-    "bytes": 72958,
-    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
-  },
-  {
-    "file": "setup-tour.webp",
-    "width": 1650,
-    "height": 900,
-    "bytes": 43496,
-    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
-  },
-  {
-    "file": "setup-listening.webp",
-    "width": 1650,
-    "height": 900,
-    "bytes": 49718,
-    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
-  },
-  {
-    "file": "setup-speaking.webp",
-    "width": 1650,
-    "height": 900,
-    "bytes": 50920,
-    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
+    "bytes": 77436,
+    "source": "Actual NYXR 5 app (5.0.0-preview.1 source), fresh data folder, placeholder name; chat replies and the game are real Antigravity (Gemini Flash) outputs"
   },
   {
     "file": "chat.webp",
     "width": 1650,
     "height": 920,
-    "bytes": 43084,
-    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
+    "bytes": 67982,
+    "source": "Actual NYXR 5 app (5.0.0-preview.1 source), fresh data folder, placeholder name; chat replies and the game are real Antigravity (Gemini Flash) outputs"
   },
   {
     "file": "fullscreen.webp",
-    "width": 1920,
-    "height": 1080,
-    "bytes": 47210,
-    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
+    "width": 1650,
+    "height": 920,
+    "bytes": 67990,
+    "source": "Actual NYXR 5 app (5.0.0-preview.1 source), fresh data folder, placeholder name; chat replies and the game are real Antigravity (Gemini Flash) outputs"
   },
   {
     "file": "projects.webp",
     "width": 1650,
     "height": 920,
-    "bytes": 89352,
-    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
+    "bytes": 62682,
+    "source": "Actual NYXR 5 app (5.0.0-preview.1 source), fresh data folder, placeholder name; chat replies and the game are real Antigravity (Gemini Flash) outputs"
   },
   {
     "file": "skills.webp",
     "width": 1650,
     "height": 920,
-    "bytes": 163818,
-    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
+    "bytes": 47490,
+    "source": "Actual NYXR 5 app (5.0.0-preview.1 source), fresh data folder, placeholder name; chat replies and the game are real Antigravity (Gemini Flash) outputs"
   },
   {
     "file": "student.webp",
     "width": 1650,
     "height": 920,
-    "bytes": 64422,
-    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
+    "bytes": 55230,
+    "source": "Actual NYXR 5 app (5.0.0-preview.1 source), fresh data folder, placeholder name; chat replies and the game are real Antigravity (Gemini Flash) outputs"
   },
   {
     "file": "macros.webp",
     "width": 1650,
     "height": 920,
-    "bytes": 55410,
-    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
+    "bytes": 24854,
+    "source": "Actual NYXR 5 app (5.0.0-preview.1 source), fresh data folder, placeholder name; chat replies and the game are real Antigravity (Gemini Flash) outputs"
   },
   {
     "file": "personalization.webp",
     "width": 1650,
     "height": 920,
-    "bytes": 44090,
-    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
+    "bytes": 53510,
+    "source": "Actual NYXR 5 app (5.0.0-preview.1 source), fresh data folder, placeholder name; chat replies and the game are real Antigravity (Gemini Flash) outputs"
   },
   {
     "file": "core-editor.webp",
     "width": 1650,
     "height": 920,
-    "bytes": 47786,
-    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
+    "bytes": 49118,
+    "source": "Actual NYXR 5 app (5.0.0-preview.1 source), fresh data folder, placeholder name; chat replies and the game are real Antigravity (Gemini Flash) outputs"
   },
   {
     "file": "providers.webp",
     "width": 1650,
     "height": 920,
-    "bytes": 39660,
-    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
+    "bytes": 75654,
+    "source": "Actual NYXR 5 app (5.0.0-preview.1 source), fresh data folder, placeholder name; chat replies and the game are real Antigravity (Gemini Flash) outputs"
   },
   {
     "file": "hud.webp",
-    "width": 460,
+    "width": 380,
     "height": 740,
-    "bytes": 19824,
-    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
+    "bytes": 12100,
+    "source": "Actual NYXR 5 app (5.0.0-preview.1 source), fresh data folder, placeholder name; chat replies and the game are real Antigravity (Gemini Flash) outputs"
   },
   {
     "file": "voice-dock.webp",
-    "width": 440,
-    "height": 192,
-    "bytes": 6180,
-    "source": "Actual NYXR 4.0 beta3 Qt UI, isolated offscreen session; disconnected services"
+    "width": 420,
+    "height": 236,
+    "bytes": 7074,
+    "source": "Actual NYXR 5 app (5.0.0-preview.1 source), fresh data folder, placeholder name; chat replies and the game are real Antigravity (Gemini Flash) outputs"
   },
   {
     "file": "openjarvis-settings.webp",
@@ -201,5 +131,61 @@
     "height": 1000,
     "bytes": 29448,
     "source": "Actual NYXR 5 5.0.0-preview.1 installer build, fresh data folder, placeholder name, no provider connected"
+  },
+  {
+    "file": "chat-detail.webp",
+    "width": 1120,
+    "height": 341,
+    "bytes": 37466,
+    "source": "Actual NYXR 5 app (5.0.0-preview.1 source), fresh data folder, placeholder name; chat replies and the game are real Antigravity (Gemini Flash) outputs"
+  },
+  {
+    "file": "coding-detail.webp",
+    "width": 1435,
+    "height": 850,
+    "bytes": 49084,
+    "source": "Actual NYXR 5 app (5.0.0-preview.1 source), fresh data folder, placeholder name; chat replies and the game are real Antigravity (Gemini Flash) outputs"
+  },
+  {
+    "file": "theme-midnight.webp",
+    "width": 1650,
+    "height": 920,
+    "bytes": 68680,
+    "source": "Actual NYXR 5 app (5.0.0-preview.1 source), fresh data folder, placeholder name; chat replies and the game are real Antigravity (Gemini Flash) outputs"
+  },
+  {
+    "file": "theme-nemesis.webp",
+    "width": 1650,
+    "height": 920,
+    "bytes": 75246,
+    "source": "Actual NYXR 5 app (5.0.0-preview.1 source), fresh data folder, placeholder name; chat replies and the game are real Antigravity (Gemini Flash) outputs"
+  },
+  {
+    "file": "theme-blossom.webp",
+    "width": 1650,
+    "height": 920,
+    "bytes": 77474,
+    "source": "Actual NYXR 5 app (5.0.0-preview.1 source), fresh data folder, placeholder name; chat replies and the game are real Antigravity (Gemini Flash) outputs"
+  },
+  {
+    "file": "theme-rain.webp",
+    "width": 1650,
+    "height": 920,
+    "bytes": 101554,
+    "source": "Actual NYXR 5 app (5.0.0-preview.1 source), fresh data folder, placeholder name; chat replies and the game are real Antigravity (Gemini Flash) outputs"
+  },
+  {
+    "file": "theme-aurora.webp",
+    "width": 1650,
+    "height": 920,
+    "bytes": 81964,
+    "source": "Actual NYXR 5 app (5.0.0-preview.1 source), fresh data folder, placeholder name; chat replies and the game are real Antigravity (Gemini Flash) outputs"
+  },
+  {
+    "file": "nyxr-music.png",
+    "width": 1650,
+    "height": 920,
+    "bytes": 288257,
+    "source": "Actual NYXR 5 app (5.0.0-preview.1 source), fresh data folder, placeholder name; tune from the built-in offline composer"
   }
 ]

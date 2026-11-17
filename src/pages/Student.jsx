@@ -28,7 +28,7 @@ export default function Student({ slidesOnly = false }) {
       </SectionHeading>
       <Shot
         name="student"
-        alt="The actual NEXUS Student workspace with PDF library, Tutor, Slides, Revision and Exams tabs"
+        alt="NYXR 5 Student in the Rain look: PDF library, Tutor, Slides, Revision and Exams"
         caption="THE STUDENT WORKSPACE / ACTUAL APP"
       />
       <div className="study-feature-grid">

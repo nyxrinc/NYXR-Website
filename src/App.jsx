@@ -145,13 +145,10 @@ const resourceCopy = {
     content: (
       <>
         <p>
-          The screenshots and product film show the actual NYXR 4.0 Qt application. A dedicated
-          showcase session was created without accessing the user’s conversations or credentials.
+          The screenshots show the actual NYXR 5 app (the 5.0.0-preview.1 source), captured in a fresh data folder with the placeholder name “Alex”, never a user’s conversations or credentials. The product film shows the earlier NYXR 4 Qt application.
         </p>
         <p>
-          The Orbit project and conversations were written for these captures. UI navigation and
-          animated N Core frames were recorded from the running application. No provider inference,
-          successful automation, or microphone activity is depicted as a live result.
+          The orbit-site project was written for these captures. The chat replies and the Neon Coin Catcher game are real outputs from Antigravity (Gemini Flash), the base model Auto uses. No microphone activity is depicted.
         </p>
         <p>
           Images were cropped and encoded locally as WebP. The product film is a 20-second WebM
@@ -160,13 +157,11 @@ const resourceCopy = {
           separate from app captures.
         </p>
         <p>
-          Theme previews use actual NYXR theme captures. The Matrix rain over the Hacker preview is
-          a website animation.
+          Theme previews show the same real conversation in each NYXR 5 look. The Matrix rain over the Hacker preview is a website animation.
         </p>
         <p>
           The OpenJarvis settings capture shows the updated source in an isolated offscreen session,
-          with an illustrative model ID and empty credential fields. It is separate from the earlier
-          beta 3 screenshots and product film.
+          with an illustrative model ID and empty credential fields. OpenJarvis is a NYXR 4 source feature; NYXR 5 keeps local models off by design.
         </p>
       </>
     ),

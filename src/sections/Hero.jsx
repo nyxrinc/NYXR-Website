@@ -13,7 +13,7 @@ export default function Hero({ openShot }) {
         </a>
       </div>
       <div className="hero-copy">
-        <Eyebrow>NEXUS / THE NYXR COMMAND CENTER</Eyebrow>
+        <Eyebrow>NYXR 5 / A LIVING CORE ON HOME</Eyebrow>
         <h1 id="hero-title">
           NYXR
           <span className="title-star" aria-hidden="true">
@@ -43,7 +43,7 @@ export default function Hero({ openShot }) {
       </div>
       <div className="hero-stage container">
         <div className="stage-coordinate coord-left">
-          N / 04.0
+          N / 05.0
           <br />
           WINDOWS DESKTOP ENVIRONMENT
         </div>
@@ -58,8 +58,8 @@ export default function Hero({ openShot }) {
         <div className="hero-main-shot">
           <Shot
             name="dashboard"
-            alt="Actual NYXR NEXUS Command Center, with its large central reactor core and surrounding work panels"
-            caption="COMMAND CENTER"
+            alt="NYXR 5 Home in Midnight: the orbiting NYXR core, a greeting, an ask box and recent chats"
+            caption="HOME"
             priority
             onClick={() => openShot('dashboard')}
           />
@@ -71,7 +71,7 @@ export default function Hero({ openShot }) {
         <button
           className="hero-chat-float"
           onClick={() => openShot('chat')}
-          aria-label="View the actual NYXR Chat interface"
+          aria-label="View the NYXR 5 Chat page"
         >
           <div className="float-heading">
             <Icon name="chat" size={14} />
@@ -80,7 +80,7 @@ export default function Hero({ openShot }) {
           </div>
           <img
             src="/screenshots/chat-detail.webp"
-            alt="A detail from the real NYXR showcase conversation"
+            alt="A real NYXR 5 reply explaining how black holes form"
             width="1120"
             height="341"
           />
@@ -91,16 +91,16 @@ export default function Hero({ openShot }) {
         <button
           className="hero-voice-float"
           onClick={() => openShot('voice-dock')}
-          aria-label="View the actual F11 voice dock"
+          aria-label="View the NYXR 5 hands-free bar"
         >
           <img
             src="/screenshots/voice-dock.webp"
-            alt="Actual NYXR F11 quick-text dock"
-            width="440"
-            height="191"
+            alt="NYXR 5 hands-free bar with its text box, Send and the Write for me switch"
+            width="420"
+            height="236"
           />
           <span>
-            <kbd>F11</kbd> A smaller way to ask.
+            <kbd>F8</kbd> Hold to talk, from any app.
           </span>
         </button>
       </div>

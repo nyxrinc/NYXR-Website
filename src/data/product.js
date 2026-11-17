@@ -1,49 +1,42 @@
+// NYXR 5's looks. Each screenshot is the same real conversation in that look (theme-<id>.webp).
 export const themes = [
   {
-    id: 'nexus',
-    name: 'NEXUS',
-    color: '#32dfff',
-    description:
-      'NYXR’s living heart. Cursor-responsive orbital depth, neon cyan-blue text and onyx glass.',
+    id: 'midnight',
+    name: 'Midnight',
+    color: '#8f9cff',
+    description: 'The default. Calm charcoal, soft violet light and an orbiting core on Home.',
   },
   {
-    id: 'core',
-    name: 'NYXR Core',
-    color: '#76edff',
-    description: 'The original. Deep navy, cool light, a little space to think.',
+    id: 'nemesis',
+    name: 'Nemesis',
+    color: '#32dfff',
+    description: 'Near-black glass, neon blue and HUD corner brackets. An arc-reactor core.',
+  },
+  {
+    id: 'blossom',
+    name: 'Blossom',
+    color: '#f2a7c7',
+    description: 'Nexus Pro glass in pink and gold, with a pearl core and drifting pastel light.',
+  },
+  {
+    id: 'rain',
+    name: 'Rain',
+    color: '#7fb6ff',
+    description: 'Blue liquid glass with real-looking rain. Your cursor wipes the drops away.',
+  },
+  {
+    id: 'aurora',
+    name: 'Aurora',
+    color: '#5fe3c4',
+    description: 'A night sky in teal and violet. The curtains of light drift with your cursor.',
   },
   {
     id: 'hacker',
     name: 'Hacker',
     color: '#72ed9a',
-    description: 'Terminal green, quiet contrast, and a little Matrix rain.',
-  },
-  {
-    id: 'violet',
-    name: 'Cyber Violet',
-    color: '#bc9fff',
-    description: 'A softer spectrum. Violet instruments against midnight.',
-  },
-  {
-    id: 'arctic',
-    name: 'Arctic',
-    color: '#9ce7ff',
-    description: 'Cool blue clarity. A crisp, lighter perspective.',
-  },
-  {
-    id: 'ember',
-    name: 'Ember',
-    color: '#ffad7c',
-    description: 'Warm amber accents. Focus with a different temperature.',
-  },
-  {
-    id: 'light',
-    name: 'Minimal Light',
-    color: '#d9e8ec',
-    description: 'A quieter canvas. Airy surfaces and clear, dark type.',
+    description: 'Phosphor-green terminal glass with a wireframe-globe core.',
   },
 ];
-
 export const providers = [
   ['OpenRouter', 'OR', 'Model ecosystem'],
   ['Ashna AI', 'A', 'Multi-model API'],
@@ -63,102 +56,94 @@ export const providers = [
 
 export const gallery = [
   {
-    id: 'openjarvis-settings',
-    title: 'Choose where NYXR thinks',
-    category: 'Workspace',
-    description:
-      'Actual OpenJarvis local/cloud settings in an isolated showcase. Example model, empty credential fields; available in the updated source.',
-  },
-  {
-    id: 'theme-nexus',
-    title: 'The NEXUS core',
-    category: 'Personalization',
-    description: 'Actual NEXUS Command Center. The shared core remains central in every theme.',
-  },
-  {
     id: 'dashboard',
-    title: 'Command Center',
+    title: 'Home, with a living core',
     category: 'Workspace',
-    description: 'The N Core, system overview and project snapshot in one place.',
-  },
-  {
-    id: 'projects',
-    title: 'Room to build',
-    category: 'Workspace',
-    description: 'Real file explorer, editor tabs and the coding assistant.',
+    description: 'NYXR 5 Home in Midnight: the core, a greeting, an ask box and your recent chats.',
   },
   {
     id: 'chat',
     title: 'A conversation with context',
     category: 'Workspace',
-    description: 'An authored showcase conversation in the actual Chat interface.',
+    description: 'A real reply from Antigravity (Gemini Flash), the base model Auto uses.',
+  },
+  {
+    id: 'fullscreen',
+    title: 'Game Studio, like an IDE',
+    category: 'Workspace',
+    description: 'Chat on the left, the game it just made on the right, saved into the project folder.',
+  },
+  {
+    id: 'projects',
+    title: 'Room to build',
+    category: 'Workspace',
+    description: 'Code: the project tree, the editor and NYXR’s coding chat, in one place.',
+  },
+  {
+    id: 'theme-nemesis',
+    title: 'Nemesis',
+    category: 'Personalization',
+    description: 'The dark, neon-blue HUD theme, on the same conversation.',
   },
   {
     id: 'voice-dock',
-    title: 'A smaller way to ask',
+    title: 'Hold F8. Anywhere.',
     category: 'Modes',
-    description:
-      'The actual F11 quick-text and voice surface. Capture is idle; no microphone is active.',
+    description: 'The hands-free bar sits over any app; hover it to type, or switch it to Write for me.',
   },
   {
     id: 'hud',
     title: 'Always beside you',
     category: 'Modes',
-    description: 'NYXR’s compact side-docked HUD, captured from the real app.',
+    description: 'NYXR 5 down to a narrow window beside your work; pages stack and the sidebar slides in.',
   },
   {
-    id: 'personalization',
-    title: 'Make it feel like you',
+    id: 'providers',
+    title: 'Choose where NYXR thinks',
+    category: 'Workspace',
+    description: 'The model picker: providers on top, every model below, Auto on each tool’s base model.',
+  },
+  {
+    id: 'theme-rain',
+    title: 'Rain',
     category: 'Personalization',
-    description: 'The theme library in the real NEXUS Theme Studio.',
+    description: 'Liquid glass and real-looking rain; your cursor wipes the drops.',
   },
   {
     id: 'skills',
     title: 'A different approach',
     category: 'Workspace',
-    description: 'Built-in skill profiles and their task instructions.',
-  },
-  {
-    id: 'theme-hacker',
-    title: 'The Hacker profile',
-    category: 'Personalization',
-    description: 'Actual Hacker theme applied to the NYXR Command Center.',
+    description: 'Commands → Skills: built-in and Python skills, pinned per chat.',
   },
   {
     id: 'macros',
-    title: 'Record. Understand. Run.',
+    title: 'Record. Review. Replay.',
     category: 'Workspace',
-    description: 'The actual Macros workspace, ready to record or open a saved routine.',
-  },
-  {
-    id: 'fullscreen',
-    title: 'Take the whole canvas',
-    category: 'Modes',
-    description: 'The real Chat interface at 1920×1080, distinct from the compact HUD.',
-  },
-  {
-    id: 'providers',
-    title: 'Connections, clearly',
-    category: 'Workspace',
-    description: 'Actual connection status. External services were disabled for these captures.',
+    description: 'Commands → Macros: record with F5 to stop, review the steps, replay with checks.',
   },
   {
     id: 'student',
     title: 'A place to learn',
     category: 'Workspace',
-    description: 'The actual Student workspace, ready for local PDF study material.',
+    description: 'Student: PDF library, Tutor, Slides, Revision and Exam plans.',
+  },
+  {
+    id: 'personalization',
+    title: 'Make it feel like you',
+    category: 'Personalization',
+    description: 'Settings → Appearance: Midnight, Nemesis and the four Nexus Pro looks.',
   },
   {
     id: 'core-editor',
-    title: 'Tune your AI heart',
+    title: 'Your name, your style',
     category: 'Personalization',
-    description: 'The live core editor: orbital depth, size, glow, rings and cursor response.',
+    description: 'Settings → You: what NYXR calls you, its personality and style dials, with a live preview.',
   },
   {
-    id: 'theme-light',
-    title: 'A lighter perspective',
+    id: 'theme-aurora',
+    title: 'Aurora',
     category: 'Personalization',
-    description: 'The actual Minimal Light profile, with the same NYXR identity.',
+    description: 'Teal and violet light that drifts with your cursor.',
   },
 ];
 

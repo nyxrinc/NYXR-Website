@@ -133,7 +133,7 @@ export function InteractiveDemo() {
 }
 
 export function ThemeSection({ openShot }) {
-  const [selected, setSelected] = useState('nexus');
+  const [selected, setSelected] = useState('midnight');
   const theme = themes.find((t) => t.id === selected);
   return (
     <section className="theme-section section container" id="personalization">
@@ -186,9 +186,9 @@ export function ThemeSection({ openShot }) {
             ))}
           </div>
           <span className="theme-capture-note">
-            REAL THEME CAPTURES
+            REAL NYXR 5 CAPTURES
             <br />
-            FROM THE WINDOWS APP
+            SAME CHAT, SIX LOOKS
           </span>
         </div>
         <div className="theme-preview">
@@ -196,7 +196,7 @@ export function ThemeSection({ openShot }) {
             <img
               key={selected}
               src={`/screenshots/theme-${selected}.webp`}
-              alt={`Actual NYXR Command Center in the ${theme.name} theme`}
+              alt={`NYXR 5 showing a real conversation in the ${theme.name} theme`}
               width="1650"
               height="920"
               loading="lazy"
@@ -265,8 +265,7 @@ export function MotionSection() {
           }
         />
         <p className="title-aside">
-          A short look around the real Windows interface. Command Center, Chat, the coding
-          workspace, Student, and the live core editor.
+          A short look around the NYXR 4 Windows app: Command Center, Chat, the coding workspace, Student, and the live core editor. The screenshots across this site show NYXR 5.
         </p>
       </div>
       <div

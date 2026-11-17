@@ -46,7 +46,7 @@ export default function Updates() {
         <h2>Games, music, pictures. One assistant.</h2>
         <p>NYXR {betaRelease.version} turns NYXR into a creative hub, alongside everything from beta 5.</p>
         <figure className="games-capture">
-          <img src="/screenshots/nyxr-music.png" alt="NYXR's Music page playing Window Rain Study, a chill 85 BPM song in A minor with intro, verse, chorus and outro" width="1440" height="900" loading="lazy" />
+          <img src="/screenshots/nyxr-music.png" alt="NYXR 5 Studio → Music with Chill Jazz, a 110 BPM tune in D dorian made by the built-in offline composer" width="1650" height="920" loading="lazy" />
           <figcaption>The Music page playing a song NYXR composed from one sentence.</figcaption>
         </figure>
         <ul><li><strong>Music.</strong> Describe a song and hear it at once. Change the tempo, key, mood and

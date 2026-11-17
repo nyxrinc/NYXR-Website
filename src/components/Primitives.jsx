@@ -73,7 +73,7 @@ export function Shot({
           <i />
         </span>
         <span>
-          NYXR 4.0 <b>/</b> {caption || 'SHOWCASE WORKSPACE'}
+          NYXR 5 <b>/</b> {caption || 'SHOWCASE WORKSPACE'}
         </span>
         <Icon name="expand" size={12} />
       </div>

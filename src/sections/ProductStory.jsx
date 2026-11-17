@@ -143,7 +143,7 @@ export function ChatSection({ openShot }) {
         </div>
         <Shot
           name="chat"
-          alt="The actual NYXR Chat page with an authored conversation about a website"
+          alt="The NYXR 5 Chat page with a real reply: a 3-day Tokyo plan on a student budget"
           caption="CHAT"
           onClick={() => openShot('chat')}
         />
@@ -209,7 +209,7 @@ export function CodingSection({ openShot }) {
           </div>
           <Shot
             name="coding-detail"
-            alt="Real NYXR project file explorer, HTML editor and coding assistant in an isolated Orbit workspace"
+            alt="NYXR 5 Code: the orbit-site project tree, index.html in the editor and the coding chat"
             caption="PROJECT WORKSPACE"
             onClick={() => openShot('projects')}
           />
@@ -336,16 +336,16 @@ export function VoiceSection({ openShot }) {
           <button
             className="dock-capture"
             onClick={() => openShot('voice-dock')}
-            aria-label="Enlarge actual NYXR hands-free dock"
+            aria-label="Enlarge the NYXR 5 hands-free bar"
           >
             <img
               src="/screenshots/voice-dock.webp"
-              alt="NYXR F11 dock with centered voice dots, quick-text input, Send and collapse controls"
-              width="440"
-              height="141"
+              alt="NYXR 5 hands-free bar: hold F8 to talk, or type in it and press Send; Chat or Write for me"
+              width="420"
+              height="236"
               loading="lazy"
             />
-            <span>ACTUAL F11 DOCK / IDLE CAPTURE</span>
+            <span>NYXR 5 HANDS-FREE BAR / IDLE CAPTURE</span>
           </button>
           <div className="voice-state-control">
             <span>EXPLORE THE STATES</span>
@@ -554,11 +554,11 @@ export function HudSection({ openShot }) {
         <button
           className="hud-capture"
           onClick={() => openShot('hud')}
-          aria-label="View real NYXR HUD screenshot"
+          aria-label="View NYXR 5 in a narrow window"
         >
           <img
             src="/screenshots/hud.webp"
-            alt="Actual side-docked NYXR HUD, with the orbital N Core and compact composer"
+            alt="NYXR 5 in a narrow window beside your work, with the reminder it just set"
             width="380"
             height="740"
             loading="lazy"
@@ -688,8 +688,8 @@ export function SkillsSection({ openShot, mode = 'skills' }) {
           name={macros ? 'macros' : 'skills'}
           alt={
             macros
-              ? 'The actual NYXR Macros workspace with its recorded actions and plan'
-              : 'The actual NYXR Skills workspace'
+              ? 'NYXR 5 Commands → Macros: record, review and replay'
+              : 'NYXR 5 Commands → Skills'
           }
           caption={macros ? 'MACROS' : 'SKILLS'}
           onClick={() => openShot(macros ? 'macros' : 'skills')}

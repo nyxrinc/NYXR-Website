@@ -164,6 +164,24 @@ export const gallery = [
 
 export const features = [
   [
+    'code',
+    'Game Studio IDE',
+    'Open a project folder; chat beside your game, model picker included. Every version is saved into the folder.',
+    'NYXR 5 / IN DEVELOPMENT',
+  ],
+  [
+    'voice',
+    'Hands-free bar',
+    'Hold F8 in any app to talk, or type in the bar. Write for me types into any textbox you click, grammar-checked.',
+    'NYXR 5 / IN DEVELOPMENT',
+  ],
+  [
+    'spark',
+    'Living core & Nemesis',
+    'Home opens on a core that answers your cursor and NYXR’s state; the Nemesis HUD theme and cursor-reactive backgrounds.',
+    'NYXR 5 / IN DEVELOPMENT',
+  ],
+  [
     'nodes',
     'OpenJarvis',
     'Explicit local or cloud text inference, with cloud keys in Windows Credential Manager. NYXR keeps execution and verification.',

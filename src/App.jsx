@@ -32,6 +32,7 @@ import Pricing from './pages/Pricing';
 import LegalPage, { contactEmail, contactHref } from './pages/Legal';
 import OpenJarvis from './pages/OpenJarvis';
 import Games from './pages/Games';
+import Nyxr5, { Nyxr5Intro } from './pages/Nyxr5';
 import SourceUpdates, { HomeEvolution } from './components/SourceUpdates';
 import LatestSetupGuide from './components/LatestSetupGuide';
 import {
@@ -67,6 +68,14 @@ const resourceCopy = {
           Press Build game, then Play for a full-screen player. Esc or Exit game returns to NYXR.
           Editing opens separately with Edit in Chrome; export and re-import a .nexus file to keep
           changes. Included in Windows beta 5. <a href="/games/">Game Studio guide</a>.</p>
+        <h3>Coming in NYXR 5</h3>
+        <p>
+          NYXR 5 is in development and not yet a download. In it, Game Studio opens a project
+          folder with the chat on the left and your game on the right; hands-free puts a small bar
+          on your desktop (hold F8 in any app, or hover it to type, with a Write for me switch);
+          typing “/” in a chat lists every command; and Home opens on a living core with the new
+          Nemesis theme. <a href="/nyxr-5/">Introducing NYXR 5</a>.
+        </p>
         <h3>Keep the flow</h3>
         <ul>
           <li>F11 toggles hands-free. While enabled, hold F8 to speak.</li>
@@ -163,12 +172,16 @@ const resourceCopy = {
     ),
   },
   about: {
-    title: 'NYXR / version 4.0',
+    title: 'NYXR / 4 today, 5 in development',
     content: (
       <>
         <p>
           Your AI operating environment. A desktop workspace bringing conversation, coding, computer
           control, voice, projects, skills, macros and intelligent provider routing together.
+        </p>
+        <p>
+          NYXR 4 is the current Windows beta. <a href="/nyxr-5/">NYXR 5</a> is a new, lighter app
+          around the same engine, in development and not yet a download.
         </p>
         <p>
           This website is a product showcase based on the existing NYXR source and real application
@@ -316,6 +329,7 @@ export default function App() {
             'updates',
             'openjarvis',
             'games',
+            'nyxr5',
             'pricing',
             'not-found',
             'documentation',
@@ -396,7 +410,7 @@ export default function App() {
           </div>
         </div>
         <div className="footer-bottom">
-          <span>NYXR 4.0 / WINDOWS DESKTOP ENVIRONMENT</span>
+          <span>NYXR 4 BETA 6 / NYXR 5 IN DEVELOPMENT</span>
           <button
             className="motion-toggle"
             aria-pressed={!motion}
@@ -426,6 +440,7 @@ function PageContent({ page, openShot }) {
       return (
         <>
           <Hero openShot={openShot} />
+          <Nyxr5Intro />
           <SpeakStrip />
           <StatementReveal />
           <WordReveal />
@@ -467,6 +482,8 @@ function PageContent({ page, openShot }) {
       return <ProviderSection />;
     case 'games':
       return <Games />;
+    case 'nyxr5':
+      return <Nyxr5 />;
     case 'openjarvis':
       return <OpenJarvis />;
     case 'hud':
@@ -520,8 +537,8 @@ function PageContent({ page, openShot }) {
 function PageDirectory({ current }) {
   const choices =
     current === 'overview'
-      ? ['coding', 'voice', 'phone', 'macros', 'personalization', 'gallery']
-      : ['features', 'demo', 'download'].filter((id) => id !== current);
+      ? ['nyxr5', 'coding', 'voice', 'games', 'personalization', 'gallery']
+      : ['nyxr5', 'features', 'download'].filter((id) => id !== current);
   return (
     <section className="page-directory container" aria-labelledby="page-directory-title">
       <div className="page-directory-heading">

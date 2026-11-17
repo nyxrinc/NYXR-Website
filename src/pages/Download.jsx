@@ -132,6 +132,16 @@ export default function Download() {
         </div>
       </div>
       <DownloadSourceNote />
+      <aside className="release-preview-notice" aria-labelledby="nyxr5-download-title">
+        <span className="nyxr5-tag">NYXR 5 · IN DEVELOPMENT</span>
+        <h2 id="nyxr5-download-title">NYXR 5 is on its way.</h2>
+        <p>
+          NYXR 5 is a new, lighter app around the same engine, with a living core on Home, Game Studio
+          as an IDE and a hands-free bar for every app. It is not a download yet. Install beta 6
+          today; your chats and settings are kept in the same place.{' '}
+          <a href="/nyxr-5/">Introducing NYXR 5</a>.
+        </p>
+      </aside>
       <aside className="release-preview-notice" aria-labelledby="source-preview-title">
         <Eyebrow>WINDOWS BETA 6</Eyebrow>
         <h2 id="source-preview-title">One assistant. Games, music, pictures and more.</h2>

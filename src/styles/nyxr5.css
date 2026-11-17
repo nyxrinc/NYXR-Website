@@ -1,0 +1,112 @@
+/* Introducing NYXR 5: page + home banner. */
+.nyxr5-page { padding-bottom: 40px; overflow-x: clip; }
+.nyxr5-hero {
+  display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: clamp(24px, 5vw, 72px);
+  align-items: center; padding-top: clamp(40px, 8vw, 96px); padding-bottom: clamp(40px, 6vw, 72px);
+}
+.nyxr5-hero-copy h1 { font-size: clamp(46px, 7vw, 92px); margin: 14px 0 10px; }
+.nyxr5-hero-copy h2 { font-size: clamp(22px, 2.6vw, 32px); color: var(--muted); font-weight: 500; margin-bottom: 18px; }
+.nyxr5-hero-copy > p { max-width: 58ch; font-size: 17px; }
+.nyxr5-hero-copy .button-row { margin-top: 26px; }
+.nyxr5-status {
+  display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; padding: 5px 12px; border-radius: 999px;
+  font: 500 11px/1 var(--mono); letter-spacing: 0.14em; color: var(--amber); border: 1px solid #e7c78655; background: #e7c78612;
+}
+.nyxr5-status i { width: 7px; height: 7px; border-radius: 50%; background: var(--amber); box-shadow: 0 0 10px var(--amber); }
+.nyxr5-note { margin-top: 18px; font-size: 13.5px; color: var(--subtle); max-width: 60ch; }
+.nyxr5-hero-core { position: relative; display: grid; place-items: center; min-height: 380px; }
+.nyxr5-hero-core .n-core { transform: scale(1.05); }
+.nyxr5-rings { position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none; }
+.nyxr5-rings i {
+  position: absolute; width: 92%; aspect-ratio: 1; border-radius: 50%; border: 1px solid #76edff22;
+  animation: nyxr5-spin 60s linear infinite;
+  background: conic-gradient(from 0deg, transparent 0 82%, #76edff55 99%, transparent 100%);
+  -webkit-mask: radial-gradient(closest-side, transparent calc(100% - 2px), #000 calc(100% - 1.5px));
+  mask: radial-gradient(closest-side, transparent calc(100% - 2px), #000 calc(100% - 1.5px));
+}
+.nyxr5-rings i:nth-child(2) { width: 76%; animation-duration: 40s; animation-direction: reverse; }
+.nyxr5-rings i:nth-child(3) { width: 110%; animation-duration: 90s; opacity: 0.6; }
+.nyxr5-five {
+  position: absolute; right: 8%; bottom: 6%; font: 600 clamp(64px, 9vw, 120px)/1 var(--display); letter-spacing: -0.06em;
+  background: linear-gradient(160deg, #e8fbff, #76edff 45%, #1d6cff); -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 0 30px #76edff44);
+}
+@keyframes nyxr5-spin { to { transform: rotate(360deg); } }
+html[data-motion='off'] .nyxr5-rings i { animation: none; }
+
+.nyxr5-highlights, .nyxr5-compare, .nyxr5-keeps, .nyxr5-timeline, .nyxr5-cta { padding-block: clamp(40px, 6vw, 80px); }
+.nyxr5-highlights header h2, .nyxr5-compare header h2, .nyxr5-timeline h2 { font-size: clamp(32px, 4.4vw, 56px); margin: 12px 0 14px; }
+.nyxr5-compare header p { max-width: 64ch; }
+.nyxr5-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr)); gap: 14px; margin-top: 26px; }
+.nyxr5-grid article {
+  padding: 24px; border-radius: 20px; border: 1px solid var(--line-soft);
+  background: linear-gradient(180deg, #12222d88, #09121b88);
+  transition: transform 400ms var(--ease), border-color 300ms ease;
+}
+.nyxr5-grid article:hover { transform: translateY(-4px); border-color: #76edff44; }
+.nyxr5-grid h3 { font-size: 22px; margin: 14px 0 10px; }
+.nyxr5-grid p { font-size: 15px; }
+
+.nyxr5-table { margin-top: 28px; border: 1px solid var(--line-soft); border-radius: 20px; overflow: hidden; }
+.nyxr5-row { display: grid; grid-template-columns: minmax(130px, 0.6fr) minmax(0, 1fr) minmax(0, 1.25fr); }
+.nyxr5-row > span { padding: 16px 18px; border-top: 1px solid var(--line-soft); font-size: 14.5px; color: var(--muted); }
+.nyxr5-row > span:first-child { color: var(--text); font-weight: 600; font-family: var(--display); letter-spacing: -0.01em; }
+.nyxr5-row > span:last-child { color: var(--text); background: #76edff08; border-left: 1px solid var(--line-soft); }
+.nyxr5-row > span.nyxr5-none { color: var(--subtle); font-style: italic; }
+.nyxr5-row-head > span { border-top: 0; font: 500 11px/1.4 var(--mono) !important; letter-spacing: 0.14em; text-transform: uppercase; color: var(--subtle) !important; background: #ffffff05; }
+.nyxr5-row-head > span:last-child { color: var(--cyan) !important; }
+
+.nyxr5-keeps { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(24px, 5vw, 64px); align-items: center; }
+.nyxr5-keeps h2 { font-size: clamp(34px, 4.6vw, 60px); margin: 12px 0 16px; }
+.nyxr5-keeps ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.nyxr5-keeps li { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 14px; border: 1px solid var(--line-soft); color: var(--text); }
+.nyxr5-keeps li svg { color: var(--teal); }
+
+.nyxr5-timeline ol { list-style: none; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.nyxr5-timeline li { position: relative; padding: 22px; border-radius: 18px; border: 1px solid var(--line-soft); }
+.nyxr5-timeline li:last-child { border-color: #76edff55; background: #76edff0a; }
+.nyxr5-timeline li > span { font: 500 12px/1 var(--mono); color: var(--cyan); letter-spacing: 0.14em; }
+.nyxr5-timeline li strong { display: block; margin: 10px 0 6px; font-family: var(--display); font-size: 20px; }
+
+.nyxr5-cta { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.nyxr5-cta h2 { font-size: clamp(32px, 4.4vw, 54px); }
+.nyxr5-cta p { max-width: 58ch; }
+
+/* Home banner */
+.nyxr5-intro { padding-block: clamp(28px, 4vw, 48px); }
+.nyxr5-intro-card {
+  display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 28px; align-items: center;
+  padding: clamp(24px, 4vw, 44px); border-radius: 26px; border: 1px solid #76edff33;
+  background: radial-gradient(90% 140% at 0% 0%, #76edff1c, transparent 60%), radial-gradient(70% 120% at 100% 100%, #aaa0ff18, transparent 60%), #09121bcc;
+  transition: transform 500ms var(--ease), border-color 300ms ease, box-shadow 400ms ease;
+}
+.nyxr5-intro-card:hover { transform: translateY(-4px); border-color: #76edff77; box-shadow: 0 30px 90px #76edff14; }
+.nyxr5-intro-copy h2 { font-size: clamp(32px, 4.6vw, 58px); margin: 12px 0 12px; }
+.nyxr5-intro-copy p { max-width: 54ch; margin-bottom: 16px; }
+.nyxr5-intro-points { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.nyxr5-intro-points li { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 14px; background: #ffffff06; border: 1px solid var(--line-soft); color: var(--text); font-weight: 500; }
+.nyxr5-intro-points svg { color: var(--cyan); }
+
+/* Small "NYXR 5" tag on cards and nav */
+.nyxr5-tag {
+  display: inline-flex; align-items: center; gap: 6px; padding: 3px 9px; border-radius: 999px; margin-bottom: 10px;
+  font: 500 10.5px/1.3 var(--mono); letter-spacing: 0.12em; color: #071016; background: linear-gradient(90deg, #76edff, #9fb8ff);
+}
+.nav-new { margin-left: 6px; padding: 1px 6px; border-radius: 999px; font: 600 9px/1.5 var(--mono); letter-spacing: 0.1em; color: #071016; background: var(--cyan); vertical-align: 2px; }
+.status-badge.status-preview { color: #071016; background: linear-gradient(90deg, #76edff, #9fb8ff); border-color: transparent; }
+
+@media (max-width: 860px) {
+  .nyxr5-hero, .nyxr5-keeps, .nyxr5-intro-card { grid-template-columns: 1fr; }
+  .nyxr5-hero-core { min-height: 300px; order: -1; }
+  .nyxr5-timeline ol { grid-template-columns: 1fr; }
+  .nyxr5-row { grid-template-columns: 1fr; }
+  .nyxr5-row > span:first-child { padding-bottom: 4px; }
+  .nyxr5-row > span:not(:first-child) { border-top: 0; padding-top: 6px; }
+  .nyxr5-row > span:last-child { border-left: 0; }
+  .nyxr5-row-head { display: none; }
+  .nyxr5-row > span[data-label]::before { content: attr(data-label); display: block; margin-bottom: 3px; font: 500 10.5px/1.3 var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--subtle); }
+}
+
+/* Game Studio page: the NYXR 5 workflow */
+.games-nyxr5 { border: 1px solid #76edff33; border-radius: 24px; padding: clamp(22px, 4vw, 40px); margin-block: 24px; background: radial-gradient(100% 120% at 0% 0%, #76edff10, transparent 60%); }
+.games-nyxr5-note { margin-top: 16px; font-size: 14px; color: var(--subtle); }

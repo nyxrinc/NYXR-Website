@@ -8,9 +8,9 @@ export default function Hero({ openShot }) {
       <div className="hero-atmosphere" />
       <div className="hero-topline container">
         <span>THE HEART OF YOUR WINDOWS WORKSPACE.</span>
-        <span>
-          <i className="status-dot" /> NYXR / VERSION 4.0
-        </span>
+        <a href="/nyxr-5/">
+          <i className="status-dot" /> NYXR 4 BETA 6 · INTRODUCING NYXR 5 →
+        </a>
       </div>
       <div className="hero-copy">
         <Eyebrow>NEXUS / THE NYXR COMMAND CENTER</Eyebrow>

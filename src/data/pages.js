@@ -1,7 +1,9 @@
 // One route per product area; also used to emit static hosting entry points.
 export const pages = [
+  {id:'nyxr5',path:'/nyxr-5/',label:'Introducing NYXR 5',group:'Discover',
+   description:'Meet NYXR 5, in development: a lighter app around the same engine, with a living core, Game Studio as an IDE, a hands-free bar for every app and the Nemesis theme. Compared with the first NYXR 4 build.'},
   {id:'games',path:'/games/',label:'Game Studio',group:'Workspace',
-   description:'Create a Nexus game from a prompt, play test inside NYXR, and edit separately in Chrome. Current desktop source beta; bring your own AI provider.'},
+   description:'Describe a game and play it. In Windows beta 6, NYXR builds and checks it; in NYXR 5, Game Studio works like an IDE: open a project folder, chat on the left, your game on the right.'},
   {
     id: 'openjarvis',
     path: '/openjarvis/',
@@ -24,7 +26,7 @@ export const pages = [
     label: 'Release notes',
     group: 'Release',
     description:
-      'See the latest OpenJarvis, voice, Background Replies and browser-recovery source changes, alongside exact Windows and Android download versions.',
+      'NYXR 5 in development, Windows beta 6 and every earlier release: what changed, exact download versions and honest test results.',
   },
   {
     id: 'students',
@@ -47,7 +49,7 @@ export const pages = [
     label: 'Home',
     group: 'Discover',
     description:
-      'Meet NYXR, your personal AI assistant for Windows. Think, build, automate and learn in a workspace of your own.',
+      'Meet NYXR, your personal AI assistant for Windows. Think, build, automate and learn in a workspace of your own. NYXR 5 is on its way.',
   },
   {
     id: 'features',
@@ -55,7 +57,7 @@ export const pages = [
     label: 'Features',
     group: 'Discover',
     description:
-      'Explore NYXR coding, voice, Windows tools, Student workflows, OpenJarvis and scoped Background Replies, with source and release availability explained.',
+      'Explore NYXR coding, voice, Windows tools, Student, Game Studio and NYXR 5’s new abilities, each honestly labelled: in beta 6, next, or in NYXR 5.',
   },
   {
     id: 'chat',
@@ -85,7 +87,7 @@ export const pages = [
     label: 'Voice & hands-free',
     group: 'Workspace',
     description:
-      'Explore F11 hands-free, Write for me, Fish Audio, ElevenLabs voice presets and JARVIS interface sounds, with clear setup and provider-cost boundaries.',
+      'Hold F8 to talk, Write for me with a grammar score, voice presets and interface sounds. In NYXR 5, a hands-free bar works from any app.',
   },
   {
     id: 'hud',
@@ -122,7 +124,7 @@ export const pages = [
     path: '/personalization/',
     label: 'Personalization',
     group: 'Intelligence',
-    description: 'Preview NYXR themes and explore conversation, voice and appearance preferences.',
+    description: 'Preview NYXR themes, from NEXUS to NYXR 5’s Nemesis, and explore conversation, voice and appearance preferences.',
   },
   {
     id: 'intelligence',
@@ -167,7 +169,7 @@ export const pages = [
     label: 'Download',
     group: 'Release',
     description:
-      'Download NYXR Windows beta 6 or the signed Android Exhibition Basic tester. Compare versions, checksums, setup requirements and what each release includes.',
+      'Download NYXR Windows beta 6 or the signed Android Exhibition Basic tester. NYXR 5 is in development and not a download yet. Compare versions, checksums and requirements.',
   },
   {
     id: 'documentation',
@@ -215,7 +217,7 @@ export const pages = [
     label: 'About NYXR',
     group: 'Information',
     description:
-      'Meet NYXR, a desktop AI workspace for conversation, coding, voice and automation.',
+      'Meet NYXR, a desktop AI workspace for conversation, coding, voice and automation: NYXR 4 today, NYXR 5 in development.',
   },
 ];
 

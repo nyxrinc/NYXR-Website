@@ -9,6 +9,7 @@ export const STATUS = {
   available: { label: 'Available', note: 'In the current Windows beta' },
   beta: { label: 'Beta', note: 'In the download, still being tested' },
   next: { label: 'Next beta', note: 'Built and tested; ships next' },
+  preview: { label: 'NYXR 5', note: 'Built and tested in NYXR 5; not a download yet' },
   planned: { label: 'Planned', note: 'Not built yet' },
 };
 
@@ -33,6 +34,11 @@ const FEATURES = [
   ['Stop everything (Ctrl+Alt+Backspace) and Permissions', 'available'],
   ['Notes, memory manager and custom instructions', 'available'],
   ['Schedules and second opinions from another AI', 'available'],
+  ['Game Studio as an IDE: project folder, chat beside your game', 'preview'],
+  ['Hands-free bar: hold F8 in any app, type in it, Write for me', 'preview'],
+  ['Home with a living core; Nemesis and cursor-reactive themes', 'preview'],
+  ['Type “/” for every command; suggestions that type themselves', 'preview'],
+  ['Auto stays on base models; bigger models need your pick or a yes', 'preview'],
   ['Signed installer and automatic updates', 'planned'],
   ['Extension marketplace and visual workflow builder', 'planned'],
   ['Paid plans and cloud storage', 'planned'],
@@ -75,7 +81,7 @@ export function FeatureStatus() {
 
 const FIRST = [
   ['“Hello NYXR”', 'Say hi with F8 or type it, to check your AI and voice.'],
-  ['“Build a coin collection game”', 'Game Studio writes it, plays it to check, then opens it full screen.'],
+  ['“Build a coin collection game”', 'Game Studio writes it, plays it to check, then opens it full screen. NYXR 5 adds a project folder and a chat beside the game.'],
   ['Drop in a PDF', 'Open Student and ask for a quiz or slides from your own notes.'],
   ['“Open Notepad”', 'A desktop action, done and verified, with every step shown.'],
   ['Settings → AI Providers', 'Pick the AI you already use. NYXR keeps it, and falls back only if it fails.'],

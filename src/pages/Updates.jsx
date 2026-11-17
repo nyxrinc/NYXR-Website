@@ -12,7 +12,32 @@ export default function Updates() {
     <section className="updates-page container">
       <Eyebrow>NYXR / RELEASE NOTES</Eyebrow>
       <h1>The core keeps evolving.</h1>
-      <article className="update-entry latest-source-entry" id="beta-6">
+      <article className="update-entry latest-source-entry" id="nyxr-5">
+        <header><span className="release-channel">NYXR 5 / IN DEVELOPMENT · NOT A DOWNLOAD YET</span><time dateTime="2026-11-17">17 NOVEMBER 2026</time></header>
+        <h2>Introducing NYXR 5.</h2>
+        <p>A new, lighter NYXR app around the same engine as every NYXR 4 beta. It is built and tested
+          on our machines; Windows beta 6 remains the download.</p>
+        <ul><li><strong>Game Studio as an IDE.</strong> Open a folder as a project. Chat on the left, with the
+          model picker and every chat feature; the game plays on the right and changes with each message.
+          Every version is written to your folder, and Previous games plays or saves anything made before.</li>
+          <li><strong>A hands-free bar for every app.</strong> Hold F8 anywhere to talk, or hover the bar to type.
+          Its Write for me switch types into any textbox you click, corrected when the grammar scores under 9/10.</li>
+          <li><strong>Home, with a living core.</strong> The NYXR core leans toward your cursor and shows when NYXR
+          is listening, thinking or speaking; every theme has its own core.</li>
+          <li><strong>Nemesis and responsive themes.</strong> A dark, neon-blue HUD theme. Aurora’s lights follow
+          your cursor, and in Rain your cursor wipes the glass.</li>
+          <li><strong>Faster to reach.</strong> Typing “/” lists every command; empty chat boxes type out
+          suggestions that fit where you are.</li>
+          <li><strong>Images and Music, simpler.</strong> Realistic pictures and diagrams in one gallery; music
+          from a mood in one tap.</li>
+          <li><strong>No surprise costs.</strong> Auto stays on each tool’s base model (Claude Haiku, GPT-5.6 Luna,
+          Gemini Flash); a bigger model needs your pick or a yes.</li></ul>
+        <div className="update-evidence"><strong>Measured</strong><p>With Home open and still, all NYXR 5 processes
+          together used about 16 to 31 milliseconds of CPU over 30 seconds. Write for me was checked end to end:
+          “this are a short test sentence” scored 5/10 and was written as “This is a short test sentence for NYXR.”</p></div>
+        <Button href="/nyxr-5/" secondary>Introducing NYXR 5</Button>
+      </article>
+      <article className="update-entry" id="beta-6">
         <header><span className="release-channel">WINDOWS BETA 6 / UNSIGNED EARLY ACCESS</span><time dateTime="2026-11-15">15 NOVEMBER 2026</time></header>
         <h2>Games, music, pictures. One assistant.</h2>
         <p>NYXR {betaRelease.version} turns NYXR into a creative hub, alongside everything from beta 5.</p>

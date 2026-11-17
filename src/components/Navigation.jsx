@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { pages } from '../data/pages';
 import Icon from './Icon';
 
-const primary = ['overview', 'features', 'coding', 'voice', 'phone', 'providers', 'pricing'];
+const primary = ['overview', 'nyxr5', 'features', 'coding', 'voice', 'phone', 'providers', 'pricing'];
 export default function Navigation({ page }) {
   const [open, setOpen] = useState(false),
     [browse, setBrowse] = useState(false),
@@ -94,7 +94,11 @@ export default function Navigation({ page }) {
                 aria-current={page.id === id ? 'page' : undefined}
                 onClick={() => setOpen(false)}
               >
-                {id === 'coding'
+                {id === 'nyxr5' ? (
+                  <>
+                    NYXR 5<b className="nav-new">NEW</b>
+                  </>
+                ) : id === 'coding'
                   ? 'Coding'
                   : id === 'providers'
                     ? 'Providers'

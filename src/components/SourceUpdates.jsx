@@ -7,10 +7,10 @@ export function SourceAvailability({ compact = false }) {
     <aside className={`source-availability ${compact ? 'is-compact' : ''}`}>
       <Icon name="timeline" size={19} />
       <div>
-        <strong>New in Windows beta 6</strong>
+        <strong>New in Windows beta 6, and coming in NYXR 5</strong>
         <p>
-          These additions are in the Windows beta 6 installer and its matching source. Check the
-          release notes for what each download includes.
+          Untagged additions are in the Windows beta 6 installer and its matching source. Cards
+          tagged NYXR 5 are built and tested in NYXR 5, which is not a download yet.
         </p>
       </div>
       <a href={sourceUpdate.href}>
@@ -58,6 +58,7 @@ export default function SourceUpdates({ page, all = false }) {
             key={item.id}
             id={item.id === 'background-replies' ? 'background-replies' : undefined}
           >
+            {item.nyxr5 && <span className="nyxr5-tag">NYXR 5 · IN DEVELOPMENT</span>}
             <span className="source-feature-icon">
               <Icon name={item.icon} size={23} />
             </span>
@@ -118,7 +119,7 @@ export function HomeEvolution() {
           </a>
         ))}
         <span className="evolution-caption">
-          LATEST SOURCE · {sourceUpdate.date.toUpperCase()} ·{' '}
+          NYXR 5 · IN DEVELOPMENT · <a href="/nyxr-5/">Introducing NYXR 5</a> ·{' '}
           <a href="/download/">Compare downloads</a>
         </span>
       </div>

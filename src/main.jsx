@@ -13,6 +13,7 @@ import './styles/phone.css';
 import './styles/evolution.css';
 import './styles/games.css';
 import './styles/motion.css';
+import './styles/nyxr5.css';
 createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RegionalPreferences>

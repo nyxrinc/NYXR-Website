@@ -1,7 +1,7 @@
 // One route per product area; also used to emit static hosting entry points.
 export const pages = [
   {id:'nyxr5',path:'/nyxr-5/',label:'Introducing NYXR 5',group:'Discover',
-   description:'Meet NYXR 5, in development: a lighter app around the same engine, with a living core, Game Studio as an IDE, a hands-free bar for every app and the Nemesis theme. Compared with the first NYXR 4 build.'},
+   description:'Meet NYXR 5, now a preview download: a lighter app around the same engine, with a living core, Game Studio as an IDE, a hands-free bar for every app and the Nemesis theme. Compared with the first NYXR 4 build.'},
   {id:'games',path:'/games/',label:'Game Studio',group:'Workspace',
    description:'Describe a game and play it. In Windows beta 6, NYXR builds and checks it; in NYXR 5, Game Studio works like an IDE: open a project folder, chat on the left, your game on the right.'},
   {
@@ -26,7 +26,7 @@ export const pages = [
     label: 'Release notes',
     group: 'Release',
     description:
-      'NYXR 5 in development, Windows beta 6 and every earlier release: what changed, exact download versions and honest test results.',
+      'The NYXR 5 preview, Windows beta 6 and every earlier release: what changed, exact download versions and honest test results.',
   },
   {
     id: 'students',
@@ -169,7 +169,7 @@ export const pages = [
     label: 'Download',
     group: 'Release',
     description:
-      'Download NYXR Windows beta 6 or the signed Android Exhibition Basic tester. NYXR 5 is in development and not a download yet. Compare versions, checksums and requirements.',
+      'Download NYXR Windows beta 6 or the signed Android Exhibition Basic tester. Try the NYXR 5 preview. Compare versions, checksums and requirements.',
   },
   {
     id: 'documentation',
@@ -217,7 +217,7 @@ export const pages = [
     label: 'About NYXR',
     group: 'Information',
     description:
-      'Meet NYXR, a desktop AI workspace for conversation, coding, voice and automation: NYXR 4 today, NYXR 5 in development.',
+      'Meet NYXR, a desktop AI workspace for conversation, coding, voice and automation: NYXR 4 today, and NYXR 5 as a preview.',
   },
 ];
 

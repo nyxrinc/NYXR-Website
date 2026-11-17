@@ -5,6 +5,91 @@ import { betaRelease as release, betaSize } from '../data/release';
 import { CompanionDownload } from '../components/PhoneCompanion';
 import { ExhibitionDownload } from '../components/ExhibitionRelease';
 import { DownloadSourceNote } from '../components/SourceUpdates';
+import { nyxr5Release as preview, nyxr5Size } from '../data/nyxr5';
+
+/** NYXR 5 preview: the new app as an early, unsigned installer beside the tested beta. */
+function Nyxr5Download() {
+  const [copyStatus, setCopyStatus] = useState('');
+  async function copyChecksum() {
+    try {
+      await navigator.clipboard.writeText(preview.installer.sha256);
+      setCopyStatus('Checksum copied.');
+    } catch {
+      setCopyStatus('Select the checksum below to copy it.');
+    }
+  }
+  return (
+    <section className="nyxr5-download" id="nyxr5-preview" aria-labelledby="nyxr5-download-title" data-reveal>
+      <div className="nyxr5-download-shot">
+        <img
+          src="/screenshots/nyxr5-home.webp"
+          alt="NYXR 5 Home in the Nemesis theme: the NYXR core in the centre with the dock below it"
+          width="1600"
+          height="1000"
+          loading="lazy"
+        />
+      </div>
+      <div className="nyxr5-download-copy">
+        <span className="nyxr5-tag">NEW · {preview.version.toUpperCase()}</span>
+        <h2 id="nyxr5-download-title">
+          NYXR 5 <span className="text-cyan">preview</span>
+        </h2>
+        <p>
+          The new, lighter NYXR app: a living core on Home, Game Studio as an IDE, a hands-free bar
+          for every app and the Nemesis theme. It installs beside NYXR 4, needs no admin rights, and
+          uses the same chats, projects and settings. <a href="/nyxr-5/">What’s new in NYXR 5</a>.
+        </p>
+        <dl className="release-details">
+          <div>
+            <dt>Platform</dt>
+            <dd>{preview.platform}</dd>
+          </div>
+          <div>
+            <dt>Installer</dt>
+            <dd>{nyxr5Size}</dd>
+          </div>
+          <div>
+            <dt>Release channel</dt>
+            <dd className="text-cyan">Preview · early</dd>
+          </div>
+        </dl>
+        <Button
+          href={preview.installer.url}
+          download={preview.installer.filename}
+          icon="download"
+          data-testid="nyxr5-download"
+        >
+          Download NYXR 5 preview
+        </Button>
+        <div className="release-resource-links">
+          <a href={preview.source.url} download={preview.source.filename}>
+            Corresponding source
+          </a>
+          <a
+            href={`https://github.com/nyxrinc/NYXR-Website/releases/tag/${preview.tag}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Release notes
+          </a>
+        </div>
+        <details className="release-checksum">
+          <summary>Verify your download</summary>
+          <p>Compare the file’s SHA-256 with this value before running it.</p>
+          <code>{preview.installer.sha256}</code>
+          <button type="button" onClick={copyChecksum}>
+            Copy SHA-256
+          </button>
+          <span role="status">{copyStatus}</span>
+        </details>
+        <p className="release-beta-warning">
+          Unsigned preview: Windows may show a security warning. Expect rough edges; keep using beta 6
+          if you need the tested app.
+        </p>
+      </div>
+    </section>
+  );
+}
 
 export default function Download() {
   const [copyStatus, setCopyStatus] = useState('');
@@ -33,6 +118,7 @@ export default function Download() {
           automate a workflow — with your own AI provider or an explicitly selected local model.
         </p>
         <nav className="download-jump-links" aria-label="Download platforms">
+          <a href="#nyxr5-preview">NYXR 5 preview</a>
           <a href="#exhibition-test">Exhibition Test</a>
           <a href="#release-title">Windows beta</a>
           <a href="#android-companion">Android companion</a>
@@ -42,6 +128,7 @@ export default function Download() {
           Explore NYXR <Icon size={16} />
         </a>
       </div>
+      <Nyxr5Download />
       <ExhibitionDownload />
       <div className="download-assets">
         <article className="release-card" data-reveal aria-labelledby="release-title">
@@ -132,16 +219,6 @@ export default function Download() {
         </div>
       </div>
       <DownloadSourceNote />
-      <aside className="release-preview-notice" aria-labelledby="nyxr5-download-title">
-        <span className="nyxr5-tag">NYXR 5 · IN DEVELOPMENT</span>
-        <h2 id="nyxr5-download-title">NYXR 5 is on its way.</h2>
-        <p>
-          NYXR 5 is a new, lighter app around the same engine, with a living core on Home, Game Studio
-          as an IDE and a hands-free bar for every app. It is not a download yet. Install beta 6
-          today; your chats and settings are kept in the same place.{' '}
-          <a href="/nyxr-5/">Introducing NYXR 5</a>.
-        </p>
-      </aside>
       <aside className="release-preview-notice" aria-labelledby="source-preview-title">
         <Eyebrow>WINDOWS BETA 6</Eyebrow>
         <h2 id="source-preview-title">One assistant. Games, music, pictures and more.</h2>

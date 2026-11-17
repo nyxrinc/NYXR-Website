@@ -1,7 +1,7 @@
 import Core from '../components/Core';
 import Icon from '../components/Icon';
 import { Button, Eyebrow } from '../components/Primitives';
-import { carriesOver, comparison, highlights, nyxr5, timeline } from '../data/nyxr5';
+import { carriesOver, comparison, highlights, nyxr5, shots, timeline } from '../data/nyxr5';
 
 /** Introducing NYXR 5: what it is, what changed since the first NYXR 4 build, and its honest status. */
 export default function Nyxr5() {
@@ -23,9 +23,11 @@ export default function Nyxr5() {
             answer your cursor. All while sitting at about zero CPU when you are not using it.
           </p>
           <div className="button-row">
-            <Button href="#what-changed">What changed</Button>
-            <Button href="/download/" secondary>
-              Download NYXR 4 beta 6
+            <Button href="/download/#nyxr5-preview" icon="download">
+              Download the preview
+            </Button>
+            <Button href="#what-changed" secondary>
+              What changed
             </Button>
           </div>
           <p className="nyxr5-note">{nyxr5.statusNote}</p>
@@ -56,6 +58,22 @@ export default function Nyxr5() {
               <p>{h.text}</p>
               <p className="source-feature-detail">{h.detail}</p>
             </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="nyxr5-gallery container" aria-labelledby="nyxr5-gallery-title">
+        <header data-reveal>
+          <Eyebrow>SEE IT</Eyebrow>
+          <h2 id="nyxr5-gallery-title">The real app, as it installs.</h2>
+          <p>Screenshots of the NYXR 5 preview on a fresh install, with no account or AI provider connected.</p>
+        </header>
+        <div className="nyxr5-shots">
+          {shots.map((s) => (
+            <figure key={s.src} data-reveal>
+              <img src={s.src} alt={s.alt} width="1600" height="1000" loading="lazy" />
+              <figcaption>{s.caption}</figcaption>
+            </figure>
           ))}
         </div>
       </section>
@@ -122,13 +140,19 @@ export default function Nyxr5() {
       </section>
 
       <section className="nyxr5-cta container" aria-labelledby="nyxr5-cta-title" data-reveal>
-        <h2 id="nyxr5-cta-title">Start with NYXR 4 today.</h2>
+        <h2 id="nyxr5-cta-title">Try NYXR 5 today.</h2>
         <p>
-          NYXR 5 is not a download yet. Windows beta 6 has the same engine and most of these
-          abilities, and your chats and settings will carry over.
+          The NYXR 5 preview installs beside NYXR 4 and uses the same chats, projects and settings.
+          It is early and unsigned, so Windows may warn you first. Prefer the tested app? Windows
+          beta 6 has the same engine and most of these abilities.
         </p>
         <div className="button-row">
-          <Button href="/download/">Download beta 6</Button>
+          <Button href="/download/#nyxr5-preview" icon="download">
+            Download the preview
+          </Button>
+          <Button href="/download/#release-title" secondary>
+            Windows beta 6
+          </Button>
           <Button href="/updates/#nyxr-5" secondary>
             NYXR 5 release notes
           </Button>
@@ -144,7 +168,7 @@ export function Nyxr5Intro() {
     <section className="nyxr5-intro container" aria-labelledby="nyxr5-intro-title">
       <a href="/nyxr-5/" className="nyxr5-intro-card" data-reveal>
         <div className="nyxr5-intro-copy">
-          <Eyebrow>NEW / IN DEVELOPMENT</Eyebrow>
+          <Eyebrow>NEW / PREVIEW DOWNLOAD</Eyebrow>
           <h2 id="nyxr5-intro-title">
             Introducing <span className="text-cyan">NYXR 5.</span>
           </h2>

@@ -9,7 +9,7 @@ export const STATUS = {
   available: { label: 'Available', note: 'In the current Windows beta' },
   beta: { label: 'Beta', note: 'In the download, still being tested' },
   next: { label: 'Next beta', note: 'Built and tested; ships next' },
-  preview: { label: 'NYXR 5', note: 'Built and tested in NYXR 5; not a download yet' },
+  preview: { label: 'NYXR 5', note: 'In the NYXR 5 preview download' },
   planned: { label: 'Planned', note: 'Not built yet' },
 };
 

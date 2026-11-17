@@ -107,6 +107,33 @@ html[data-motion='off'] .nyxr5-rings i { animation: none; }
   .nyxr5-row > span[data-label]::before { content: attr(data-label); display: block; margin-bottom: 3px; font: 500 10.5px/1.3 var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--subtle); }
 }
 
+/* Download page: the NYXR 5 preview card */
+.nyxr5-download {
+  display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(20px, 4vw, 44px); align-items: center;
+  grid-column: 1 / -1;
+  padding: clamp(18px, 3.4vw, 36px); border-radius: 26px; border: 1px solid #76edff44;
+  background: radial-gradient(90% 140% at 100% 0%, #76edff18, transparent 60%), #09121bcc;
+  scroll-margin-top: 90px;
+}
+.nyxr5-download-shot img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--line-soft); box-shadow: 0 30px 80px #0008; }
+.nyxr5-download-copy h2 { font-size: clamp(28px, 3.6vw, 44px); margin: 4px 0 12px; }
+.nyxr5-download-copy > p { font-size: 15.5px; }
+.nyxr5-download-copy > p a { color: var(--cyan); }
+.nyxr5-download-copy .release-details { margin: 18px 0; }
+.nyxr5-download-copy .release-resource-links { margin-top: 14px; }
+
+/* NYXR 5 page: screenshot gallery */
+.nyxr5-gallery { padding-block: clamp(40px, 6vw, 80px); }
+.nyxr5-gallery h2 { font-size: clamp(32px, 4.4vw, 56px); margin: 12px 0 14px; }
+.nyxr5-shots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 26px; }
+.nyxr5-shots figure { margin: 0; }
+.nyxr5-shots figure:first-child { grid-column: 1 / -1; }
+.nyxr5-shots img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--line-soft); background: #070b10; }
+.nyxr5-shots figcaption { margin-top: 8px; font-size: 13.5px; color: var(--subtle); }
+@media (max-width: 860px) {
+  .nyxr5-download, .nyxr5-shots { grid-template-columns: 1fr; }
+}
+
 /* Game Studio page: the NYXR 5 workflow */
 .games-nyxr5 { border: 1px solid #76edff33; border-radius: 24px; padding: clamp(22px, 4vw, 40px); margin-block: 24px; background: radial-gradient(100% 120% at 0% 0%, #76edff10, transparent 60%); }
 .games-nyxr5-note { margin-top: 16px; font-size: 14px; color: var(--subtle); }

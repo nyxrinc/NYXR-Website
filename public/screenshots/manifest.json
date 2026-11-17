@@ -166,5 +166,40 @@
     "height": 850,
     "bytes": 62674,
     "source": "Actual NYXR Qt settings, isolated offscreen showcase with an illustrative model; empty credential fields"
+  },
+  {
+    "file": "nyxr5-home.webp",
+    "width": 1600,
+    "height": 1000,
+    "bytes": 36594,
+    "source": "Actual NYXR 5 5.0.0-preview.1 installer build, fresh data folder, placeholder name, no provider connected"
+  },
+  {
+    "file": "nyxr5-midnight.webp",
+    "width": 1600,
+    "height": 1000,
+    "bytes": 21790,
+    "source": "Actual NYXR 5 5.0.0-preview.1 installer build, fresh data folder, placeholder name, no provider connected"
+  },
+  {
+    "file": "nyxr5-commands.webp",
+    "width": 1600,
+    "height": 1000,
+    "bytes": 38240,
+    "source": "Actual NYXR 5 5.0.0-preview.1 installer build, fresh data folder, placeholder name, no provider connected"
+  },
+  {
+    "file": "nyxr5-studio.webp",
+    "width": 1600,
+    "height": 1000,
+    "bytes": 19838,
+    "source": "Actual NYXR 5 5.0.0-preview.1 installer build, fresh data folder, placeholder name, no provider connected"
+  },
+  {
+    "file": "nyxr5-quick.webp",
+    "width": 1600,
+    "height": 1000,
+    "bytes": 29448,
+    "source": "Actual NYXR 5 5.0.0-preview.1 installer build, fresh data folder, placeholder name, no provider connected"
   }
 ]

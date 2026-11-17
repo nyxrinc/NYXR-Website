@@ -68,9 +68,9 @@ const resourceCopy = {
           Press Build game, then Play for a full-screen player. Esc or Exit game returns to NYXR.
           Editing opens separately with Edit in Chrome; export and re-import a .nexus file to keep
           changes. Included in Windows beta 5. <a href="/games/">Game Studio guide</a>.</p>
-        <h3>Coming in NYXR 5</h3>
+        <h3>New in the NYXR 5 preview</h3>
         <p>
-          NYXR 5 is in development and not yet a download. In it, Game Studio opens a project
+          NYXR 5 is an early preview download that installs beside NYXR 4. In it, Game Studio opens a project
           folder with the chat on the left and your game on the right; hands-free puts a small bar
           on your desktop (hold F8 in any app, or hover it to type, with a Write for me switch);
           typing “/” in a chat lists every command; and Home opens on a living core with the new
@@ -172,7 +172,7 @@ const resourceCopy = {
     ),
   },
   about: {
-    title: 'NYXR / 4 today, 5 in development',
+    title: 'NYXR / 4 beta 6 and the 5 preview',
     content: (
       <>
         <p>
@@ -181,7 +181,7 @@ const resourceCopy = {
         </p>
         <p>
           NYXR 4 is the current Windows beta. <a href="/nyxr-5/">NYXR 5</a> is a new, lighter app
-          around the same engine, in development and not yet a download.
+          around the same engine, available as an early preview download.
         </p>
         <p>
           This website is a product showcase based on the existing NYXR source and real application
@@ -410,7 +410,7 @@ export default function App() {
           </div>
         </div>
         <div className="footer-bottom">
-          <span>NYXR 4 BETA 6 / NYXR 5 IN DEVELOPMENT</span>
+          <span>NYXR 4 BETA 6 / NYXR 5 PREVIEW</span>
           <button
             className="motion-toggle"
             aria-pressed={!motion}

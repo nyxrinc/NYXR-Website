@@ -18,14 +18,14 @@ export default function Games() {
     </section>
     <SourceAvailability />
     <section className="games-workflow games-nyxr5" id="game-studio-nyxr5" aria-labelledby="game-nyxr5-title">
-      <span className="nyxr5-tag">NYXR 5 · IN DEVELOPMENT</span>
+      <span className="nyxr5-tag">NYXR 5 · PREVIEW</span>
       <Eyebrow>OPEN A PROJECT → CHAT → PLAY</Eyebrow><h2 id="game-nyxr5-title">Game Studio, like an IDE.</h2>
       <div className="games-steps">
         <article><span>01 / OPEN</span><h3>A folder is a project.</h3><p>Start by opening a folder. An empty one begins a new game; one with a NYXR game in it carries on where you left off. Recent projects are one click away.</p></article>
         <article><span>02 / CHAT</span><h3>Talk on the left.</h3><p>The full NYXR chat sits beside your game, model picker included. Each message makes or changes the game; questions get answers. Suggestions type themselves into the empty box.</p></article>
         <article><span>03 / PLAY</span><h3>Play on the right.</h3><p>The game reloads with every version, with Tweaks, Undo, Fix it and full screen on its toolbar. Every version is saved to your folder as a page that plays in any browser.</p></article>
       </div>
-      <p className="games-nyxr5-note">Previous games, at the top right, plays or saves anything you made before. NYXR 5 is not a download yet; the workflow below is what Windows beta 6 does today.</p>
+      <p className="games-nyxr5-note">Previous games, at the top right, plays or saves anything you made before. This is in the <a href="/download/#nyxr5-preview">NYXR 5 preview</a>; the workflow below is what Windows beta 6 does.</p>
     </section>
     <section className="games-workflow" id="game-workflow" aria-labelledby="game-workflow-title">
       <Eyebrow>DESCRIBE → BUILD → PLAY</Eyebrow><h2 id="game-workflow-title">Stay in NYXR. Step into your game.</h2>

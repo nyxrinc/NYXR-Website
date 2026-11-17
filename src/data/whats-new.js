@@ -13,7 +13,7 @@ export const openJarvisCloudProviders = [
   'MiniMax',
 ];
 
-// Items marked nyxr5 are built in NYXR 5 (in development), not in a download yet; cards show a tag.
+// Items marked nyxr5 are in the NYXR 5 preview download (5.0.0-preview.1); cards show a tag.
 export const recentCapabilities = [
   {id:'nyxr5-game-ide',nyxr5:true,icon:'code',title:'Game Studio, like an IDE.',
    text:'Open a folder as a project. Chat on the left, with the model picker and every chat feature; your game plays on the right and changes with each message.',

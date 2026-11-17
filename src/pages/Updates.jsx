@@ -13,10 +13,11 @@ export default function Updates() {
       <Eyebrow>NYXR / RELEASE NOTES</Eyebrow>
       <h1>The core keeps evolving.</h1>
       <article className="update-entry latest-source-entry" id="nyxr-5">
-        <header><span className="release-channel">NYXR 5 / IN DEVELOPMENT · NOT A DOWNLOAD YET</span><time dateTime="2026-11-17">17 NOVEMBER 2026</time></header>
+        <header><span className="release-channel">NYXR 5 / PREVIEW 5.0.0-preview.1 · WINDOWS</span><time dateTime="2026-11-17">17 NOVEMBER 2026</time></header>
         <h2>Introducing NYXR 5.</h2>
-        <p>A new, lighter NYXR app around the same engine as every NYXR 4 beta. It is built and tested
-          on our machines; Windows beta 6 remains the download.</p>
+        <p>A new, lighter NYXR app around the same engine as every NYXR 4 beta, now an early, unsigned
+          preview download that installs beside NYXR 4 and shares its chats and settings. Windows beta 6
+          stays the main download. <a href="/download/#nyxr5-preview">Download the NYXR 5 preview</a>.</p>
         <ul><li><strong>Game Studio as an IDE.</strong> Open a folder as a project. Chat on the left, with the
           model picker and every chat feature; the game plays on the right and changes with each message.
           Every version is written to your folder, and Previous games plays or saves anything made before.</li>
@@ -31,7 +32,10 @@ export default function Updates() {
           <li><strong>Images and Music, simpler.</strong> Realistic pictures and diagrams in one gallery; music
           from a mood in one tap.</li>
           <li><strong>No surprise costs.</strong> Auto stays on each tool’s base model (Claude Haiku, GPT-5.6 Luna,
-          Gemini Flash); a bigger model needs your pick or a yes.</li></ul>
+          Gemini Flash); a bigger model needs your pick or a yes.</li>
+          <li><strong>Macros replay again.</strong> Replays find the app you recorded in even after it was
+          reopened, and every run ends with a clear Done, Stopped or Needs attention line instead of waiting
+          forever.</li></ul>
         <div className="update-evidence"><strong>Measured</strong><p>With Home open and still, all NYXR 5 processes
           together used about 16 to 31 milliseconds of CPU over 30 seconds. Write for me was checked end to end:
           “this are a short test sentence” scored 5/10 and was written as “This is a short test sentence for NYXR.”</p></div>

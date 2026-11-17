@@ -1,9 +1,13 @@
 // NYXR 5: what is built today, compared honestly with the first NYXR 4 build.
-// NYXR 5 is in development. It is not a public download yet; Windows beta 6 (NYXR 4) is.
+// NYXR 5 is a downloadable preview (5.0.0-preview.1); NYXR 4 Windows beta 6 stays the main download.
+import release from './nyxr5-release.json';
+
+export const nyxr5Release = release;
+export const nyxr5Size = `${Math.round(release.installer.bytes / 1_000_000)} MB`;
 export const nyxr5 = {
-  status: 'IN DEVELOPMENT',
+  status: 'PREVIEW',
   statusNote:
-    'NYXR 5 is built and tested on our machines but is not a public download yet. The current download is NYXR 4 Windows beta 6.',
+    'NYXR 5 is a preview: an early, unsigned build for trying the new app. It installs beside NYXR 4 and shares your chats and settings with it. Windows beta 6 stays the main download.',
   date: '17 November 2026',
 };
 
@@ -72,6 +76,35 @@ export const highlights = [
   },
 ];
 
+// Real screenshots of the installed preview (fresh data folder, no provider connected).
+export const shots = [
+  {
+    src: '/screenshots/nyxr5-home.webp',
+    alt: 'NYXR 5 Home in the Nemesis theme, with the arc-reactor core in the centre and the dock below',
+    caption: 'Home in Nemesis: the core, a greeting and the dock.',
+  },
+  {
+    src: '/screenshots/nyxr5-midnight.webp',
+    alt: 'NYXR 5 Home in the Midnight theme with the orbital NYXR core',
+    caption: 'Midnight, with its orbital core.',
+  },
+  {
+    src: '/screenshots/nyxr5-commands.webp',
+    alt: 'NYXR 5 chat with the command list open after typing a slash',
+    caption: 'Type “/” and every command appears.',
+  },
+  {
+    src: '/screenshots/nyxr5-studio.webp',
+    alt: 'NYXR 5 Game Studio asking to open a project folder, with Previous games at the top right',
+    caption: 'Game Studio starts with a project folder.',
+  },
+  {
+    src: '/screenshots/nyxr5-quick.webp',
+    alt: 'NYXR 5 Quick Features sheet listing everything NYXR can do and create',
+    caption: 'Quick Features: everything to do and create.',
+  },
+];
+
 // What NYXR 5 keeps from NYXR 4: the engine, unchanged.
 export const carriesOver = [
   'The same engine: routing, planner, agent and executors',
@@ -85,5 +118,5 @@ export const carriesOver = [
 export const timeline = [
   ['First NYXR 4 build', 'A single-file alpha: one window, one model, a HUD and a terminal.'],
   ['NYXR 4 betas 1–6', 'Coding, voice, Write for me, Game Studio, Student, music, pictures, Companion, signed-in providers.'],
-  ['NYXR 5 (in development)', 'A new, lighter app around the same engine, with a new Home, themes, Game Studio IDE and the hands-free bar.'],
+  ['NYXR 5 preview', 'A new, lighter app around the same engine, with a new Home, themes, Game Studio IDE and the hands-free bar. Now a preview download.'],
 ];

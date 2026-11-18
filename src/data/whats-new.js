@@ -1,7 +1,7 @@
 // Product facts from the current desktop source. Not a release-manifest override.
 export const sourceUpdate = {
   date: '15 November 2026',
-  label: 'WINDOWS BETA 6',
+  label: 'NYXR 5',
   href: '/updates/#beta-6',
 };
 export const openJarvisCloudProviders = [
@@ -29,7 +29,7 @@ export const recentCapabilities = [
    href:'/nyxr-5/',link:'Introducing NYXR 5',pages:['personalization','intelligence','providers']},
   {id:'music',icon:'voice',title:'Describe a song. Hear it now.',
    text:'The Music page writes a song from a sentence and plays it at once. Change the tempo, key, mood or instruments, regenerate a part and edit the notes.',
-   detail:'Turn lyrics into a melody and export WAV, MIDI or a project file. Composition uses your AI provider; playback is built in. Included in Windows beta 6.',
+   detail:'Turn lyrics into a melody and export WAV, MIDI or a project file. Composition uses your AI provider; playback is built in. In NYXR 5.',
    href:'/updates/#beta-6',link:'See what changed',pages:['chat','intelligence','personalization']},
   {id:'make-anything',icon:'spark',title:'Ask for anything. Get something real.',
    text:'Drawings, posters, quizzes, tunes and small apps are made and checked even when NYXR has no special tool for them. Draw and Generate image are in the + menu.',
@@ -45,11 +45,11 @@ export const recentCapabilities = [
    href:'/updates/#beta-6',link:'See what changed',pages:['computer','voice','macros']},
   {id:'companion',icon:'cursor',title:'Show me how. Right here.',
    text:'Ask “Show me how…” and NYXR highlights the real buttons step by step, waiting for your click. Press Ctrl+Alt+A and drag a box to ask about any part of the screen.',
-   detail:'Focus sessions with spoken nudges, a “Brief me” daily briefing and spoken reminders with snooze. Stop everything with Ctrl+Alt+Backspace. Included in Windows beta 6.',
+   detail:'Focus sessions with spoken nudges, a “Brief me” daily briefing and spoken reminders with snooze. Stop everything with Ctrl+Alt+Backspace. In NYXR 5.',
    href:'/updates/#beta-6',link:'See what changed',pages:['computer','voice','personalization']},
   {id:'nexus-games',icon:'code',title:'Your idea. A world to play.',
    text:'Describe an original game in a sentence. NYXR writes it, tests it by playing it, keeps repairing by itself and opens it full screen, centred, in front of your work.',
-   detail:'Add images, files or web research as inspiration. Editing opens separately in Chrome. Uses your selected AI provider; results vary by prompt. Included in Windows beta 5.',
+   detail:'Add images, files or web research as inspiration. Editing opens separately in Chrome. Uses your selected AI provider; results vary by prompt. In NYXR 5 5.',
    href:'/games/',link:'Explore Game Studio',pages:['coding','chat','intelligence']},
   {id:'signed-in-providers',icon:'nodes',title:'The AI plans you already have.',
    text:'Claude Code, Codex and Antigravity (Gemini) work through the tools already signed in on your PC. NYXR never reads their logins.',

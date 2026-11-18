@@ -320,16 +320,15 @@ export function SayMarquee() {
       <Row items={SAYINGS} />
       <Row items={ROUTES} reverse />
       <p className="container say-marquee-note">
-        Every phrase here works in Windows beta 6; see “What works today” below for exact
-        availability.
+        Every phrase here works in NYXR 5, most of them instantly with no AI; see “What works today” below.
       </p>
     </section>
   );
 }
 
 const STEPS = [
-  ['01', 'Install.', 'Download the Windows beta. Connect the AI plan you already have — or bring a key.'],
-  ['02', 'Hold F8 and speak.', 'Or type. English, Hindi or Hinglish. Press F11 for hands-free.'],
+  ['01', 'Install.', 'One click installs NYXR 5. Setup finds the AI you already have, or helps you add a free one.'],
+  ['02', 'Hold F8 and speak.', 'Press F2 in any app for the hands-free bar. Or type. English, Hindi or Hinglish.'],
   ['03', 'Consider it done.', 'Answers, apps, games, slides and reminders — with every step shown.'],
 ];
 

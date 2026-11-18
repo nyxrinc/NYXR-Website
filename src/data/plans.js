@@ -17,7 +17,7 @@ export const coreFeatures = [
   'BYOK & local model chat',
   'Coding workspace',
   'Voice & Chrome tools',
-  'Write for me · included in beta 3',
+  'Write for me · in NYXR 5',
   'Macros & local workflows',
   'Local PDF tutoring & slides',
   `Phone companion · ${phoneLimits('core').actions}, when released`,
@@ -44,7 +44,7 @@ const planPresentation = [
     available: true,
     cta: 'Download Core',
     href: '/download/',
-    note: 'See the Windows beta download for release availability and known limitations.',
+    note: 'See the NYXR 5 download for availability and known limitations.',
   },
   {
     id: 'plus',
@@ -140,7 +140,7 @@ export const featureMatrix = [
   },
   {
     label: 'Write for me · free Core feature',
-    values: Array(4).fill('Included · beta 3'),
+    values: Array(4).fill('Included · NYXR 5'),
   },
   { label: 'NYXR-imposed local token quota', values: ['None', 'None', 'None', 'None'] },
   {
@@ -206,7 +206,7 @@ export const planFAQs = [
   {
     question: 'Is Write for me included in the current download?',
     answer:
-      'Write for me is a free Core feature included in beta 3. It adds the F11 mode dropdown, textbox selection, F8 dictation, optional grammar correction and verified insertion without submitting the text. Speech and AI services use your own configured providers.',
+      'Write for me is a free Core feature in NYXR 5. It is a switch on the hands-free bar (F2): click a textbox, hold F8 to dictate, with optional grammar correction and verified insertion without submitting the text. Speech and AI services use your own configured providers.',
   },
   {
     question: 'Will my work or provider keys be uploaded?',

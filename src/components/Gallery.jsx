@@ -21,7 +21,7 @@ export function Gallery({ openShot }) {
           }
         />
         <p className="title-aside">
-          Actual captures from NYXR 4.0.
+          Actual captures from NYXR 5.
           <br />
           Open a frame. Look around.
         </p>

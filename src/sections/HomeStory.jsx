@@ -26,7 +26,7 @@ const workflows = [
     icon: 'voice',
     label: 'STAY IN YOUR FLOW',
     title: 'An assistant within reach.',
-    text: 'Start a conversation, speak with F11 hands-free, or keep NYXR beside your work in the compact HUD.',
+    text: 'Start a conversation, press F2 and talk from any app, or keep NYXR in a narrow window beside your work.',
     href: '/voice/',
     link: 'Meet your voice companion',
     detail: 'CHAT · VOICE · HUD',

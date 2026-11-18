@@ -1,22 +1,22 @@
 import { Eyebrow } from '../components/Primitives';
 
 /* One honest, consistent availability board for every NYXR capability.
-   AVAILABLE: in the current Windows beta download.
+   AVAILABLE: in the NYXR 5 download.
    BETA: in the download, still being tested (expect rough edges).
-   NEXT BETA: built and tested in the NYXR source; ships with the next Windows beta.
+   NEXT: built and tested in the NYXR source; ships with the next NYXR 5 update.
    PLANNED: not built yet. */
 export const STATUS = {
-  available: { label: 'Available', note: 'In the current Windows beta' },
+  available: { label: 'Available', note: 'In NYXR 5' },
   beta: { label: 'Beta', note: 'In the download, still being tested' },
-  next: { label: 'Next beta', note: 'Built and tested; ships next' },
-  preview: { label: 'NYXR 5', note: 'In the NYXR 5 preview download' },
+  next: { label: 'Next', note: 'Built and tested; ships in the next update' },
+  preview: { label: 'New in 5', note: 'New in NYXR 5' },
   planned: { label: 'Planned', note: 'Not built yet' },
 };
 
 const FEATURES = [
   ['Chat with memory and research sources', 'available'],
   ['Projects & coding workspace', 'available'],
-  ['Voice: hold F8, hands-free F11', 'available'],
+  ['Voice: F2 hands-free bar, hold F8 to talk', 'available'],
   ['Computer use with verification', 'beta'],
   ['Game Studio: one prompt to a played-and-checked game', 'available'],
   ['Macros you record and replay', 'available'],
@@ -39,7 +39,10 @@ const FEATURES = [
   ['Home with a living core; Nemesis and cursor-reactive themes', 'preview'],
   ['Type “/” for every command; suggestions that type themselves', 'preview'],
   ['Auto stays on base models; bigger models need your pick or a yes', 'preview'],
-  ['Signed installer and automatic updates', 'planned'],
+  ['One-click installer, first-run setup for your AI and voice', 'preview'],
+  ['Starter quest: six first things, ticked off as you do them', 'preview'],
+  ['Change the theme by asking; Aurora and Blossom drift', 'preview'],
+  ['Code-signed installer and automatic updates', 'planned'],
   ['Extension marketplace and visual workflow builder', 'planned'],
   ['Paid plans and cloud storage', 'planned'],
 ];

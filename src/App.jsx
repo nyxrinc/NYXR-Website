@@ -58,40 +58,28 @@ const resourceCopy = {
         </p>
         <h3>Find your place</h3>
         <p>
-          Use Chat for conversations and Projects for the file explorer, editor and coding
-          assistant. The Command Center puts the animated NYXR core at the center, surrounded by
-          your work and system panels. NEXUS is the new default for fresh installations; existing
-          users keep their chosen theme.
+          NYXR 5 opens on Home: the NYXR core, a greeting and an ask box. The dock and sidebar take you to Chat, Code (a project folder with an editor and coding chat), Studio (games, pictures, music), Student, Memory, Commands and Settings. A starter quest in the sidebar shows you six first things to try.
         </p>
-        <h3>Build a game</h3>
-        <p>Open Games, choose Create a game from the chat + menu, or ask “Build a coin collection game.”
-          Press Build game, then Play for a full-screen player. Esc or Exit game returns to NYXR.
-          Editing opens separately with Edit in Chrome; export and re-import a .nexus file to keep
-          changes. Included in Windows beta 5. <a href="/games/">Game Studio guide</a>.</p>
-        <h3>New in the NYXR 5 preview</h3>
+        <h3>Make a game</h3>
+        <p>Ask in any chat (“make a clicker simulator”), or open Studio → Games and pick a folder: the chat sits on the left, your game plays on the right, and every message makes or changes it. Every version is saved in the folder as a page that plays in any browser. <a href="/games/">Game Studio guide</a>.</p>
+        <h3>Talk to it</h3>
         <p>
-          NYXR 5 is an early preview download that installs beside NYXR 4. In it, Game Studio opens a project
-          folder with the chat on the left and your game on the right; hands-free puts a small bar
-          on your desktop (hold F8 in any app, or hover it to type, with a Write for me switch);
-          typing “/” in a chat lists every command; and Home opens on a living core with the new
-          Nemesis theme. <a href="/nyxr-5/">Introducing NYXR 5</a>.
+          Press F2 in any app to turn on the hands-free bar, then hold F8 and speak. Hover the bar to type instead, or switch it to Write for me to have NYXR type into the textbox you clicked. Typing “/” in a chat lists every command, and you can change the look by just asking (“change the theme to Rain”). <a href="/nyxr-5/">Introducing NYXR 5</a>.
         </p>
         <h3>Keep the flow</h3>
         <ul>
-          <li>F11 toggles hands-free. While enabled, hold F8 to speak.</li>
-          <li>F9 stops speaking. F10 toggles macro voice.</li>
-          <li>Ctrl+P opens the file switcher in the coding workspace.</li>
-          <li>Ctrl+Shift+P opens the command palette.</li>
+          <li>F2 turns the hands-free bar on or off; hold F8 to speak.</li>
+          <li>Ctrl+Shift+Space shows or hides NYXR from anywhere.</li>
+          <li>Ctrl+Alt+A asks about anything on your screen.</li>
+          <li>Ctrl+Alt+Backspace stops everything at once.</li>
           <li>F6 starts macro recording; F5 stops it.</li>
         </ul>
-        <h3>Write for me / beta 3</h3>
+        <h3>Write for me</h3>
         <p>
-          In beta 3, the F11 dropdown adds Assistant, Write for me and Macro voice. In Write for me,
-          choose Select textbox, click a field, then hold F8 to dictate. With grammar correction on,
+          Switch the hands-free bar to Write for me, click into a textbox in any app, then hold F8 and say what to write. With grammar correction on,
           scores below 9/10 are rewritten; 9/10 or higher stays verbatim. Text is inserted and
           verified without submitting it. The speech service transcribes your audio; dictation
-          cleanup uses your selected AI. Review Voice context and privacy settings. Write for me is
-          included in the beta 3 installer.
+          cleanup uses your selected AI. It never presses Enter and refuses password fields.
         </p>
         <h3>Connect deliberately</h3>
         <p>
@@ -145,7 +133,7 @@ const resourceCopy = {
     content: (
       <>
         <p>
-          The screenshots show the actual NYXR 5 app (the 5.0.0-preview.2 source), captured in a fresh data folder with the placeholder name “Alex”, never a user’s conversations or credentials. The product film shows the earlier NYXR 4 Qt application.
+          The screenshots show the actual NYXR 5 app (the 5.0.0-preview.3 source), captured in a fresh data folder with the placeholder name “Alex”, never a user’s conversations or credentials. The product film shows the earlier NYXR 4 Qt application.
         </p>
         <p>
           The orbit-site project was written for these captures. The chat replies and the Neon Coin Catcher game are real outputs from Antigravity (Gemini Flash), the base model Auto uses. No microphone activity is depicted.
@@ -167,7 +155,7 @@ const resourceCopy = {
     ),
   },
   about: {
-    title: 'NYXR / 4 beta 6 and the 5 preview',
+    title: 'NYXR / 5',
     content: (
       <>
         <p>
@@ -175,13 +163,11 @@ const resourceCopy = {
           control, voice, projects, skills, macros and intelligent provider routing together.
         </p>
         <p>
-          NYXR 4 is the current Windows beta. <a href="/nyxr-5/">NYXR 5</a> is a new, lighter app
-          around the same engine, available as an early preview download.
+          <a href="/nyxr-5/">NYXR 5</a> is the current NYXR: a new, lighter app around the engine that powered every NYXR 4 beta.
         </p>
         <p>
           This website is a product showcase based on the existing NYXR source and real application
-          captures. It is not an online instance of NYXR. Visit the Download page for beta
-          availability.
+          captures. It is not an online instance of NYXR. Visit the Download page to get NYXR 5.
         </p>
       </>
     ),
@@ -405,7 +391,7 @@ export default function App() {
           </div>
         </div>
         <div className="footer-bottom">
-          <span>NYXR 4 BETA 6 / NYXR 5 PREVIEW</span>
+          <span>NYXR 5 / WINDOWS</span>
           <button
             className="motion-toggle"
             aria-pressed={!motion}

@@ -24,7 +24,7 @@ export default function Nyxr5() {
           </p>
           <div className="button-row">
             <Button href="/download/#nyxr5-preview" icon="download">
-              Download the preview
+              Download NYXR 5
             </Button>
             <Button href="#what-changed" secondary>
               What changed
@@ -140,19 +140,15 @@ export default function Nyxr5() {
       </section>
 
       <section className="nyxr5-cta container" aria-labelledby="nyxr5-cta-title" data-reveal>
-        <h2 id="nyxr5-cta-title">Try NYXR 5 today.</h2>
+        <h2 id="nyxr5-cta-title">Get NYXR 5.</h2>
         <p>
-          The NYXR 5 preview installs beside NYXR 4 and uses the same chats, projects and settings.
-          It is early and unsigned, so Windows may warn you first. Prefer the tested app? Windows
-          beta 6 has the same engine and most of these abilities.
+          One click installs it, no admin rights needed. A short setup finds the AI you already have and tests your microphone and voice, then a starter quest shows you around. It keeps your chats, projects and settings from NYXR 4.
         </p>
         <div className="button-row">
           <Button href="/download/#nyxr5-preview" icon="download">
-            Download the preview
+            Download NYXR 5
           </Button>
-          <Button href="/download/#release-title" secondary>
-            Windows beta 6
-          </Button>
+          
           <Button href="/updates/#nyxr-5" secondary>
             NYXR 5 release notes
           </Button>
@@ -168,7 +164,7 @@ export function Nyxr5Intro() {
     <section className="nyxr5-intro container" aria-labelledby="nyxr5-intro-title">
       <a href="/nyxr-5/" className="nyxr5-intro-card" data-reveal>
         <div className="nyxr5-intro-copy">
-          <Eyebrow>NEW / PREVIEW DOWNLOAD</Eyebrow>
+          <Eyebrow>NEW / AVAILABLE NOW</Eyebrow>
           <h2 id="nyxr5-intro-title">
             Introducing <span className="text-cyan">NYXR 5.</span>
           </h2>

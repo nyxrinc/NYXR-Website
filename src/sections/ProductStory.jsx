@@ -322,9 +322,9 @@ export function VoiceSection({ openShot }) {
             </>
           }
         >
-          Toggle hands-free with F11. Hold F8 to speak.
+          Press F2 in any app for the hands-free bar. Hold F8 to speak.
           <br />
-          Or put a thought into the quick-text bubble and keep going.
+          Or hover the bar, type a thought and keep going.
         </SectionHeading>
         <div className={`voice-stage voice-${state.toLowerCase()}`} data-reveal>
           <div className="voice-orbit" />
@@ -366,10 +366,10 @@ export function VoiceSection({ openShot }) {
         </div>
         <div className="shortcut-strip" data-reveal>
           {[
-            ['F11', 'Hands-free on / off'],
+            ['F2', 'Hands-free bar on / off'],
             ['F8', 'Hold to speak'],
-            ['F9', 'Stop speaking'],
-            ['F10', 'Macro voice'],
+            ['Ctrl+Alt+A', 'Ask about your screen'],
+            ['Ctrl+Alt+⌫', 'Stop everything'],
           ].map(([k, l]) => (
             <div key={k}>
               <Key>{k}</Key>
@@ -382,27 +382,25 @@ export function VoiceSection({ openShot }) {
           id="write-for-me"
           aria-labelledby="dictation-preview-title"
         >
-          <Eyebrow>BETA 3 / WRITE FOR ME</Eyebrow>
+          <Eyebrow>NYXR 5 / WRITE FOR ME</Eyebrow>
           <h3 id="dictation-preview-title">Write for me. Your words, in the right textbox.</h3>
           <p className="preview-availability">
-            Included in the beta 3 installer. The capture above shows the earlier dock; the app adds
-            the mode dropdown and writing controls for selecting a textbox and dictating.
+            In NYXR 5’s hands-free bar (press F2). The capture above shows the bar; it adds
+            a Chat / Write for me switch, so what you say is typed into the textbox you clicked.
           </p>
           <ol className="dictation-steps">
             <li>
               <span>01 / CHOOSE YOUR MODE</span>
-              <h4>Open the F11 dropdown.</h4>
+              <h4>Switch the bar to Write for me.</h4>
               <p>
-                Press <Key>F11</Key>, then choose Write for me from the Assistant / Write for me /
-                Macro voice mode dropdown.
+                Press <Key>F2</Key> for the hands-free bar, then flip its switch from Chat to Write for me.
               </p>
             </li>
             <li>
               <span>02 / SELECT AND SPEAK</span>
               <h4>Pick the textbox.</h4>
               <p>
-                Choose Select textbox and click an editable field. Hold <Key>F8</Key> to dictate;
-                release when you finish speaking.
+                Click into the textbox you want, then hold <Key>F8</Key> and speak; release when you finish. NYXR writes into that box.
               </p>
             </li>
             <li>
@@ -670,7 +668,7 @@ export function SkillsSection({ openShot, mode = 'skills' }) {
               {[
                 ['01', 'Record', 'F6'],
                 ['02', 'Save', 'F5'],
-                ['03', 'Plan + run', 'F10 voice'],
+                ['03', 'Review + run', '/macro'],
               ].map(([n, t, k]) => (
                 <div key={n}>
                   <b>{n}</b>
@@ -757,17 +755,16 @@ export function CoreSection() {
           on the task and available integrations.
         </p>
         <article className="architecture-example" aria-labelledby="dictation-core-title">
-          <Eyebrow>BETA 3 / WRITE FOR ME</Eyebrow>
+          <Eyebrow>NYXR 5 / WRITE FOR ME</Eyebrow>
           <h3 id="dictation-core-title">Write for me, with a clear role for each tool.</h3>
           <p>
-            The F11 dropdown separates Assistant, Write for me and Macro voice. Select a textbox and
-            hold F8 to dictate. The speech service transcribes audio; with correction on, your
+            The hands-free bar switches between Chat and Write for me. Click a textbox and hold F8 to dictate. The speech service transcribes audio; with correction on, your
             selected AI checks only the dictation. Scores below 9/10 are rewritten; 9/10 or higher
             stays verbatim. Local tools check the target and verify insertion without submitting the
             text.
           </p>
           <p className="preview-availability">
-            Included in the beta 3 installer and its matching source download.
+            In the NYXR 5 download and its matching source.
           </p>
           <a className="text-link" href="/voice/#write-for-me">
             Explore Write for me <Icon size={16} />

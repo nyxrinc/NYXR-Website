@@ -7,17 +7,22 @@ import { ExhibitionDownload } from '../components/ExhibitionRelease';
 import { DownloadSourceNote } from '../components/SourceUpdates';
 import { nyxr5Release as preview, nyxr5Size } from '../data/nyxr5';
 
-/** NYXR 5 preview: the new app as an early, unsigned installer beside the tested beta. */
-function Nyxr5Download() {
-  const [copyStatus, setCopyStatus] = useState('');
-  async function copyChecksum() {
+function useCopy(text) {
+  const [status, setStatus] = useState('');
+  async function copy() {
     try {
-      await navigator.clipboard.writeText(preview.installer.sha256);
-      setCopyStatus('Checksum copied.');
+      await navigator.clipboard.writeText(text);
+      setStatus('Checksum copied.');
     } catch {
-      setCopyStatus('Select the checksum below to copy it.');
+      setStatus('Select the checksum below to copy it.');
     }
   }
+  return [status, copy];
+}
+
+/** NYXR 5: the download. One-click installer, then a short setup inside the app. */
+function Nyxr5Download() {
+  const [copyStatus, copyChecksum] = useCopy(preview.installer.sha256);
   return (
     <section className="nyxr5-download" id="nyxr5-preview" aria-labelledby="nyxr5-download-title" data-reveal>
       <div className="nyxr5-download-shot">
@@ -30,14 +35,15 @@ function Nyxr5Download() {
         />
       </div>
       <div className="nyxr5-download-copy">
-        <span className="nyxr5-tag">NEW · {preview.version.toUpperCase()}</span>
+        <span className="nyxr5-tag">WINDOWS · {preview.version.toUpperCase()}</span>
         <h2 id="nyxr5-download-title">
-          NYXR 5 <span className="text-cyan">preview</span>
+          NYXR <span className="text-cyan">5</span>
         </h2>
         <p>
-          The new, lighter NYXR app: a living core on Home, Game Studio as an IDE, a hands-free bar
-          for every app and the Nemesis theme. It installs beside NYXR 4, needs no admin rights, and
-          uses the same chats, projects and settings. <a href="/nyxr-5/">What’s new in NYXR 5</a>.
+          A living core on Home, Game Studio as an IDE, a hands-free bar for every app (press F2),
+          instant everyday commands and six looks. One click installs it, no admin rights needed;
+          then a short setup picks your AI and tests your microphone and voice.{' '}
+          <a href="/nyxr-5/">What’s new in NYXR 5</a>.
         </p>
         <dl className="release-details">
           <div>
@@ -49,8 +55,8 @@ function Nyxr5Download() {
             <dd>{nyxr5Size}</dd>
           </div>
           <div>
-            <dt>Release channel</dt>
-            <dd className="text-cyan">Preview · early</dd>
+            <dt>Channel</dt>
+            <dd className="text-cyan">Preview · early access</dd>
           </div>
         </dl>
         <Button
@@ -59,7 +65,7 @@ function Nyxr5Download() {
           icon="download"
           data-testid="nyxr5-download"
         >
-          Download NYXR 5 preview
+          Download NYXR 5
         </Button>
         <div className="release-resource-links">
           <a href={preview.source.url} download={preview.source.filename}>
@@ -83,208 +89,138 @@ function Nyxr5Download() {
           <span role="status">{copyStatus}</span>
         </details>
         <p className="release-beta-warning">
-          Unsigned preview: Windows may show a security warning. Expect rough edges; keep using beta 6
-          if you need the tested app.
+          Not yet code-signed: Windows SmartScreen may ask you to confirm (More info → Run anyway).
+          It installs over earlier NYXR 5 previews and keeps your chats and settings.
         </p>
       </div>
     </section>
   );
 }
 
+/** NYXR 4 beta 6: still downloadable for anyone who needs the earlier app. */
+function PreviousVersion() {
+  const [copyStatus, copyChecksum] = useCopy(release.installer.sha256);
+  if (!release.available) return null;
+  return (
+    <details className="previous-version" id="nyxr-4">
+      <summary>
+        <span>Previous version</span>
+        <strong>NYXR {release.version}</strong>
+        <small>{betaSize} · the earlier Qt app · same engine, fewer features</small>
+      </summary>
+      <div className="previous-body">
+        <p>
+          NYXR 4 is the earlier app NYXR 5 replaces. Both use the same chats and settings, so you can
+          go back and forth. Most people should install NYXR 5.
+        </p>
+        <div className="release-resource-links">
+          <a href={release.installer.url} download={release.installer.filename} data-testid="beta-download">
+            Download NYXR {release.version}
+          </a>
+          <a href={release.source.url} download={release.source.filename}>
+            Corresponding source
+          </a>
+          <a href="/beta-SHA256SUMS.txt" download>
+            Checksums
+          </a>
+          <a
+            href={`https://github.com/nyxrinc/NYXR-Website/releases/tag/v${release.version}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Release notes &amp; dependency sources
+          </a>
+        </div>
+        <details className="release-checksum">
+          <summary>Verify the NYXR 4 download</summary>
+          <code>{release.installer.sha256}</code>
+          <button type="button" onClick={copyChecksum}>
+            Copy SHA-256
+          </button>
+          <span role="status">{copyStatus}</span>
+        </details>
+      </div>
+    </details>
+  );
+}
+
 export default function Download() {
-  const [copyStatus, setCopyStatus] = useState('');
-  async function copyChecksum() {
-    try {
-      await navigator.clipboard.writeText(release.installer.sha256);
-      setCopyStatus('Checksum copied.');
-    } catch {
-      setCopyStatus('Select the checksum below to copy it.');
-    }
-  }
   return (
     <section className="download-page container">
       <div className="download-copy" data-reveal>
-        <Eyebrow>NYXR / DOWNLOADS</Eyebrow>
+        <Eyebrow>NYXR / DOWNLOAD</Eyebrow>
         <span className="release-status">
-          <i /> {release.available ? 'BETA AVAILABLE' : 'PREPARING THE BETA'}
+          <i /> NYXR 5 AVAILABLE
         </span>
         <h1>
           Your core.
           <br />
-          Across your <span className="text-cyan">devices.</span>
+          On your <span className="text-cyan">PC.</span>
         </h1>
         <p>
-          Bring NYXR to Windows. Talk through an idea, build a project, learn from your PDFs or
-          automate a workflow — with your own AI provider or an explicitly selected local model.
+          Talk through an idea, build a project, make a game or a song, learn from your PDFs or let
+          NYXR do it for you, with the AI you already have or a free one.
         </p>
-        <nav className="download-jump-links" aria-label="Download platforms">
-          <a href="#nyxr5-preview">NYXR 5 preview</a>
-          <a href="#exhibition-test">Exhibition Test</a>
-          <a href="#release-title">Windows beta</a>
+        <nav className="download-jump-links" aria-label="Downloads">
+          <a href="#nyxr5-preview">NYXR 5 for Windows</a>
+          <a href="#first-minutes">Your first minutes</a>
           <a href="#android-companion">Android companion</a>
-          <a href="#latest-source">What’s in beta 6</a>
+          <a href="#exhibition-test">Exhibition Test</a>
+          <a href="#nyxr-4">Previous version</a>
         </nav>
-        <a className="text-link" href="/features/">
-          Explore NYXR <Icon size={16} />
+        <a className="text-link" href="/nyxr-5/">
+          See what NYXR 5 can do <Icon size={16} />
         </a>
       </div>
       <Nyxr5Download />
-      <ExhibitionDownload />
-      <div className="download-assets">
-        <article className="release-card" data-reveal aria-labelledby="release-title">
-          <div className="release-card-top">
-            <span>EARLY ACCESS / WINDOWS</span>
-            <Icon name="download" size={18} />
-          </div>
-          <div className="release-logo">
-            <img
-              src="/logos/nyxr-brand-core.png"
-              alt="NYXR orbital core"
-              width="1280"
-              height="1280"
-            />
-          </div>
-          <h2 id="release-title">NYXR {release.version}</h2>
-          <p>A self-contained installer. No Python or Node setup.</p>
-          <dl className="release-details">
-            <div>
-              <dt>Platform</dt>
-              <dd>{release.platform}</dd>
-            </div>
-            <div>
-              <dt>Installer</dt>
-              <dd>{betaSize}</dd>
-            </div>
-            <div>
-              <dt>Release channel</dt>
-              <dd className="text-cyan">Beta · early access</dd>
-            </div>
-          </dl>
-          {release.available ? (
-            <>
-              <Button
-                href={release.installer.url}
-                download={release.installer.filename}
-                icon="download"
-                data-testid="beta-download"
-              >
-                Download Windows beta
-              </Button>
-              <span className="release-note">Direct installer download · no sign-in required</span>
-              <div className="release-resource-links">
-                <a href={release.source.url} download={release.source.filename}>
-                  Corresponding source
-                </a>
-                <a href="/beta-SHA256SUMS.txt" download>
-                  Checksums
-                </a>
-                <a
-                  href={`https://github.com/nyxrinc/NYXR-Website/releases/tag/v${release.version}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Release notes &amp; dependency sources
-                </a>
-              </div>
-              <details className="release-checksum">
-                <summary>Verify your download</summary>
-                <p>Compare the file’s SHA-256 with this value before running it.</p>
-                <code>{release.installer.sha256}</code>
-                <button type="button" onClick={copyChecksum}>
-                  Copy SHA-256
-                </button>
-                <span role="status">{copyStatus}</span>
-              </details>
-            </>
-          ) : (
-            <>
-              <Button disabled icon="download" aria-describedby="beta-unavailable">
-                Beta download being prepared
-              </Button>
-              <span className="release-note" id="beta-unavailable">
-                The installer is built. The public download will open here after distribution checks
-                and file hosting are complete.
-              </span>
-            </>
-          )}
-          <p className="release-beta-warning">
-            {release.signed
-              ? 'Early software: '
-              : 'Unsigned beta: Windows may show a security warning. '}
-            Use on a test computer first and keep backups of important work.
-          </p>
-        </article>
-        <div id="android-companion">
-          <CompanionDownload />
-        </div>
-      </div>
-      <DownloadSourceNote />
-      <aside className="release-preview-notice" aria-labelledby="source-preview-title">
-        <Eyebrow>WINDOWS BETA 6</Eyebrow>
-        <h2 id="source-preview-title">One assistant. Games, music, pictures and more.</h2>
-        <p>
-          Describe a song and hear it, ask for a drawing or a realistic picture, turn a topic into a
-          mind map, or build an original game in <a href="/games/">Game Studio</a>. Common commands act
-          the moment you say them. Claude Code, Codex and Antigravity (Gemini) work through the plans
-          already signed in on your PC.
-        </p>
-        <p>
-          The NEXUS core, every theme and <a href="/voice/#write-for-me">Write for me</a> carry over
-          from beta 3. Updates keep your saved theme, local conversations, projects and profile. The
-          matching application source accompanies the installer.
-        </p>
-        <p>
-          <a href="/pricing/#teams-beta">Teams collaboration</a> has implemented beta foundations
-          for explicitly selected text files and Macro JSON export/import, with workspace
-          permissions and activity / audit history. Automatic whole-folder sync and binary-file
-          sharing are not supported. Hosted access awaits production account service configuration;
-          public cloud services have not launched.
-        </p>
-      </aside>
-      <div className="beta-setup" data-reveal>
+      <div className="beta-setup" id="first-minutes" data-reveal>
         <article>
-          <span>01 / YOUR AI</span>
-          <h3>Connect what works for you.</h3>
+          <span>01 / INSTALL</span>
+          <h3>One click.</h3>
           <p>
-            Bring your own provider credentials or choose an installed Ollama model. NYXR accounts
-            are optional and do not include AI credits. Local models never start automatically by
-            default.
+            Run the installer and press Install. It is for you only, so no administrator rights are
+            needed, and NYXR 5 opens when it finishes.
           </p>
         </article>
         <article>
-          <span>02 / BROWSER TASKS</span>
-          <h3>Give Chrome a connection.</h3>
+          <span>02 / YOUR AI</span>
+          <h3>Pick it in one tap.</h3>
           <p>
-            The beta includes the Native Messaging host and extension files. Open Chrome setup in
-            NYXR for manual extension setup. A Chrome Web Store listing is not available yet.
+            Already signed in to Antigravity, Claude Code or Codex? NYXR finds it. Or paste a free
+            Groq, Gemini or OpenRouter key: setup links you to it, saves it securely and tests it.
           </p>
         </article>
         <article>
-          <span>03 / LISTENING &amp; SPEAKING</span>
-          <h3>Find your voice.</h3>
+          <span>03 / YOUR VOICE</span>
+          <h3>Hear yourself, hear NYXR.</h3>
           <p>
-            The skippable tutorial helps you choose a microphone, run a local signal check and test
-            the current speaking voice. Set up input and output separately, or skip both. Your
-            checklist is available from Home whenever you want to return.
+            A microphone check that stays on your PC, a try of voice typing, a sample of the spoken
+            voice, and the hands-free bar: press F2 in any app, then hold F8 and talk.
           </p>
         </article>
         <article>
-          <span>04 / EARLY ACCESS</span>
-          <h3>Help shape what comes next.</h3>
+          <span>04 / STARTER QUEST</span>
+          <h3>Learn it by doing.</h3>
           <p>
-            Hosted NYXR sign-in is not available in this beta. Clean-machine, voice and browser
-            testing is ongoing. Your provider connection works independently of NYXR account setup.
+            Six first things to try wait in the sidebar, from “what time is it” to asking about your
+            screen. Each one ticks itself off as you do it.
           </p>
           <a className="text-link" href="/updates/">
             Read release notes <Icon size={15} />
           </a>
         </article>
       </div>
+      <div className="download-assets" id="android-companion">
+        <CompanionDownload />
+      </div>
+      <ExhibitionDownload />
+      <DownloadSourceNote />
+      <PreviousVersion />
       <div className="release-footnote">
         <span>YOUR WORKSPACE. YOUR CHOICE.</span>
         <p>
-          Windows x64 only. No local LLM weights are included. Upgrade and uninstall preserve your
-          local user data by default. Need a hand? <a href="/guide/">Read the guide</a> or{' '}
+          Windows 10/11 x64. No local AI models are included or started. Updates and uninstalling keep
+          your chats, projects and settings. Need a hand? <a href="/guide/">Read the guide</a> or{' '}
           <a href="/contact/">contact NYXR</a>.
         </p>
       </div>

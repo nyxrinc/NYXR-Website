@@ -1,13 +1,13 @@
 // NYXR 5: what is built today, compared honestly with the first NYXR 4 build.
-// NYXR 5 is a downloadable preview (5.0.0-preview.2); NYXR 4 Windows beta 6 stays the main download.
+// NYXR 5 is the NYXR download (5.0.0-preview.3); NYXR 4 beta 6 remains as the previous version.
 import release from './nyxr5-release.json';
 
 export const nyxr5Release = release;
 export const nyxr5Size = `${Math.round(release.installer.bytes / 1_000_000)} MB`;
 export const nyxr5 = {
-  status: 'PREVIEW',
+  status: 'AVAILABLE NOW',
   statusNote:
-    'NYXR 5 is a preview: an early, unsigned build for trying the new app. It installs beside NYXR 4 and shares your chats and settings with it. Windows beta 6 stays the main download.',
+    'NYXR 5 is the NYXR to download: one click installs it, and a short setup picks your AI and voice. It is early and not yet code-signed, so Windows may ask you to confirm. It shares your chats and settings with NYXR 4.',
   date: '17 November 2026',
 };
 
@@ -99,6 +99,16 @@ export const shots = [
     caption: 'Game Studio starts with a project folder.',
   },
   {
+    src: '/screenshots/nyxr5-setup.webp',
+    alt: 'NYXR 5 first-run setup: pick your AI, with signed-in Antigravity, Claude Code and Codex and free-key providers',
+    caption: 'Setup finds the AI you already have, or a free one.',
+  },
+  {
+    src: '/screenshots/nyxr5-quest.webp',
+    alt: 'NYXR 5 starter quest in the sidebar with three of six first steps ticked off',
+    caption: 'A starter quest ticks itself off as you go.',
+  },
+  {
     src: '/screenshots/nyxr5-quick.webp',
     alt: 'NYXR 5 Quick Features sheet listing everything NYXR can do and create',
     caption: 'Quick Features: everything to do and create.',
@@ -118,5 +128,5 @@ export const carriesOver = [
 export const timeline = [
   ['First NYXR 4 build', 'A single-file alpha: one window, one model, a HUD and a terminal.'],
   ['NYXR 4 betas 1–6', 'Coding, voice, Write for me, Game Studio, Student, music, pictures, Companion, signed-in providers.'],
-  ['NYXR 5 preview', 'A new, lighter app around the same engine, with a new Home, themes, Game Studio IDE and the hands-free bar. Now a preview download.'],
+  ['NYXR 5', 'A new, lighter app around the same engine: a living core, Game Studio IDE, the hands-free bar, instant commands and a one-click installer with guided setup.'],
 ];

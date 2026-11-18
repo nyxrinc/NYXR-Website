@@ -122,12 +122,32 @@ html[data-motion='off'] .nyxr5-rings i { animation: none; }
 .nyxr5-download-copy .release-details { margin: 18px 0; }
 .nyxr5-download-copy .release-resource-links { margin-top: 14px; }
 
+.download-page .download-source-update { grid-column: 1 / -1; }
+
+/* Download page: the previous version (NYXR 4), folded away */
+.previous-version {
+  grid-column: 1 / -1; border: 1px solid var(--line-soft); border-radius: 20px; padding: 0;
+  background: #ffffff04;
+}
+.previous-version > summary {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; padding: 18px 22px; cursor: pointer; list-style: none;
+}
+.previous-version > summary::-webkit-details-marker { display: none; }
+.previous-version > summary span { font: 500 11px/1 var(--mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--subtle); }
+.previous-version > summary strong { font-family: var(--display); font-size: 18px; color: var(--text); }
+.previous-version > summary small { color: var(--subtle); font-size: 13.5px; }
+.previous-version[open] > summary { border-bottom: 1px solid var(--line-soft); }
+.previous-body { padding: 16px 22px 20px; display: grid; gap: 12px; }
+.previous-body p { max-width: 70ch; }
+
 /* NYXR 5 page: screenshot gallery */
 .nyxr5-gallery { padding-block: clamp(40px, 6vw, 80px); }
 .nyxr5-gallery h2 { font-size: clamp(32px, 4.4vw, 56px); margin: 12px 0 14px; }
 .nyxr5-shots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 26px; }
 .nyxr5-shots figure { margin: 0; }
 .nyxr5-shots figure:first-child { grid-column: 1 / -1; }
+/* An even number of shots leaves the last one alone on its row: let it span. */
+.nyxr5-shots figure:first-child:nth-last-child(even) ~ figure:last-child { grid-column: 1 / -1; }
 .nyxr5-shots img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid var(--line-soft); background: #070b10; }
 .nyxr5-shots figcaption { margin-top: 8px; font-size: 13.5px; color: var(--subtle); }
 @media (max-width: 860px) {

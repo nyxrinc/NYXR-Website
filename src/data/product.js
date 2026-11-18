@@ -208,8 +208,8 @@ export const features = [
   [
     'voice',
     'Write for me',
-    'F11 mode dropdown, textbox selection and F8 dictation. Grammar below 9/10 is rewritten; text is inserted without sending. Included in beta 3.',
-    'BETA 3 / WRITE FOR ME',
+    'The hands-free bar’s Write for me switch: click a textbox, hold F8 and speak. Grammar below 9/10 is rewritten; text is inserted without sending. In NYXR 5.',
+    'NYXR 5 / WRITE FOR ME',
   ],
   ['panel', 'HUD & Full Screen', 'A side companion or the whole desktop canvas.'],
   ['spark', 'Skills', 'Choose the approach that fits the current task.'],

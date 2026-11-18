@@ -187,5 +187,19 @@
     "height": 920,
     "bytes": 288257,
     "source": "Actual NYXR 5 app (5.0.0-preview.2 source), fresh data folder, placeholder name; tune from the built-in offline composer"
+  },
+  {
+    "file": "nyxr5-setup.webp",
+    "width": 1600,
+    "height": 1000,
+    "bytes": 34392,
+    "source": "Actual NYXR 5 (5.0.0-preview.3 source), fresh data folder; plan name removed from the setup capture"
+  },
+  {
+    "file": "nyxr5-quest.webp",
+    "width": 1600,
+    "height": 1000,
+    "bytes": 36228,
+    "source": "Actual NYXR 5 (5.0.0-preview.3 source), fresh data folder; plan name removed from the setup capture"
   }
 ]

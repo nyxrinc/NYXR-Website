@@ -1,21 +1,21 @@
 {
-  "version": "5.0.0-preview.2",
-  "tag": "v5.0.0-preview.2",
+  "version": "5.0.0-preview.3",
+  "tag": "v5.0.0-preview.3",
   "channel": "preview",
   "date": "2026-11-18",
   "available": true,
   "signed": false,
   "platform": "Windows 10/11 x64",
   "installer": {
-    "filename": "NYXR-5-Preview-Setup-5.0.0-preview.2-x64.exe",
-    "bytes": 627514195,
-    "sha256": "6e6c6f5fddab896b11d01e1f79b30cf275eaa51df79b3bfc5ea1644bebe75235",
-    "url": "https://github.com/nyxrinc/NYXR-Website/releases/download/v5.0.0-preview.2/NYXR-5-Preview-Setup-5.0.0-preview.2-x64.exe"
+    "filename": "NYXR-5-Setup-5.0.0-preview.3-x64.exe",
+    "bytes": 627928578,
+    "sha256": "012072cb6c58854230d385cdac711c491a059a3ade956b78072efc53fb0241a1",
+    "url": "https://github.com/nyxrinc/NYXR-Website/releases/download/v5.0.0-preview.3/NYXR-5-Setup-5.0.0-preview.3-x64.exe"
   },
   "source": {
-    "filename": "NYXR-5-source-5.0.0-preview.2.zip",
-    "bytes": 24842271,
-    "sha256": "134afe63d5f5c032950216a2abdab45b9eb8470d726df43c802f5f41aa6324dc",
-    "url": "https://github.com/nyxrinc/NYXR-Website/releases/download/v5.0.0-preview.2/NYXR-5-source-5.0.0-preview.2.zip"
+    "filename": "NYXR-5-source-5.0.0-preview.3.zip",
+    "bytes": 24877080,
+    "sha256": "d8a68f94261d5728ed775db7de2f30359822687b38036910331c354e45adb492",
+    "url": "https://github.com/nyxrinc/NYXR-Website/releases/download/v5.0.0-preview.3/NYXR-5-source-5.0.0-preview.3.zip"
   }
 }

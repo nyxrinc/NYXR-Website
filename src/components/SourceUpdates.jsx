@@ -7,10 +7,9 @@ export function SourceAvailability({ compact = false }) {
     <aside className={`source-availability ${compact ? 'is-compact' : ''}`}>
       <Icon name="timeline" size={19} />
       <div>
-        <strong>New in Windows beta 6 and the NYXR 5 preview</strong>
+        <strong>New in NYXR 5</strong>
         <p>
-          Untagged additions are in the Windows beta 6 installer and its matching source. Cards
-          tagged NYXR 5 are in the NYXR 5 preview download.
+          Everything here is in the NYXR 5 download and its matching source. Cards tagged NYXR 5 are new to NYXR 5; the rest came from NYXR 4 and carry over.
         </p>
       </div>
       <a href={sourceUpdate.href}>
@@ -138,16 +137,10 @@ export function DownloadSourceNote() {
         <Eyebrow>LATEST DEVELOPMENT / {sourceUpdate.date.toUpperCase()}</Eyebrow>
         <h2 id="download-source-title">Know what you’re installing.</h2>
         <p>
-          Windows beta 6 adds the Music page, make-anything results with drawings and realistic
-          images, Student visuals and Antigravity slides, instant voice commands with Exhibition
-          mode, verified email sending, an on-screen Companion, Hinglish commands, a Stop everything
-          switch with per-action permissions, and a calmer interface. Everything from beta 5 is included:
-          Game Studio, signed-in Claude Code, Codex and Antigravity, background research and
-          automatic performance levels.
+          NYXR 5 is a new, lighter app around the same engine: a one-click installer and a first-run setup for your AI and voice, a starter quest, a living core on Home, Game Studio as an IDE, a hands-free bar for every app (F2), instant everyday commands, and six looks you can switch by just asking. Everything from NYXR 4 comes along: Music, pictures, Student, the Companion, Hinglish, Stop everything and signed-in Claude Code, Codex and Antigravity.
         </p>
         <p>
-          Earlier downloads keep their original versions, checksums and limitations. Beta 6 passed
-          its own build, runtime and isolated installer checks before it was listed here.
+          Every NYXR 5 build is installed, opened and uninstalled on a clean data folder before it is listed here. Earlier downloads keep their original versions, checksums and limitations.
         </p>
       </div>
       <Button href={sourceUpdate.href} secondary>

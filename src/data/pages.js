@@ -1,9 +1,9 @@
 // One route per product area; also used to emit static hosting entry points.
 export const pages = [
   {id:'nyxr5',path:'/nyxr-5/',label:'Introducing NYXR 5',group:'Discover',
-   description:'Meet NYXR 5, now a preview download: a lighter app around the same engine, with a living core, Game Studio as an IDE, a hands-free bar for every app and the Nemesis theme. Compared with the first NYXR 4 build.'},
+   description:'Meet NYXR 5: a lighter app around the same engine, with a living core, Game Studio as an IDE, a hands-free bar for every app and the Nemesis theme. Compared with the first NYXR 4 build.'},
   {id:'games',path:'/games/',label:'Game Studio',group:'Workspace',
-   description:'Describe a game and play it. In Windows beta 6, NYXR builds and checks it; in NYXR 5, Game Studio works like an IDE: open a project folder, chat on the left, your game on the right.'},
+   description:'Describe a game and play it. In NYXR 5, Game Studio works like an IDE: open a project folder, chat on the left, your game on the right, every version saved.'},
   {
     id: 'openjarvis',
     path: '/openjarvis/',
@@ -26,7 +26,7 @@ export const pages = [
     label: 'Release notes',
     group: 'Release',
     description:
-      'The NYXR 5 preview, Windows beta 6 and every earlier release: what changed, exact download versions and honest test results.',
+      'NYXR 5 and every earlier release: what changed, exact download versions and honest test results.',
   },
   {
     id: 'students',
@@ -57,7 +57,7 @@ export const pages = [
     label: 'Features',
     group: 'Discover',
     description:
-      'Explore NYXR coding, voice, Windows tools, Student, Game Studio and NYXR 5’s new abilities, each honestly labelled: in beta 6, next, or in NYXR 5.',
+      'Explore NYXR coding, voice, Windows tools, Student, Game Studio and NYXR 5’s new abilities, each honestly labelled: available, new in NYXR 5, next or planned.',
   },
   {
     id: 'chat',
@@ -169,7 +169,7 @@ export const pages = [
     label: 'Download',
     group: 'Release',
     description:
-      'Download NYXR Windows beta 6 or the signed Android Exhibition Basic tester. Try the NYXR 5 preview. Compare versions, checksums and requirements.',
+      'Download NYXR 5 for Windows: one-click install and a guided setup for your AI and voice. Also the Android Exhibition tester and the previous NYXR 4. Checksums and requirements.',
   },
   {
     id: 'documentation',
@@ -217,7 +217,7 @@ export const pages = [
     label: 'About NYXR',
     group: 'Information',
     description:
-      'Meet NYXR, a desktop AI workspace for conversation, coding, voice and automation: NYXR 4 today, and NYXR 5 as a preview.',
+      'Meet NYXR, a desktop AI workspace for conversation, coding, voice and automation: Now NYXR 5.',
   },
 ];
 

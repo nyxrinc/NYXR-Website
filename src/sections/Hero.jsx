@@ -9,7 +9,7 @@ export default function Hero({ openShot }) {
       <div className="hero-topline container">
         <span>THE HEART OF YOUR WINDOWS WORKSPACE.</span>
         <a href="/nyxr-5/">
-          <i className="status-dot" /> NYXR 4 BETA 6 · INTRODUCING NYXR 5 →
+          <i className="status-dot" /> NYXR 5 IS HERE · SEE WHAT’S NEW →
         </a>
       </div>
       <div className="hero-copy">
@@ -29,7 +29,7 @@ export default function Hero({ openShot }) {
         </p>
         <div className="button-row">
           <Button href="/download/">
-            Get NYXR <span className="sr-only">release information</span>
+            Download NYXR 5 <span className="sr-only">for Windows</span>
           </Button>
           <Button href="/demo/" secondary>
             See NYXR in action

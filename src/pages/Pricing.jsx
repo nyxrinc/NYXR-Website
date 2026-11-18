@@ -223,7 +223,7 @@ function PricingComparison() {
               <Icon name="check" size={14} /> Local mode when you choose it
             </li>
           </ul>
-          <Button href="/download/">Explore the Windows beta</Button>
+          <Button href="/download/">Download NYXR 5</Button>
           <span className="plan-footnote">
             In development. Free quotas belong to your provider accounts.
           </span>
@@ -625,7 +625,7 @@ function PlanComparison() {
       >
         <table className="plans-matrix">
           <caption>
-            Core features stay free in every plan. Write for me is included in beta 3. Cloud
+            Core features stay free in every plan. Write for me is included in NYXR 5. Cloud
             services are planned; Teams beta foundations await hosted account service configuration.
           </caption>
           <thead>

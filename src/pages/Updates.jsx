@@ -12,11 +12,34 @@ export default function Updates() {
     <section className="updates-page container">
       <Eyebrow>NYXR / RELEASE NOTES</Eyebrow>
       <h1>The core keeps evolving.</h1>
-      <article className="update-entry latest-source-entry" id="nyxr-5-preview-2">
+      <article className="update-entry latest-source-entry" id="nyxr-5-preview-3">
+        <header><span className="release-channel">NYXR 5 / 5.0.0-preview.3 · WINDOWS</span><time dateTime="2026-11-18">18 NOVEMBER 2026</time></header>
+        <h2>Install in one click. Set up in a minute.</h2>
+        <p>NYXR 5 is now the NYXR download. This build makes the first minutes easy.
+          <a href="/download/#nyxr5-preview"> Download NYXR 5</a>.</p>
+        <ul><li><strong>One-click installer.</strong> No folders or questions: press Install, and NYXR 5 opens when
+          it is done. No administrator rights needed; it installs over earlier NYXR 5 previews.</li>
+          <li><strong>Pick your AI in one tap.</strong> Setup finds Antigravity, Claude Code or Codex if you are
+          already signed in. Or it links you to a free Groq, Gemini or OpenRouter key, saves it in Windows
+          Credential Manager and tests it on the spot.</li>
+          <li><strong>Your voice, end to end.</strong> A microphone check that stays on your PC, a try of voice
+          typing, a sample of the spoken voice, and the hands-free bar.</li>
+          <li><strong>A starter quest.</strong> Six first things to try wait in the sidebar, and tick themselves
+          off as you do them.</li>
+          <li><strong>F2 for hands-free</strong>, from any app. <strong>Change the theme by asking</strong>
+          (“change the theme to Nexus” shows the four Nexus looks). Aurora and Blossom now drift slowly.</li>
+          <li><strong>Studio keeps going.</strong> Songs, pictures and diagrams keep generating when you switch
+          pages, and say so when they are ready.</li>
+          <li><strong>Smarter follow-ups.</strong> “Now search for tesla” right after opening YouTube searches YouTube,
+          instantly. Write for me types into the textbox you clicked before speaking.</li>
+          <li><strong>Fixes.</strong> The model picker stays on screen in Game Studio; the game viewer can be closed;
+          Fish Audio voices can be searched and previewed.</li></ul>
+      </article>
+      <article className="update-entry" id="nyxr-5-preview-2">
         <header><span className="release-channel">NYXR 5 / PREVIEW 5.0.0-preview.2 · WINDOWS</span><time dateTime="2026-11-18">18 NOVEMBER 2026</time></header>
         <h2>Instant from the first command.</h2>
         <p>The second NYXR 5 preview makes everyday commands answer in milliseconds, from the very first one.
-          It installs over preview 1. <a href="/download/#nyxr5-preview">Download the NYXR 5 preview</a>.</p>
+          It installs over preview 1.</p>
         <ul><li><strong>No first-time wait.</strong> A few seconds after NYXR starts, it quietly prepares the
           commands that act on your PC. “Type hello judges in Notepad” went from about 9 seconds the first time to
           about 0.3 seconds.</li>

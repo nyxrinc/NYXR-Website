@@ -133,7 +133,7 @@ const resourceCopy = {
     content: (
       <>
         <p>
-          The screenshots show the actual NYXR 5 app (the 5.0.0-preview.3 source), captured in a fresh data folder with the placeholder name “Alex”, never a user’s conversations or credentials. The product film shows the earlier NYXR 4 Qt application.
+          The screenshots show the actual NYXR 5 app (the 5.0.0-preview.4 source), captured in a fresh data folder with the placeholder name “Alex”, never a user’s conversations or credentials. The product film shows the earlier NYXR 4 Qt application.
         </p>
         <p>
           The orbit-site project was written for these captures. The chat replies and the Neon Coin Catcher game are real outputs from Antigravity (Gemini Flash), the base model Auto uses. No microphone activity is depicted.

@@ -12,11 +12,23 @@ export default function Updates() {
     <section className="updates-page container">
       <Eyebrow>NYXR / RELEASE NOTES</Eyebrow>
       <h1>The core keeps evolving.</h1>
-      <article className="update-entry latest-source-entry" id="nyxr-5-preview-3">
+      <article className="update-entry latest-source-entry" id="nyxr-5-preview-4">
+        <header><span className="release-channel">NYXR 5 / 5.0.0-preview.4 · WINDOWS</span><time dateTime="2026-11-18">18 NOVEMBER 2026</time></header>
+        <h2>Say it your way.</h2>
+        <p>Changing the theme by voice or chat now understands the request instead of matching a fixed sentence.
+          <a href="/download/#nyxr5-preview"> Download NYXR 5</a>.</p>
+        <ul><li><strong>Any wording.</strong> “Change the theme back to Nemesis”, “Nemesis theme please”, “go back to the
+          default theme” and “I want the rain look” all switch at once, with no AI. Small typos are fine when you say
+          “theme”.</li>
+          <li><strong>Never in the way.</strong> “Make it rain” or “write a theme song about rain” stay ordinary
+          requests.</li>
+          <li><strong>Built from the app.</strong> The looks NYXR offers come from its own theme list, so new looks
+          work by voice the day they arrive.</li></ul>
+      </article>
+      <article className="update-entry" id="nyxr-5-preview-3">
         <header><span className="release-channel">NYXR 5 / 5.0.0-preview.3 · WINDOWS</span><time dateTime="2026-11-18">18 NOVEMBER 2026</time></header>
         <h2>Install in one click. Set up in a minute.</h2>
-        <p>NYXR 5 is now the NYXR download. This build makes the first minutes easy.
-          <a href="/download/#nyxr5-preview"> Download NYXR 5</a>.</p>
+        <p>NYXR 5 is now the NYXR download. This build makes the first minutes easy.</p>
         <ul><li><strong>One-click installer.</strong> No folders or questions: press Install, and NYXR 5 opens when
           it is done. No administrator rights needed; it installs over earlier NYXR 5 previews.</li>
           <li><strong>Pick your AI in one tap.</strong> Setup finds Antigravity, Claude Code or Codex if you are

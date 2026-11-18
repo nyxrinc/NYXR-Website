@@ -1,5 +1,5 @@
 // NYXR 5: what is built today, compared honestly with the first NYXR 4 build.
-// NYXR 5 is the NYXR download (5.0.0-preview.3); NYXR 4 beta 6 remains as the previous version.
+// NYXR 5 is the NYXR download (5.0.0-preview.4); NYXR 4 beta 6 remains as the previous version.
 import release from './nyxr5-release.json';
 
 export const nyxr5Release = release;

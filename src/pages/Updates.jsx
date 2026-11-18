@@ -12,12 +12,28 @@ export default function Updates() {
     <section className="updates-page container">
       <Eyebrow>NYXR / RELEASE NOTES</Eyebrow>
       <h1>The core keeps evolving.</h1>
-      <article className="update-entry latest-source-entry" id="nyxr-5">
+      <article className="update-entry latest-source-entry" id="nyxr-5-preview-2">
+        <header><span className="release-channel">NYXR 5 / PREVIEW 5.0.0-preview.2 · WINDOWS</span><time dateTime="2026-11-18">18 NOVEMBER 2026</time></header>
+        <h2>Instant from the first command.</h2>
+        <p>The second NYXR 5 preview makes everyday commands answer in milliseconds, from the very first one.
+          It installs over preview 1. <a href="/download/#nyxr5-preview">Download the NYXR 5 preview</a>.</p>
+        <ul><li><strong>No first-time wait.</strong> A few seconds after NYXR starts, it quietly prepares the
+          commands that act on your PC. “Type hello judges in Notepad” went from about 9 seconds the first time to
+          about 0.3 seconds.</li>
+          <li><strong>Voice starts sooner.</strong> Holding F8 opens the connection to speech-to-text while you are
+          still talking, saving about a second on the first spoken command. No audio is sent until you let go.</li>
+          <li><strong>Menus you can read.</strong> The “/” command list, the model picker and notices are now
+          solid in every theme, so nothing shows through them in Nemesis.</li></ul>
+        <div className="update-evidence"><strong>Measured</strong><p>Through NYXR’s engine on a Windows 11 PC:
+          what time is it 26–60 ms, open Notepad 19–370 ms, snap a window ~30 ms, volume up ~0.35 s, open Calculator
+          ~0.5 s, take a screenshot ~0.6 s, type into a new Notepad note 0.25–0.36 s. No AI is used for any of them.</p></div>
+      </article>
+      <article className="update-entry" id="nyxr-5">
         <header><span className="release-channel">NYXR 5 / PREVIEW 5.0.0-preview.1 · WINDOWS</span><time dateTime="2026-11-17">17 NOVEMBER 2026</time></header>
         <h2>Introducing NYXR 5.</h2>
         <p>A new, lighter NYXR app around the same engine as every NYXR 4 beta, now an early, unsigned
           preview download that installs beside NYXR 4 and shares its chats and settings. Windows beta 6
-          stays the main download. <a href="/download/#nyxr5-preview">Download the NYXR 5 preview</a>.</p>
+          stays the main download. Preview 2 (above) replaces this build.</p>
         <ul><li><strong>Game Studio as an IDE.</strong> Open a folder as a project. Chat on the left, with the
           model picker and every chat feature; the game plays on the right and changes with each message.
           Every version is written to your folder, and Previous games plays or saves anything made before.</li>

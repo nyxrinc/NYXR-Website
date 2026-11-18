@@ -1,5 +1,5 @@
 // NYXR 5: what is built today, compared honestly with the first NYXR 4 build.
-// NYXR 5 is a downloadable preview (5.0.0-preview.1); NYXR 4 Windows beta 6 stays the main download.
+// NYXR 5 is a downloadable preview (5.0.0-preview.2); NYXR 4 Windows beta 6 stays the main download.
 import release from './nyxr5-release.json';
 
 export const nyxr5Release = release;

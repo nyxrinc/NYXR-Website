@@ -32,6 +32,7 @@ import Pricing from './pages/Pricing';
 import LegalPage, { contactEmail, contactHref } from './pages/Legal';
 import OpenJarvis from './pages/OpenJarvis';
 import Games from './pages/Games';
+import Blog from './pages/Blog';
 import Nyxr5, { Nyxr5Intro } from './pages/Nyxr5';
 import SourceUpdates, { HomeEvolution } from './components/SourceUpdates';
 import LatestSetupGuide from './components/LatestSetupGuide';
@@ -133,7 +134,7 @@ const resourceCopy = {
     content: (
       <>
         <p>
-          The screenshots show the actual NYXR 5 app (the 5.0.0-preview.4 source), captured in a fresh data folder with the placeholder name “Alex”, never a user’s conversations or credentials. The product film shows the earlier NYXR 4 Qt application.
+          The screenshots show the actual NYXR 5 app (NYXR 5 and 5.1 builds), captured in a fresh data folder with the placeholder name “Alex”, never a user’s conversations or credentials. The product film shows the earlier NYXR 4 Qt application.
         </p>
         <p>
           The orbit-site project was written for these captures. The chat replies and the Neon Coin Catcher game are real outputs from Antigravity (Gemini Flash), the base model Auto uses. No microphone activity is depicted.
@@ -371,7 +372,7 @@ export default function App() {
               .filter(
                 (p) =>
                   p.group === 'Intelligence' ||
-                  ['demo', 'in-motion', 'gallery', 'download', 'updates', 'pricing'].includes(p.id),
+                  ['nyxr5', 'blog', 'demo', 'in-motion', 'gallery', 'download', 'updates', 'pricing'].includes(p.id),
               )
               .map((p) => (
                 <a key={p.id} href={p.path}>
@@ -391,7 +392,7 @@ export default function App() {
           </div>
         </div>
         <div className="footer-bottom">
-          <span>NYXR 5 / WINDOWS</span>
+          <span>NYXR 5.1 / WINDOWS</span>
           <button
             className="motion-toggle"
             aria-pressed={!motion}
@@ -465,6 +466,8 @@ function PageContent({ page, openShot }) {
       return <Games />;
     case 'nyxr5':
       return <Nyxr5 />;
+    case 'blog':
+      return <Blog />;
     case 'openjarvis':
       return <OpenJarvis />;
     case 'hud':

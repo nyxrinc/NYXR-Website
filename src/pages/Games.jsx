@@ -25,6 +25,7 @@ export default function Games() {
         <article><span>02 / CHAT</span><h3>Talk on the left.</h3><p>The full NYXR chat sits beside your game, model picker included. Each message makes or changes the game; questions get answers. Suggestions type themselves into the empty box.</p></article>
         <article><span>03 / PLAY</span><h3>Play on the right.</h3><p>The game reloads with every version, with Tweaks, Undo, Fix it and full screen on its toolbar. Every version is saved to your folder as a page that plays in any browser.</p></article>
       </div>
+      <p className="games-nyxr5-note"><strong>New in 5.1:</strong> say how you want the art. “Use sprites from the web” gets free-licence pictures with a credits screen; attach your own pictures and they become the sprites. NYXR never generates art you asked it not to. Asked for chess with sprites from the web and three levels, it built a game in about five and a half minutes, with all 12 pieces from one free set and three genuinely different bot strengths.</p>
       <p className="games-nyxr5-note">Previous games, at the top right, plays or saves anything you made before. Close the game viewer any time for a full-width chat; “Show game” brings it back. The quick flow below also works straight from any chat.</p>
     </section>
     <section className="games-workflow" id="game-workflow" aria-labelledby="game-workflow-title">

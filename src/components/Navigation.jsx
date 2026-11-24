@@ -96,7 +96,7 @@ export default function Navigation({ page }) {
               >
                 {id === 'nyxr5' ? (
                   <>
-                    NYXR 5<b className="nav-new">NEW</b>
+                    NYXR 5.1<b className="nav-new">NEW</b>
                   </>
                 ) : id === 'coding'
                   ? 'Coding'

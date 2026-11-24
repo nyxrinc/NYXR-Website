@@ -12,7 +12,47 @@ export default function Updates() {
     <section className="updates-page container">
       <Eyebrow>NYXR / RELEASE NOTES</Eyebrow>
       <h1>The core keeps evolving.</h1>
-      <article className="update-entry latest-source-entry" id="nyxr-5-preview-4">
+      <article className="update-entry latest-source-entry" id="nyxr-5-1">
+        <header><span className="release-channel">NYXR 5.1 / 5.1.0 · WINDOWS</span><time dateTime="2026-11-24">24 NOVEMBER 2026</time></header>
+        <h2>It reads your textbook, checks its own work, and shows you when it’s driving.</h2>
+        <p>The biggest NYXR 5 update so far. It installs over every NYXR 5 preview and keeps your chats and settings.
+          <a href="/download/#nyxr5-preview"> Download NYXR 5.1</a> · <a href="/blog/#nyxr-5-1">the full write-up, with measurements</a>.</p>
+        <ul><li><strong>Homework from the real page.</strong> Name a textbook page and questions (“Ganita Manjari, page 185,
+          Q1 and Q2”) and NYXR finds the official PDF, picks the chapter that holds that printed page, and solves the
+          questions step by step. Student’s homework help and My books use the same path.</li>
+          <li><strong>Answers that check themselves.</strong> Hard maths is solved two ways and checked with a calculator,
+          code is run before you see it, and word limits are counted. On our 93-question set, base models went from
+          89 and 90 to 93 out of 93.</li>
+          <li><strong>Maths you can read.</strong> Equations are typeset like a textbook instead of showing raw code.</li>
+          <li><strong>A model picker in every chat</strong>, with Copy, Regenerate and Edit-and-resend. Base models stay the
+          default; Sonnet only after your yes.</li>
+          <li><strong>Any project type.</strong> Websites, browser and pygame games, desktop and command-line apps: 13 types,
+          each with a starter, a sandboxed run or preview and its own checks.</li>
+          <li><strong>Slides in Studio</strong> for any topic and style, with pictures, as .pptx.</li>
+          <li><strong>A new Student section:</strong> Today, Learn, Revise, Make and Plan, plus My books.</li>
+          <li><strong>Game Studio respects your art choice:</strong> free-licence web sprites with credits, or your own
+          pictures. It never generates art you said not to.</li>
+          <li><strong>Song makers only where there is a real music AI</strong> (such as Google Lyria); note-writing chat
+          models are labelled as a fallback.</li>
+          <li><strong>See when NYXR is driving.</strong> Its own cursor and a “NYXR is using your computer” banner with a
+          Stop button, in hands-free mode and everywhere else.</li>
+          <li><strong>Mission Control</strong> runs multi-step tasks and holds risky steps for your OK.</li>
+          <li><strong>Small signed updates.</strong> From 5.1 on, updates download only the files that changed, checked
+          against a signed list.</li>
+          <li><strong>Browser companion 2.0.7</strong> keeps one connection open and reports its status clearly. Reload it
+          in chrome://extensions after updating.</li>
+          <li><strong>Fixes.</strong> “Whats the current version of NYXR?” answers from NYXR itself; research reads a site
+          you name directly; “set a reminder in 3 days to …” works; homework messages are no longer mistaken for WhatsApp
+          while WhatsApp Web is open; no more 10–65 second pause on messages with “play” or “game”.</li></ul>
+        <div className="update-evidence"><strong>Tested</strong><p>A pre-release pressure test found and fixed 16 issues
+          (3 high: a make-it sandbox escape, the Open button running made programs, and coding projects running with
+          full permissions). Known vulnerabilities in NYXR’s Python packages went from 114 to 12. About 14,100 hostile
+          inputs to the request routers caused 0 crashes. 185 of 190 test files pass.</p></div>
+        <div className="update-open"><strong>Known limits</strong><p>Not yet code-signed. Real AI songs need a paid music
+          model (Gemini billing, OpenRouter credit or Cloudflare). Publisher sites can be slow; NYXR keeps downloading a
+          textbook in the background when they are.</p></div>
+      </article>
+      <article className="update-entry" id="nyxr-5-preview-4">
         <header><span className="release-channel">NYXR 5 / 5.0.0-preview.4 · WINDOWS</span><time dateTime="2026-11-18">18 NOVEMBER 2026</time></header>
         <h2>Say it your way.</h2>
         <p>Changing the theme by voice or chat now understands the request instead of matching a fixed sentence.

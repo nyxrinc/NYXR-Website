@@ -37,13 +37,14 @@ function Nyxr5Download() {
       <div className="nyxr5-download-copy">
         <span className="nyxr5-tag">WINDOWS · {preview.version.toUpperCase()}</span>
         <h2 id="nyxr5-download-title">
-          NYXR <span className="text-cyan">5</span>
+          NYXR <span className="text-cyan">5.1</span>
         </h2>
         <p>
-          A living core on Home, Game Studio as an IDE, a hands-free bar for every app (press F2),
-          instant everyday commands and six looks. One click installs it, no admin rights needed;
-          then a short setup picks your AI and tests your microphone and voice.{' '}
-          <a href="/nyxr-5/">What’s new in NYXR 5</a>.
+          Homework solved from your real textbook page, answers that check their own maths and code,
+          typeset equations, coding for any project type, Mission Control and a visible cursor whenever
+          NYXR uses your PC, plus everything from NYXR 5. One click installs it, no admin rights
+          needed; then a short setup picks your AI and tests your microphone and voice.{' '}
+          <a href="/nyxr-5/">What’s new in NYXR 5.1</a>.
         </p>
         <dl className="release-details">
           <div>
@@ -56,7 +57,7 @@ function Nyxr5Download() {
           </div>
           <div>
             <dt>Channel</dt>
-            <dd className="text-cyan">Preview · early access</dd>
+            <dd className="text-cyan">Release · small signed updates from now on</dd>
           </div>
         </dl>
         <Button
@@ -65,7 +66,7 @@ function Nyxr5Download() {
           icon="download"
           data-testid="nyxr5-download"
         >
-          Download NYXR 5
+          Download NYXR 5.1
         </Button>
         <div className="release-resource-links">
           <a href={preview.source.url} download={preview.source.filename}>
@@ -90,7 +91,8 @@ function Nyxr5Download() {
         </details>
         <p className="release-beta-warning">
           Not yet code-signed: Windows SmartScreen may ask you to confirm (More info → Run anyway).
-          It installs over earlier NYXR 5 previews and keeps your chats and settings.
+          It installs over NYXR 5 previews and keeps your chats and settings. NYXR 5 previews have no
+          updater, so this one is a full download; after it, updates fetch only the files that changed.
         </p>
       </div>
     </section>

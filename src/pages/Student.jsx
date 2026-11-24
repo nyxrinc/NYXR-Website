@@ -23,8 +23,8 @@ export default function Student({ slidesOnly = false }) {
         }
       >
         {slidesOnly
-          ? 'Create a slide outline, review the content, then export an editable PowerPoint with speaker notes.'
-          : 'Add PDF study material. Ask questions, practise recall and work through ideas with NYXR.'}
+          ? 'Make a deck on any topic, from Studio or Student. Pick a style, review the slides and pictures, then export an editable PowerPoint with speaker notes.'
+          : 'Name your textbook page and questions and NYXR solves them from the real page. Add PDF study material, ask questions, practise recall and plan your week.'}
       </SectionHeading>
       <Shot
         name="student"
@@ -36,7 +36,11 @@ export default function Student({ slidesOnly = false }) {
           ? [
               [
                 'Start with a topic',
-                'Describe the audience and what you want to explain. Or use selected excerpts from your study material.',
+                'Describe the audience and what you want to explain, for school, work or anything else. Or use selected excerpts from your study material.',
+              ],
+              [
+                'Pick a look',
+                'New in 5.1: Studio’s Slides tab offers five styles, adds pictures and lets you restyle a finished deck in one click.',
               ],
               [
                 'Review before presenting',
@@ -48,6 +52,14 @@ export default function Student({ slidesOnly = false }) {
               ],
             ]
           : [
+              [
+                'Homework from the real page',
+                'New in 5.1: say “Ganita Manjari, page 185, Q1 and Q2” and NYXR finds the official textbook PDF, opens the chapter that holds that page and solves the questions step by step, with the maths typeset properly.',
+              ],
+              [
+                'Five places for your week',
+                'Today, Learn, Revise, Make and Plan, plus My books, so homework help already knows which textbooks you study from.',
+              ],
               [
                 'Bring your chapters',
                 'Keep searchable PDFs in a persistent local study library. Text extraction happens on your computer, without a model call.',

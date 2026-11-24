@@ -223,7 +223,7 @@ function PricingComparison() {
               <Icon name="check" size={14} /> Local mode when you choose it
             </li>
           </ul>
-          <Button href="/download/">Download NYXR 5</Button>
+          <Button href="/download/">Download NYXR 5.1</Button>
           <span className="plan-footnote">
             In development. Free quotas belong to your provider accounts.
           </span>

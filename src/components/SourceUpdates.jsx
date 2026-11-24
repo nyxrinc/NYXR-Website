@@ -57,7 +57,7 @@ export default function SourceUpdates({ page, all = false }) {
             key={item.id}
             id={item.id === 'background-replies' ? 'background-replies' : undefined}
           >
-            {item.nyxr5 && <span className="nyxr5-tag">NYXR 5 · PREVIEW</span>}
+            {item.nyxr51 ? <span className="nyxr5-tag">NEW IN NYXR 5.1</span> : item.nyxr5 && <span className="nyxr5-tag">NYXR 5</span>}
             <span className="source-feature-icon">
               <Icon name={item.icon} size={23} />
             </span>

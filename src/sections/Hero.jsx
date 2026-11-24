@@ -9,11 +9,11 @@ export default function Hero({ openShot }) {
       <div className="hero-topline container">
         <span>THE HEART OF YOUR WINDOWS WORKSPACE.</span>
         <a href="/nyxr-5/">
-          <i className="status-dot" /> NYXR 5 IS HERE · SEE WHAT’S NEW →
+          <i className="status-dot" /> NYXR 5.1 IS HERE · SEE WHAT’S NEW →
         </a>
       </div>
       <div className="hero-copy">
-        <Eyebrow>NYXR 5 / A LIVING CORE ON HOME</Eyebrow>
+        <Eyebrow>NYXR 5.1 / SMARTER, AND YOURS TO WATCH</Eyebrow>
         <h1 id="hero-title">
           NYXR
           <span className="title-star" aria-hidden="true">
@@ -24,12 +24,13 @@ export default function Hero({ openShot }) {
           A living core. <span>A world of possibilities.</span>
         </h2>
         <p>
-          Your own AI command center for Windows. Speak an idea, build a project, automate a
-          routine or learn something new. One glowing core, with your work in orbit.
+          Your own AI command center for Windows. Speak an idea, build any project, automate a
+          routine or solve tonight’s homework from the real textbook page. Answers that check
+          themselves, and a cursor you can see whenever NYXR is at work.
         </p>
         <div className="button-row">
           <Button href="/download/">
-            Download NYXR 5 <span className="sr-only">for Windows</span>
+            Download NYXR 5.1 <span className="sr-only">for Windows</span>
           </Button>
           <Button href="/demo/" secondary>
             See NYXR in action
@@ -43,7 +44,7 @@ export default function Hero({ openShot }) {
       </div>
       <div className="hero-stage container">
         <div className="stage-coordinate coord-left">
-          N / 05.0
+          N / 05.1
           <br />
           WINDOWS DESKTOP ENVIRONMENT
         </div>

@@ -1,8 +1,8 @@
 // Product facts from the current desktop source. Not a release-manifest override.
 export const sourceUpdate = {
-  date: '15 November 2026',
-  label: 'NYXR 5',
-  href: '/updates/#beta-6',
+  date: '24 November 2026',
+  label: 'NYXR 5.1',
+  href: '/updates/#nyxr-5-1',
 };
 export const openJarvisCloudProviders = [
   'OpenRouter',
@@ -13,8 +13,28 @@ export const openJarvisCloudProviders = [
   'MiniMax',
 ];
 
-// Items marked nyxr5 are in the NYXR 5 preview download (5.0.0-preview.2); cards show a tag.
+// Items marked nyxr51 are new in NYXR 5.1; items marked nyxr5 arrived with NYXR 5. Cards show a tag.
 export const recentCapabilities = [
+  {id:'nyxr51-homework',nyxr51:true,icon:'nodes',title:'Homework from the real page.',
+   text:'Name a textbook page and questions and NYXR finds the official PDF, opens the chapter that holds that printed page and solves the questions step by step.',
+   detail:'Tested on NCERT Ganita Manjari, class 9, page 185: both questions solved from the official PDF in 71 seconds, 29 seconds when asked again.',
+   href:'/blog/#nyxr-5-1',link:'How it works',pages:['chat','intelligence','coding']},
+  {id:'nyxr51-reasoning',nyxr51:true,icon:'spark',title:'Answers that check themselves.',
+   text:'Hard maths is solved two ways and checked with a calculator, code runs before you see it, and word limits are counted.',
+   detail:'On a 93-question set graded by code, base models went from 89 and 90 to 93 out of 93. Maths is typeset like a textbook.',
+   href:'/blog/#nyxr-5-1',link:'See the numbers',pages:['intelligence','providers','chat']},
+  {id:'nyxr51-projects',nyxr51:true,icon:'code',title:'Build any kind of project.',
+   text:'Websites, browser and pygame games, desktop and command-line apps: 13 project types, each with a starter, a sandboxed run or preview and checks that fit.',
+   detail:'Every chat has its own model picker. Game Studio uses free-licence web sprites with credits, or your own pictures, when you ask.',
+   href:'/updates/#nyxr-5-1',link:'See what changed',pages:['coding','chat']},
+  {id:'nyxr51-cursor',nyxr51:true,icon:'cursor',title:'You see when NYXR drives.',
+   text:'Whenever NYXR uses your computer, its own cursor and a “NYXR is using your computer” banner appear, with a Stop button.',
+   detail:'Mission Control runs multi-step tasks and holds risky steps for your OK.',
+   href:'/updates/#nyxr-5-1',link:'See what changed',pages:['computer','voice','macros']},
+  {id:'nyxr51-slides',nyxr51:true,icon:'route',title:'Slides in Studio.',
+   text:'Make a deck on any topic, in five styles, with pictures and speaker notes, and download it as an editable PowerPoint.',
+   detail:'The Student section is new too: Today, Learn, Revise, Make and Plan, plus My books.',
+   href:'/updates/#nyxr-5-1',link:'See what changed',pages:['intelligence','chat','personalization']},
   {id:'nyxr5-game-ide',nyxr5:true,icon:'code',title:'Game Studio, like an IDE.',
    text:'Open a folder as a project. Chat on the left, with the model picker and every chat feature; your game plays on the right and changes with each message.',
    detail:'Every version is saved into your folder as a page that plays in any browser. Previous games plays or saves anything you made before.',

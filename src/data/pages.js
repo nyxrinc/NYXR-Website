@@ -1,7 +1,9 @@
 // One route per product area; also used to emit static hosting entry points.
 export const pages = [
-  {id:'nyxr5',path:'/nyxr-5/',label:'Introducing NYXR 5',group:'Discover',
-   description:'Meet NYXR 5: a lighter app around the same engine, with a living core, Game Studio as an IDE, a hands-free bar for every app and the Nemesis theme. Compared with the first NYXR 4 build.'},
+  {id:'nyxr5',path:'/nyxr-5/',label:'Introducing NYXR 5.1',group:'Discover',
+   description:'NYXR 5.1 reads your textbook page and solves the questions, checks its own maths and code, typesets maths, builds any kind of project and shows its cursor whenever it uses your PC. Measured, with honest numbers.'},
+  {id:'blog',path:'/blog/',label:'Blog',group:'Discover',
+   description:'Notes from the NYXR core: what we built, how we measured it and what we haven’t got right yet. Starting with NYXR 5.1.'},
   {id:'games',path:'/games/',label:'Game Studio',group:'Workspace',
    description:'Describe a game and play it. In NYXR 5, Game Studio works like an IDE: open a project folder, chat on the left, your game on the right, every version saved.'},
   {
@@ -26,14 +28,14 @@ export const pages = [
     label: 'Release notes',
     group: 'Release',
     description:
-      'NYXR 5 and every earlier release: what changed, exact download versions and honest test results.',
+      'NYXR 5.1 and every earlier release: what changed, exact download versions and honest test results.',
   },
   {
     id: 'students',
     path: '/students/',
     label: 'For students',
     group: 'Workspace',
-    description: 'Learn with your PDF study material, a contextual tutor, quizzes and flashcards.',
+    description: 'Homework help that reads your textbook page and solves the questions, with maths shown properly. A tutor for your PDFs, quizzes, flashcards, mind maps and a study plan.',
   },
   {
     id: 'slideshows',
@@ -41,7 +43,7 @@ export const pages = [
     label: 'Slideshows',
     group: 'Workspace',
     description:
-      'Generate, review and export editable PowerPoint presentations with speaker notes.',
+      'Make a slide deck on any topic in Studio or Student: pick a style, get pictures and speaker notes, and download an editable PowerPoint.',
   },
   {
     id: 'overview',
@@ -49,7 +51,7 @@ export const pages = [
     label: 'Home',
     group: 'Discover',
     description:
-      'Meet NYXR, your personal AI assistant for Windows. Think, build, automate and learn in a workspace of your own. NYXR 5 is on its way.',
+      'Meet NYXR, your personal AI assistant for Windows. Think, build, automate and learn in a workspace of your own. NYXR 5.1 is here.',
   },
   {
     id: 'features',
@@ -57,7 +59,7 @@ export const pages = [
     label: 'Features',
     group: 'Discover',
     description:
-      'Explore NYXR coding, voice, Windows tools, Student, Game Studio and NYXR 5’s new abilities, each honestly labelled: available, new in NYXR 5, next or planned.',
+      'Explore NYXR coding, voice, Windows tools, Student, Game Studio and what’s new in NYXR 5.1, each honestly labelled: available, new, next or planned.',
   },
   {
     id: 'chat',
@@ -72,14 +74,14 @@ export const pages = [
     path: '/coding/',
     label: 'Projects & coding',
     group: 'Workspace',
-    description: 'Inspect, plan, edit and validate projects with the NYXR coding workspace.',
+    description: 'Build any kind of project: websites, browser and pygame games, desktop and command-line apps. Each type gets a starter, a sandboxed run or preview, and checks that fit.',
   },
   {
     id: 'computer',
     path: '/computer-use/',
     label: 'Computer use',
     group: 'Workspace',
-    description: 'How NYXR plans computer tasks, executes with tools and verifies the outcome.',
+    description: 'How NYXR plans computer tasks, acts with tools and verifies the outcome. In NYXR 5.1 you always see its cursor and a Stop button while it works.',
   },
   {
     id: 'voice',
@@ -169,7 +171,7 @@ export const pages = [
     label: 'Download',
     group: 'Release',
     description:
-      'Download NYXR 5 for Windows: one-click install and a guided setup for your AI and voice. Also the Android Exhibition tester and the previous NYXR 4. Checksums and requirements.',
+      'Download NYXR 5.1 for Windows: one-click install and a guided setup for your AI and voice. Also the Android Exhibition tester and the previous NYXR 4. Checksums and requirements.',
   },
   {
     id: 'documentation',

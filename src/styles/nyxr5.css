@@ -157,3 +157,44 @@ html[data-motion='off'] .nyxr5-rings i { animation: none; }
 /* Game Studio page: the NYXR 5 workflow */
 .games-nyxr5 { border: 1px solid #76edff33; border-radius: 24px; padding: clamp(22px, 4vw, 40px); margin-block: 24px; background: radial-gradient(100% 120% at 0% 0%, #76edff10, transparent 60%); }
 .games-nyxr5-note { margin-top: 16px; font-size: 14px; color: var(--subtle); }
+
+/* Blog: release write-ups with measured tables. */
+.blog-page { padding-top: clamp(40px, 7vw, 88px); padding-bottom: 72px; max-width: 980px; }
+.blog-page h1 { font-size: clamp(40px, 6vw, 72px); margin-top: 14px; }
+.blog-lede { color: var(--muted); font-size: 18px; margin-top: 12px; max-width: 60ch; }
+.blog-index { display: grid; gap: 10px; margin-top: 32px; }
+.blog-index a { display: grid; gap: 4px; padding: 16px 20px; border: 1px solid var(--line-soft); border-radius: 14px; text-decoration: none; color: var(--text); transition: border-color 0.2s var(--ease); }
+.blog-index a:hover, .blog-index a:focus-visible { border-color: var(--cyan); }
+.blog-index time, .blog-post header time { font: 11px/1.8 var(--mono); color: var(--subtle); letter-spacing: 0.08em; }
+.blog-post { margin-top: 48px; padding: clamp(24px, 4vw, 48px); border: 1px solid var(--line); border-radius: 18px; background: #0a1720; }
+.blog-post header { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.blog-post h2 { font-size: clamp(26px, 3.4vw, 40px); line-height: 1.22; margin-top: 22px; max-width: 30ch; }
+.blog-summary { font-size: 18px; line-height: 1.75; color: var(--text); margin-top: 18px; max-width: 65ch; }
+.blog-section { margin-top: 40px; }
+.blog-section h3 { font-size: clamp(20px, 2.2vw, 26px); }
+.blog-section > p, .blog-list li { color: var(--muted); font-size: 15.5px; line-height: 1.85; margin-top: 14px; max-width: 72ch; }
+.blog-list { padding-left: 20px; margin-top: 8px; }
+.blog-list li { margin-top: 10px; }
+.blog-list strong { color: var(--text); }
+.blog-table { margin: 22px 0 0; }
+.blog-table figcaption { font: 11px/1.8 var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--cyan); margin-bottom: 10px; }
+.blog-table-scroll { overflow-x: auto; border: 1px solid var(--line-soft); border-radius: 14px; }
+.blog-table table { width: 100%; border-collapse: collapse; min-width: 520px; font-size: 14.5px; }
+.blog-table th, .blog-table td { text-align: left; padding: 12px 16px; border-top: 1px solid var(--line-soft); vertical-align: top; line-height: 1.6; }
+.blog-table thead th { border-top: 0; font: 500 11px/1.6 var(--mono); letter-spacing: 0.08em; color: var(--subtle); text-transform: uppercase; }
+.blog-table tbody th { color: var(--text); font-weight: 500; }
+.blog-table td { color: var(--muted); }
+.blog-table td:last-child { color: var(--text); }
+.blog-sources { margin-top: 36px; font-size: 13px; color: var(--subtle); line-height: 1.7; max-width: 75ch; }
+.blog-post .button-row { margin-top: 24px; }
+
+/* NYXR 5.1 measured strip (Introducing page + home). */
+.nyxr51-measured { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-top: 26px; }
+.nyxr51-measured div { padding: 20px; border: 1px solid var(--line-soft); border-radius: 16px; background: #56dcea06; }
+.nyxr51-measured strong { display: block; font: 600 clamp(26px, 3vw, 36px)/1.1 var(--display); color: var(--cyan); letter-spacing: -0.02em; }
+.nyxr51-measured span { display: block; margin-top: 8px; color: var(--muted); font-size: 14px; line-height: 1.55; }
+@media (max-width: 640px) {
+  .blog-table table { min-width: 0; font-size: 13.5px; }
+  .blog-table th, .blog-table td { padding: 10px 9px; }
+  .blog-post { padding: 20px 16px; }
+}

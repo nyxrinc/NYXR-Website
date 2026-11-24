@@ -152,7 +152,7 @@ export default function Download() {
       <div className="download-copy" data-reveal>
         <Eyebrow>NYXR / DOWNLOAD</Eyebrow>
         <span className="release-status">
-          <i /> NYXR 5 AVAILABLE
+          <i /> NYXR 5.1 AVAILABLE
         </span>
         <h1>
           Your core.
@@ -164,14 +164,14 @@ export default function Download() {
           NYXR do it for you, with the AI you already have or a free one.
         </p>
         <nav className="download-jump-links" aria-label="Downloads">
-          <a href="#nyxr5-preview">NYXR 5 for Windows</a>
+          <a href="#nyxr5-preview">NYXR 5.1 for Windows</a>
           <a href="#first-minutes">Your first minutes</a>
           <a href="#android-companion">Android companion</a>
           <a href="#exhibition-test">Exhibition Test</a>
           <a href="#nyxr-4">Previous version</a>
         </nav>
         <a className="text-link" href="/nyxr-5/">
-          See what NYXR 5 can do <Icon size={16} />
+          See what NYXR 5.1 can do <Icon size={16} />
         </a>
       </div>
       <Nyxr5Download />

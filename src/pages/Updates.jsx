@@ -12,7 +12,15 @@ export default function Updates() {
     <section className="updates-page container">
       <Eyebrow>NYXR / RELEASE NOTES</Eyebrow>
       <h1>The core keeps evolving.</h1>
-      <article className="update-entry latest-source-entry" id="nyxr-5-1">
+      <article className="update-entry latest-source-entry" id="nyxr-5-1-1">
+        <header><span className="release-channel">NYXR 5.1 / 5.1.1 · WINDOWS</span><time dateTime="2026-11-24">24 NOVEMBER 2026</time></header>
+        <h2>It says NYXR 5.1 now.</h2>
+        <p>5.1.0 still called itself “NYXR 5” in the sidebar, the welcome screen, Settings, the window title and the
+          tray menu, because those labels were typed in by hand. They now come from the app’s own version, so they
+          can’t fall behind again. Nothing else changed. If you have 5.1.0, this arrives as a small update;
+          otherwise <a href="/download/#nyxr5-preview">download NYXR 5.1</a>.</p>
+      </article>
+      <article className="update-entry" id="nyxr-5-1">
         <header><span className="release-channel">NYXR 5.1 / 5.1.0 · WINDOWS</span><time dateTime="2026-11-24">24 NOVEMBER 2026</time></header>
         <h2>It reads your textbook, checks its own work, and shows you when it’s driving.</h2>
         <p>The biggest NYXR 5 update so far. It installs over every NYXR 5 preview and keeps your chats and settings.

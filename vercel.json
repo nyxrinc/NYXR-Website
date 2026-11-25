@@ -7,9 +7,10 @@
   "cleanUrls": true,
   "trailingSlash": true,
   "redirects": [
-    { "source": "/nyxr-5", "destination": "/nyxr-5.1/", "permanent": true },
-    { "source": "/nyxr-5/", "destination": "/nyxr-5.1/", "permanent": true },
-    { "source": "/nyxr-5.1", "destination": "/nyxr-5.1/", "permanent": true }
+    { "source": "/nyxr-5", "destination": "/nyxr-5-1/", "permanent": true },
+    { "source": "/nyxr-5/", "destination": "/nyxr-5-1/", "permanent": true },
+    { "source": "/nyxr-5.1", "destination": "/nyxr-5-1/", "permanent": true },
+    { "source": "/nyxr-5.1/", "destination": "/nyxr-5-1/", "permanent": true }
   ],
   "headers": [
     {

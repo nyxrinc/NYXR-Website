@@ -44,7 +44,7 @@ function Nyxr5Download() {
           typeset equations, coding for any project type, Mission Control and a visible cursor whenever
           NYXR uses your PC, plus everything from NYXR 5. One click installs it, no admin rights
           needed; then a short setup picks your AI and tests your microphone and voice.{' '}
-          <a href="/nyxr-5.1/">What’s new in NYXR 5.1</a>.
+          <a href="/nyxr-5-1/">What’s new in NYXR 5.1</a>.
         </p>
         <dl className="release-details">
           <div>
@@ -170,7 +170,7 @@ export default function Download() {
           <a href="#exhibition-test">Exhibition Test</a>
           <a href="#nyxr-4">Previous version</a>
         </nav>
-        <a className="text-link" href="/nyxr-5.1/">
+        <a className="text-link" href="/nyxr-5-1/">
           See what NYXR 5.1 can do <Icon size={16} />
         </a>
       </div>

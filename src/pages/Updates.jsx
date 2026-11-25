@@ -150,7 +150,7 @@ export default function Updates() {
         <div className="update-evidence"><strong>Measured</strong><p>With Home open and still, all NYXR 5 processes
           together used about 16 to 31 milliseconds of CPU over 30 seconds. Write for me was checked end to end:
           “this are a short test sentence” scored 5/10 and was written as “This is a short test sentence for NYXR.”</p></div>
-        <Button href="/nyxr-5.1/" secondary>Introducing NYXR 5</Button>
+        <Button href="/nyxr-5-1/" secondary>Introducing NYXR 5</Button>
       </article>
       <article className="update-entry" id="beta-6">
         <header><span className="release-channel">WINDOWS BETA 6 / UNSIGNED EARLY ACCESS</span><time dateTime="2026-11-15">15 NOVEMBER 2026</time></header>

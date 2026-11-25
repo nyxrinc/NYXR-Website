@@ -118,7 +118,7 @@ export function HomeEvolution() {
           </a>
         ))}
         <span className="evolution-caption">
-          NYXR 5 · PREVIEW DOWNLOAD · <a href="/nyxr-5.1/">Introducing NYXR 5</a> ·{' '}
+          NYXR 5 · PREVIEW DOWNLOAD · <a href="/nyxr-5-1/">Introducing NYXR 5</a> ·{' '}
           <a href="/download/">Compare downloads</a>
         </span>
       </div>

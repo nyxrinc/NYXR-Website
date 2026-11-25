@@ -204,7 +204,7 @@ export default function Nyxr5() {
 export function Nyxr5Intro() {
   return (
     <section className="nyxr5-intro container" aria-labelledby="nyxr5-intro-title">
-      <a href="/nyxr-5.1/" className="nyxr5-intro-card" data-reveal>
+      <a href="/nyxr-5-1/" className="nyxr5-intro-card" data-reveal>
         <div className="nyxr5-intro-copy">
           <Eyebrow>NEW / NYXR 5.1</Eyebrow>
           <h2 id="nyxr5-intro-title">

@@ -1,6 +1,6 @@
 // One route per product area; also used to emit static hosting entry points.
 export const pages = [
-  {id:'nyxr5',path:'/nyxr-5.1/',label:'Introducing NYXR 5.1',group:'Discover',
+  {id:'nyxr5',path:'/nyxr-5-1/',label:'Introducing NYXR 5.1',group:'Discover',
    description:'NYXR 5.1 reads your textbook page and solves the questions, checks its own maths and code, typesets maths, builds any kind of project and shows its cursor whenever it uses your PC. Measured, with honest numbers.'},
   {id:'blog',path:'/blog/',label:'Blog',group:'Discover',
    description:'Notes from the NYXR core: what we built, how we measured it and what we haven’t got right yet. Starting with NYXR 5.1.'},

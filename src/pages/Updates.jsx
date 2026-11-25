@@ -12,7 +12,19 @@ export default function Updates() {
     <section className="updates-page container">
       <Eyebrow>NYXR / RELEASE NOTES</Eyebrow>
       <h1>The core keeps evolving.</h1>
-      <article className="update-entry latest-source-entry" id="nyxr-5-1-1">
+      <article className="update-entry latest-source-entry" id="nyxr-5-1-2">
+        <header><span className="release-channel">NYXR 5.1 / 5.1.2 · WINDOWS</span><time dateTime="2026-11-25">25 NOVEMBER 2026</time></header>
+        <h2>Switch AI mid-project, and see whose AI it is.</h2>
+        <p>Every chat, Game Studio project and Code project has a model pill: pick another provider or model and your
+          next message uses it, with the history kept and nothing restarting. Studio, Student and Mission Control get
+          their own pick too. Providers now show their logo beside the name, set-up ones first, and models read as
+          names (“Claude Haiku 5.5”) instead of IDs.</p>
+        <p>Also: a short Firebase setup in Settings → Account for Google sign-in, Settings no longer asks for “keys” for
+          signed-in apps like Claude Code, long project paths no longer push the page sideways, and a dozen smaller
+          wording fixes. If you have 5.1.0 or 5.1.1, this arrives as a small update; otherwise{' '}
+          <a href="/download/#nyxr5-preview">download NYXR 5.1</a>.</p>
+      </article>
+      <article className="update-entry" id="nyxr-5-1-1">
         <header><span className="release-channel">NYXR 5.1 / 5.1.1 · WINDOWS</span><time dateTime="2026-11-24">24 NOVEMBER 2026</time></header>
         <h2>It says NYXR 5.1 now.</h2>
         <p>5.1.0 still called itself “NYXR 5” in the sidebar, the welcome screen, Settings, the window title and the
@@ -138,7 +150,7 @@ export default function Updates() {
         <div className="update-evidence"><strong>Measured</strong><p>With Home open and still, all NYXR 5 processes
           together used about 16 to 31 milliseconds of CPU over 30 seconds. Write for me was checked end to end:
           “this are a short test sentence” scored 5/10 and was written as “This is a short test sentence for NYXR.”</p></div>
-        <Button href="/nyxr-5/" secondary>Introducing NYXR 5</Button>
+        <Button href="/nyxr-5.1/" secondary>Introducing NYXR 5</Button>
       </article>
       <article className="update-entry" id="beta-6">
         <header><span className="release-channel">WINDOWS BETA 6 / UNSIGNED EARLY ACCESS</span><time dateTime="2026-11-15">15 NOVEMBER 2026</time></header>

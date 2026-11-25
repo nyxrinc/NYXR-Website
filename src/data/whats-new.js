@@ -1,8 +1,8 @@
 // Product facts from the current desktop source. Not a release-manifest override.
 export const sourceUpdate = {
-  date: '24 November 2026',
-  label: 'NYXR 5.1',
-  href: '/updates/#nyxr-5-1',
+  date: '25 November 2026',
+  label: 'NYXR 5.1.2',
+  href: '/updates/#nyxr-5-1-2',
 };
 export const openJarvisCloudProviders = [
   'OpenRouter',
@@ -38,15 +38,15 @@ export const recentCapabilities = [
   {id:'nyxr5-game-ide',nyxr5:true,icon:'code',title:'Game Studio, like an IDE.',
    text:'Open a folder as a project. Chat on the left, with the model picker and every chat feature; your game plays on the right and changes with each message.',
    detail:'Every version is saved into your folder as a page that plays in any browser. Previous games plays or saves anything you made before.',
-   href:'/nyxr-5/',link:'Introducing NYXR 5',pages:['coding','chat','intelligence']},
+   href:'/nyxr-5.1/',link:'Introducing NYXR 5',pages:['coding','chat','intelligence']},
   {id:'nyxr5-handsfree',nyxr5:true,icon:'voice',title:'Hold F8 in any app.',
    text:'Hands-free puts a small bar on your desktop. Hold F8 wherever you are to talk to NYXR, or hover the bar to type.',
    detail:'Switch it to Write for me: NYXR waits for you to click a textbox, then writes your words, corrected when the grammar scores under 9/10. It never presses Enter.',
-   href:'/nyxr-5/',link:'Introducing NYXR 5',pages:['voice','computer','macros']},
+   href:'/nyxr-5.1/',link:'Introducing NYXR 5',pages:['voice','computer','macros']},
   {id:'nyxr5-core',nyxr5:true,icon:'spark',title:'A core for every look.',
    text:'Home opens on a living NYXR core that leans toward your cursor and shows when NYXR listens, thinks or speaks. The new Nemesis theme is a dark, neon-blue HUD.',
    detail:'Aurora’s lights follow your cursor and Rain lets you wipe the glass. Reduce effects keeps everything still.',
-   href:'/nyxr-5/',link:'Introducing NYXR 5',pages:['personalization','intelligence','providers']},
+   href:'/nyxr-5.1/',link:'Introducing NYXR 5',pages:['personalization','intelligence','providers']},
   {id:'music',icon:'voice',title:'Describe a song. Hear it now.',
    text:'The Music page writes a song from a sentence and plays it at once. Change the tempo, key, mood or instruments, regenerate a part and edit the notes.',
    detail:'Turn lyrics into a melody and export WAV, MIDI or a project file. Composition uses your AI provider; playback is built in. In NYXR 5.',

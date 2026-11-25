@@ -65,7 +65,7 @@ const resourceCopy = {
         <p>Ask in any chat (“make a clicker simulator”), or open Studio → Games and pick a folder: the chat sits on the left, your game plays on the right, and every message makes or changes it. Every version is saved in the folder as a page that plays in any browser. <a href="/games/">Game Studio guide</a>.</p>
         <h3>Talk to it</h3>
         <p>
-          Press F2 in any app to turn on the hands-free bar, then hold F8 and speak. Hover the bar to type instead, or switch it to Write for me to have NYXR type into the textbox you clicked. Typing “/” in a chat lists every command, and you can change the look by just asking (“change the theme to Rain”). <a href="/nyxr-5/">Introducing NYXR 5</a>.
+          Press F2 in any app to turn on the hands-free bar, then hold F8 and speak. Hover the bar to type instead, or switch it to Write for me to have NYXR type into the textbox you clicked. Typing “/” in a chat lists every command, and you can change the look by just asking (“change the theme to Rain”). <a href="/nyxr-5.1/">Introducing NYXR 5</a>.
         </p>
         <h3>Keep the flow</h3>
         <ul>
@@ -164,7 +164,7 @@ const resourceCopy = {
           control, voice, projects, skills, macros and intelligent provider routing together.
         </p>
         <p>
-          <a href="/nyxr-5/">NYXR 5</a> is the current NYXR: a new, lighter app around the engine that powered every NYXR 4 beta.
+          <a href="/nyxr-5.1/">NYXR 5</a> is the current NYXR: a new, lighter app around the engine that powered every NYXR 4 beta.
         </p>
         <p>
           This website is a product showcase based on the existing NYXR source and real application

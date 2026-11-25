@@ -8,7 +8,7 @@ export default function Hero({ openShot }) {
       <div className="hero-atmosphere" />
       <div className="hero-topline container">
         <span>THE HEART OF YOUR WINDOWS WORKSPACE.</span>
-        <a href="/nyxr-5/">
+        <a href="/nyxr-5.1/">
           <i className="status-dot" /> NYXR 5.1 IS HERE · SEE WHAT’S NEW →
         </a>
       </div>

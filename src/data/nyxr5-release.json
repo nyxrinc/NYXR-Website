@@ -1,21 +1,21 @@
 {
-  "version": "5.1.1",
-  "tag": "v5.1.1",
+  "version": "5.1.2",
+  "tag": "v5.1.2",
   "channel": "release",
-  "date": "2026-11-24",
+  "date": "2026-11-25",
   "available": true,
   "signed": false,
   "platform": "Windows 10/11 x64",
   "installer": {
-    "filename": "NYXR-5-Setup-5.1.1-x64.exe",
-    "bytes": 632487848,
-    "sha256": "746c38f2172fe5b3d1c05170b36c2d4bc1317e87a826985ff65ae7137e849962",
-    "url": "https://github.com/nyxrinc/NYXR-Website/releases/download/v5.1.1/NYXR-5-Setup-5.1.1-x64.exe"
+    "filename": "NYXR-5-Setup-5.1.2-x64.exe",
+    "bytes": 632537361,
+    "sha256": "07f51fe72f0bf1484ac1b50cb7168adab0bd5652c05b53449a47aadaa0500e93",
+    "url": "https://github.com/nyxrinc/NYXR-Website/releases/download/v5.1.2/NYXR-5-Setup-5.1.2-x64.exe"
   },
   "source": {
-    "filename": "NYXR-5-source-5.1.1.zip",
-    "bytes": 25235209,
-    "sha256": "417b6f9578bddd6dac3e6428cd4e919df91f53d8530b951cafbbd3ecc17422ba",
-    "url": "https://github.com/nyxrinc/NYXR-Website/releases/download/v5.1.1/NYXR-5-source-5.1.1.zip"
+    "filename": "NYXR-5-source-5.1.2.zip",
+    "bytes": 25264776,
+    "sha256": "44eef2e727d0b812db18c418edb9df7f93833094f3a5702124306126375f3a1d",
+    "url": "https://github.com/nyxrinc/NYXR-Website/releases/download/v5.1.2/NYXR-5-source-5.1.2.zip"
   }
 }
